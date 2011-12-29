@@ -1,0 +1,2071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5464cd35-ae85-4a2e-a138-8145a5db6189" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/images/10px.calendar.icon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/images/10px.red.arrow.left.double.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/images/10px.red.arrow.left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/images/10px.red.arrow.right.double.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/images/10px.red.arrow.right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/images/8px.red.X.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/actor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/alignbottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/aligncenter.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/alignleft.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/alignmiddle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/alignright.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/aligntop.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/arrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/bell.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/block_end.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/block_start.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/bold.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/box.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/cancel_end.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/cancel_intermediate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/center.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/classic_end.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/classic_start.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/cloud.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/collapse.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/connect.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/connect.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/connector.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/copy.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/cube_green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/cut.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/cylinder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/delete.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/diagram.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/diamond_end.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/diamond_start.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/doubleellipse.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/down.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/dude3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/earth.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/ellipse.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/entity.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/entity.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/error.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/event.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/event_end.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/event_intermediate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/expand.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/fillcolor.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/fit.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/font.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/fontcolor.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/fork.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/gear.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/group.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/hexagon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/hline.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/house.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/house.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/image.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/inclusive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/italic.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/linecolor.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/link.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/maximize.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/merge.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/message.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/message_end.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/message_intermediate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/middle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/minimize.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/multiple.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/new.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/open_end.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/open_start.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/outline.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/oval_end.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/oval_start.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/package.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/pagesetup.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/pan.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/paste.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/plain.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/preferences.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/preview.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/print.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/printer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/rectangle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/redo.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/resize.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/rhombus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/rounded.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/rule.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/save.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/saveas.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/select.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/server.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/straight.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/straight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/swimlane.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/terminate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/timer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/toback.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/tofront.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/tree.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/triangle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/undo.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/ungroup.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/up.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/vertical.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/vertical.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/workplace.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/wrench.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/zoom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/zoomactual.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/zoomin.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/images/zoomout.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/images/collapsed.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/images/expanded.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/images/rotate.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/images/warning.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/resources/slider_knob2_13x13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/resources/slider_knob_13x13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/danny.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Jetbrains_annotations.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Postgres.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Unnamed.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Caliper.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/ui/Colors.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/ui/Date_selector.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/ui/Date_selector_dialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/ui/Date_selector_panel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/ui/Navigable_date_selector.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/ui/Popup_dialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/holub/ui/Titled_date_selector.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/AddComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/AverageComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/BurnComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/ColorBurnComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/ColorComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/ColorDodgeComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/ContourComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/DarkenComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/DifferenceComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/DodgeComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/ExclusionComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/HardLightComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/HueComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/LightenComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/MiscComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/MiscCompositeContext.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/MultiplyComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/NegationComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/OverlayComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/PinLightComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/RGBComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/SaturationComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/ScreenComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/SoftLightComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/SubtractComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/composite/ValueComposite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/AbstractBufferedImageOp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ApplyMaskFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ArrayColormap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/AverageFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/BicubicScaleFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/BinaryFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/BlockFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/BlurFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/BorderFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/BoxBlurFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/BrushedMetalFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/BumpFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/CausticsFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/CellularFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ChannelMixFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/CheckFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ChromaKeyFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ChromeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/CircleFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ColorHalftoneFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/Colormap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/CompositeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/CompoundFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ContourFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ContrastFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ConvolveFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/CropFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/CrystallizeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/CurlFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/Curve.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/CurvesFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/DeinterlaceFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/DespeckleFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/DiffuseFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/DiffusionFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/DilateFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/DisplaceFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/DissolveFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/DitherFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/DoGFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/EdgeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/EmbossFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/EqualizeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ErodeAlphaFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ErodeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ExposureFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/FBMFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/FadeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/FeedbackFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/FieldWarpFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/FillFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/FlareFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/FlipFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/Flush3DFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/FourColorFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/GainFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/GammaFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/GaussianFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/GlintFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/GlowFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/Gradient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/GradientFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/GradientWipeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/GrayFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/GrayscaleColormap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/GrayscaleFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/HSBAdjustFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/HalftoneFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/HighPassFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/Histogram.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ImageCombiningFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ImageMath.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ImageUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/InterpolateFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/InvertAlphaFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/InvertFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/IteratedFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/JavaLnFFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/KaleidoscopeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/KeyFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/LaplaceFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/LensBlurFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/LevelsFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/LifeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/LightFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/LinearColormap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/LookupFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MapColorsFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MapFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MarbleFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MarbleTexFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MaskFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MaximumFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MedianFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MinimumFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MirrorFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MotionBlurFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MotionBlurOp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/MutatableFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/NoiseFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/OctTreeQuantizer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/OffsetFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/OilFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/OpacityFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/OutlineFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/PerspectiveFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/PinchFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/PixelUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/PlasmaFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/PointFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/PointillizeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/PolarFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/PosterizeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/PremultiplyFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/QuantizeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/Quantizer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/QuiltFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/RGBAdjustFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/RaysFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ReduceNoiseFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/RenderTextFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/RescaleFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/RippleFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/RotateFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SaturationFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ScaleFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ScratchFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ShadeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ShadowFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ShapeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SharpenFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ShatterFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ShearFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ShineFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SkeletonFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SkyFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SmartBlurFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SmearFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SolarizeFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SparkleFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/Spectrum.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SpectrumColormap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SphereFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SplineColormap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/StampFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SwimFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/SwizzleFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/TextureFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/ThresholdFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/TileImageFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/TransferFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/TransformFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/TransitionFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/TritoneFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/TwirlFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/UnpremultiplyFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/UnsharpFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/VariableBlurFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/WarpFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/WarpGrid.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/WaterFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/WeaveFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/WholeImageFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/image/WoodFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/BinaryFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/BlackFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/CellularFunction2D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/CompositeFunction1D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/CompoundFunction2D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/FBM.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/FFT.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/FractalSumFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/Function1D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/Function2D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/Function3D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/ImageFunction2D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/MarbleFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/MathFunction1D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/Noise.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/RidgedFBM.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/SCNoise.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/TurbulenceFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/math/VLNoise.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/vecmath/AxisAngle4f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/vecmath/Color4f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/vecmath/Matrix4f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/vecmath/Point3f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/vecmath/Point4f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/vecmath/Quat4f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/vecmath/Tuple3f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/vecmath/Tuple4f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/vecmath/Vector3f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jhlabs/vecmath/Vector4f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/db/PostgresConnection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/generic/OkPopupMessageWindow.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/generic/OkPopupMessageWindow.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/generic/OkPopupTester.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/generic/YesNoPopupMessageWindow.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/generic/YesNoPopupMessageWindow.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/Readme.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ElephantConnection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ElephantDBServices.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/dbdata/BundledKeys.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/dbdata/DBInet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/dbdata/Tuple.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/dbdata/Tuple2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/devutils/ColumnMetaData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/devutils/DbClassGenerator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/devutils/DbClassGeneratorV2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/devutils/ExpectedTableInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/devutils/LoaTypeInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/devutils/MetaDataParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/devutils/MetaDataParserUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/devutils/TableMetaData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/exceptions/LoaNetworksElephantMoreThanOneFoundException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/exceptions/LoaNetworksJDBCDriverLoadFailedException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/exceptions/LoaNetworksJDBCgetConnectionFailedException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/DBBoolean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/DBByteArray.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/DBInt.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/DBLong.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/DBSerial.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/DBShort.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/DBText.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/DBTimestamptz.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/DBType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/DBValue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/loanetworks/nahanni/elephant2/raw/ti/TableInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/analysis/mxConstantCostFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/analysis/mxDistanceCostFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/analysis/mxFibonacciHeap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/analysis/mxGraphAnalysis.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/analysis/mxICostFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/analysis/mxUnionFind.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/analysis/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/canvas/mxBasicCanvas.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/canvas/mxGraphics2DCanvas.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/canvas/mxGraphicsCanvas2D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/canvas/mxHtmlCanvas.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/canvas/mxICanvas.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/canvas/mxICanvas2D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/canvas/mxImageCanvas.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/canvas/mxSvgCanvas.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/canvas/mxVmlCanvas.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/canvas/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/ClickHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/CustomCanvas.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/FixedPoints.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/GraphEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/HelloWorld.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/Port.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/SchemaEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/UserObject.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/Validation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/BasicGraphEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/DefaultFileFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/EditorAboutFrame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/EditorActions.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/EditorKeyboardHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/EditorMenuBar.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/EditorPalette.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/EditorPopupMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/EditorRuler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/EditorToolBar.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/JTableRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/SchemaEditorMenuBar.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/SchemaEditorToolBar.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/SchemaGraphComponent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/editor/ShadowBorder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/basic-style.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/default-style.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_de.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_es.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_fr.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_it.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_ja.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_nl.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_pt.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_ru.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_zh-CN.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/gd/mxGdDocument.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/gd/mxGdEdge.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/gd/mxGdNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlConstants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlEdge.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlGraph.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlKey.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlKeyManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlPort.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlShapeEdge.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlShapeNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/graphml/mxGraphMlUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxCellCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxChildChangeCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxCodecRegistry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxGdCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxGenericChangeCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxGraphMlCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxModelCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxObjectCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxRootChangeCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxStylesheetCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxTerminalChangeCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/mxVdxCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/PageShapeIDKey.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxDelegateShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxGeneralShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxMasterElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxMasterShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxMastersManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxPropertiesManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxStyleSheet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxStyleSheetManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxVdxConstants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxVdxShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxVdxShapeForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxVdxTextParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/io/vdx/mxVdxUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/hierarchical/model/mxGraphAbstractHierarchyCell.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/hierarchical/model/mxGraphHierarchyEdge.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/hierarchical/model/mxGraphHierarchyModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/hierarchical/model/mxGraphHierarchyNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/hierarchical/model/mxGraphHierarchyRank.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/hierarchical/mxHierarchicalLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/hierarchical/stage/mxCoordinateAssignment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/hierarchical/stage/mxHierarchicalLayoutStage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/hierarchical/stage/mxMedianHybridCrossingReduction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/hierarchical/stage/mxMinimumCycleRemover.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/mxCircleLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/mxCompactTreeLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/mxEdgeLabelLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/mxFastOrganicLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/mxGraphLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/mxIGraphLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/mxOrganicLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/mxParallelEdgeLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/mxPartitionLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/mxStackLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/orthogonal/model/mxOrthogonalModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/orthogonal/model/mxPointPair.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/orthogonal/model/mxPointSequence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/orthogonal/model/mxSegment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/orthogonal/mxOrthogonalLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/layout/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/model/mxCell.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/model/mxCellPath.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/model/mxGeometry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/model/mxGraphModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/model/mxICell.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/model/mxIGraphModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/model/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/reader/mxDomOutputParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/reader/mxGraphViewImageReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/reader/mxGraphViewReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/reader/mxSaxOutputHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/reader/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/resources/graph.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/resources/graph_de.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/resources/graph_es.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/resources/graph_fr.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/resources/graph_it.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/resources/graph_ja.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/resources/graph_nl.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/resources/graph_pt.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/resources/graph_ru.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/resources/graph_zh.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxActorShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxArrowShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxBasicShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxCloudShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxConnectorShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxCurveLabelShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxCurveShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxCylinderShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxDefaultTextShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxDoubleEllipseShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxEllipseShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxHexagonShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxHtmlTextShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxIMarker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxIShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxITextShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxImageShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxLabelShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxLineShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxMarkerRegistry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxRectangleShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxRhombusShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxStencilShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxSwimlaneShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/shape/mxTriangleShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/sharing/mxSession.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/sharing/mxSharedGraphModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/sharing/mxSharedState.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/sharing/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxCellHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxCellMarker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxCellTracker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxConnectPreview.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxConnectionHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxEdgeHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxElbowEdgeHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxGraphHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxGraphTransferHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxInsertHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxKeyboardHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxMovePreview.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxPanningHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxRotationHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxRubberband.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxSelectionCellsHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/mxVertexHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/handler/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/mxGraphComponent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/mxGraphOutline.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/util/mxAnimation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/util/mxCellOverlay.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/util/mxGraphActions.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/util/mxGraphTransferable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/util/mxICellOverlay.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/util/mxMorphing.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/util/mxMouseAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/util/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/view/mxCellEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/view/mxCellStatePreview.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/view/mxICellEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/view/mxInteractiveCanvas.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/swing/view/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxBase64.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxCellRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxConstants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxCurve.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxEventObject.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxEventSource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxImage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxImageBundle.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxLightweightLabel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxLine.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxPoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxRectangle.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxResources.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxSpline.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxSpline1D.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxUndoManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxUndoableEdit.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/mxUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/png/mxPngEncodeParam.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/png/mxPngImageEncoder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/png/mxPngSuggestedPaletteEntry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/png/mxPngTextDecoder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/AWTPathProducer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/AWTPolygonProducer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/AWTPolylineProducer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/AbstractParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/CSSConstants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/DefaultErrorHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/ErrorHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/ExtendedGeneralPath.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/ExtendedPathIterator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/NormalizingReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/NumberParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/ParseException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/Parser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/PathHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/PathParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/PointsHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/PointsParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/ShapeProducer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/util/svg/StringNormalizingReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxCellState.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxConnectionConstraint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxEdgeStyle.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxGraph.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxGraphSelectionModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxGraphView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxLayoutManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxMultiplicity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxPerimeter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxSpaceManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxStyleRegistry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxStylesheet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxSwimlaneManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/mxTemporaryCellStates.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mxgraph/view/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/JSliderTest.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/JSliderTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/MpsKnob.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/MpsKnobSize.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/MpsLabel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/MpsTest.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/MpsTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/MpsTest2.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/MpsTest2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/MultiPointSlider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/AboutWindowHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/Arg.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ArgInt.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ArgLong.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ArgParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ArgParserExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ArgString.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ArgYYYY_MM_DD_Date.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ArgYesNo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/BasicProgramConfigInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ButtonInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ButtonOwner.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/Counter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/DateRange.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/DefaultMpsKnob.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/GaussianDistribution.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ImmutableDate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/JulianDate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/Logger.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/LoggerListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/MacCustomization.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/Measure.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/MyIntSet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/OSLevelCustomizations.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ObtuseUtil5.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/OrderedEntity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/OrientedImage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/PreferencesHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/QuitCatcher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/RandomCentral.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/Range.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/RangeFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/Ranges.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/SimpleEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/SimpleEventQueue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/Stats.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ThreeDimensionalSortedMap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ThreeDimensionalTreeMap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/Trace.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/TraceFileManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/TraceHook.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/Tracer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/TreeCounter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/TreeSorter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/TwoDimensionalSortedMap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/TwoDimensionalTreeMap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/exceptions/HowDidWeGetHereError.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/exceptions/ParsingException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/util/exceptions/RejectRangeException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ec/util/MersenneTwister.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ec/util/MersenneTwisterFast.java" />
+    </list>
+    <ignored path="Caliper.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java" line="33" class="com.obtuse.util.ImageIconUtils" package="com.obtuse.util">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/util/ButtonInfo.java" line="99" class="com.obtuse.util.ButtonInfo" package="com.obtuse.util">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <breakpoint_any>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Caliper" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Navigable_date_selector.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/holub/ui/Navigable_date_selector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="13" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/jhlabs/README.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OkPopupTester.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/loanetworks/generic/OkPopupTester.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="51" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editor_nl.properties" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_nl.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MpsTest2.form" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/MpsTest2.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MpsTest.form" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/MpsTest.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultMpsKnob.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/DefaultMpsKnob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="83" column="0" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrientedImage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/OrientedImage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="0" selection-start="2177" selection-end="2177" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JSliderTest.form" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/JSliderTest.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageIconUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="134" column="32" selection-start="3387" selection-end="3387" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
+    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
+    <option name="LINE_SEPARATORS_CONVERSION" value="ASK" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/MultiPointSliderKnob.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/MultiPointSlider.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/DefaultMultiPointSliderKnob.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/MultiPointSliderLabel.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/MpsLabel.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/JSliderTest.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/JSliderTest.form" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/MpsKnob.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/DefaultMpsKnob.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/OrientedImage.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/MpsLabel.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/MpsTest.form" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/MpsTest.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/MpsTest2.form" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/MpsTest2.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/MultiPointSlider.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="308" />
+    <option name="y" value="22" />
+    <option name="width" value="1880" />
+    <option name="height" value="1438" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Control flow issues</id>
+          </State>
+          <State>
+            <id>Declaration redundancy</id>
+          </State>
+          <State>
+            <id>Performance issues</id>
+          </State>
+          <State>
+            <id>Probable bugs</id>
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpellCheckingInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource ProjectPane="true" />
+      <autoscrollFromSource ProjectPane="true" />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="obtuse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="obtuse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MpsTest2" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="obtuse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MpsTest" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="obtuse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JSliderTest" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="obtuse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="obtuse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mxgraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mxgraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mxgraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mxgraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resource Bundle 'editor'" />
+              <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="loanetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="loanetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YesNoPopupMessageWindow" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="loanetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OkPopupMessageWindow" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="loanetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jhlabs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Favorites" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.holub.ui" />
+      <recent name="com.obtuse.util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com" />
+      <recent name="$PROJECT_DIR$/src/com/obtuse/util" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.obtuse.util" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.obtuse.ui" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MpsTest2">
+    <configuration default="false" name="HelloWorld" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.mxgraph.examples.swing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.mxgraph.examples.swing.HelloWorld" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Caliper" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="YesNoPopupMessageWindow" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.loanetworks.generic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.loanetworks.generic.YesNoPopupMessageWindow" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Caliper" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="JSliderTest" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.obtuse.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.obtuse.ui.JSliderTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Caliper" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MpsTest" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.obtuse.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.obtuse.ui.MpsTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Caliper" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MpsTest2" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.obtuse.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.obtuse.ui.MpsTest2" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Caliper" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="false" name="MultiPointSlider" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.obtuse.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.obtuse.ui.MultiPointSlider" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Caliper" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Application.HelloWorld" />
+      <item index="1" class="java.lang.String" itemvalue="Application.YesNoPopupMessageWindow" />
+      <item index="2" class="java.lang.String" itemvalue="Application.JSliderTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.MpsTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.MpsTest2" />
+      <item index="5" class="java.lang.String" itemvalue="Application.MultiPointSlider" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <configuration useDefault="true">$USER_HOME$/.subversion_IDEA</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5464cd35-ae85-4a2e-a138-8145a5db6189" name="Default" comment="" />
+      <created>1322814767060</created>
+      <updated>1322814767060</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="308" y="22" width="1880" height="1438" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297953" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13249728" sideWeight="0.60121304" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39878696" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32752085" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31113538" sideWeight="0.67247915" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913166" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32878953" sideWeight="0.60121304" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial checkin to git." />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Initial checkin to git." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/mxgraph/canvas/package.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="7" selection-start="168" selection-end="168" vertical-scroll-proportion="0.2549575" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/MpsLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="36" selection-start="3576" selection-end="3576" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/MpsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="29" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/MultiPointSlider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="43" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/loanetworks/generic/OkPopupMessageWindow.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/MpsTest2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="38" selection-start="1831" selection-end="1831" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/MpsTest2.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/MpsTest.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/DefaultMpsKnob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="0" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/OrientedImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="0" selection-start="2177" selection-end="2177" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/JSliderTest.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="32" selection-start="3387" selection-end="3387" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/holub/ui/Navigable_date_selector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="13" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jhlabs/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/loanetworks/generic/OkPopupTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="51" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mxgraph/examples/swing/resources/editor_nl.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Shared/Parsers</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Caliper</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Postgres</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+
