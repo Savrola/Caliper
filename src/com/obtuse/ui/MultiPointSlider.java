@@ -16,7 +16,7 @@ import java.util.*;
  * considerably less screen real estate and supports more than one slider point.
  */
 
-public class MultiPointSlider extends JPanel {
+public class MultiPointSlider extends JComponent {
 
     public static final int MINIMUM_LINE_LENGTH = 25;
     public static final int MINIMUM_LABEL_GAP_SPACE = 2;
@@ -224,6 +224,30 @@ public class MultiPointSlider extends JPanel {
 
                 }
         );
+
+    }
+
+    public MpsKnobSize getKnobSize() {
+
+        return _knobSize;
+
+    }
+
+    public void setKnobSize( MpsKnobSize knobSize ) {
+
+        _knobSize = knobSize;
+
+    }
+
+    public MpsKnob getKnob() {
+
+        return _knob;
+
+    }
+
+    public static MpsKnob getDefaultKnob() {
+
+        return _defaultKnob;
 
     }
 
@@ -475,6 +499,8 @@ public class MultiPointSlider extends JPanel {
 //        // Compute the basic drawing parameters but avoid calling ourselves recursively.
 //
 //        computeDrawingParameters( false );
+
+        Logger.logMsg( _name + ":  call to computeMinimumSize()" );
 
         OrientedImage orientedImage = _knob.getOrientedImage( _knobSize, _positionOnLine, _isSelected );
         if ( "s3s7".contains( _name ) )
@@ -760,12 +786,65 @@ public class MultiPointSlider extends JPanel {
 
     }
 
+    public void setMinimumSize( Dimension size ) {
+
+        Logger.logMsg( _name + ":  call to setMinimumSize( " + size + ")" );
+
+        super.setMinimumSize( size );
+
+    }
+
+    public void setMaximumSize( Dimension size ) {
+
+        Logger.logMsg( _name + ":  call to setMaximumSize( " + size + ")" );
+
+        super.setMaximumSize( size );
+
+    }
+
+    public void setPreferredSize( Dimension size ) {
+
+        Logger.logMsg( _name + ":  call to setPreferredSize( " + size + ")" );
+
+        super.setPreferredSize( size );
+
+    }
+
+    public void setBounds( int x, int y, int width, int height ) {
+
+        Logger.logMsg( _name + ":  call to setBounds( " + x + ", " + y + ", " + width + ", " + height + ")" );
+
+        super.setBounds( x, y, width, height );
+
+    }
+
+    public void setBounds( Rectangle bounds ) {
+
+        Logger.logMsg( _name + ":  call to setBounds( " + bounds + ")" );
+
+        super.setBounds( bounds );
+
+    }
+
     public void paint( Graphics g ) {
 
         Graphics2D g2d = (Graphics2D) g;
         computeDrawingParameters( true );
 
+        Logger.logMsg( "painting " + _name + " with size ( " + _width + ", " + _height + " )" );
+
         g.setColor( new Color( 255, 255, 255, 0 ) );
+        g.fillRect( 0, 0, getWidth(), getHeight() );
+
+        g.setColor( Color.WHITE );
+        g.fillRect( 0, 0, getWidth(), getHeight() );
+//
+//        g.setColor( Color.BLACK );
+//        for ( int i = 0; i < _width + 10; i += 10 ) {
+//
+//            g.drawLine( i, 0, i, 400 );
+//
+//        }
 
 //        g.setColor( new Color( 100, 200, 100 ) );
 //        g.fillRect( 0, 0, _minimumSize.width, _minimumSize.height );

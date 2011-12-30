@@ -17,6 +17,14 @@ import java.util.Hashtable;
 public class MpsTest extends JFrame {
 
     private JPanel _panel1;
+    private JPanel _slider1panel;
+    private JPanel _slider2panel;
+    private JPanel _slider3panel;
+    private JPanel _slider4panel;
+    private JPanel _slider5panel;
+    private JPanel _slider6panel;
+    private JPanel _slider7panel;
+    private JPanel _slider8panel;
     private JPanel _slider1;
     private JPanel _slider2;
     private JPanel _slider3;
@@ -32,7 +40,7 @@ public class MpsTest extends JFrame {
 
         pack();
 
-        for ( JPanel slider : new JPanel[] { _slider1, _slider2, _slider3, _slider4, _slider5, _slider6, _slider7, _slider8 } ) {
+        for ( JComponent slider : new JComponent[] { _slider1, _slider2, _slider3, _slider4, _slider5, _slider6, _slider7, _slider8 } ) {
 
             MultiPointSlider mps = (MultiPointSlider)slider;
             mps.setMinimumSize( mps.computeMinimumSize() );
@@ -67,7 +75,8 @@ public class MpsTest extends JFrame {
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
-        _slider1 = slider;
+        _slider1panel.setLayout( new BoxLayout( _slider1panel, BoxLayout.X_AXIS ) );
+        _slider1panel.add( slider );
 
         slider = new MultiPointSlider( "s2", 0, 1000 );
         slider.setLabelTable( labels );
@@ -80,7 +89,8 @@ public class MpsTest extends JFrame {
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
-        _slider2 = slider;
+        _slider2panel.setLayout( new BoxLayout( _slider1panel, BoxLayout.X_AXIS ) );
+        _slider2panel.add( slider );
 
         slider = new MultiPointSlider( "s3", 0, 100 );
         slider.setLabelTable( labels );
@@ -92,7 +102,8 @@ public class MpsTest extends JFrame {
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
-        _slider3 = slider;
+        _slider3panel.setLayout( new BoxLayout( _slider1panel, BoxLayout.X_AXIS ) );
+        _slider3panel.add( slider );
 
         slider = new MultiPointSlider( "s4", 0, 1000 );
         slider.setLabelTable( labels );
@@ -105,7 +116,8 @@ public class MpsTest extends JFrame {
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
-        _slider4 = slider;
+        _slider4panel.setLayout( new BoxLayout( _slider1panel, BoxLayout.X_AXIS ) );
+        _slider4panel.add( slider );
 
 //        JPanel redPanel = new JPanel();
 //        redPanel.setLayout( new BoxLayout( redPanel, BoxLayout.X_AXIS ) );
@@ -133,7 +145,8 @@ public class MpsTest extends JFrame {
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
-        _slider5 = ( slider );
+        _slider5panel.setLayout( new BoxLayout( _slider1panel, BoxLayout.X_AXIS ) );
+        _slider5panel.add( slider );
 
         slider = new MultiPointSlider( "s6", 0, 1000 );
         slider.setLabelTable( labels );
@@ -146,7 +159,8 @@ public class MpsTest extends JFrame {
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
-        _slider6 = slider;
+        _slider6panel.setLayout( new BoxLayout( _slider1panel, BoxLayout.X_AXIS ) );
+        _slider6panel.add( slider );
 
         slider = new MultiPointSlider( "s7", 0, 100 );
         slider.setMinorTickSpacing( 5 );
@@ -158,7 +172,8 @@ public class MpsTest extends JFrame {
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
-        _slider7 = slider;
+        _slider7panel.setLayout( new BoxLayout( _slider1panel, BoxLayout.X_AXIS ) );
+        _slider7panel.add( slider );
 
         slider = new MultiPointSlider( "s8", 0, 1000 );
         slider.setLabelTable( labels );
@@ -171,7 +186,8 @@ public class MpsTest extends JFrame {
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
-        _slider8 = slider;
+        _slider8panel.setLayout( new BoxLayout( _slider1panel, BoxLayout.X_AXIS ) );
+        _slider8panel.add( slider );
 
     }
 
