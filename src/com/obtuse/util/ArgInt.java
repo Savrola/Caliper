@@ -4,6 +4,10 @@ package com.obtuse.util;
  * Copyright © 2011 Obtuse Systems Corporation
  */
 
+/**
+ * An integer {@link ArgParser} argument.
+ */
+
 public abstract class ArgInt extends Arg {
 
     protected ArgInt( String keyword ) {

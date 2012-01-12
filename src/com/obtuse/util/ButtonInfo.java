@@ -11,7 +11,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * Manage the two versions of an icon/image used as a button.
+ * Manage the pressed and unpressed versions of an icon/image used as a button.
  * <p/>
  */
 

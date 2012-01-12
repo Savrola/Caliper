@@ -5,18 +5,14 @@ import com.obtuse.util.Logger;
 import com.obtuse.util.ObtuseUtil5;
 
 import java.awt.*;
-import java.awt.font.TextLayout;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 
 /**
-* Created by IntelliJ IDEA.
-* User: danny
-* Date: 2011/12/25
-* Time: 10:33
-* To change this template use File | Settings | File Templates.
+* Describe a label on the slider line for an {@link MultiPointSlider}.
 */
 
+@SuppressWarnings("UnusedDeclaration")
 public class MpsLabel {
 
     private final String _textLabel;

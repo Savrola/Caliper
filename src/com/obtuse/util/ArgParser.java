@@ -7,6 +7,10 @@ import java.util.TreeMap;
  * Copyright © 2011 Obtuse Systems Corporation
  */
 
+/**
+ * A (relatively) simple command line argument parser facility.
+ */
+
 @SuppressWarnings({"ClassWithoutToString"})
 public class ArgParser {
 

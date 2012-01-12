@@ -8,6 +8,12 @@ import com.obtuse.util.exceptions.ParsingException;
 
 import java.util.Date;
 
+/**
+ * A date {@link ArgParser} argument.
+ * <p/>The only supported format is "yyyy-MM-dd".
+ * See {@link DateUtils#parseYYYY_MM_DD} for more information.
+ */
+
 public abstract class ArgYYYY_MM_DD_Date extends Arg {
 
     protected ArgYYYY_MM_DD_Date( String keyword ) {

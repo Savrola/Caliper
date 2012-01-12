@@ -8,6 +8,7 @@ package com.obtuse.util;
  * Make it possible to apply a strict ordering to arbitrary instances of some class.
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public class OrderedEntity<T> implements Comparable<OrderedEntity<T>> {
 
     private final Integer _ordering;

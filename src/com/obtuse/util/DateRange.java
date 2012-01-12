@@ -6,9 +6,12 @@ import java.util.Date;
 /**
  * A single date range from a starting date through to an ending date inclusive.
  * <p/>
+ * Intended for use with the {@link Range} and {@link Ranges} classes.
+ * <p/>
  * Copyright © 2009 Obtuse Systems Corporation.
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public class DateRange extends Range<Date> {
 
     private static final SimpleDateFormat YYYYMMDD = new SimpleDateFormat( "yyyy-MM-dd" );

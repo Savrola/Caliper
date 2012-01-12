@@ -1,7 +1,6 @@
 package com.obtuse.util;
 
-import com.obtuse.ui.MpsKnob;
-import com.obtuse.ui.MpsKnobSize;
+import com.obtuse.ui.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -19,8 +18,8 @@ public class DefaultMpsKnob extends MpsKnob {
 
     private SortedMap<PositionOnLine, Double> _rotations =
             new TreeMap<PositionOnLine, Double>();
-    private ThreeDimensionalSortedMap<MpsKnobSize, PositionOnLine, Boolean, OrientedImage> _rotatedSelectedScaledImages =
-            new ThreeDimensionalTreeMap<MpsKnobSize, PositionOnLine, Boolean, OrientedImage>();
+    private ThreeDimensionalSortedMap<MpsKnobSize, PositionOnLine, Boolean, MultiPointSlider.OrientedImage> _rotatedSelectedScaledImages =
+            new ThreeDimensionalTreeMap<MpsKnobSize, PositionOnLine, Boolean, MultiPointSlider.OrientedImage>();
 
     public DefaultMpsKnob( Image image ) {
         super( image );
@@ -60,7 +59,7 @@ public class DefaultMpsKnob extends MpsKnob {
             Point point
     ) {
 
-        OrientedImage orientedImage = getOrientedImage( knobSize, positionOnLine, isSelected );
+        MultiPointSlider.OrientedImage orientedImage = getOrientedImage( knobSize, positionOnLine, isSelected );
 
         return orientedImage.isPointInImage( hotSpot, point );
 
@@ -76,10 +75,10 @@ public class DefaultMpsKnob extends MpsKnob {
             ImageObserver imageObserver
     ) {
 
-        OrientedImage img = getOrientedImage( knobSize, positionOnLine, isSelected );
+        MultiPointSlider.OrientedImage img = getOrientedImage( knobSize, positionOnLine, isSelected );
 
-        int x = hotSpot.x - knobSize.integerSize() / 2;
-        int y = hotSpot.y - knobSize.integerSize();
+//        int x = hotSpot.x - knobSize.integerSize() / 2;
+//        int y = hotSpot.y - knobSize.integerSize();
 
         img.drawImage( g, hotSpot );
 
@@ -135,12 +134,12 @@ public class DefaultMpsKnob extends MpsKnob {
     }
 
     @Override
-    public OrientedImage getOrientedImage( MpsKnobSize knobSize, PositionOnLine positionOnLine, boolean isSelected ) {
+    public MultiPointSlider.OrientedImage getOrientedImage( MpsKnobSize knobSize, PositionOnLine positionOnLine, boolean isSelected ) {
 
         int ks = knobSize.integerSize();
         Point hotSpot;
 
-        OrientedImage orientedImage = _rotatedSelectedScaledImages.get( knobSize, positionOnLine, isSelected );
+        MultiPointSlider.OrientedImage orientedImage = _rotatedSelectedScaledImages.get( knobSize, positionOnLine, isSelected );
         if ( orientedImage == null ) {
 
             BufferedImage scaledImage = ImageIconUtils.toBufferedImage( getImage().getScaledInstance( knobSize.integerSize(), -1, Image.SCALE_SMOOTH ) );
@@ -174,14 +173,17 @@ public class DefaultMpsKnob extends MpsKnob {
 //                            g2d.setColor( Color.WHITE );
 //                            g2d.drawLine( 0, 0, -50, -50 );
 
+                    @SuppressWarnings("UnusedDeclaration")
                     boolean drawImageRval;
                     if ( positionOnLine == PositionOnLine.LEFT ) {
 
+                        //noinspection UnusedAssignment
                         drawImageRval = g2d.drawImage( sourceImage, -rotatedImage.getWidth( null ), 0, null );
                         hotSpot = new Point( ks + 1, ks / 2 );
 
                     } else {
 
+                        //noinspection UnusedAssignment
                         drawImageRval = g2d.drawImage( sourceImage, 0, -rotatedImage.getWidth( null ), null );
                         hotSpot = new Point( -2, ks / 2 );
 
@@ -217,7 +219,7 @@ public class DefaultMpsKnob extends MpsKnob {
 
             }
 
-            orientedImage = new OrientedImage( hotSpot, rotatedImage );
+            orientedImage = new MultiPointSlider.OrientedImage( hotSpot, rotatedImage );
             _rotatedSelectedScaledImages.put( knobSize, positionOnLine, isSelected, orientedImage );
 
         }

@@ -10,7 +10,7 @@ import java.util.Date;
  * Copyright © 2011 Obtuse Systems Corporation
  */
 
-@SuppressWarnings({ "deprecation" })
+@SuppressWarnings({ "deprecation", "UnusedDeclaration" })
 public class ImmutableDate extends Date {
 
     public ImmutableDate() {

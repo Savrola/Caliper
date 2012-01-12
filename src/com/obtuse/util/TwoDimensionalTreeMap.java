@@ -9,6 +9,21 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
+/**
+ * A sorted map with two dimensions/indices.
+ * <p/>
+ * The map is sorted in the sense that each dimension's keys are sorted.
+ * <p/>
+ * The map is actually a double layer {@link TreeMap} dressed up in fancy clothes.  This double layer map is
+ * declared as follows:
+ *
+ * <blockquote><tt>SortedMap&lt;T1,SortedMap&lt;T2,V>> _map = new TreeMap&tl;T1,SortedMap&lt;T2,V>>();</tt></blockquote>
+ *
+ * @param <T1> The type of the first dimension.
+ * @param <T2> The type of the second dimension.
+ * @param <V>  The type of the values stored within the map.
+ */
+
 public class TwoDimensionalTreeMap<T1,T2,V> implements TwoDimensionalSortedMap<T1,T2,V> {
 
     private SortedMap<T1,SortedMap<T2,V>> _map = new TreeMap<T1,SortedMap<T2,V>>();

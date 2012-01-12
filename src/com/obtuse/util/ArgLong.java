@@ -4,6 +4,10 @@ package com.obtuse.util;
  * Copyright © 2011 Obtuse Systems Corporation
  */
 
+/**
+ * A long {@link ArgParser} argument.
+ */
+
 public abstract class ArgLong extends Arg {
 
     protected ArgLong( String keyword ) {

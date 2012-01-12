@@ -1,11 +1,7 @@
 package com.obtuse.ui;
 
 /**
-* Created by IntelliJ IDEA.
-* User: danny
-* Date: 2011/12/25
-* Time: 10:34
-* To change this template use File | Settings | File Templates.
+* The supported knob sizes for an {@link MultiPointSlider}.
 */
 
 public enum MpsKnobSize {

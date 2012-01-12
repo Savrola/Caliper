@@ -6,11 +6,12 @@ package com.obtuse.util;
  * Copyright © 2006 Obtuse Systems Corporation
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public class Stats {
 
     @SuppressWarnings({ "InstanceVariableNamingConvention" })
     private double _sum;
-    private double _sumsq;
+    private double _sumSq;
     private double _maxValue;
     private double _minValue;
     @SuppressWarnings({ "InstanceVariableNamingConvention" })
@@ -24,7 +25,7 @@ public class Stats {
         super();
 
         _sum = 0;
-        _sumsq = 0;
+        _sumSq = 0;
         _n = 0;
 
     }
@@ -38,7 +39,7 @@ public class Stats {
         super();
 
         _sum = x._sum;
-        _sumsq = x._sumsq;
+        _sumSq = x._sumSq;
         _n = x._n;
         _maxValue = x._maxValue;
         _minValue = x._minValue;
@@ -53,7 +54,7 @@ public class Stats {
     public void datum( double v ) {
 
         _sum += v;
-        _sumsq += v * v;
+        _sumSq += v * v;
         if ( _n == 0 ) {
 
             _maxValue = v;
@@ -85,7 +86,7 @@ public class Stats {
     public void datum( double sum, double sumsq, int n ) {
 
         _sum += sum;
-        _sumsq += sumsq;
+        _sumSq += sumsq;
         _n += n;
 
     }
@@ -110,7 +111,7 @@ public class Stats {
     public double sampleVariance() {
 
         //noinspection UnnecessaryParentheses
-        return ( _sumsq - ( _sum * _sum ) / _n ) / ( _n - 1 );
+        return ( _sumSq - ( _sum * _sum ) / _n ) / ( _n - 1 );
 
     }
 
@@ -123,7 +124,7 @@ public class Stats {
     public double populationVariance() {
 
         //noinspection UnnecessaryParentheses
-        return ( _sumsq - ( _sum * _sum ) / _n ) / _n;
+        return ( _sumSq - ( _sum * _sum ) / _n ) / _n;
 
     }
 
@@ -191,7 +192,7 @@ public class Stats {
 
     public double sumSq() {
 
-        return _sumsq;
+        return _sumSq;
 
     }
 

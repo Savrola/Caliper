@@ -1,7 +1,9 @@
 package com.obtuse.util;
 
 /**
- * Allow the application to intercept quit attempts. Works on Mac OS X.  No idea what happens on Windows.
+ * Something which handles quit events on Mac OS X.
+ * <p/>
+ * See the {@link MacCustomization} class for more information.
  * <p/>
  * Copyright © 2007, 2008 Loa Corporation.
  * Copyright © 2011 Daniel Boulet.

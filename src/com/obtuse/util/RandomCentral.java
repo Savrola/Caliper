@@ -10,7 +10,7 @@ import java.security.SecureRandom;
  * A thread-safe centralized random number generator.
  */
 
-@SuppressWarnings( { "AccessingNonPublicFieldOfAnotherObject" } )
+@SuppressWarnings({ "AccessingNonPublicFieldOfAnotherObject", "UnusedDeclaration" })
 public class RandomCentral {
 
     private final SecureRandom _generator;

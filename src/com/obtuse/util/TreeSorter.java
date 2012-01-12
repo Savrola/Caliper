@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.*;
 
 /**
- * Much like a SortedMap except that duplicate entries are supported and there is no get method.
+ * Much like a SortedMap except that duplicate entries are supported.
+ * <p/>
+ * There is no <tt>get()</tt> method.  See the {@link #getValues} method for the presumably obvious analogous method.
  * <p/>
  * Duplicate entries are supported in the sense that if two
  * equal entries are placed into the sorter than these two equal entries will each

@@ -20,6 +20,7 @@ public interface TwoDimensionalSortedMap<T1,T2,V> {
 
     Set<T1> outerKeys();
 
+    @SuppressWarnings("UnusedDeclaration")
     Collection<SortedMap<T2,V>> innerMaps();
 
 }

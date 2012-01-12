@@ -45,44 +45,44 @@ public class Trace {
 
     public static final int MAX_FORMATTED_TRACE_DEPTH = 100;
 
-    private static Tracer _tracer = null;
-
-    public static void setTracer( Tracer tracer ) {
-
-        _tracer = tracer;
-
-    }
-
-    static {
-
-        //noinspection ClassWithoutToString
-        Tracer tracer = new Tracer() {
-
-            public void event( String description ) {
-                Trace.event( description );
-            }
-
-            public void event( String description, Throwable e ) {
-                Trace.event( description, e );
-            }
-
-            public String emitTrace( String description ) {
-                return Trace.emitTrace( description );
-            }
-
-            public String emitTrace( String description, Throwable e ) {
-                return Trace.emitTrace( description, e );
-            }
-
-            public String emitTrace( Throwable e ) {
-                return Trace.emitTrace( e );
-            }
-
-        };
-
-        setTracer( tracer );
-
-    }
+//    private static Tracer _tracer = null;
+//
+//    public static void setTracer( Tracer tracer ) {
+//
+//        _tracer = tracer;
+//
+//    }
+//
+//    static {
+//
+//        //noinspection ClassWithoutToString
+//        Tracer tracer = new Tracer() {
+//
+//            public void event( String description ) {
+//                Trace.event( description );
+//            }
+//
+//            public void event( String description, Throwable e ) {
+//                Trace.event( description, e );
+//            }
+//
+//            public String emitTrace( String description ) {
+//                return Trace.emitTrace( description );
+//            }
+//
+//            public String emitTrace( String description, Throwable e ) {
+//                return Trace.emitTrace( description, e );
+//            }
+//
+//            public String emitTrace( Throwable e ) {
+//                return Trace.emitTrace( e );
+//            }
+//
+//        };
+//
+//        setTracer( tracer );
+//
+//    }
 
     private static class TraceEvent {
 

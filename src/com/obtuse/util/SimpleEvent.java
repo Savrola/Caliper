@@ -2,6 +2,10 @@ package com.obtuse.util;
 
 /**
  * A clock event.
+ * <p/>
+ * See the {@link SimpleEventQueue} class for more information.
+ * <p/>
+ * Copyright © 2011 Obtuse Systems Corporation
  */
 
 public abstract class SimpleEvent {

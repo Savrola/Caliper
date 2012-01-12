@@ -9,8 +9,6 @@ import java.util.Date;
 
 /**
  * Describe something that's interested in seeing all messages sent via {@link Logger}.
- * <p/>
- * Copyright © 2006 Loa Corporation.
  */
 
 public interface LoggerListener {

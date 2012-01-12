@@ -13,27 +13,28 @@ public class JulianDate {
      * the specified day.
      * Positive year signifies A.D., negative year B.C.
      * Remember that the year after 1 B.C. was 1 A.D.
-     *
+     * <p/>
      * ref :
-     *  Numerical Recipes in C, 2nd ed., Cambridge University Press 1992
-     *
+     * Numerical Recipes in C, 2nd ed., Cambridge University Press 1992
+     * <p/>
      * Source:  http://www.rgagnon.com/javadetails/java-0506.html
      */
 
     // Gregorian Calendar adopted Oct. 15, 1582 (2299161)
 
     public static final int JGREG = 15 + 31 * ( 10 + 12 * 1582 );
-    public static final double HALFSECOND = 0.5;
 
     private JulianDate() {
+
         super();
 
     }
 
     /**
      * Return the Julian day number for a Gregorian date specified in yy-mm-dd form.
+     *
      * @param ymd the Gregorian date where ymd[0] is the year, ymd[1] is the month (one origin)
-     * and ymd[2] is the day of the month.
+     *            and ymd[2] is the day of the month.
      * @return the Julian day for the specified Gregorian date.
      */
 
@@ -78,6 +79,7 @@ public class JulianDate {
 
     /**
      * Return the Julian day number for a date encapsulated in a {@link java.util.Date} object.
+     *
      * @param d the input date.
      * @return the Julian day for the specified {@link java.util.Date}.
      */
@@ -99,19 +101,19 @@ public class JulianDate {
      * ref :
      * Numerical Recipes in C, 2nd ed., Cambridge University Press 1992
      * <p/>
-     * @param injulian the Julian date which is to be converted to a Gregorian calendar date.
+     *
+     * @param inJulian the Julian date which is to be converted to a Gregorian calendar date.
      * @return the equivalent Gregorian date as a three element int array
-     * (first element is the year, second is the month (1 origin) and third is the day of month).
+     *         (first element is the year, second is the month (1 origin) and third is the day of month).
      */
 
-    public static int[] fromJulian( double injulian ) {
+    public static int[] fromJulian( double inJulian ) {
 
-        double julian = injulian + HALFSECOND / 86400.0;
-        int ja = (int)injulian;
+        int ja = (int)inJulian;
         if ( ja >= JGREG ) {
 
-            int jalpha = (int)( ( ( ja - 1867216 ) - 0.25 ) / 36524.25 );
-            ja = ja + 1 + jalpha - jalpha / 4;
+            int jAlpha = (int)( ( ( ja - 1867216 ) - 0.25 ) / 36524.25 );
+            ja = ja + 1 + jAlpha - jAlpha / 4;
 
         }
 
@@ -151,22 +153,24 @@ public class JulianDate {
         // output : 2440000
         int[] results = fromJulian( toJulian( new int[] { 1968, 5, 23 } ) );
         Logger.logMsg(
-                        "... back to calendar : " + results[0] + " "
-                        + results[1] + " " + results[2]
-                );
+                "... back to calendar : " + results[0] + " "
+                + results[1] + " " + results[2]
+        );
 
         // SECOND TEST today
         Calendar today = Calendar.getInstance();
         double todayJulian = toJulian(
-                        new int[] { today.get( Calendar.YEAR ), today.get( Calendar.MONTH ) + 1,
-                                today.get( Calendar.DATE ) }
-                );
+                new int[] {
+                        today.get( Calendar.YEAR ), today.get( Calendar.MONTH ) + 1,
+                        today.get( Calendar.DATE )
+                }
+        );
         Logger.logMsg( "Julian date for today : " + todayJulian );
         results = fromJulian( todayJulian );
         Logger.logMsg(
-                        "... back to calendar : " + results[0] + " " + results[1]
-                        + " " + results[2]
-                );
+                "... back to calendar : " + results[0] + " " + results[1]
+                + " " + results[2]
+        );
 
         // THIRD TEST
         double date1 = toJulian( new int[] { 2005, 1, 1 } );

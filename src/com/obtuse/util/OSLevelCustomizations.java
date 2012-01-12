@@ -24,6 +24,7 @@ public abstract class OSLevelCustomizations {
     public static boolean onMacOsX() {
 
         String lcOSName = System.getProperty( "os.name" ).toLowerCase();
+        @SuppressWarnings("UnnecessaryLocalVariable")
         boolean onMacOSX = lcOSName.startsWith( "mac os x" );
 
         return onMacOSX;
@@ -33,6 +34,7 @@ public abstract class OSLevelCustomizations {
     public static boolean onWindows() {
 
         String lcOSName = System.getProperty( "os.name" ).toLowerCase();
+        @SuppressWarnings("UnnecessaryLocalVariable")
         boolean onWindows = lcOSName.startsWith( "windows" );
 
         return onWindows;

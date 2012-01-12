@@ -14,6 +14,7 @@ import java.util.Random;
  * Instances of this class are immutable.
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public class GaussianDistribution {
 
     private final double _center;

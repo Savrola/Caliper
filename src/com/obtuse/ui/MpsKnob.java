@@ -1,18 +1,13 @@
 package com.obtuse.ui;
 
 import com.obtuse.util.ImageIconUtils;
-import com.obtuse.util.OrientedImage;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 
 /**
- * Created by IntelliJ IDEA.
- * User: danny
- * Date: 2011/12/25
- * Time: 10:34
- * To change this template use File | Settings | File Templates.
+ * Manage a slider knob for an {@link MultiPointSlider}.
  */
 
 public abstract class MpsKnob {
@@ -27,6 +22,7 @@ public abstract class MpsKnob {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     protected void setImage( Image image ) {
 
         _image = ImageIconUtils.toBufferedImage( image );
@@ -56,7 +52,7 @@ public abstract class MpsKnob {
             ImageObserver imageObserver
     );
 
-    public abstract OrientedImage getOrientedImage(
+    public abstract MultiPointSlider.OrientedImage getOrientedImage(
             MpsKnobSize knobSize,
             MultiPointSlider.PositionOnLine positionOnLine,
             boolean isSelected

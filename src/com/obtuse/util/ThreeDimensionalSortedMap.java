@@ -9,6 +9,7 @@ import java.util.Set;
  * Copyright © 2010 Obtuse Systems Corporation
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public interface ThreeDimensionalSortedMap<T1,T2,T3,V> {
 
     void put( T1 key1, T2 key2, T3 key3, V value );

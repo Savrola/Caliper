@@ -105,6 +105,7 @@ public class ImageIconUtils {
 
         } else {
 
+            //noinspection ConstantConditions
             return new ImageIcon(
                     rval.getImage().getScaledInstance(
                             size,
@@ -172,7 +173,7 @@ public class ImageIconUtils {
 
         // Create a buffered image with a format that's compatible with the screen
 
-        BufferedImage bimage = null;
+        BufferedImage bImage = null;
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         try {
 
@@ -187,7 +188,7 @@ public class ImageIconUtils {
             // Create the buffered image
             GraphicsDevice gs = ge.getDefaultScreenDevice();
             GraphicsConfiguration gc = gs.getDefaultConfiguration();
-            bimage = gc.createCompatibleImage(
+            bImage = gc.createCompatibleImage(
                     image.getWidth(null), image.getHeight(null), transparency);
 
         } catch (HeadlessException e) {
@@ -196,7 +197,7 @@ public class ImageIconUtils {
 
         }
 
-        if (bimage == null) {
+        if (bImage == null) {
 
             // Create a buffered image using the default color model
 
@@ -207,20 +208,20 @@ public class ImageIconUtils {
 
             }
 
-            bimage = new BufferedImage(image.getWidth(null), image.getHeight(null), type);
+            bImage = new BufferedImage(image.getWidth(null), image.getHeight(null), type);
 
         }
 
         // Copy image to buffered image
 
-        Graphics g = bimage.createGraphics();
+        Graphics g = bImage.createGraphics();
 
         // Paint the image onto the buffered image
 
         g.drawImage(image, 0, 0, null);
         g.dispose();
 
-        return bimage;
+        return bImage;
 
     }
 
@@ -243,14 +244,15 @@ public class ImageIconUtils {
         // If buffered image, the color model is readily available
         if (image instanceof BufferedImage) {
 
-            BufferedImage bimage = (BufferedImage)image;
-            return bimage.getColorModel().hasAlpha();
+            BufferedImage bImage = (BufferedImage)image;
+            return bImage.getColorModel().hasAlpha();
 
         }
 
         // Use a pixel grabber to retrieve the image's color model;
         // grabbing a single pixel is usually sufficient
         PixelGrabber pg = new PixelGrabber(image, 0, 0, 1, 1, false);
+        //noinspection EmptyCatchBlock
         try {
 
             pg.grabPixels();

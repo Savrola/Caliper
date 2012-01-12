@@ -4,6 +4,18 @@ package com.obtuse.util;
  * Copyright © 2011 Obtuse Systems Corporation
  */
 
+/**
+ * A yes/no {@link ArgParser} argument.
+ * <p/>Valid values are:
+ * <ul>
+ *     <li>y</li>
+ *     <li>yes</li>
+ *     <li>n</li>
+ *     <li>no</li>
+ * </ul>
+ * in any mixture of upper and/or lower case.
+ */
+
 public abstract class ArgYesNo extends Arg {
 
     protected ArgYesNo( String keyword ) {

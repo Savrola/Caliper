@@ -13,6 +13,7 @@ import java.util.TreeMap;
  * Copyright © 2009 Obtuse Systems Corporation
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public class TreeCounter<K extends Comparable<K>> implements Counter<K>, Serializable {
 
     private SortedMap<K,Integer> _counts = new TreeMap<K,Integer>();

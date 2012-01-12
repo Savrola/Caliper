@@ -7,8 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /*
- * Copyright � 2005, 2006, 2007 Loa Corporation.
- * Copyright � 2011 Daniel Boulet.
+ * Copyright © 2005, 2006, 2007 Loa Corporation.
+ * Copyright © 2011 Daniel Boulet.
  */
 
 /**

@@ -16,12 +16,15 @@ import java.util.*;
  * considerably less screen real estate and supports more than one slider point.
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public class MultiPointSlider extends JComponent {
 
     public static final int MINIMUM_LINE_LENGTH = 25;
     public static final int MINIMUM_LABEL_GAP_SPACE = 2;
     private boolean _drawSliderLine = true;
     public static final boolean REAL_MODE = true;
+
+    private static boolean _traceSizeChanges = false;
 
     private Dictionary<Integer, MpsLabel> _labelTable;
     private Dictionary<Integer, BufferedImage> _cachedLabelTable = new Hashtable<Integer, BufferedImage>();
@@ -59,8 +62,6 @@ public class MultiPointSlider extends JComponent {
     private int _minimumBreadth;
     private int _minimumLength;
     private static final int TIC_GAP = 2;
-    private int _minValueOverhang;
-    private int _maxValueOverhang;
 
     private Dimension _minimumSize;
     private final String _name;
@@ -227,6 +228,18 @@ public class MultiPointSlider extends JComponent {
 
     }
 
+    public static boolean traceSizeChanges() {
+
+        return _traceSizeChanges;
+
+    }
+
+    public static void setTraceSizeChanges( boolean traceSizeChanges ) {
+
+        _traceSizeChanges = traceSizeChanges;
+
+    }
+
     public MpsKnobSize getKnobSize() {
 
         return _knobSize;
@@ -296,7 +309,7 @@ public class MultiPointSlider extends JComponent {
 
     private void adjustValue( Point clickPoint ) {
 
-        computeDrawingParameters( true );
+        computeDrawingParameters();
 
         int moveDistance = isVerticalOrientation() ? clickPoint.y - _startingPoint.y : clickPoint.x - _startingPoint.x;
 
@@ -401,58 +414,15 @@ public class MultiPointSlider extends JComponent {
     private int _length = -1;
     private int _endSpace = -1;
 
-    private void computeDrawingParameters( boolean recomputeMinimumSizeIfNecessary ) {
+    private void computeDrawingParameters() {
 
         int width = getWidth();
         int height = getHeight();
 
-//        if ( _width == width && _height == height && _minimumSize != null ) {
-//
-//            return;
-//
-//        }
-
         _width = width;
         _height = height;
-//        _endSpace = BORDER_SIZE;
-//        if ( isVerticalOrientation() ) {
-//
-//            _length = _height - 2 * BORDER_SIZE;
-//
-//        } else {
-//
-//            _length = _width - 2 * BORDER_SIZE;
-//
-//        }
-//
-//        if ( _length < MINIMUM_LINE_LENGTH ) {
-//
-//            _length = MINIMUM_LINE_LENGTH;
-//
-//        }
 
         computeMinimumSize();
-
-//        _width = width;
-//        _height = height;
-//
-//        if ( isVerticalOrientation() ) {
-//
-//            _endSpace = (int) ( height * 0.05 );
-//            _length = (int) ( height * 0.9 );
-//
-//        } else {
-//
-//            _endSpace = (int) ( width * 0.05 );
-//            _length = (int) ( width * 0.9 );
-//
-//        }
-//
-//        if ( recomputeMinimumSizeIfNecessary && _minimumSize == null ) {
-//
-//            computeMinimumSize();
-//
-//        }
 
     }
 
@@ -493,18 +463,14 @@ public class MultiPointSlider extends JComponent {
 
     }
 
-    int _s1Count = 0;
+//    int _s1Count = 0;
     public Dimension computeMinimumSize() {
-
-//        // Compute the basic drawing parameters but avoid calling ourselves recursively.
-//
-//        computeDrawingParameters( false );
 
         Logger.logMsg( _name + ":  call to computeMinimumSize()" );
 
         OrientedImage orientedImage = _knob.getOrientedImage( _knobSize, _positionOnLine, _isSelected );
-        if ( "s3s7".contains( _name ) )
-        Logger.logMsg( _name + ":  " + orientedImage );
+//        if ( "s3s7".contains( _name ) )
+//        Logger.logMsg( _name + ":  " + orientedImage );
 
         int breadth = 0;
         int length = 0;
@@ -546,52 +512,47 @@ public class MultiPointSlider extends JComponent {
         // end of the line.  We need to know just how much the knob could protrude
         // out each end.  Note that the knob is not necessarily symmetric or, more
         // to the point, the hot spot is not necessarily located at the midpoint
-        // of the knob (pretty silly if it isn't but it is possible).
+        // of the knob.
 
-        String what;
+//        String what;
+        int minValueOverhang;
+        int maxValueOverhang;
         if ( isVerticalOrientation() ) {
 
-            if ( "s3s7".contains( _name ) )
-            Logger.logMsg( "oIsh = " + orientedImage.getScreenHeight() + ", oIhs = " + orientedImage.getHotSpotWithinImage() );
-            what = "a";
-            _minValueOverhang = orientedImage.getHotSpotWithinImage().y;
-            _maxValueOverhang = orientedImage.getScreenHeight() - ( orientedImage.getHotSpotWithinImage().y );
+//            if ( "s3s7".contains( _name ) )
+//            Logger.logMsg( "oIsh = " + orientedImage.getScreenHeight() + ", oIhs = " + orientedImage.getHotSpotWithinImage() );
+//            what = "a";
+
+            minValueOverhang = orientedImage.getHotSpotWithinImage().y;
+            maxValueOverhang = orientedImage.getScreenHeight() - orientedImage.getHotSpotWithinImage().y;
 
         } else {
 
-            if ( "s3s7".contains( _name ) )
-                Logger.logMsg( "oIsh = " + orientedImage.getScreenHeight() + ", oIhs = " + orientedImage.getHotSpotWithinImage() );
-            what = "b";
-            _minValueOverhang = orientedImage.getHotSpotWithinImage().x;
-            _maxValueOverhang = orientedImage.getScreenWidth() - ( orientedImage.getHotSpotWithinImage().x );
+//            if ( "s3s7".contains( _name ) )
+//                Logger.logMsg( "oIsh = " + orientedImage.getScreenHeight() + ", oIhs = " + orientedImage.getHotSpotWithinImage() );
+//            what = "b";
+
+            minValueOverhang = orientedImage.getHotSpotWithinImage().x;
+            maxValueOverhang = orientedImage.getScreenWidth() - orientedImage.getHotSpotWithinImage().x;
 
         }
 
         // Don't let the overhangs go negative (seems unlikely but the consequences would be pretty confusing).
 
-        _minValueOverhang = Math.max( 0, _minValueOverhang );
-        _maxValueOverhang = Math.max( 0, _maxValueOverhang );
+        minValueOverhang = Math.max( 0, minValueOverhang );
+        maxValueOverhang = Math.max( 0, maxValueOverhang );
 
-        if ( "s3s7".contains( _name ) )
-        Logger.logMsg( _name + ":  what = " + what + "; minVO = " + _minValueOverhang + "; maxVO = " + _maxValueOverhang );
-        /**
+//        if ( "s3s7".contains( _name ) )
+//        Logger.logMsg( _name + ":  what = " + what + "; minVO = " + _minValueOverhang + "; maxVO = " + _maxValueOverhang );
+
+        /*
          * Do we need to account for the space consumed by labels?
          */
 
         if ( _drawLabels ) {
 
-            // Assuming that there are at least two pixels between each label image,
-            // compute the minimum label breadth and length.
-
             int maxLabelBreadth = 0;
             int maxLabelLength = 0;
-//            int totalLabelLength = 0;
-
-            // Start the inter-label gap at 0 so that we do not count a gap before
-            // the first label.
-
-            int labelGapSpace = 0;
-
             int labelCount = 0;
             BufferedImage firstLabel = null;
             BufferedImage lastLabel = null;
@@ -605,8 +566,6 @@ public class MultiPointSlider extends JComponent {
             g2d.setFont( getFont() );
 
             for ( int value = _brm.getMinimum(); value <= _brm.getMaximum(); value += _majorTickSpacing ) {
-
-//                totalLabelLength += labelGapSpace;
 
                 BufferedImage labelImage = getLabel( g2d, value );
 
@@ -624,13 +583,11 @@ public class MultiPointSlider extends JComponent {
 
                     maxLabelBreadth = Math.max( maxLabelBreadth, labelImage.getWidth() );
                     maxLabelLength = Math.max( maxLabelLength, labelImage.getHeight() );
-//                    totalLabelLength += labelImage.getHeight();
 
                 } else {
 
                     maxLabelBreadth = Math.max( maxLabelBreadth, labelImage.getHeight() );
                     maxLabelLength = Math.max( maxLabelLength, labelImage.getWidth() );
-//                    totalLabelLength += labelImage.getWidth();
 
                 }
 
@@ -649,38 +606,38 @@ public class MultiPointSlider extends JComponent {
 
 //            Logger.logMsg( "before:  minVO = " + _minValueOverhang + ", maxVO = " + _maxValueOverhang + ", fL.h = " + firstLabel.getHeight() + ", fL.w = " + firstLabel.getWidth() + ", lL.h = " + lastLabel.getHeight() + ", lL.w = " + lastLabel.getWidth() );
 
-            String how;
+//            String how;
             if ( isVerticalOrientation() ) {
 
-                how = "a";
+//                how = "a";
                 if ( firstLabel != null ) {
 
-                    how = "v1";
-                    _minValueOverhang = Math.max( ( firstLabel.getHeight() + 1 ) / 2, _minValueOverhang );
+//                    how = "v1";
+                    minValueOverhang = Math.max( ( firstLabel.getHeight() + 1 ) / 2, minValueOverhang );
 
                 }
 
                 if ( lastLabel != null ) {
 
-                    how = "v2";
-                    _maxValueOverhang = Math.max( ( lastLabel.getHeight() + 1 ) / 2, _maxValueOverhang );
+//                    how = "v2";
+                    maxValueOverhang = Math.max( ( lastLabel.getHeight() + 1 ) / 2, maxValueOverhang );
 
                 }
 
             } else {
 
-                how = "b";
+//                how = "b";
                 if ( firstLabel != null ) {
 
-                    how = "v3";
-                    _minValueOverhang = Math.max( ( firstLabel.getWidth() + 1 ) / 2, _minValueOverhang );
+//                    how = "v3";
+                    minValueOverhang = Math.max( ( firstLabel.getWidth() + 1 ) / 2, minValueOverhang );
 
                 }
 
                 if ( lastLabel != null ) {
 
-                    how = "v4";
-                    _maxValueOverhang = Math.max( ( lastLabel.getWidth() + 1 ) / 2, _maxValueOverhang );
+//                    how = "v4";
+                    maxValueOverhang = Math.max( ( lastLabel.getWidth() + 1 ) / 2, maxValueOverhang );
 
                 }
 
@@ -692,7 +649,8 @@ public class MultiPointSlider extends JComponent {
 
             int minLabelSpace = labelCount * maxLabelLength + ( labelCount - 1 ) * MINIMUM_LABEL_GAP_SPACE;
 
-            length = minLabelSpace < MINIMUM_LINE_LENGTH ? MINIMUM_LINE_LENGTH : minLabelSpace;
+            length = Math.max( MINIMUM_LINE_LENGTH, minLabelSpace );
+//            length = minLabelSpace < MINIMUM_LINE_LENGTH ? MINIMUM_LINE_LENGTH : minLabelSpace;
 
         } else {
 
@@ -710,7 +668,7 @@ public class MultiPointSlider extends JComponent {
                 if ( _majorTickSpacing > 0 ) {
 
                     when = "3";
-                    length = Math.max( ( ( _brm.getMaximum() - _brm.getMinimum() ) / _minorTickSpacing ) * MINIMUM_TIC_ROOM, length );
+                    length = Math.max( ( ( _brm.getMaximum() - _brm.getMinimum() ) / _majorTickSpacing ) * MINIMUM_TIC_ROOM, length );
 
                 }
 
@@ -727,12 +685,12 @@ public class MultiPointSlider extends JComponent {
         }
 
         _length = length;
-        _endSpace = BORDER_SIZE + _minValueOverhang;
+        _endSpace = BORDER_SIZE + minValueOverhang;
 
-        length = _minValueOverhang + length + _maxValueOverhang;
+        length = minValueOverhang + length + maxValueOverhang;
 
         if ( "s3s7".contains( _name ) )
-        Logger.logMsg( _name + "  minVO = " + _minValueOverhang + ", maxVO = " + _maxValueOverhang + ", es = " + _endSpace + ", l = " + _length );
+        Logger.logMsg( _name + "  minVO = " + minValueOverhang + ", maxVO = " + maxValueOverhang + ", es = " + _endSpace + ", l = " + _length );
 
         // We've got it!
 
@@ -749,12 +707,12 @@ public class MultiPointSlider extends JComponent {
         switch ( _positionOnLine ) {
 
             case ABOVE:
-
                 _linePosition = BORDER_SIZE + orientedImage.getHotSpotWithinImage().y;
                 break;
 
             case BELOW:
-                _linePosition = BORDER_SIZE + breadth - orientedImage.getImage().getHeight( null ) + orientedImage.getHotSpotWithinImage().y;
+                _linePosition = BORDER_SIZE + breadth - orientedImage.getImage().getHeight( null ) +
+                                orientedImage.getHotSpotWithinImage().y;
                 break;
 
             case LEFT:
@@ -762,18 +720,10 @@ public class MultiPointSlider extends JComponent {
                 break;
 
             case RIGHT:
-                _linePosition = BORDER_SIZE + breadth - orientedImage.getImage().getWidth( null) + orientedImage.getHotSpotWithinImage().x;
+                _linePosition = BORDER_SIZE + breadth - orientedImage.getImage().getWidth( null ) +
+                                orientedImage.getHotSpotWithinImage().x;
 
         }
-//        if ( _positionOnLine == PositionOnLine.BELOW || _positionOnLine == PositionOnLine.RIGHT ) {
-//
-//            _linePosition = BORDER_SIZE + breadth - knobBreadth;
-//
-//        } else {
-//
-//            _linePosition = BORDER_SIZE + knobBreadth;
-//
-//        }
 
         if ( "s3s7".contains( _name ) )
         Logger.logMsg( "" + _name + ":  breadth = " + breadth + ", length = " + length + ", knob breadth = " + knobBreadth + ", min size = ( " + _minimumSize.getWidth() + ", " + _minimumSize.getHeight() + " ), line position = " + _linePosition );
@@ -788,7 +738,11 @@ public class MultiPointSlider extends JComponent {
 
     public void setMinimumSize( Dimension size ) {
 
-        Logger.logMsg( _name + ":  call to setMinimumSize( " + size + ")" );
+        if ( _traceSizeChanges ) {
+
+            Logger.logMsg( _name + ":  call to setMinimumSize( " + size + ")" );
+
+        }
 
         super.setMinimumSize( size );
 
@@ -796,7 +750,11 @@ public class MultiPointSlider extends JComponent {
 
     public void setMaximumSize( Dimension size ) {
 
-        Logger.logMsg( _name + ":  call to setMaximumSize( " + size + ")" );
+        if ( _traceSizeChanges ) {
+
+            Logger.logMsg( _name + ":  call to setMaximumSize( " + size + ")" );
+
+        }
 
         super.setMaximumSize( size );
 
@@ -804,7 +762,11 @@ public class MultiPointSlider extends JComponent {
 
     public void setPreferredSize( Dimension size ) {
 
-        Logger.logMsg( _name + ":  call to setPreferredSize( " + size + ")" );
+        if ( _traceSizeChanges ) {
+
+            Logger.logMsg( _name + ":  call to setPreferredSize( " + size + ")" );
+
+        }
 
         super.setPreferredSize( size );
 
@@ -812,7 +774,11 @@ public class MultiPointSlider extends JComponent {
 
     public void setBounds( int x, int y, int width, int height ) {
 
-        Logger.logMsg( _name + ":  call to setBounds( " + x + ", " + y + ", " + width + ", " + height + ")" );
+        if ( _traceSizeChanges ) {
+
+            Logger.logMsg( _name + ":  call to setBounds( " + x + ", " + y + ", " + width + ", " + height + ")" );
+
+        }
 
         super.setBounds( x, y, width, height );
 
@@ -820,7 +786,11 @@ public class MultiPointSlider extends JComponent {
 
     public void setBounds( Rectangle bounds ) {
 
-        Logger.logMsg( _name + ":  call to setBounds( " + bounds + ")" );
+        if ( _traceSizeChanges ) {
+
+            Logger.logMsg( _name + ":  call to setBounds( " + bounds + ")" );
+
+        }
 
         super.setBounds( bounds );
 
@@ -829,7 +799,7 @@ public class MultiPointSlider extends JComponent {
     public void paint( Graphics g ) {
 
         Graphics2D g2d = (Graphics2D) g;
-        computeDrawingParameters( true );
+        computeDrawingParameters();
 
         Logger.logMsg( "painting " + _name + " with size ( " + _width + ", " + _height + " )" );
 
@@ -838,39 +808,8 @@ public class MultiPointSlider extends JComponent {
 
         g.setColor( Color.WHITE );
         g.fillRect( 0, 0, getWidth(), getHeight() );
-//
-//        g.setColor( Color.BLACK );
-//        for ( int i = 0; i < _width + 10; i += 10 ) {
-//
-//            g.drawLine( i, 0, i, 400 );
-//
-//        }
-
-//        g.setColor( new Color( 100, 200, 100 ) );
-//        g.fillRect( 0, 0, _minimumSize.width, _minimumSize.height );
-//
-//        g.setColor( new Color( 220, 220, 220 ) );
-//        for ( int i = 0; i < _minimumSize.height - 1; i += 2 ) {
-//            g.drawLine( 0, i, _width, i );
-//        }
-//        for ( int i = 0; i < _minimumSize.width - 1; i += 2 ) {
-//            g.drawLine( i, 0, i, _height );
-//        }
-//
-//        g.setColor( new Color( 255, 255, 255 ) );
-//        int innerWidth = _minimumSize.width - 2 * BORDER_SIZE;
-//        int innerHeight = _minimumSize.height - 2 * BORDER_SIZE;
-//        g.drawRect( BORDER_SIZE, BORDER_SIZE, innerWidth - 1, innerHeight - 1 );
-//        g.setColor( Color.BLACK );
-////        g.drawRect( 0, 0, _minimumSize.width - 1, _minimumSize.height - 1 );
-//        if ( "s3s7".contains( _name ) )
-//        Logger.logMsg( _name + ":  iw = " + innerWidth + ", ih = " + innerHeight + ", msW = " + _minimumSize.width + ", msH = " + _minimumSize.height + ", l = " + _length + ", es = " + _endSpace );
-
-//        super.paintChildren( g );
 
         g.setColor( Color.BLACK );
-
-//        drawLabel( g2d, "ace man", drawLabel( g2d, "hello danny", 10, 10 ) + 1, 10 );
 
         int ticSpace = 0;
 
@@ -917,7 +856,7 @@ public class MultiPointSlider extends JComponent {
                         break;
 
                 }
-//                g.drawImage( labelImage, valuePoint.x - labelImage.getWidth() / 2, valuePoint.y + 2, this );
+
             }
 
         }
@@ -926,14 +865,6 @@ public class MultiPointSlider extends JComponent {
         Point lineStart = mapValueToPoint( _brm.getMinimum() );
         Point lineEnd = mapValueToPoint( _brm.getMaximum() );
         if ( _drawSliderLine ) {
-
-//            if ( "s1".equals( _name ) ) {
-//
-//                _s1Count += 1;
-//                Logger.logMsg( "s1 count " + _s1Count + ", line from " + lineStart + " to " + lineEnd );
-//                ObtuseUtil5.doNothing();
-//
-//            }
 
             g.drawLine( lineStart.x, lineStart.y, lineEnd.x, lineEnd.y );
 
@@ -954,8 +885,6 @@ public class MultiPointSlider extends JComponent {
 
         } else {
 
-////        int hotSpot.X = _endSpace + ( _length * _brm.getValue() ) / ( _brm.getMaximum() - _brm.getMinimum() );
-////        int hotSpot.Y = _height / 2;
             _knob.drawKnob(
                     g2d,
                     hotSpot,
@@ -984,67 +913,6 @@ public class MultiPointSlider extends JComponent {
                     false, PositionOnLine.RIGHT,
                     this
             );
-//
-//        g.setColor( Color.BLUE );
-//        g.drawLine( 20, 20, 40, 40 );
-//        g.drawLine( 20, 40, 40, 20 );
-//
-//        OrientedImage img = _knob.getOrientedImage( KnobSize.SIZE_13x13, PositionOnLine.ABOVE, false );
-//        img.drawImage( g2d, new Point( 30, 30 ) );
-////        g.drawImage( img.getImage(), 30, hotSpot.y + 30, this );
-//
-//        img = _knob.getOrientedImage( KnobSize.SIZE_13x13, PositionOnLine.BELOW, false );
-//        img.drawImage( g2d, new Point( 30, 30 ) );
-////        g.drawImage( img.getImage(), 70, hotSpot.y + 30, this );
-//
-//        img = _knob.getOrientedImage( KnobSize.SIZE_13x13, PositionOnLine.LEFT, false );
-//        img.drawImage( g2d, new Point( 30, 30 ) );
-////        g.drawImage( img.getImage(), 110, hotSpot.y + 30, this );
-//
-//        img = _knob.getOrientedImage( KnobSize.SIZE_13x13, PositionOnLine.RIGHT, false );
-//        img.drawImage( g2d, new Point( 30, 30 ) );
-////        g.drawImage( img.getImage(), 150, hotSpot.y + 30, this );
-//
-////        img = _knob.getOrientedImage( KnobSize.SIZE_13x13, PositionOnLine.ABOVE, true );
-////        g.drawImage( img.getImage(), 30, hotSpot.y + 45, this );
-////
-////        img = _knob.getOrientedImage( KnobSize.SIZE_13x13, PositionOnLine.BELOW, true );
-////        g.drawImage( img.getImage(), 70, hotSpot.y + 45, this );
-////
-////        img = _knob.getOrientedImage( KnobSize.SIZE_13x13, PositionOnLine.LEFT, true );
-////        g.drawImage( img.getImage(), 110, hotSpot.y + 45, this );
-////
-////        img = _knob.getOrientedImage( KnobSize.SIZE_13x13, PositionOnLine.RIGHT, true );
-////        g.drawImage( img.getImage(), 150, hotSpot.y + 45, this );
-//
-////        g.drawLine( hotSpot.x, hotSpot.y - 2, hotSpot.x, hotSpot.y - 30 );
-//
-////        g.drawImage(
-////                _knob,
-////                left + ( length * _brm.getValue() ) / ( _brm.getMaximum() - _brm.getMinimum() ) - 6,
-////                h / 2 - 14,
-////                this
-////        );
-////        g.drawImage( _knob, w / 2, h / 2, this );
-////
-////        int lastIconSize = 3;
-////        int x = 5;
-////        for ( Image img : _images ) {
-//////        for ( int x = 5; x < w && lastIconSize < 21; x += lastIconSize + 2 ) {
-////
-////            lastIconSize += 2;
-////            g.drawImage( img, x, h / 2, this );
-////            x += lastIconSize + 2;
-////
-////        }
-////        int lastIconSize = 3;
-////        for ( int x = 5; x < w && lastIconSize < 21; x += lastIconSize + 2 ) {
-////
-////            lastIconSize += 2;
-////            Image img = _knob.getScaledInstance( lastIconSize, -1, Image.SCALE_SMOOTH );
-////            g.drawImage( img, x, h / 2, this );
-////
-////        }
 
         }
 
@@ -1348,6 +1216,175 @@ public class MultiPointSlider extends JComponent {
 
         _drawTickMarks = drawTickMarks;
         _minimumSize = null;
+
+    }
+
+    /**
+     * Manage a particular orientation of an image.
+     * <p/>
+     * Intended to be used by the {@link com.obtuse.ui.MultiPointSlider} class.  Probably not all that useful in other contexts.
+     */
+
+    public static class OrientedImage {
+
+        private final Point _hotSpotWithinImage;
+        private final BufferedImage _image;
+
+        public OrientedImage( Point hotSpotWithinImage, BufferedImage image ) {
+            super();
+
+            _hotSpotWithinImage = new Point( hotSpotWithinImage.x, hotSpotWithinImage.y );
+            _image = image;
+
+        }
+
+        public boolean isPointInImage( Point actualHotSpot, Point p ) {
+
+            Point imageLocation = new Point(
+                    actualHotSpot.x - _hotSpotWithinImage.x,
+                    actualHotSpot.y - _hotSpotWithinImage.y
+            );
+            Point computedHotSpot = new Point(
+                    imageLocation.x + _hotSpotWithinImage.x,
+                    imageLocation.y + _hotSpotWithinImage.y
+            );
+            Point pointWithinImage = new Point(
+                    p.x - imageLocation.x,
+                    p.y - imageLocation.y
+            );
+            Point imageSize = new Point(
+                    _image.getWidth(),
+                    _image.getHeight()
+            );
+
+            boolean isInside;
+            if (
+                    pointWithinImage.x >= 0 && pointWithinImage.x < imageSize.x
+                    &&
+                    pointWithinImage.y >= 0 && pointWithinImage.y < imageSize.y
+            ) {
+
+                int argb = _image.getRGB( pointWithinImage.x, pointWithinImage.y );
+                isInside = ( argb & 0xff000000 ) != 0;
+
+            } else {
+
+                isInside = false;
+
+            }
+
+    //        Logger.logMsg(
+    //                "image @ " + imageLocation +
+    //                ", point @ " + p +
+    //                ", point within image @ " + pointWithinImage +
+    //                ", INSIDE is " + isInside +
+    //                ", hotspot @ " + actualHotSpot +
+    //                ", computed hotspot @ " + computedHotSpot
+    //        );
+
+            return isInside;
+
+        }
+
+        public void drawImage( Graphics2D g, Point actualHotSpot ) {
+
+            g.translate( actualHotSpot.x, actualHotSpot.y );
+    //            g.drawLine( -5, 0, 5, 0 );
+    //            g.drawLine(  0, -5, 0, 5 );
+            g.drawImage( _image, -_hotSpotWithinImage.x, -_hotSpotWithinImage.y, null );
+            g.translate( -actualHotSpot.x, -actualHotSpot.y );
+
+        }
+
+        /**
+         * Retrieve this image's hotspot.
+         * @return a copy of this image's hotspot (to ensure that caller does not modify the hotspot).
+         */
+
+        public Point getHotSpotWithinImage() {
+
+            return new Point( _hotSpotWithinImage.x, _hotSpotWithinImage.y );
+
+        }
+
+        public Image getImage() {
+
+            return _image;
+
+        }
+
+    //    public int getScreenWidth( ImageObserver imageObserver ) {
+    //
+    //        int width = _image.getWidth( imageObserver );
+    //        if ( _hotSpotWithinImage.x < 0 ) {
+    //
+    //            width += -_hotSpotWithinImage.x;
+    //
+    //        } else if ( _hotSpotWithinImage.x > width ) {
+    //
+    //            width = _hotSpotWithinImage.x;
+    //
+    //        }
+    //
+    //        return width;
+    //
+    //    }
+
+        /**
+         * Compute the amount of vertical screen space this image will consume.
+         * <p/>
+         * The computed value takes this instance' hotspot into account if the hotspot is either
+         * above or below the image.
+         *
+         * @return the vertical screen space consumed by this image.
+         */
+
+        public int getScreenHeight() {
+
+            int height = _image.getHeight( null );
+            int before = height;
+            if ( _hotSpotWithinImage.y < 0 ) {
+
+                height += -_hotSpotWithinImage.y;
+    //            Logger.logMsg( "- from " + before + " to " + height + ", adjustment " + -_hotSpotWithinImage.y );
+
+            } else if ( _hotSpotWithinImage.y > height ) {
+
+                height = _hotSpotWithinImage.y + 1;     // deal with zero-origin x and y values
+    //            Logger.logMsg( "+ from " + before + " to " + height + ", adjustment =" + _hotSpotWithinImage.y + "+1");
+
+    //        } else {
+    //
+    //            Logger.logMsg( "no adjustment" );
+
+            }
+
+            return height;
+
+        }
+
+        public int getScreenWidth() {
+
+            int width = _image.getHeight( null );
+            if ( _hotSpotWithinImage.x < 0 ) {
+
+                width += -_hotSpotWithinImage.x;
+
+            } else if ( _hotSpotWithinImage.x > width ) {
+
+                width = _hotSpotWithinImage.x + 1;  // deal with zero-origin x and y values
+
+            }
+
+            return width;
+
+        }
+
+        public String toString() {
+
+            return "OrientedImage( " + getScreenWidth() + 'x' + getScreenHeight() + ", hs = " + _hotSpotWithinImage + " )";
+
+        }
 
     }
 

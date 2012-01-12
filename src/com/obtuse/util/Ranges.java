@@ -6,9 +6,9 @@ import java.io.Serializable;
 import java.util.*;
 
 /**
- * Keep track of date ranges.
+ * Keep track of ranges of values.
  * <p/>
- * Maintains a series of sorted date ranges.  Ranges are combined when gaps between them are filled in.
+ * Maintains a series of sorted ranges.  Ranges are combined when gaps between them are filled in.
  * <p/>
  * Copyright © 2009 Obtuse Systems Corporation.
  */
