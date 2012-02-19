@@ -1,7 +1,7 @@
 package com.obtuse.util;
 
 /*
- * Copyright © 2011 Daniel Boulet
+ * Copyright © 2012 Daniel Boulet
  */
 
 import java.awt.*;

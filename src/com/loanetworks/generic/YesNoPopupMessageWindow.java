@@ -11,13 +11,12 @@ import java.awt.event.*;
 /**
  * Create and manage a disposable popup window with two buttons.
  * <p/>
- * Copyright © 2006, 2007 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  *
  * @noinspection ClassWithoutToString, UnusedDeclaration
  */
 
-public abstract class YesNoPopupMessageWindow
-        extends JDialog {
+public abstract class YesNoPopupMessageWindow extends JDialog {
 
     private JPanel _contentPane;
 

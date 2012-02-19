@@ -5,8 +5,8 @@ package com.obtuse.util;
  * <p/>
  * See the {@link MacCustomization} class for more information.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
- * Copyright © 2011 Daniel Boulet.
+ * Copyright © 2012 Daniel Boulet.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 @SuppressWarnings( { "UnusedDeclaration" } )

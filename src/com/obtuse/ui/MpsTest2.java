@@ -6,6 +6,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/*
+ * Copyright © 2012 Daniel Boulet
+ */
+
 /**
  * Try out MPS class again.
  */

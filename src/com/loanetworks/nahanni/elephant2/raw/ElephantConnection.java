@@ -5,7 +5,7 @@ import com.loanetworks.db.PostgresConnection;
 /**
  * A connection to a database that is managed by Elephant.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 @SuppressWarnings( { "ClassWithoutToString" } )

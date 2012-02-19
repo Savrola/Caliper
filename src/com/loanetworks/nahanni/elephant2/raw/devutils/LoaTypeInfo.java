@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Describe the various was that a database type will need to be 'described' in various contexts.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public class LoaTypeInfo implements Serializable {

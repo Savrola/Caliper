@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * General purpose management of something that (normally) exists as a tuple in the database.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public abstract class Tuple implements Serializable {

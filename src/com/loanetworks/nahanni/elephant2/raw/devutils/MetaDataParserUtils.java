@@ -17,7 +17,7 @@ import java.util.Properties;
  * Parse the metadata of a database and emit a Java class that can be used to carry around tuples from the class and a
  * Java class that describes the metadata of each class.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  * Those parts which describe Invidi-specific database tables are Copyright © 2009 Invidi Technologies Corporation.
  */
 

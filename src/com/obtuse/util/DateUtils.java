@@ -13,7 +13,7 @@ import java.util.TimeZone;
  * Various methods for parsing and just generally managing dates.
  * <p/>
  * Copyright © 2009 Invidi Technologies Corporation
- * Copyright © 2009 Daniel Boulet
+ * Copyright © 2012 Daniel Boulet
  */
 
 @SuppressWarnings({ "UnnecessaryLocalVariable", "StaticMethodNamingConvention", "UnusedDeclaration" })

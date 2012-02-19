@@ -9,8 +9,7 @@ import java.util.prefs.Preferences;
 /**
  * Fundamental program configuration information and such.
  * <p/>
- * Copyright © 2006, 2007, 2008 Loa Corporation.
- * Copyright © 2011 Daniel Boulet.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 @SuppressWarnings( { "ClassNamingConvention" } )

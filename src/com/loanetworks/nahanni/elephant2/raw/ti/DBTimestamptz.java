@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 /**
  * Carry around a timestamptz value from the database (represented as a long in all meaningful respects).
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public class DBTimestamptz extends DBValue {

@@ -14,7 +14,7 @@ import java.util.*;
 /**
  * Describe a database table.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public abstract class TableInfo implements Serializable {

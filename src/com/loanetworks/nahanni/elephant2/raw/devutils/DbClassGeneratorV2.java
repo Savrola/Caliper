@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * Generate a {@link TableInfo} class and a tuple carrier class which manages the column values directly.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 @SuppressWarnings( { "ClassWithoutToString" } )

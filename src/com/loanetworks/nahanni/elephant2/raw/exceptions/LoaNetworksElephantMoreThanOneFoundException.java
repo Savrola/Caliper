@@ -3,7 +3,7 @@ package com.loanetworks.nahanni.elephant2.raw.exceptions;
 /**
  * Thrown if a search for what was supposed to be a singleton yields more than one entity.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 @SuppressWarnings({"ClassWithoutToString"})

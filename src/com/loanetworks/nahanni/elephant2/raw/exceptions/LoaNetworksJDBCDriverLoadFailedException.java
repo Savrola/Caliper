@@ -3,7 +3,7 @@ package com.loanetworks.nahanni.elephant2.raw.exceptions;
 /**
  * Thrown if we are unable to load a suitable JDBC driver.
  * <p/>
- * Copyright © 2006 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 @SuppressWarnings({"ClassWithoutToString"})

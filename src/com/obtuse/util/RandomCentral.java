@@ -3,7 +3,7 @@ package com.obtuse.util;
 import java.security.SecureRandom;
 
 /*
- * Copyright © 2010 Daniel Boulet.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 /**

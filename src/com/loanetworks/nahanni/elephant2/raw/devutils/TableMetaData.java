@@ -6,7 +6,7 @@ import java.util.TreeMap;
 /**
  * Manage the metadata that the {@link MetaDataParserUtils} discovers about a DB table.
 * <p/>
-* Copyright © 2007, 2008 Loa Corporation.
+* Copyright © 2012 Daniel Boulet.
 */
 
 public class TableMetaData {

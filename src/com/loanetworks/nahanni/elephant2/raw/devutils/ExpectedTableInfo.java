@@ -4,7 +4,7 @@ package com.loanetworks.nahanni.elephant2.raw.devutils;
  * Describe the tables that the {@link MetaDataParserUtils} should expect to find described by
  * the database that it gets pointed at.
 * <p/>
-* Copyright © 2007, 2008 Loa Corporation.
+* Copyright © 2012 Daniel Boulet.
 */
 
 public class ExpectedTableInfo {

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 /**
  * Abstract representation of a column's value in a tuple.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public abstract class DBValue implements Serializable {

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * Static helper methods for Postgres' inet and macaddr types.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public class DBInet {

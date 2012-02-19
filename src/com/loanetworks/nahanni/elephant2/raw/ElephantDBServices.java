@@ -13,7 +13,7 @@ import java.sql.SQLException;
 /**
  * Provide database access services to the Elephant RMI level.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 @SuppressWarnings({ "UnusedDeclaration" })

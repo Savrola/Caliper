@@ -3,7 +3,7 @@ package com.loanetworks.nahanni.elephant2.raw.devutils;
 /**
  * Describe a single column in a table.
 * <p/>
-* Copyright © 2007, 2008 Loa Corporation.
+* Copyright © 2012 Daniel Boulet.
 */
 
 public class ColumnMetaData {

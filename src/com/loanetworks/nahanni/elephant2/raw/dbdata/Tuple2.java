@@ -11,7 +11,7 @@ import java.sql.Statement;
 /**
  * The new 'streamlined' tuple instance carrier base class.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public abstract class Tuple2 {

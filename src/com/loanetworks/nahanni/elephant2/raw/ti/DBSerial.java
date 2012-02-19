@@ -3,7 +3,7 @@ package com.loanetworks.nahanni.elephant2.raw.ti;
 /**
  * Carry around a serial value from the database.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public class DBSerial extends DBInt {

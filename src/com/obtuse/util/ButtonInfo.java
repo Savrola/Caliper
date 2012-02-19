@@ -1,8 +1,8 @@
 package com.obtuse.util;
 
 /*
- * Copyright © 2008 Loa Corporation
- * Copyright © 2011 Daniel Boulet
+ * Copyright © 2012 Daniel Boulet
+ * Copyright © 2012 Daniel Boulet
  */
 
 import javax.swing.*;

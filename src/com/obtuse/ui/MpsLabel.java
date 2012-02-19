@@ -8,6 +8,10 @@ import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 
+/*
+ * Copyright © 2012 Daniel Boulet
+ */
+
 /**
 * Describe a label on the slider line for an {@link MultiPointSlider}.
 */

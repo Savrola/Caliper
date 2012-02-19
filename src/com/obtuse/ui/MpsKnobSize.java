@@ -1,5 +1,9 @@
 package com.obtuse.ui;
 
+/*
+ * Copyright © 2012 Daniel Boulet
+ */
+
 /**
 * The supported knob sizes for an {@link MultiPointSlider}.
 */

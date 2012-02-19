@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * Carry around a long value from the database.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public class DBLong extends DBValue {

@@ -9,7 +9,7 @@ import java.sql.SQLException;
 /**
  * Carry around a byte array value from the database.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public class DBByteArray extends DBValue {

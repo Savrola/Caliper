@@ -7,11 +7,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Test the OkPopupMessageWindow
+ * Test the OkPopupMessageWindow.
  */
 
 @SuppressWarnings({ "UtilityClassWithoutPrivateConstructor" })
 public class OkPopupTester {
+
     public static void main( String[] args ) {
 
         System.setProperty( "apple.laf.useScreenMenuBar", "true" );
@@ -27,9 +28,13 @@ public class OkPopupTester {
         String lcOSName = System.getProperty( "os.name" ).toLowerCase();
         boolean onMacOSX = lcOSName.startsWith( "mac os x" );
         if ( onMacOSX ) {
+
             laf = "apple.laf.AquaLookAndFeel";
+
         } else {
+
             laf = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
+
         }
 
         try {

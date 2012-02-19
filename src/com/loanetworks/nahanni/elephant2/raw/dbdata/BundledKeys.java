@@ -3,7 +3,7 @@ package com.loanetworks.nahanni.elephant2.raw.dbdata;
 /**
  * Encapsulate the return value of an insertion operation.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public class BundledKeys {

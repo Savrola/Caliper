@@ -10,6 +10,10 @@ import java.awt.*;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
+/*
+ * Copyright © 2012 Daniel Boulet
+ */
+
 /**
  * Take the {@link MultiPointSlider} class out for a test drive.
  */

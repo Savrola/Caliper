@@ -16,8 +16,8 @@ import java.util.zip.GZIPOutputStream;
 /**
  * A trace facility.
  * <p/>
- * Copyright © 2006, 2007 Loa Corporation.
- * Copyright © 2011 Daniel Boulet.
+ * Copyright © 2012 Daniel Boulet.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public class Trace {

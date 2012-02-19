@@ -10,13 +10,12 @@ import java.awt.event.*;
 /**
  * Popup a window with a message and a single button (which disposes of the window).
  * <p/>
- * Copyright © 2006, 2007 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  *
  * @noinspection ClassWithoutToString, UnusedDeclaration
  */
 
-public abstract class OkPopupMessageWindow
-        extends JDialog {
+public abstract class OkPopupMessageWindow extends JDialog {
 
     @SuppressWarnings({ "InstanceVariableNamingConvention" })
 
@@ -52,9 +51,13 @@ public abstract class OkPopupMessageWindow
 
         _firstMessageField.setText( "<html>" + firstMessage );
         if ( secondMessage == null || secondMessage.trim().length() == 0 ) {
+
             _secondMessageField.setVisible( false );
+
         } else {
+
             _secondMessageField.setText( "<html>" + secondMessage );
+
         }
 
         // call onCancel() when cross is clicked
@@ -63,20 +66,28 @@ public abstract class OkPopupMessageWindow
         //noinspection RefusedBequest
         addWindowListener(
                 new WindowAdapter() {
+
                     public void windowClosing( WindowEvent e ) {
+
                         onOK();
                         ok();
+
                     }
+
                 }
         );
 
         // call onCancel() on ESCAPE
         _contentPane.registerKeyboardAction(
                 new ActionListener() {
+
                     public void actionPerformed( ActionEvent e ) {
+
                         onOK();
                         ok();
+
                     }
+
                 },
                 KeyStroke.getKeyStroke( KeyEvent.VK_ESCAPE, 0 ),
                 JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
@@ -138,10 +149,14 @@ public abstract class OkPopupMessageWindow
 
         SwingUtilities.invokeLater(
                 new Runnable() {
+
                     public void run() {
+
                         OkPopupMessageWindow.this.setVisible( false );
                         aborted( why );
+
                     }
+
                 }
         );
 
@@ -155,7 +170,9 @@ public abstract class OkPopupMessageWindow
 
     @SuppressWarnings({ "EmptyMethod", "NoopMethodInAbstractClass" })
     public void aborted( String why ) {
+
         // Do nothing by default.
+
     }
 
     @SuppressWarnings({ "SameParameterValue" })

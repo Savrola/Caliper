@@ -2,13 +2,14 @@ package com.obtuse.ui;
 
 import javax.swing.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: danny
- * Date: 2011/12/25
- * Time: 15:24
- * To change this template use File | Settings | File Templates.
+/*
+ * Copyright © 2012 Daniel Boulet
  */
+
+/**
+ * Simple test program.
+ */
+
 public class JSliderTest extends JFrame {
 
     private JSlider _slider1;

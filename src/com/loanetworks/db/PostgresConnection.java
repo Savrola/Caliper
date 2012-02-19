@@ -11,7 +11,7 @@ import java.util.Properties;
 /**
  * Base class to manage Postgres-specific aspects of JDBC connection management.
  * <p/>
- * Copyright © 2007, 2008 Loa Corporation.
+ * Copyright © 2012 Daniel Boulet.
  */
 
 public abstract class PostgresConnection {
@@ -105,18 +105,26 @@ public abstract class PostgresConnection {
             _jdbcConnection.close();
 
         }
+
     }
 
     public String getHostName() {
+
         return _hostname;
+
     }
 
     @SuppressWarnings({ "UnusedDeclaration" })
     public String getDBName() {
+
         return _dbName;
+
     }
 
     public Connection c() {
+
         return _jdbcConnection;
+
     }
+
 }

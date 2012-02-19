@@ -11,6 +11,10 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.util.*;
 
+/*
+ * Copyright © 2012 Daniel Boulet
+ */
+
 /**
  * Along the lines of {@link javax.swing.JSlider} but capable of being configured to use
  * considerably less screen real estate and supports more than one slider point.

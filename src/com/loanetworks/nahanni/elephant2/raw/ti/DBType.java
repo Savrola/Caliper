@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Describe the type of a (normally) database-resident entity.
 * <p/>
-* Copyright © 2007, 2008 Loa Corporation.
+* Copyright © 2012 Daniel Boulet.
 */
 
 public enum DBType implements Serializable {
