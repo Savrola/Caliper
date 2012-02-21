@@ -1,18 +1,14 @@
 package com.obtuse.util;
 
-import com.loanetworks.db.PostgresConnection;
+import com.obtuse.db.PostgresConnection;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Vector;
+import java.sql.*;
+import java.util.*;
 import java.util.zip.ZipFile;
 
 /*
