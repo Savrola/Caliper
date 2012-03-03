@@ -1,6 +1,6 @@
-package com.obtuse.util;
+package com.obtuse.ui;
 
-import com.obtuse.ui.*;
+import com.obtuse.util.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -8,18 +8,19 @@ import java.awt.image.ImageObserver;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import static com.obtuse.ui.MultiPointSlider.*;
+import static com.obtuse.ui.MultiPointSlider.OrientedImage;
+import static com.obtuse.ui.MultiPointSlider.PositionOnLine;
 
 /**
- * The implementation of {@link MpsKnob} used by default by the {@link com.obtuse.ui.MultiPointSlider} class.
+ * The implementation of {@link MpsKnob} used by default by the {@link MultiPointSlider} class.
  */
 
 public class DefaultMpsKnob extends MpsKnob {
 
     private SortedMap<PositionOnLine, Double> _rotations =
             new TreeMap<PositionOnLine, Double>();
-    private ThreeDimensionalSortedMap<MpsKnobSize, PositionOnLine, Boolean, MultiPointSlider.OrientedImage> _rotatedSelectedScaledImages =
-            new ThreeDimensionalTreeMap<MpsKnobSize, PositionOnLine, Boolean, MultiPointSlider.OrientedImage>();
+    private ThreeDimensionalSortedMap<MpsKnobSize, PositionOnLine, Boolean, OrientedImage> _rotatedSelectedScaledImages =
+            new ThreeDimensionalTreeMap<MpsKnobSize, PositionOnLine, Boolean, OrientedImage>();
 
     public DefaultMpsKnob( Image image ) {
         super( image );
@@ -142,7 +143,13 @@ public class DefaultMpsKnob extends MpsKnob {
         MultiPointSlider.OrientedImage orientedImage = _rotatedSelectedScaledImages.get( knobSize, positionOnLine, isSelected );
         if ( orientedImage == null ) {
 
-            BufferedImage scaledImage = ImageIconUtils.toBufferedImage( getImage().getScaledInstance( knobSize.integerSize(), -1, Image.SCALE_SMOOTH ) );
+            BufferedImage scaledImage = ImageIconUtils.toBufferedImage(
+                    getImage().getScaledInstance(
+                            knobSize.integerSize(),
+                            -1,
+                            Image.SCALE_SMOOTH
+                    )
+            );
             BufferedImage selectedScaledImage = ImageIconUtils.changeImageBrightness( scaledImage, 0.9f );
             BufferedImage rotatedImage;
             BufferedImage sourceImage = isSelected ? selectedScaledImage : scaledImage;

@@ -5,8 +5,7 @@ package com.obtuse.garnett.examples;
  */
 
 import com.obtuse.garnett.*;
-import com.obtuse.garnett.exceptions.GarnettObjectVersionNotSupportedException;
-import com.obtuse.garnett.exceptions.GarnettSerializationFailedException;
+import com.obtuse.garnett.exceptions.*;
 import com.obtuse.util.BasicProgramConfigInfo;
 import com.obtuse.util.Logger;
 
@@ -49,14 +48,14 @@ public class ExampleEmittedClass implements GarnettObject {
 
         }
 
-        public void serializeContents( GarnettObjectOutputStreamInterface boos )
+        public void serializeContents( GarnettObjectOutputStreamInterface goos )
                 throws IOException {
 
-            super.serializeContents( boos );
+            super.serializeContents( goos );
 
-            boos.writeVersion( INHERITED_CLASS_VERSION );
+            goos.writeVersion( INHERITED_CLASS_VERSION );
 
-            boos.writeOptionalString( _stringValue );
+            goos.writeOptionalString( _stringValue );
 
         }
 
@@ -101,12 +100,12 @@ public class ExampleEmittedClass implements GarnettObject {
 
     }
 
-    public void serializeContents( GarnettObjectOutputStreamInterface boos )
+    public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        boos.writeVersion( BASE_CLASS_VERSION );
+        goos.writeVersion( BASE_CLASS_VERSION );
 
-        boos.writeInt( _finalInt );
+        goos.writeInt( _finalInt );
 
     }
 
@@ -119,7 +118,7 @@ public class ExampleEmittedClass implements GarnettObject {
     public static void main( String[] args ) {
 
         BasicProgramConfigInfo.init( "Obtuse", "Garnett", "Test", null );
-        String testFilename = "test.boos";
+        String testFilename = "test.goos";
 
         testSerialization( testFilename );
 
@@ -130,14 +129,47 @@ public class ExampleEmittedClass implements GarnettObject {
     private static void testDeserialization( String testFilename ) {
 
         GarnettObjectInputStream gois = null;
+        BufferedInputStream inStream = null;
         try {
 
+            inStream = new BufferedInputStream(
+                    new FileInputStream( testFilename )
+            );
+
+        } catch ( FileNotFoundException e ) {
+
+            Logger.logErr( testFilename + ":  unable to open test input file", e );
+
+            return;
+
+        }
+
+        try {
             gois = new GarnettObjectInputStream(
                     0,
-                    new BufferedInputStream(
-                            new FileInputStream( testFilename )
-                    )
+                    inStream
             );
+        } catch ( IOException e ) {
+
+            Logger.logErr( testFilename + ":  unable to create GOIS", e );
+
+            return;
+
+        } catch ( GarnettUnsupportedProtocolVersionException e ) {
+
+            Logger.logErr( testFilename + ":  unsupported or bogus Garnett protocol version", e );
+
+            return;
+
+        } catch ( GarnettIllegalArgumentException e ) {
+
+            Logger.logErr( testFilename + ":  illegal argument to Garnett method", e );
+
+            return;
+
+        }
+
+        try {
 
             gois.getRestorerRegistry().addGarnettObjectFactory(
                     InheritedEmittedClass.BASE_CLASS_CANONICAL_NAME,
@@ -189,10 +221,6 @@ public class ExampleEmittedClass implements GarnettObject {
             GarnettObject example3 = gois.readOptionalGarnettObject();
             Logger.logMsg( "example3 = " + example3 );
 
-        } catch ( FileNotFoundException e ) {
-
-            Logger.logErr( "unable to open \"" + testFilename + "\"", e );
-
         } catch ( IOException e ) {
 
             Logger.logErr( "unable to de-serialized object", e );
@@ -219,25 +247,33 @@ public class ExampleEmittedClass implements GarnettObject {
 
     private static void testSerialization( String testFilename ) {
 
-        GarnettObjectOutputStream boos = null;
+        GarnettObjectOutputStream goos = null;
         try {
 
-            boos = new GarnettObjectOutputStream(
-                    new FileOutputStream( testFilename )
+            goos = new GarnettObjectOutputStream(
+                    new FileOutputStream( testFilename ),
+                    new GarnettSessionPrefix(
+                            new GarnettComponentInstanceName( "testing" ),
+                            0
+                    )
             );
 
-            boos.writeOptionalInteger( 42 );
+            goos.writeOptionalInteger( 42 );
 
-            boos.writeOptionalGarnettObject( null );
+            goos.writeOptionalGarnettObject( null );
 
             ExampleEmittedClass example1 = new InheritedEmittedClass( 1000, "hello world" );
-            boos.writeOptionalGarnettObject( example1 );
+            goos.writeOptionalGarnettObject( example1 );
             ExampleEmittedClass example2 = new ExampleEmittedClass( 12321 );
-            boos.writeOptionalGarnettObject( example2 );
-            boos.writeOptionalGarnettObject( example1 );
+            goos.writeOptionalGarnettObject( example2 );
+            goos.writeOptionalGarnettObject( example1 );
 
             Logger.logMsg( "example1 == " + example1 );
             Logger.logMsg( "example2 == " + example2 );
+
+        } catch ( GarnettIllegalArgumentException e ) {
+
+            Logger.logErr( "unable to build a GSP", e );
 
         } catch ( FileNotFoundException e ) {
 
@@ -251,15 +287,15 @@ public class ExampleEmittedClass implements GarnettObject {
 
             try {
 
-                if ( boos != null ) {
+                if ( goos != null ) {
 
-                    boos.close();
+                    goos.close();
                     
                 }
 
             } catch ( IOException e ) {
 
-                Logger.logErr( "close boos failed", e );
+                Logger.logErr( "close goos failed", e );
 
             }
 

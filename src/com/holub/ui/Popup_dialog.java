@@ -280,14 +280,14 @@ public class Popup_dialog extends JDialog {
                     );
             main.getContentPane().add( new JLabel( "Main window" ) );
             main.pack();
-            main.show();
+            main.setVisible( true );
 
             System.out.println( "Creating dialog" );
             dialog.getContentPane().add( b );
             dialog.pack();
 
             System.out.println( "Displaying dialog" );
-            dialog.show();
+            dialog.setVisible( true );
             System.out.println( "Dialog shut down" );
 
 
@@ -297,7 +297,7 @@ public class Popup_dialog extends JDialog {
             d.change_titlebar_colors( Color.WHITE, Color.BLACK );
             d.setDragable( false );
 
-            dialog.show();
+            dialog.setVisible( true );
             System.exit( 0 );
         }
     }

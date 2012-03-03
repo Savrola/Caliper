@@ -10,7 +10,7 @@ import com.obtuse.util.Trace;
  * Thrown if a protocol error is detected.
  */
 
-@SuppressWarnings( { "ClassWithoutToString" } )
+@SuppressWarnings({ "ClassWithoutToString", "UnusedDeclaration" })
 public class ObtuseProtocolErrorException extends Exception {
 
     public ObtuseProtocolErrorException() {

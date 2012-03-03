@@ -1,17 +1,16 @@
 package com.obtuse.garnett.exceptions;
 
-import java.io.IOException;
-
 /*
  * Copyright © 2012 Daniel Boulet
  */
 
 /**
- * Thrown if an attempt is made to send a {@link com.obtuse.garnett.GarnettObject}
- * across a {@link com.obtuse.garnett.GarnettSession} before the session is connected.
+ * Thrown in various contexts if an illegal argument is provided to a Garnett method.
+ * Note that unexpected null parameter values are illegal in many situations.
+ * See the documentation for the method that threw the exception for more info.
  */
 
-public class GarnettIllegalArgumentException extends IOException {
+public class GarnettIllegalArgumentException extends Exception {
 
     public GarnettIllegalArgumentException() {
         super();

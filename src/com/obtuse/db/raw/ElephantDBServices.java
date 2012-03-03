@@ -4,8 +4,8 @@ import com.obtuse.db.raw.dbdata.Tuple2;
 import com.obtuse.db.raw.exceptions.ObtuseMoreThanOneFoundException;
 import com.obtuse.db.raw.ti.DBValue;
 import com.obtuse.db.raw.ti.TableInfo;
+import com.obtuse.exceptions.HowDidWeGetHereError;
 import com.obtuse.util.Logger;
-import com.obtuse.util.exceptions.HowDidWeGetHereError;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

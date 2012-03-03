@@ -254,7 +254,7 @@ public class SSLUtilities {
             throws GarnettSSLChannelCreationFailedException, IOException {
 
         return getSSLContext(
-                "LoaPowerTools_client-XXX.keystore",
+                "GarnettClient.keystore",
                 ResourceUtils.openResource( "GarnettClient.keystore", "com.obtuse.garnett.resources" ),
                 // new char[] { 'p', 'i', 'c', 'k', 'l', 'e', 's' }
                 "pickles".toCharArray()

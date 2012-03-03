@@ -4,10 +4,9 @@ package com.obtuse.garnett;
  * Copyright © 2011 Daniel Boulet.
  */
 
-import com.obtuse.garnett.exceptions.GarnettDeserializationFailedException;
-import com.obtuse.garnett.exceptions.GarnettObjectVersionNotSupportedException;
+import com.obtuse.exceptions.HowDidWeGetHereError;
+import com.obtuse.garnett.exceptions.*;
 import com.obtuse.util.*;
-import com.obtuse.util.exceptions.HowDidWeGetHereError;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,6 +33,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
 
     }
 
+    private static final byte[] EXPECTED_PREFIX_TAGS = generateExpectedTags( GarnettConstants.PREFIX_TAG );
     private static final byte[] EXPECTED_BOOLEAN_TAGS = generateExpectedTags( GarnettConstants.BOOLEAN_TAG );
     private static final byte[] EXPECTED_BYTE_TAGS = generateExpectedTags( GarnettConstants.BYTE_TAG );
     private static final byte[] EXPECTED_BYTE_ARRAY_TAGS = generateExpectedTags( GarnettConstants.BYTE_ARRAY_TAG );
@@ -47,6 +47,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
     private static final byte[] EXPECTED_INET_ADDRESS_TAGS = generateExpectedTags( GarnettConstants.INET_ADDRESS_TAG );
     private static final byte[] EXPECTED_INET_SOCKET_ADDRESS_TAGS = generateExpectedTags( GarnettConstants.INET_SOCKET_ADDRESS_TAG );
     private static final byte[] EXPECTED_DATE_TAGS = generateExpectedTags( GarnettConstants.DATE_TAG );
+    private static final byte[] EXPECTED_GARNETT_OBJECT_ARRAY_TAGS = generateExpectedTags( GarnettConstants.GARNETT_OBJECT_ARRAY_TAG );
     private static final byte[] EXPECTED_OPTIONAL_GARNETT_OBJECT_TAGS =
             new byte[] {
                     GarnettConstants.GARNETT_OBJECT_TAG,
@@ -76,6 +77,8 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
     private final GarnettObjectRestorerRegistry _restorerRegistry;
     private int _nextGarnettTypeIndex = 0;
 
+    private final GarnettSessionPrefix _sessionPrefix;
+
 //    public static final int PRIMITIVE_TAG_SIZE = Byte.SIZE;
 //    public static final int GARNETT_TYPE_INDEX_SIZE = Integer.SIZE / Byte.SIZE;
 //    public static final int CHAR_SIZE    = Character.SIZE / Byte.SIZE;
@@ -99,7 +102,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
             InputStream inStream,
             GarnettObjectRestorerRegistry restorerRegistry
     )
-            throws IOException {
+            throws IOException, GarnettUnsupportedProtocolVersionException, GarnettIllegalArgumentException {
 
         super();
 
@@ -128,25 +131,29 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
 
         gotReset();
 
+        expectPrimitiveTag( GarnettConstants.PREFIX_TAG );
+        byte[] sessionPrefixBytes = readByteArray();
+        _sessionPrefix = new GarnettSessionPrefix( sessionPrefixBytes );
+
     }
 
     public GarnettObjectInputStream(
             InputStream inStream,
             GarnettObjectRestorerRegistry restorerRegistry
     )
-            throws IOException {
+            throws IOException, GarnettUnsupportedProtocolVersionException, GarnettIllegalArgumentException {
         this( 0, inStream, restorerRegistry );
 
     }
 
     public GarnettObjectInputStream( InputStream inStream )
-            throws IOException {
+            throws IOException, GarnettUnsupportedProtocolVersionException, GarnettIllegalArgumentException {
         this( 0, inStream );
 
     }
 
     public GarnettObjectInputStream( int maxGarnettObjectSize, InputStream inStream )
-            throws IOException {
+            throws IOException, GarnettUnsupportedProtocolVersionException, GarnettIllegalArgumentException {
         this( maxGarnettObjectSize, inStream, new GarnettObjectRestorerRegistry( "anonymous BOR registry" ) );
 
     }
@@ -1195,6 +1202,63 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
 
     }
 
+    public GarnettObject[] readOptionalGarnettObjectArray()
+            throws IOException {
+
+        _serializationDepth += 1;
+        try {
+
+            byte tag = expectPrimitiveTags( EXPECTED_GARNETT_OBJECT_ARRAY_TAGS );
+            if ( tag == GarnettConstants.MISSING_GARNETT_OBJECT_ARRAY_TAG ) {
+
+                return null;
+
+            }
+
+            int len = readInt();
+            GarnettObject[] rval = new GarnettObject[len];
+            for ( int i = 0; i < len; i += 1 ) {
+
+                rval[i] = readOptionalGarnettObject();
+
+            }
+
+            return rval;
+
+        } finally {
+
+            _serializationDepth -= 1;
+
+        }
+
+    }
+
+    public GarnettObject[] readGarnettObjectArray()
+            throws IOException {
+
+        _serializationDepth += 1;
+        try {
+
+            byte tag = expectPrimitiveTag( GarnettConstants.GARNETT_OBJECT_ARRAY_TAG );
+
+            int len = readInt();
+            GarnettObject[] rval = new GarnettObject[len];
+            for ( int i = 0; i < len; i += 1 ) {
+
+                rval[i] = readOptionalGarnettObject();
+
+            }
+
+            return rval;
+
+        } finally {
+
+            _serializationDepth -= 1;
+
+        }
+
+    }
+
     public GarnettObject readGarnettObject()
             throws IOException {
 
@@ -1329,6 +1393,12 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
     public GarnettObjectRestorerRegistry getRestorerRegistry() {
 
         return _restorerRegistry;
+
+    }
+
+    public GarnettSessionPrefix getSessionPrefix() {
+
+        return _sessionPrefix;
 
     }
 

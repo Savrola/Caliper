@@ -58,6 +58,12 @@ public interface GarnettObjectInputStreamInterface extends Closeable {
     GarnettObject readOptionalGarnettObject()
             throws IOException;
 
+    GarnettObject[] readGarnettObjectArray()
+            throws IOException;
+
+    GarnettObject[] readOptionalGarnettObjectArray()
+            throws IOException;
+
     boolean readBoolean()
             throws IOException, GarnettDeserializationFailedException;
 
@@ -113,4 +119,6 @@ public interface GarnettObjectInputStreamInterface extends Closeable {
             throws IOException;
 
     GarnettObjectRestorerRegistry getRestorerRegistry();
+
+    GarnettSessionPrefix getSessionPrefix();
 }

@@ -28,11 +28,12 @@ public interface GarnettObject {
     GarnettTypeName getGarnettTypeName();
 
     /**
-     * Write a serialized version of this object to the specified {@link GarnettObjectOutputStreamInterface}.
-     * @param boos where to write the serialized version of this object.
+     * Write a serialized version of this instance to the specified {@link GarnettObjectOutputStreamInterface}.
+     * @param goos where to write the serialized version of this object.
+     * @throws IOException if something goes wrong serializing this instance.
      */
 
-    void serializeContents( GarnettObjectOutputStreamInterface boos )
+    void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException;
 
 }

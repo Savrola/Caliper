@@ -5,9 +5,9 @@ package com.obtuse.garnett;
  */
 
 /**
- * {@link GarnettMessage}s which provide session management functionality.
+ * Marks {@link GarnettMessage}s which provide session management functionality.
  */
 
-public interface GarnettControlMessage extends GarnettMessage {
+public interface GarnettControlMessage {
 
 }

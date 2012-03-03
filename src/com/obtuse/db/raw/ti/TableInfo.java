@@ -3,7 +3,7 @@ package com.obtuse.db.raw.ti;
 import com.obtuse.db.raw.ElephantConnection;
 import com.obtuse.db.raw.dbdata.Tuple2;
 import com.obtuse.db.raw.exceptions.ObtuseMoreThanOneFoundException;
-import com.obtuse.util.exceptions.HowDidWeGetHereError;
+import com.obtuse.exceptions.HowDidWeGetHereError;
 
 import java.io.Serializable;
 import java.sql.*;

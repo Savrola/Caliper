@@ -15,10 +15,10 @@ import java.io.IOException;
  * Login to a Garnett-aware server.
  */
 
-public class GarnettLoginMessage extends GarnettRequestMessage {
+public class GarnettLoginRequestMessage extends GarnettRequestMessage {
 
     public static final GarnettTypeName GARNETT_LOGIN_MESSAGE_NAME = new GarnettTypeName(
-            GarnettLoginMessage.class.getCanonicalName()
+            GarnettLoginRequestMessage.class.getCanonicalName()
     );
 
     public static final int VERSION = 1;
@@ -33,19 +33,34 @@ public class GarnettLoginMessage extends GarnettRequestMessage {
 
     private final byte[] _obfuscatedPassword;
 
-    public GarnettLoginMessage( String accountName, @Nullable byte[] obfuscatedPassword )
+    private GarnettObject _augmentedData;
+
+    /**
+     * The code number sent to the user via email which activates their account.
+     */
+
+    private final long _activationCode;
+
+    public GarnettLoginRequestMessage( String accountName, @Nullable byte[] obfuscatedPassword, long activationCode )
             throws GarnettInvalidAccountNameException {
         super();
 
         Logger.logMsg( "new login message" );
         _obfuscatedAccountName = UserUtilities.obfuscateAccountName( accountName.toCharArray() );
         _obfuscatedPassword = obfuscatedPassword;
+        _activationCode = activationCode;
 
         _clearAccountName = accountName;
 
     }
 
-    public GarnettLoginMessage( GarnettObjectInputStreamInterface gois )
+    public GarnettLoginRequestMessage( String accountName, @Nullable byte[] obfuscatedPassword )
+            throws GarnettInvalidAccountNameException {
+        this( accountName, obfuscatedPassword, 0L );
+
+    }
+
+    public GarnettLoginRequestMessage( GarnettObjectInputStreamInterface gois )
             throws IOException {
         super();
 
@@ -57,8 +72,16 @@ public class GarnettLoginMessage extends GarnettRequestMessage {
 
         _obfuscatedAccountName = gois.readByteArray();
         _obfuscatedPassword = gois.readOptionalByteArray();
+        _activationCode = gois.readLong();
+        _augmentedData = gois.readOptionalGarnettObject();
 
         // Try to reconstruct the cached account name.  Don't get fussed if it fails.
+
+        _clearAccountName = reconstructClearAccountName();
+
+    }
+
+    private String reconstructClearAccountName() {
 
         String accountName;
         try {
@@ -70,8 +93,13 @@ public class GarnettLoginMessage extends GarnettRequestMessage {
             accountName = null;
 
         }
+        return accountName;
+    }
 
-        _clearAccountName = accountName;
+    @Override
+    public Class<? extends GarnettResponseMessage> getResponseClass() {
+
+        return GarnettLoginResponseMessage.class;
 
     }
 
@@ -99,20 +127,38 @@ public class GarnettLoginMessage extends GarnettRequestMessage {
 
     }
 
-    public void serializeContents( GarnettObjectOutputStreamInterface boos )
+    public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        boos.writeVersion( VERSION );
+        super.serializeContents( goos );
+        goos.writeVersion( VERSION );
 
-        boos.writeByteArray( _obfuscatedAccountName );
-        boos.writeOptionalByteArray( _obfuscatedPassword );
+        goos.writeByteArray( _obfuscatedAccountName );
+        goos.writeOptionalByteArray( _obfuscatedPassword );
+        goos.writeLong( _activationCode );
+        goos.writeOptionalGarnettObject( _augmentedData );
 
     }
 
     public String toString() {
 
-        return "GarnettLoginMessage( \"" + _clearAccountName + "\" )";
+        return "GarnettLoginRequestMessage( \"" + _clearAccountName + "\" )";
 
     }
 
+    public long getActivationCode() {
+
+        return _activationCode;
+
+    }
+
+    public GarnettObject getAugmentedData() {
+
+        return _augmentedData;
+    }
+
+    public void setAugmentedData( GarnettObject augmentedData ) {
+
+        _augmentedData = augmentedData;
+    }
 }

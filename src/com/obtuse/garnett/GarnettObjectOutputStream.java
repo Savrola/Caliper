@@ -4,9 +4,10 @@ package com.obtuse.garnett;
  * Copyright © 2011 Daniel Boulet.
  */
 
+import com.obtuse.exceptions.HowDidWeGetHereError;
+import com.obtuse.garnett.exceptions.GarnettIllegalArgumentException;
 import com.obtuse.garnett.exceptions.GarnettSerializationFailedException;
 import com.obtuse.util.Logger;
-import com.obtuse.util.exceptions.HowDidWeGetHereError;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -26,6 +27,8 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
     private final OutputStream        _outStream;
     private final WritableByteChannel _outChannel;
 
+    private final GarnettSessionPrefix _sessionPrefix;
+
     private int _serializationDepth = 0;
 
     private ByteBuffer _buffer;
@@ -41,12 +44,22 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
             + GarnettConstants.MAX_GARNETT_TYPE_NAME_LENGTH // slightly over 32K
     );
 
-    public GarnettObjectOutputStream( OutputStream outStream )
-            throws IOException {
+    /**
+     * Create an output stream that can send {@link GarnettObject}s.
+     * @param outStream the underlying stream over which the {@link GarnettObject}s should be sent.
+     * @param sessionPrefix the prefix for this session.
+     * @throws GarnettIllegalArgumentException if the sessionPrefix parameter is null or otherwise invalid.
+     * @throws IOException if something goes wrong.
+     */
+
+    public GarnettObjectOutputStream( OutputStream outStream, GarnettSessionPrefix sessionPrefix )
+            throws IOException, GarnettIllegalArgumentException {
 
         super();
 
         _outStream = outStream;
+
+        _sessionPrefix = sessionPrefix;
 
         _outChannel = Channels.newChannel( outStream );
 
@@ -54,6 +67,17 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
         _buffer.putInt( GarnettConstants.GARNETT_OBJECT_STREAM_MAGIC_NUMBER );
         reset();
+
+        if ( sessionPrefix == null ) {
+
+            throw new GarnettIllegalArgumentException( "session prefix is null" );
+
+        } else {
+
+            writePrimitiveTag( GarnettConstants.PREFIX_TAG );
+            writeByteArray( sessionPrefix.getSessionPrefixBytes() );
+
+        }
 
     }
 
@@ -789,6 +813,52 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
     }
 
+    public void writeGarnettObjectArray( GarnettObject[] objs )
+            throws IOException {
+
+        _serializationDepth += 1;
+        try {
+
+            writePrimitiveTag( GarnettConstants.GARNETT_OBJECT_ARRAY_TAG );
+            writeInt( objs.length );
+            for ( GarnettObject obj : objs ) {
+
+                writeOptionalGarnettObject( obj );
+
+            }
+
+        } finally {
+
+            _serializationDepth -= 1;
+
+        }
+
+    }
+
+    public void writeOptionalGarnettObjectArray( GarnettObject[] objs )
+            throws IOException {
+
+        _serializationDepth += 1;
+        try {
+
+            if ( objs == null ) {
+
+                writePrimitiveTag( GarnettConstants.MISSING_GARNETT_OBJECT_ARRAY_TAG );
+
+            } else {
+
+                writeGarnettObjectArray( objs );
+
+            }
+
+        } finally {
+
+            _serializationDepth -= 1;
+
+        }
+
+    }
+
     public void writeOptionalGarnettObject( GarnettObject obj )
             throws IOException {
 
@@ -801,7 +871,7 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
             } else {
 
-                writeMandatoryGarnettObject( obj );
+                writeGarnettObject( obj );
 
             }
 
@@ -813,7 +883,7 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
     }
 
-    public void writeMandatoryGarnettObject( GarnettObject obj )
+    public void writeGarnettObject( GarnettObject obj )
             throws IOException {
 
         _serializationDepth += 1;
@@ -876,4 +946,8 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
     }
 
+    public GarnettSessionPrefix getSessionPrefix() {
+
+        return _sessionPrefix;
+    }
 }

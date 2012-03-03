@@ -1,4 +1,4 @@
-package com.obtuse.util.exceptions;
+package com.obtuse.exceptions;
 
 /**
  * Thrown if something truly unexpected happens.

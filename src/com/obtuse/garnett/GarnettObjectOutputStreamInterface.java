@@ -95,7 +95,13 @@ public interface GarnettObjectOutputStreamInterface extends Closeable {
     void writeOptionalGarnettObject( GarnettObject obj )
             throws IOException;
 
-    void writeMandatoryGarnettObject( GarnettObject obj )
+    void writeGarnettObject( GarnettObject obj )
+            throws IOException;
+
+    void writeGarnettObjectArray( GarnettObject[] objs )
+            throws IOException;
+
+    void writeOptionalGarnettObjectArray( GarnettObject[] objs )
             throws IOException;
 
     void writeOptionalInetAddress( InetAddress val )
@@ -118,4 +124,5 @@ public interface GarnettObjectOutputStreamInterface extends Closeable {
 
     void needRoom( int neededRoom )
             throws IOException;
+
 }

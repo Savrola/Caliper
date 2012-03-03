@@ -28,7 +28,7 @@ public class MultiPointSlider extends JComponent {
     private boolean _drawSliderLine = true;
     public static final boolean REAL_MODE = true;
 
-    private static boolean _traceSizeChanges = false;
+    private static boolean _traceSizeChanges = true;
 
     private Dictionary<Integer, MpsLabel> _labelTable;
     private Dictionary<Integer, BufferedImage> _cachedLabelTable = new Hashtable<Integer, BufferedImage>();
@@ -40,8 +40,8 @@ public class MultiPointSlider extends JComponent {
     private int _startingValue;
     private int _minorTickSpacing;
     private int _majorTickSpacing;
-    private boolean _drawTickMarks;
-    private boolean _drawLabels;
+    private boolean _paintTicks;
+    private boolean _paintLabels;
     private MpsKnob _knob;
     private ChangeListener _myChangeListener = new ChangeListener() {
 
@@ -107,8 +107,8 @@ public class MultiPointSlider extends JComponent {
 //        setLayout( new BoxLayout( this, Box ) );
 //        add( _knob );
 
-        _drawTickMarks = false;
-        _drawLabels = false;
+        _paintTicks = false;
+        _paintLabels = false;
 
         setPositionOnLine( PositionOnLine.ABOVE );
 
@@ -387,6 +387,34 @@ public class MultiPointSlider extends JComponent {
 
     }
 
+    public void setMinimum( int minimum ) {
+
+        _brm.setMinimum( minimum );
+        repaint();
+
+    }
+
+    public void setMaximum( int maximum ) {
+
+        _brm.setMaximum( maximum );
+        repaint();
+
+    }
+
+    public void setExtent( int extent ) {
+
+        _brm.setExtent( extent );
+        repaint();
+
+    }
+
+    public void setValue( int value ) {
+
+        _brm.setValue( value );
+        repaint();
+
+    }
+
     private Point mapValueToPoint( int value ) {
 
         if ( _positionOnLine == PositionOnLine.ABOVE || _positionOnLine == PositionOnLine.BELOW ) {
@@ -491,7 +519,7 @@ public class MultiPointSlider extends JComponent {
 
         breadth += knobBreadth;
 
-        if ( _drawTickMarks && ( _minorTickSpacing > 0 || _majorTickSpacing < 0 ) ) {
+        if ( _paintTicks && ( _minorTickSpacing > 0 || _majorTickSpacing < 0 ) ) {
 
             int ticSpace = 0;
             if ( _minorTickSpacing > 0 ) {
@@ -553,7 +581,7 @@ public class MultiPointSlider extends JComponent {
          * Do we need to account for the space consumed by labels?
          */
 
-        if ( _drawLabels ) {
+        if ( _paintLabels ) {
 
             int maxLabelBreadth = 0;
             int maxLabelLength = 0;
@@ -659,7 +687,7 @@ public class MultiPointSlider extends JComponent {
         } else {
 
             String when;
-            if ( _drawTickMarks ) {
+            if ( _paintTicks ) {
 
                 when = "1";
                 if ( _minorTickSpacing > 0 ) {
@@ -698,13 +726,30 @@ public class MultiPointSlider extends JComponent {
 
         // We've got it!
 
+        Dimension actualSize;
+//        Logger.logMsg( _name + ":  min size = " + super.getMinimumSize() + ", max size = " + super.getMaximumSize() + ", pref size = " + super.getPreferredSize() );
+
         if ( isVerticalOrientation() ) {
 
             _minimumSize = new Dimension( 2 * BORDER_SIZE + breadth, 2 *  BORDER_SIZE + length );
+            actualSize = new Dimension( Math.max( _minimumSize.width, getWidth() ), Math.max( _minimumSize.height, getHeight() ) );
+            if ( _minimumSize.height < actualSize.height ) {
+
+                _length = actualSize.height - ( 2 * BORDER_SIZE + minValueOverhang + maxValueOverhang );
+                _minimumSize.height = actualSize.height;
+
+            }
 
         } else {
 
             _minimumSize = new Dimension( 2 * BORDER_SIZE + length, 2 * BORDER_SIZE + breadth );
+            actualSize = new Dimension( Math.max( _minimumSize.width, getWidth() ), Math.max( _minimumSize.height, getHeight() ) );
+            if ( _minimumSize.width < actualSize.width ) {
+
+                _length = actualSize.width - ( 2 * BORDER_SIZE + minValueOverhang + maxValueOverhang );
+                _minimumSize.width = actualSize.width;
+
+            }
 
         }
 
@@ -737,6 +782,46 @@ public class MultiPointSlider extends JComponent {
 //        Logger.logMsg( "slider \"" + _name + "\" has a computed minimum size of " + _minimumSize );
 
         return _minimumSize;
+
+    }
+
+    public Dimension getMinimumSize() {
+
+        Dimension minimumSize = computeMinimumSize();
+        Dimension rval = super.getMinimumSize();
+        Logger.logMsg( _name + "  computeMinimumSize() returned " + minimumSize + ", super.getMinimumSize() returned " + rval );
+        rval.width = Math.max( minimumSize.width, rval.width );
+        rval.height = Math.max( minimumSize.height, rval.height );
+        Logger.logMsg( _name + ": getMinimumSize() returned " + rval );
+        return rval;
+
+    }
+
+    public Dimension getMaximumSize() {
+
+        Dimension rval = super.getMaximumSize();
+        Logger.logMsg( _name + ": getMaximumSize() returned " + rval );
+        return rval;
+
+    }
+
+    public Dimension getPreferredSize() {
+
+        Dimension preferredSize = computeMinimumSize();
+        Dimension rval = super.getPreferredSize();
+        Logger.logMsg( _name + "  computePreferredSize() returned " + preferredSize + ", super.getPreferredSize() returned " + rval );
+        rval.width = Math.max( preferredSize.width, rval.width );
+        rval.height = Math.max( preferredSize.height, rval.height );
+        Logger.logMsg( _name + ": getPreferredSize() returned " + rval );
+        return rval;
+
+    }
+
+    public Rectangle getBounds() {
+
+        Rectangle rval = super.getBounds();
+        Logger.logMsg( _name + ":  getBounds() returned " + rval );
+        return rval;
 
     }
 
@@ -807,17 +892,17 @@ public class MultiPointSlider extends JComponent {
 
         Logger.logMsg( "painting " + _name + " with size ( " + _width + ", " + _height + " )" );
 
-        g.setColor( new Color( 255, 255, 255, 0 ) );
+        g.setColor( getBackground() );
         g.fillRect( 0, 0, getWidth(), getHeight() );
 
-        g.setColor( Color.WHITE );
-        g.fillRect( 0, 0, getWidth(), getHeight() );
+//        g.setColor( Color.WHITE );
+//        g.fillRect( 0, 0, getWidth(), getHeight() );
 
         g.setColor( Color.BLACK );
 
         int ticSpace = 0;
 
-        if ( _drawTickMarks && ( _minorTickSpacing > 0 || _majorTickSpacing < 0 ) ) {
+        if ( _paintTicks && ( _minorTickSpacing > 0 || _majorTickSpacing < 0 ) ) {
 
             if ( _minorTickSpacing > 0 ) {
 
@@ -833,7 +918,7 @@ public class MultiPointSlider extends JComponent {
 
         }
 
-        if ( _drawLabels ) {
+        if ( _paintLabels ) {
 
             ticSpace += GAP_BETWEEN_TICK_MARKS_AND_LABELS;
 
@@ -971,16 +1056,16 @@ public class MultiPointSlider extends JComponent {
 
     }
 
-    public void setDrawLabels( boolean drawLabels ) {
+    public void setPaintLabels( boolean paintLabels ) {
 
-        _drawLabels = drawLabels;
+        _paintLabels = paintLabels;
         _minimumSize = null;
 
     }
 
-    public boolean drawLabels() {
+    public boolean paintLabels() {
 
-        return _drawLabels;
+        return _paintLabels;
 
     }
 
@@ -1019,8 +1104,8 @@ public class MultiPointSlider extends JComponent {
         slider.setLabelTable( labels );
         slider.setMinorTickSpacing( 1 );
         slider.setMajorTickSpacing( 2 );
-        slider.setDrawTickMarks( true );
-        slider.setDrawLabels( true );
+        slider.setPaintTickMarks( true );
+        slider.setPaintLabels( true );
         slider.getModel().setValue( slider.getModel().getMaximum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
         bluePanel.add( slider );
@@ -1030,8 +1115,8 @@ public class MultiPointSlider extends JComponent {
         slider.setPositionOnLine( PositionOnLine.BELOW );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setDrawTickMarks( true );
-        slider.setDrawLabels( true );
+        slider.setPaintTickMarks( true );
+        slider.setPaintLabels( true );
         slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
         slider.setMinimumSize( slider.computeMinimumSize() );
         bluePanel.add( slider );
@@ -1040,8 +1125,8 @@ public class MultiPointSlider extends JComponent {
         slider.setLabelTable( labels );
         slider.setMinorTickSpacing( 5 );
         slider.setMajorTickSpacing( 10 );
-        slider.setDrawTickMarks( true );
-        slider.setDrawLabels( false );
+        slider.setPaintTickMarks( true );
+        slider.setPaintLabels( false );
         slider.getModel().setValue( slider.getModel().getMaximum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
         bluePanel.add( slider );
@@ -1051,8 +1136,8 @@ public class MultiPointSlider extends JComponent {
         slider.setPositionOnLine( PositionOnLine.BELOW );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setDrawTickMarks( true );
-        slider.setDrawLabels( false );
+        slider.setPaintTickMarks( true );
+        slider.setPaintLabels( false );
         slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
         slider.setMinimumSize( slider.computeMinimumSize() );
         bluePanel.add( slider );
@@ -1064,8 +1149,8 @@ public class MultiPointSlider extends JComponent {
         slider.setLabelTable( labels );
         slider.setMinorTickSpacing( 1 );
         slider.setMajorTickSpacing( 2 );
-        slider.setDrawTickMarks( true );
-        slider.setDrawLabels( true );
+        slider.setPaintTickMarks( true );
+        slider.setPaintLabels( true );
         slider.setPositionOnLine( PositionOnLine.LEFT );
         slider.getModel().setValue( slider.getModel().getMaximum() );
         final MultiPointSlider leftSlider = slider;
@@ -1088,8 +1173,8 @@ public class MultiPointSlider extends JComponent {
         slider.setPositionOnLine( PositionOnLine.RIGHT );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setDrawTickMarks( true );
-        slider.setDrawLabels( true );
+        slider.setPaintTickMarks( true );
+        slider.setPaintLabels( true );
         slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
         slider.setMinimumSize( slider.computeMinimumSize() );
         redPanel.add( slider );
@@ -1097,8 +1182,8 @@ public class MultiPointSlider extends JComponent {
         slider = new MultiPointSlider( "s7", 0, 100 );
         slider.setMinorTickSpacing( 5 );
         slider.setMajorTickSpacing( 10 );
-        slider.setDrawTickMarks( true );
-        slider.setDrawLabels( false );
+        slider.setPaintTickMarks( true );
+        slider.setPaintLabels( false );
         slider.setPositionOnLine( PositionOnLine.LEFT );
         slider.getModel().setValue( slider.getModel().getMaximum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
@@ -1109,8 +1194,8 @@ public class MultiPointSlider extends JComponent {
         slider.setPositionOnLine( PositionOnLine.RIGHT );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setDrawTickMarks( true );
-        slider.setDrawLabels( false );
+        slider.setPaintTickMarks( true );
+        slider.setPaintLabels( false );
         slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
         slider.setMinimumSize( slider.computeMinimumSize() );
         redPanel.add( slider );
@@ -1155,17 +1240,17 @@ public class MultiPointSlider extends JComponent {
         }
 
         _positionOnLine = positionOnLine;
-        if ( _positionOnLine == PositionOnLine.ABOVE || _positionOnLine == PositionOnLine.BELOW ) {
-
-            setMinimumSize( new Dimension( 400, 80 ) );
-            setPreferredSize( new Dimension( 400, 80 ) );
-
-        } else {
-
-            setMinimumSize( new Dimension( 80, 300 ) );
-            setPreferredSize( new Dimension( 80, 300 ) );
-
-        }
+//        if ( _positionOnLine == PositionOnLine.ABOVE || _positionOnLine == PositionOnLine.BELOW ) {
+//
+//            setMinimumSize( new Dimension( 400, 80 ) );
+//            setPreferredSize( new Dimension( 400, 80 ) );
+//
+//        } else {
+//
+//            setMinimumSize( new Dimension( 80, 300 ) );
+//            setPreferredSize( new Dimension( 80, 300 ) );
+//
+//        }
 
         _minimumSize = null;
 
@@ -1210,15 +1295,15 @@ public class MultiPointSlider extends JComponent {
 
     }
 
-    public boolean drawTickMarks() {
+    public boolean paintTickMarks() {
 
-        return _drawTickMarks;
+        return _paintTicks;
 
     }
 
-    public void setDrawTickMarks( boolean drawTickMarks ) {
+    public void setPaintTickMarks( boolean paintTicks ) {
 
-        _drawTickMarks = drawTickMarks;
+        _paintTicks = paintTicks;
         _minimumSize = null;
 
     }
@@ -1226,7 +1311,7 @@ public class MultiPointSlider extends JComponent {
     /**
      * Manage a particular orientation of an image.
      * <p/>
-     * Intended to be used by the {@link com.obtuse.ui.MultiPointSlider} class.  Probably not all that useful in other contexts.
+     * Intended to be used by the {@link MultiPointSlider} class.  Probably not all that useful in other contexts.
      */
 
     public static class OrientedImage {

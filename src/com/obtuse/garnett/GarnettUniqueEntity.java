@@ -39,12 +39,12 @@ public abstract class GarnettUniqueEntity implements GarnettObject {
 
     }
 
-    public void serializeContents( GarnettObjectOutputStreamInterface boos )
+    public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        boos.writeVersion( VERSION );
+        goos.writeVersion( VERSION );
 
-        boos.writeLong( _id );
+        goos.writeLong( _id );
 
     }
 

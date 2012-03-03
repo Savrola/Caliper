@@ -4,13 +4,15 @@ package com.obtuse.garnett;
  * Copyright © 2012 Daniel Boulet
  */
 
+import com.obtuse.garnett.stdmsgs.GarnettResponseMessage;
+
 import java.io.IOException;
 
 /**
  * A Garnett message which requires a response.
  */
 
-public abstract class GarnettRequestMessage extends GarnettUniqueEntity implements GarnettMessage {
+public abstract class GarnettRequestMessage extends GarnettMessage {
 
 //    public static final GarnettTypeName GARNETT_REQUEST_MESSAGE_NAME = new GarnettTypeName(
 //            GarnettRequestMessage.class.getCanonicalName()
@@ -27,5 +29,13 @@ public abstract class GarnettRequestMessage extends GarnettUniqueEntity implemen
         super( gois );
 
     }
+
+    public long getRequestId() {
+
+        return getId();
+
+    }
+
+    public abstract Class<? extends GarnettResponseMessage> getResponseClass();
 
 }

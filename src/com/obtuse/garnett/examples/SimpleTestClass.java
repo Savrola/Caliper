@@ -65,14 +65,14 @@ public class SimpleTestClass implements GarnettObject {
 
     }
 
-    public void serializeContents( GarnettObjectOutputStreamInterface boos )
+    public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws GarnettSerializationFailedException, IOException, GarnettObjectVersionNotSupportedException {
 
-        boos.writeVersion( SIMPLETESTCLASS_VERSION );
+        goos.writeVersion( SIMPLETESTCLASS_VERSION );
 
-        boos.writeOptionalDouble( _d );
-        boos.writeInt( _i1 );
-        boos.writeOptionalInteger( _i2 );
+        goos.writeOptionalDouble( _d );
+        goos.writeInt( _i1 );
+        goos.writeOptionalInteger( _i2 );
 
     }
 

@@ -2,8 +2,8 @@ package com.obtuse.db.raw.dbdata;
 
 import com.obtuse.db.raw.ElephantConnection;
 import com.obtuse.db.raw.ti.*;
+import com.obtuse.exceptions.HowDidWeGetHereError;
 import com.obtuse.util.ObtuseUtil5;
-import com.obtuse.util.exceptions.HowDidWeGetHereError;
 
 import java.io.Serializable;
 import java.sql.*;

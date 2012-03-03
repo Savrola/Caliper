@@ -1,9 +1,9 @@
 package com.obtuse.garnett;
 
+import com.obtuse.exceptions.HowDidWeGetHereError;
 import com.obtuse.garnett.exceptions.*;
 import com.obtuse.util.Logger;
 import com.obtuse.util.ObtuseUtil5;
-import com.obtuse.util.exceptions.HowDidWeGetHereError;
 import com.obtuse.util.exceptions.ObtuseProtocolErrorException;
 
 import java.nio.CharBuffer;
