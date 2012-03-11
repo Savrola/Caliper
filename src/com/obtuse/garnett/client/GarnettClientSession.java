@@ -7,11 +7,11 @@ import com.obtuse.garnett.stdmsgs.GarnettLoginResponseMessage;
 import com.obtuse.util.*;
 
 import javax.management.timer.Timer;
-import javax.net.ssl.*;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.InetSocketAddress;
-import java.nio.ByteBuffer;
 import java.util.Arrays;
 
 /*
@@ -30,41 +30,6 @@ public class GarnettClientSession extends GarnettSession {
 
     private final byte[] _obfuscatedPassword;
 
-    private static final SSLContext _sslClientContext;
-
-    private static final SSLSocketFactory _sslVanHorneClientSocketFactory;
-
-//    private static final SSLContext _sslAlfredClientContext;
-//
-//    private static final SSLSocketFactory _sslAlfredClientSocketFactory;
-
-    static {
-
-        // Create the SSL context and socket factory for connecting either directly or via Alfred.
-
-        SSLContext sslContext = null;
-        try {
-
-            sslContext = SSLUtilities.getOurClientSSLContext();
-
-        } catch ( GarnettSSLChannelCreationFailedException e ) {
-
-            Logger.logErr( "initializing direct VanHorne SSL client socket factory", e );
-            System.exit( 1 );
-
-        } catch ( IOException e ) {
-
-            Logger.logErr( "initializing Garnett client socket factory", e );
-            System.exit( 1 );
-
-        }
-
-        _sslClientContext = sslContext;
-
-        _sslVanHorneClientSocketFactory = _sslClientContext.getSocketFactory();
-
-    }
-
     private boolean _fromServerDone = false;
 
     private boolean _toServerDone = false;
@@ -79,13 +44,15 @@ public class GarnettClientSession extends GarnettSession {
             InetSocketAddress serverAddress,
             GarnettComponentInstanceName serverInstanceName,
             int podNumber,
+            GarnettSessionType intendedGarnettSessionType,
             String userName,
             byte[] obfuscatedPassword
     )
             throws GarnettIllegalArgumentException {
         super(
                 "to " + serverInstanceName + "@" + serverAddress + " by " + userName,
-                new GarnettSessionPrefix( serverInstanceName, podNumber )
+                new GarnettSessionPrefix( serverInstanceName, podNumber ),
+                intendedGarnettSessionType
         );
 
         _garnettClientSessionManager = garnettClientSessionManager;
@@ -100,28 +67,28 @@ public class GarnettClientSession extends GarnettSession {
 
     }
 
-    /**
-     * Construct the prefix used by Alfred to redirect this session to the right component.
-     * @param componentInstanceName the name of the target component.
-     * @param podNumber the target pod.
-     * @return the constructed prefix.
-     */
-
-    private static byte[] constructPrefix( GarnettComponentInstanceName componentInstanceName, int podNumber ) {
-
-        ByteBuffer bb = ByteBuffer.allocate( 100 + componentInstanceName.getInstanceNameBytesLength() );
-        bb.put( (byte)PROXIED_PROTOCOL_VERSION_CODE );
-        bb.putInt( podNumber );
-        bb.put( (byte)componentInstanceName.getInstanceNameBytesLength() );
-        bb.put( componentInstanceName.getInstanceNameBytes() );
-
-        byte[] prefix = new byte[bb.position()];
-        bb.flip();
-        bb.get( prefix );
-
-        return prefix;
-
-    }
+//    /**
+//     * Construct the prefix used by Alfred to redirect this session to the right component.
+//     * @param componentInstanceName the name of the target component.
+//     * @param podNumber the target pod.
+//     * @return the constructed prefix.
+//     */
+//
+//    private static byte[] constructPrefix( GarnettComponentInstanceName componentInstanceName, int podNumber ) {
+//
+//        ByteBuffer bb = ByteBuffer.allocate( 100 + componentInstanceName.getInstanceNameBytesLength() );
+//        bb.put( (byte)PROXIED_PROTOCOL_VERSION_CODE );
+//        bb.putInt( podNumber );
+//        bb.put( (byte)componentInstanceName.getInstanceNameBytesLength() );
+//        bb.put( componentInstanceName.getInstanceNameBytes() );
+//
+//        byte[] prefix = new byte[bb.position()];
+//        bb.flip();
+//        bb.get( prefix );
+//
+//        return prefix;
+//
+//    }
 
     protected GarnettClientSessionManager getClientSessionManager() {
 
@@ -130,7 +97,7 @@ public class GarnettClientSession extends GarnettSession {
     }
 
     @SuppressWarnings( { "RefusedBequest" } )
-    public void run() {
+    public void doRun() {
 
         try {
 
@@ -369,7 +336,7 @@ public class GarnettClientSession extends GarnettSession {
 
                 }
 
-                if ( !response.worked() && getSessionType() != GarnettSessionType.NOAUTH ) {
+                if ( !response.worked() && getSessionType() != GarnettSessionType.NO_AUTH ) {
 
                     Logger.logErr(
                             "Unable to create Garnett session to " + _serverAddress + " (authentication failed)"
@@ -477,7 +444,7 @@ public class GarnettClientSession extends GarnettSession {
 
     protected SSLSocketFactory getSslClientSocketFactory() {
 
-        return _sslVanHorneClientSocketFactory;
+        return GarnettClientSslTools.getSslClientSocketFactory();
 
     }
 

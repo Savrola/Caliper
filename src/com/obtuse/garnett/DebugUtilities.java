@@ -5,7 +5,6 @@ package com.obtuse.garnett;
  */
 
 import com.obtuse.util.ImmutableDate;
-import com.obtuse.util.Logger;
 import com.sun.net.ssl.internal.ssl.Provider;
 
 import javax.management.timer.Timer;
@@ -39,7 +38,7 @@ public class DebugUtilities {
 
             _inIntelliJIDEA = true;
 
-            Logger.logMsg( "we're running within the IntelliJ IDEA environment" );
+            System.out.println( "we're running within the IntelliJ IDEA environment" );
 
             _alfredListenPort = INTELLIJ_PORT + 3000;
 

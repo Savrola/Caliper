@@ -58,7 +58,7 @@ public class GarnettClientSessionManager extends GarnettSessionManager {
 //
 //    }
 
-    public GarnettClientSession createSession( GarnettSessionType garnettSessionType )
+    public GarnettClientSession createSession( GarnettSessionType intendedSessionType )
             throws GarnettIllegalArgumentException {
 
         GarnettClientSession garnettClientSession = new GarnettClientSession(
@@ -66,10 +66,11 @@ public class GarnettClientSessionManager extends GarnettSessionManager {
                 getServerAddress(),
                 getServerInstanceName(),
                 0,
+                intendedSessionType,
                 "fred",
                 new byte[] { 1, 2, 3 }
         );
-        garnettClientSession.setSessionType( garnettSessionType );
+
         return garnettClientSession;
 
     }

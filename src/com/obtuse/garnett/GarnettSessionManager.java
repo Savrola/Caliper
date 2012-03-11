@@ -49,7 +49,7 @@ public abstract class GarnettSessionManager extends Thread {
 
         }
 
-        if ( !( garnettMessage instanceof SlcUnauthenticatedMessage ) && !garnettSession.isAuthenticated() ) {
+        if ( !( garnettMessage instanceof GarnettUnauthenticatedMessage ) && !garnettSession.isAuthenticated() ) {
 
             // A message requiring authentication has arrived via an unauthenticated channel.
             // Log and drop the message.
@@ -88,7 +88,7 @@ public abstract class GarnettSessionManager extends Thread {
                                              forbiddenLoaCapabilities != null && forbiddenLoaCapabilities.length > 0 ||
                                              requestResponseHandler.authenticationRequired();
 
-            // While arguably not necessary given the existence of the SlcUnauthenticatedMessage
+            // While arguably not necessary given the existence of the GarnettUnauthenticatedMessage
             // interface, being a bit more paranoid just seems to make sense.
 
             if ( authenticationRequired && !garnettSession.isAuthenticated() ) {
@@ -283,7 +283,7 @@ public abstract class GarnettSessionManager extends Thread {
                 createSession(
                         isAuthenticatedSessionManager()
                         ? GarnettSessionType.COMMAND
-                        : GarnettSessionType.NOAUTH
+                        : GarnettSessionType.NO_AUTH
                 );
 
         try {

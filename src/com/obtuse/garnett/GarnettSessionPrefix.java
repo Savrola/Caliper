@@ -40,7 +40,7 @@ public class GarnettSessionPrefix implements Comparable<GarnettSessionPrefix> {
     public GarnettSessionPrefix( GarnettComponentInstanceName componentInstanceName, int podNumber ) {
         super();
 
-        _protocolVersionCode = GarnettSession.PROXIED_PROTOCOL_VERSION_CODE;
+        _protocolVersionCode = MinimalGarnettSession.PROXIED_PROTOCOL_VERSION_CODE;
         _componentInstanceName = componentInstanceName;
         _podNumber = podNumber;
 
@@ -97,7 +97,7 @@ public class GarnettSessionPrefix implements Comparable<GarnettSessionPrefix> {
             ByteBuffer bb = ByteBuffer.wrap( sessionPrefix );
 
             _protocolVersionCode = bb.get();
-            if ( _protocolVersionCode != GarnettSession.PROXIED_PROTOCOL_VERSION_CODE ) {
+            if ( _protocolVersionCode != MinimalGarnettSession.PROXIED_PROTOCOL_VERSION_CODE ) {
 
                 throw new GarnettUnsupportedProtocolVersionException(
                         "protocol version code 0x" +

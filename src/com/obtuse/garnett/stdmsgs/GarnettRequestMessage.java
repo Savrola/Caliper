@@ -1,10 +1,11 @@
-package com.obtuse.garnett;
+package com.obtuse.garnett.stdmsgs;
 
 /*
  * Copyright © 2012 Daniel Boulet
  */
 
-import com.obtuse.garnett.stdmsgs.GarnettResponseMessage;
+import com.obtuse.garnett.GarnettMessage;
+import com.obtuse.garnett.GarnettObjectInputStreamInterface;
 
 import java.io.IOException;
 

@@ -4,6 +4,7 @@ package com.obtuse.garnett;
  * Copyright © 2012 Daniel Boulet
  */
 
+import com.obtuse.garnett.stdmsgs.GarnettRequestMessage;
 import com.obtuse.garnett.stdmsgs.GarnettResponseMessage;
 
 /**

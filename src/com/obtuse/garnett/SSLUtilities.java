@@ -1,6 +1,7 @@
 package com.obtuse.garnett;
 
 import com.obtuse.garnett.exceptions.GarnettSSLChannelCreationFailedException;
+import com.obtuse.util.ObtuseUtil5;
 import com.obtuse.util.ResourceUtils;
 
 import javax.net.ssl.*;
@@ -117,15 +118,18 @@ public class SSLUtilities {
 
     private static class SSLContextWrapper {
 
+        private final boolean _clientMode;
+
         private SSLContext _sslContext;
 
         private final String _keystoreFname;
 
         private final char[] _keystorePassword;
 
-        private SSLContextWrapper( String keystoreFname, char[] keystorePassword ) {
+        private SSLContextWrapper( boolean clientMode, String keystoreFname, char[] keystorePassword ) {
             super();
 
+            _clientMode = clientMode;
             _keystoreFname = keystoreFname;
             _keystorePassword = keystorePassword.clone();
 
@@ -162,6 +166,7 @@ public class SSLUtilities {
                 }
 
                 if ( _keystoreFname.equals( rhs._keystoreFname ) &&
+                     _clientMode == rhs._clientMode &&
                      _keystorePassword.length == rhs._keystorePassword.length ) {
 
                     for ( int i = 0; i < _keystorePassword.length; i += 1 ) {
@@ -190,7 +195,7 @@ public class SSLUtilities {
 
         public String toString() {
 
-            return "SSLContextWrapper( keystore = " + _keystoreFname + " )";
+            return "SSLContextWrapper( client mode = " + _clientMode + ", keystore = " + _keystoreFname + " )";
 
         }
 
@@ -204,9 +209,11 @@ public class SSLUtilities {
     /**
      * Get or create an {@link javax.net.ssl.SSLContext} associated with a specified keystore file and password.
      *
-     * @param keystoreFname       the keystore file.
-     * @param keystorePassword    its password.
+     * @param clientMode          true if we want a client-mode context, false otherwise.
+     * @param keystoreFileName       the keystore file.
      * @param keystoreInputStream an input stream referring to the keystore file.
+     * @param keystorePassword    its password.
+     * @param keyPassword         optional key password.
      *
      * @return the SSL context associated with the keystore file and password.
      *
@@ -214,30 +221,34 @@ public class SSLUtilities {
      *          if the attempt fails.
      */
 
-    private static SSLContext getSSLContext(
-            String keystoreFname, InputStream keystoreInputStream, char[] keystorePassword
+    public static SSLContext getSSLContext(
+            boolean clientMode,
+            String keystoreFileName,
+            InputStream keystoreInputStream,
+            char[] keystorePassword,
+            char[] keyPassword
     )
             throws
             GarnettSSLChannelCreationFailedException {
 
         synchronized ( _sslContexts ) {
 
-            SSLContextWrapper tmp = new SSLContextWrapper( keystoreFname, keystorePassword );
+            SSLContextWrapper tmp = new SSLContextWrapper( clientMode, keystoreFileName, keystorePassword );
             if ( _sslContexts.containsKey( tmp ) ) {
 
-//                Logger.logMsg( "reusing SSL cert(s) from " + keystoreFname );
+//                Logger.logMsg( "reusing SSL cert(s) from " + keystoreFileName );
                 return _sslContexts.get( tmp ).getSSLContext();
 
             } else {
 
-//                Logger.logMsg( "loading SSL cert(s) from " + keystoreFname );
+//                Logger.logMsg( "loading SSL cert(s) from " + keystoreFileName );
 
                 tmp.setSSLContext(
                         wrappedCreateSSLContext(
-                                true,
+                                clientMode,
                                 keystoreInputStream,
                                 keystorePassword,
-                                null
+                                keyPassword
                         )
                 );
 
@@ -250,14 +261,51 @@ public class SSLUtilities {
 
     }
 
+//    /**
+//     * Get or create an {@link javax.net.ssl.SSLContext} associated with a specified keystore file and password.
+//     *
+//     * @param clientMode          true if we want a client-mode context, false otherwise.
+//     * @param keystoreFile       the keystore file.
+//     * @param keystorePassword    its password.
+//     * @param keyPassword         optional key password.
+//     * @return the SSL context associated with the keystore file and password.
+//     * @throws com.obtuse.garnett.exceptions.GarnettSSLChannelCreationFailedException
+//     *          if the attempt fails.
+//     */
+//
+//    public static SSLContext getSSLContext(
+//            boolean clientMode,
+//            File keystoreFile,
+//            char[] keystorePassword,
+//            char[] keyPassword
+//    )
+//            throws
+//            GarnettSSLChannelCreationFailedException, FileNotFoundException {
+//
+//        FileInputStream keystoreInputStream = null;
+//        try {
+//
+//            keystoreInputStream = new FileInputStream( keystoreFile );
+//            return getSSLContext( clientMode, keystoreFile, keystoreInputStream, keystorePassword, keyPassword );
+//
+//        } finally {
+//
+//            ObtuseUtil5.closeQuietly( keystoreInputStream );
+//
+//        }
+//
+//    }
+
     public static SSLContext getOurClientSSLContext()
             throws GarnettSSLChannelCreationFailedException, IOException {
 
         return getSSLContext(
+                true,
                 "GarnettClient.keystore",
-                ResourceUtils.openResource( "GarnettClient.keystore", "com.obtuse.garnett.resources" ),
+                ResourceUtils.openResource( "GarnettClient.keystore", "com/obtuse/garnett/resources" ),
                 // new char[] { 'p', 'i', 'c', 'k', 'l', 'e', 's' }
-                "pickles".toCharArray()
+                "LondonStrumps".toCharArray(),
+                null
         );
 
     }
@@ -307,6 +355,60 @@ public class SSLUtilities {
         }
 
         return sslContext;
+
+    }
+
+//    public static SSLContext findOrCreateSslContext(
+//            boolean clientMode,
+//            File keystoreFile,
+//            char[] keystorePassword,
+//            char[] keyPassword
+//    )
+//            throws GarnettInvalidCharacterException, GarnettSSLChannelCreationFailedException, FileNotFoundException {
+//
+//        synchronized ( _knownSslContexts ) {
+//
+//            byte[] obfuscatedKeystorePassword = UserUtilities.obfuscate( keystorePassword );
+//            byte[] obfuscatedKeyPassword = UserUtilities.obfuscate( keyPassword );
+//            String key =
+//                    "" + clientMode + ";" + keystoreFile + ";" + ObtuseUtil5.hexvalue( obfuscatedKeystorePassword ) +
+//                    ";" + ObtuseUtil5.hexvalue( obfuscatedKeyPassword );
+//
+//            SSLContext sslContext = _knownSslContexts.get( key );
+//            if ( sslContext == null ) {
+//
+//                sslContext = SSLUtilities.wrappedCreateSSLContext(
+//                        clientMode,
+//                        keystoreFile,
+//                        keystorePassword,
+//                        keyPassword
+//                );
+//
+//            }
+//
+//            return sslContext;
+//
+//        }
+//
+//    }
+
+    public static SSLContext wrappedCreateSSLContext(
+            boolean clientMode, File keystoreFile, char[] keystorePassword, char[] keyPassword
+    )
+            throws FileNotFoundException, GarnettSSLChannelCreationFailedException {
+
+        FileInputStream keyStoreInputStream = null;
+
+        try {
+
+            keyStoreInputStream = new FileInputStream( keystoreFile );
+            return wrappedCreateSSLContext( clientMode, keyStoreInputStream, keystorePassword, keyPassword );
+
+        } finally {
+
+            ObtuseUtil5.closeQuietly( keyStoreInputStream );
+
+        }
 
     }
 

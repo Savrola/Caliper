@@ -28,6 +28,12 @@ public class ResourceUtils {
 
         }
 
+        if ( url == null ) {
+
+            throw new FileNotFoundException( resourcePath + " (Resource not found)" );
+
+        }
+
         InputStream inputStream = url.openStream();
 
         return new BufferedInputStream( inputStream );
