@@ -1,30 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5464cd35-ae85-4a2e-a138-8145a5db6189" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettIndividuallyAuthenticatedMessage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/MinimalGarnettSession.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSslTools.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/explore/ExploreSSL.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/server/GarnettServerSslTools.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettServerManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettServerSession.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettSession.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettRequestMessage.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettRequestMessage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/SlcUnauthenticatedMessage.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettUnauthenticatedMessage.java" />
+    <list default="true" id="5464cd35-ae85-4a2e-a138-8145a5db6189" name="Default" comment="Minor cleanup.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/DebugUtilities.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/DebugUtilities.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettRequestResponseHandler.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettRequestResponseHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionManager.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionPrefix.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionPrefix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionType.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/SSLUtilities.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/SSLUtilities.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/UserUtilities.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/UserUtilities.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSession.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSession.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSessionManager.java" afterPath="$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSessionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/util/ResourceUtils.java" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ResourceUtils.java" />
     </list>
     <ignored path="Caliper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,7 +109,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java" line="284" class="com.obtuse.garnett.GarnettSession" package="com.obtuse.garnett">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java" line="286" class="com.obtuse.garnett.GarnettSession" package="com.obtuse.garnett">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -143,7 +122,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java" line="270" class="com.obtuse.garnett.GarnettSession" package="com.obtuse.garnett">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java" line="272" class="com.obtuse.garnett.GarnettSession" package="com.obtuse.garnett">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -156,7 +135,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java" line="189" class="com.obtuse.garnett.simple.SimpleGarnettClientSession" package="com.obtuse.garnett.simple">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java" line="184" class="com.obtuse.garnett.simple.SimpleGarnettClientSession" package="com.obtuse.garnett.simple">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -195,7 +174,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java" line="76" class="com.obtuse.garnett.simple.SimpleGarnettClientSession" package="com.obtuse.garnett.simple">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java" line="75" class="com.obtuse.garnett.simple.SimpleGarnettClientSession" package="com.obtuse.garnett.simple">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -249,28 +228,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SimpleGarnettClientSession.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java">
+      <file leaf-file-name="SimpleGarnettServerManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettServerManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="50" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GarnettSessionManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="282" column="16" selection-start="9371" selection-end="9371" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleGarnettServerSession.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettServerSession.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="10" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0">
+            <state line="23" column="35" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -279,46 +240,61 @@
       <file leaf-file-name="GarnettClientSession.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="14" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0">
+            <state line="41" column="26" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GarnettClientSessionManager.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SimpleGarnettClientSession.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="195" column="0" selection-start="6046" selection-end="6046" vertical-scroll-proportion="0.022619048">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GarnettClientSessionManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSessionManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="0" selection-start="2048" selection-end="2048" vertical-scroll-proportion="0.45646867">
+            <state line="40" column="0" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleGarnettServerManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettServerManager.java">
+      <file leaf-file-name="GarnettLoginRequestMessage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettLoginRequestMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0">
+            <state line="17" column="52" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MinimalGarnettSession.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/MinimalGarnettSession.java">
+      <file leaf-file-name="GarnettRequestMessage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettRequestMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="0" selection-start="4518" selection-end="4518" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#5510#5533#0" expanded="true" />
-                <element signature="e#12608#12653#1" expanded="true" />
-              </folding>
+            <state line="15" column="58" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GarnettSessionType.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionType.java">
+      <file leaf-file-name="GarnettMessage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="3" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0">
+            <state line="12" column="55" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GarnettUniqueEntity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettUniqueEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="22" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -327,7 +303,7 @@
       <file leaf-file-name="GarnettSession.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0">
+            <state line="37" column="0" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -350,16 +326,14 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
-    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
     <option name="LINE_SEPARATORS_CONVERSION" value="ASK" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/com/obtuse/garnett/DebugUtilities.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/util/ResourceUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/obtuse/garnett/SSLUtilities.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/garnett/SlcUnauthenticatedMessage.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettUnauthenticatedMessage.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettIndividuallyAuthenticatedMessage.java" />
@@ -370,9 +344,10 @@
         <option value="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettServerSession.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/garnett/MinimalGarnettSession.java" />
-        <option value="$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSession.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/garnett/SSLUtilities.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSessionManager.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java" />
       </list>
     </option>
   </component>
@@ -381,10 +356,10 @@
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="292" />
+    <option name="x" value="428" />
     <option name="y" value="22" />
     <option name="width" value="1880" />
-    <option name="height" value="1419" />
+    <option name="height" value="1445" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -446,8 +421,30 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Caliper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -847,10 +844,6 @@
               <option name="myItemId" value="generic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YesNoPopupMessageWindow" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -880,32 +873,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="OkPopupMessageWindow" />
               <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1445,9 +1412,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1718,12 +1685,12 @@
       <method />
     </configuration>
     <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Application.MultiPointSlider" />
-      <item index="1" class="java.lang.String" itemvalue="Application.ResourceUtils" />
-      <item index="2" class="java.lang.String" itemvalue="Application.GarnettSessionPrefix" />
-      <item index="3" class="java.lang.String" itemvalue="Application.SimpleGarnettServerManager" />
-      <item index="4" class="java.lang.String" itemvalue="Application.SimpleGarnettClientSession" />
-      <item index="5" class="java.lang.String" itemvalue="Application.ExploreSSL" />
+      <item index="0" class="java.lang.String" itemvalue="Application.ResourceUtils" />
+      <item index="1" class="java.lang.String" itemvalue="Application.GarnettSessionPrefix" />
+      <item index="2" class="java.lang.String" itemvalue="Application.SimpleGarnettServerManager" />
+      <item index="3" class="java.lang.String" itemvalue="Application.SimpleGarnettClientSession" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ExploreSSL" />
+      <item index="5" class="java.lang.String" itemvalue="Application.MultiPointSlider" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -1755,30 +1722,35 @@
       <created>1322814767060</created>
       <updated>1322814767060</updated>
     </task>
+    <task id="LOCAL-00001" summary="Minor cleanup.">
+      <created>1334876593063</created>
+      <updated>1334876593063</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="292" y="22" width="1880" height="1419" extended-state="0" />
+    <frame x="428" y="22" width="1880" height="1445" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854986" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13249728" sideWeight="0.6624156" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38855422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3176649" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31722054" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995633" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34224892" sideWeight="0.99846154" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29694322" sideWeight="0.67145014" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903716" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32878953" sideWeight="0.6624156" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28388554" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28323263" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1817,8 +1789,11 @@
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="It finally compiles again after adding in the whole session, session manager infrastructure ala LPT's SLC facility." />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor cleanup." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1837,6 +1812,8 @@
     <MESSAGE value="Move to Benoit serialization and deserialization classes into Caliper." />
     <MESSAGE value="Rename the Benoit... serialization classes to Garnett...&#10;Partially implemented Garnett session support including most of the class structure to define messages.&#10;Move the Elephant classes out of the com.loanetworks package and into the com.obtuse.db package." />
     <MESSAGE value="It finally compiles again after adding in the whole session, session manager infrastructure ala LPT's SLC facility." />
+    <MESSAGE value="Mostly a checkpoint commit.&#10;&#10;The simple session stuff seems to be working reasonably well although a lot of it is still untested." />
+    <MESSAGE value="Minor cleanup." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1846,49 +1823,74 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Certs/Makefile">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0" />
+        <state line="12" column="3" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSslTools.java">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="50" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0" />
+        <state line="17" column="0" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettSSLChannelCreationFailedException.java">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/LoginResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0" />
+        <state line="27" column="36" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/SavrolaLoginEnvironment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="45" selection-start="2166" selection-end="2166" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/SSLUtilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="300" column="39" selection-start="9619" selection-end="9619" vertical-scroll-proportion="0.0" />
+        <state line="396" column="29" selection-start="12865" selection-end="12865" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/explore/ExploreSSL.java">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/server/GarnettServerSslTools.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="74" selection-start="6848" selection-end="6848" vertical-scroll-proportion="-8.769231" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettObjectInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="0" selection-start="5066" selection-end="5066" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="282" column="16" selection-start="9371" selection-end="9371" vertical-scroll-proportion="0.0" />
+        <state line="17" column="13" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettServerManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0" />
+        <state line="23" column="35" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionType.java">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="3" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0" />
+        <state line="41" column="26" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettLoginRequestMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="52" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettRequestMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="58" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="55" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettUniqueEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="22" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionPrefix.java">
@@ -1896,47 +1898,9 @@
         <state line="39" column="11" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettServerSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="10" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/MinimalGarnettSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="0" selection-start="4518" selection-end="4518" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#5510#5533#0" expanded="true" />
-            <element signature="e#12608#12653#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="50" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="14" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSessionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="0" selection-start="2048" selection-end="2048" vertical-scroll-proportion="0.45646867">
+        <state line="195" column="0" selection-start="6046" selection-end="6046" vertical-scroll-proportion="0.022619048">
           <folding />
         </state>
       </provider>

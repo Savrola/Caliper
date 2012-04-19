@@ -33,11 +33,12 @@ public class GarnettClientSessionManager extends GarnettSessionManager {
     private final GarnettComponentInstanceName _componentInstanceName;
 
     public GarnettClientSessionManager( GarnettComponentInstanceName componentInstanceName ) {
-
         super( "Tungsten's SMTP proxy manager" );
+
         _componentInstanceName = componentInstanceName;
 
         setAuthenticatedSessionManager( true );
+
     }
 
     @SuppressWarnings({ "RefusedBequest" })
