@@ -3,6 +3,7 @@ package com.obtuse.garnett;
 import com.obtuse.garnett.exceptions.GarnettSSLChannelCreationFailedException;
 import com.obtuse.util.ObtuseUtil5;
 import com.obtuse.util.ResourceUtils;
+import org.jetbrains.annotations.Nullable;
 
 import javax.net.ssl.*;
 import java.io.*;
@@ -201,7 +202,7 @@ public class SSLUtilities {
 
     }
 
-    public SSLUtilities() {
+    private SSLUtilities() {
         super();
 
     }
@@ -226,7 +227,7 @@ public class SSLUtilities {
             String keystoreFileName,
             InputStream keystoreInputStream,
             char[] keystorePassword,
-            char[] keyPassword
+            @Nullable char[] keyPassword
     )
             throws
             GarnettSSLChannelCreationFailedException {
@@ -244,7 +245,7 @@ public class SSLUtilities {
 //                Logger.logMsg( "loading SSL cert(s) from " + keystoreFileName );
 
                 tmp.setSSLContext(
-                        wrappedCreateSSLContext(
+                        createWrappedSSLContext(
                                 clientMode,
                                 keystoreInputStream,
                                 keystorePassword,
@@ -377,7 +378,7 @@ public class SSLUtilities {
 //            SSLContext sslContext = _knownSslContexts.get( key );
 //            if ( sslContext == null ) {
 //
-//                sslContext = SSLUtilities.wrappedCreateSSLContext(
+//                sslContext = SSLUtilities.createWrappedSSLContext(
 //                        clientMode,
 //                        keystoreFile,
 //                        keystorePassword,
@@ -392,8 +393,12 @@ public class SSLUtilities {
 //
 //    }
 
-    public static SSLContext wrappedCreateSSLContext(
-            boolean clientMode, File keystoreFile, char[] keystorePassword, char[] keyPassword
+    @SuppressWarnings("UnusedDeclaration")
+    public static SSLContext createWrappedSSLContext(
+            boolean clientMode,
+            File keystoreFile,
+            char[] keystorePassword,
+            char[] keyPassword
     )
             throws FileNotFoundException, GarnettSSLChannelCreationFailedException {
 
@@ -402,7 +407,7 @@ public class SSLUtilities {
         try {
 
             keyStoreInputStream = new FileInputStream( keystoreFile );
-            return wrappedCreateSSLContext( clientMode, keyStoreInputStream, keystorePassword, keyPassword );
+            return createWrappedSSLContext( clientMode, keyStoreInputStream, keystorePassword, keyPassword );
 
         } finally {
 
@@ -412,7 +417,7 @@ public class SSLUtilities {
 
     }
 
-    public static SSLContext wrappedCreateSSLContext(
+    public static SSLContext createWrappedSSLContext(
             boolean clientMode, InputStream keyStoreInputStream, char[] keystorePassword, char[] keyPassword
     )
             throws
