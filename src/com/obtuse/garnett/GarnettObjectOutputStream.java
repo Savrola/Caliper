@@ -900,15 +900,15 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
             Integer garnettTypeIndex = _knownGarnettTypes.get( garnettTypeName );
             if ( garnettTypeIndex == null ) {
 
-                byte[] garnettTypeNameBytes = garnettTypeName.getTypeName().getBytes();
+                byte[] garnettTypeNameBytes = garnettTypeName.getName().getBytes();
                 int garnettTypeNameLength = garnettTypeNameBytes.length;
                 if ( garnettTypeNameLength > GarnettConstants.MAX_GARNETT_TYPE_NAME_LENGTH ) {
 
                     throw new GarnettSerializationFailedException(
                             "Garnett type name \"" +
-                            garnettTypeName.getTypeName().substring( 0, 20 ) +
+                            garnettTypeName.getName().substring( 0, 20 ) +
                             "..." +
-                            garnettTypeName.getTypeName().substring( garnettTypeName.getTypeName().length() - 20 ) +
+                            garnettTypeName.getName().substring( garnettTypeName.getName().length() - 20 ) +
                             "\" is too long (max length is " + GarnettConstants.MAX_GARNETT_TYPE_NAME_LENGTH + ")"
                     );
 

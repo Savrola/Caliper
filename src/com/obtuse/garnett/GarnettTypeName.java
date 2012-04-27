@@ -23,7 +23,7 @@ public class GarnettTypeName implements Comparable<GarnettTypeName> {
 
     }
 
-    public String getTypeName() {
+    public String getName() {
 
         return _typeName;
     }
@@ -36,13 +36,13 @@ public class GarnettTypeName implements Comparable<GarnettTypeName> {
 
     public boolean equals( Object rhs ) {
 
-        return rhs instanceof GarnettTypeName && _typeName.equals( ( (GarnettTypeName)rhs ).getTypeName() );
+        return rhs instanceof GarnettTypeName && _typeName.equals( ( (GarnettTypeName)rhs ).getName() );
 
     }
 
     public int compareTo( GarnettTypeName rhs ) {
 
-        return _typeName.compareTo( rhs.getTypeName() );
+        return _typeName.compareTo( rhs.getName() );
 
     }
 
