@@ -1,20 +1,17 @@
 package com.obtuse.generic;
 
-import com.obtuse.util.*;
-import org.jetbrains.annotations.Nullable;
+import com.obtuse.util.ObtuseUtil5;
 
 import javax.swing.*;
 import java.awt.event.*;
 
-/**
- * Create and manage a disposable popup window with two buttons.
- * <p/>
- * Copyright © 2012 Daniel Boulet.
- *
- * @noinspection ClassWithoutToString, UnusedDeclaration
+/*
+ * Copyright © 2010 Daniel Boulet.
  */
 
-public abstract class YesNoPopupMessageWindow extends JDialog {
+@SuppressWarnings({ "UnusedDeclaration" })
+public abstract class YesNoPopupMessageWindow
+        extends JDialog {
 
     private JPanel _contentPane;
 
@@ -30,11 +27,13 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
 
     private boolean _gotAnswer;
 
-    protected YesNoPopupMessageWindow( String line1,
-                                       @Nullable String line2,
-                                       String defaultLabel,
-                                       String alternativeLabel
+    protected YesNoPopupMessageWindow(
+            String line1,
+            String line2,
+            String defaultLabel,
+            String alternativeLabel
     ) {
+
         super();
 
         setContentPane( _contentPane );
@@ -49,10 +48,8 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
 
                     public void actionPerformed( ActionEvent e ) {
 
-                        onChoice( false );
-
+                        onAlternativeChoice();
                     }
-
                 }
         );
 
@@ -62,22 +59,16 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
 
                     public void actionPerformed( ActionEvent e ) {
 
-                        onChoice( true );
-
+                        onDefaultChoice();
                     }
-
                 }
         );
 
         _firstMessageField.setText( "<html>" + line1 );
-        if ( line2 == null || line2.length() == 0 ) {
-
+        if ( line2 == null ) {
             _secondMessageField.setVisible( false );
-
         } else {
-
             _secondMessageField.setText( "<html>" + line2 );
-
         }
 
         // call onCancel() when cross is clicked
@@ -88,12 +79,8 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
                 new WindowAdapter() {
 
                     public void windowClosing( WindowEvent e ) {
-
-//                        Logger.logMsg( "close attempted" );
-                        onChoice( false );
-
+//                        onAlternativeChoice();
                     }
-
                 }
         );
 
@@ -102,12 +89,8 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
                 new ActionListener() {
 
                     public void actionPerformed( ActionEvent e ) {
-
-//                        Logger.logMsg( "ESC pressed" );
-                        onChoice( false );
-
+//                        onAlternativeChoice();
                     }
-
                 },
                 KeyStroke.getKeyStroke( KeyEvent.VK_ESCAPE, 0 ),
                 JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
@@ -118,11 +101,12 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
 
     }
 
-    protected YesNoPopupMessageWindow( String line1, String defaultLabel, String alternativeLabel ) {
+    protected YesNoPopupMessageWindow(
+            String line1, String defaultLabel, String alternativeLabel
+    ) {
+
         this( line1, null, defaultLabel, alternativeLabel );
-
     }
-
 
     @SuppressWarnings({ "InstanceMethodNamingConvention" })
     public void go() {
@@ -130,8 +114,25 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
         _answer = false;
         _gotAnswer = false;
 
+//        Logger.logMsg( "we are " + ( SwingUtilities.isEventDispatchThread() ? "" : "not " ) + "the event queue" );
+
         setVisible( true );
 
+//        synchronized ( this ) {
+//            while ( !_gotAnswer ) {
+//                try {
+//                    wait();
+//                } catch ( InterruptedException e ) {
+//
+//                    // just ignore it
+//
+//                }
+//            }
+//
+//            dispose();
+//
+//            return _answer;
+//        }
     }
 
     @SuppressWarnings({ "SameParameterValue" })
@@ -142,93 +143,64 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
 
                     public void run() {
 
-                        onChoice( answer );
-
+                        if ( answer ) {
+                            onDefaultChoice();
+                        } else {
+                            onAlternativeChoice();
+                        }
                     }
-
                 }
         );
-
     }
 
-    private synchronized void onChoice( boolean defaultChoice ) {
+    private synchronized void onDefaultChoice() {
 
         setVisible( false );
 
         if ( !_gotAnswer ) {
-
-            _answer = defaultChoice;
+            _answer = true;
             _gotAnswer = true;
-            if ( defaultChoice ) {
-
-                defaultChoice();
-
-            } else {
-
-                alternativeChoice();
-
-            }
-
+            defaultChoice();
         }
-
         notifyAll();
 
         dispose();
-
     }
 
-//    private synchronized void onDefaultChoice() {
-//
-//        setVisible( false );
-//
-//        if ( !_gotAnswer ) {
-//
-//            _answer = true;
-//            _gotAnswer = true;
-//            defaultChoice();
-//
-//        }
-//
-//        notifyAll();
-//
-//        dispose();
-//
-//    }
-//
-//    private synchronized void onAlternativeChoice() {
-//
-//        setVisible( false );
-//
-//        if ( !_gotAnswer ) {
-//
-//            _answer = false;
-//            _gotAnswer = true;
-//            alternativeChoice();
-//
-//        }
-//
-//        notifyAll();
-//
-//        dispose();
-//
-//    }
+    private synchronized void onAlternativeChoice() {
+
+        setVisible( false );
+
+        if ( !_gotAnswer ) {
+            _answer = false;
+            _gotAnswer = true;
+            alternativeChoice();
+        }
+        notifyAll();
+
+        dispose();
+    }
 
     /**
      * Determine if an answer has been selected yet.
+     *
      * @return true if an answer has been selected, false otherwise.
      */
 
     public boolean hasAnswer() {
+
         return _gotAnswer;
     }
 
     /**
      * Gets the answer to the question.
+     *
      * @return true if the default was selected, false otherwise.
      * @throws IllegalArgumentException if no answer has been selected yet (see {@link #hasAnswer}).
      */
 
     public boolean getAnswer() {
+
         if ( hasAnswer() ) {
             return _answer;
         } else {
@@ -241,9 +213,9 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
     protected abstract void alternativeChoice();
 
     @SuppressWarnings({ "SameParameterValue" })
-    private static void doit(
+    public static void doit(
             final String line1,
-            @Nullable final String line2,
+            final String line2,
             final String defaultLabel,
             final String alternativeLabel,
             final Runnable defaultRunnable,
@@ -265,12 +237,14 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
                         ) {
 
                             protected void defaultChoice() {
+
                                 if ( defaultRunnable != null ) {
                                     defaultRunnable.run();
                                 }
                             }
 
                             protected void alternativeChoice() {
+
                                 if ( alternativeRunnable != null ) {
                                     alternativeRunnable.run();
                                 }
@@ -287,8 +261,7 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
 
     }
 
-    @SuppressWarnings({ "UnusedDeclaration" })
-    private static void doit(
+    public static void doit(
             final String line1,
             final String defaultLabel,
             final String alternativeLabel,
@@ -302,42 +275,33 @@ public abstract class YesNoPopupMessageWindow extends JDialog {
 
     public static void main( String[] args ) {
 
-        BasicProgramConfigInfo.init( "Obtuse", "YesNoPopupMessageWindow", "testing", null );
-        
         final YesNoPopupMessageWindow dialog = new YesNoPopupMessageWindow(
                 "Are we having fun yet?<br>More words<br>Even more words<br>Still more words",
-                "You have ten seconds to decide!",
+                "You have five seconds to decide!",
                 "Yes",
                 "No"
         ) {
 
             public void defaultChoice() {
-
-                Logger.logMsg( "go said yes" );
-
+                //noinspection UseOfSystemOutOrSystemErr
+                System.out.println( "go said yes" );
             }
 
             public void alternativeChoice() {
-
-                Logger.logMsg( "go said no" );
-
+                //noinspection UseOfSystemOutOrSystemErr
+                System.out.println( "go said no" );
             }
-
         };
-
         //noinspection RefusedBequest
         new Thread() {
+
             public void run() {
-
                 //noinspection MagicNumber
-                ObtuseUtil5.safeSleepMillis( javax.management.timer.Timer.ONE_SECOND * 10L );
+                ObtuseUtil5.safeSleepMillis( javax.management.timer.Timer.ONE_SECOND * 50L );
                 dialog.fakeAnswer( true );
-
             }
-
         }.start();
         dialog.go();
-
     }
 
 }

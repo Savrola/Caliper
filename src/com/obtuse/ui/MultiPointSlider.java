@@ -47,7 +47,7 @@ public class MultiPointSlider extends JComponent {
 
         public void stateChanged( ChangeEvent changeEvent ) {
 
-            Logger.logMsg( "repainting due to state change" );
+//            Logger.logMsg( "repainting due to state change" );
             repaint();
             notifyListeners( changeEvent );
 
@@ -61,7 +61,7 @@ public class MultiPointSlider extends JComponent {
 
     };
 
-    private static final MpsKnob _defaultKnob;
+    private static final MpsKnob DEFAULT_KNOB;
     private Collection<ChangeListener> _changeListeners = new LinkedList<ChangeListener>();
     private int _minimumBreadth;
     private int _minimumLength;
@@ -73,6 +73,7 @@ public class MultiPointSlider extends JComponent {
     private static final int MINIMUM_TIC_ROOM = 5;
     private static final int GAP_BETWEEN_TICK_MARKS_AND_LABELS = 2;
     private int _linePosition;
+    private Dimension _lastMinimumSize;
 
     static {
 
@@ -82,7 +83,7 @@ public class MultiPointSlider extends JComponent {
                 "com/obtuse/ui/resources"
         );
 
-        _defaultKnob = new DefaultMpsKnob( imageIcon.getImage() );
+        DEFAULT_KNOB = new DefaultMpsKnob( imageIcon.getImage() );
 
     }
 
@@ -96,13 +97,14 @@ public class MultiPointSlider extends JComponent {
     }
 
     public MultiPointSlider( String name, BoundedRangeModel brm ) {
+
         super();
 
         _name = name;
 
         setModel( brm );
 
-        _knob = _defaultKnob;
+        _knob = DEFAULT_KNOB;
 
 //        setLayout( new BoxLayout( this, Box ) );
 //        add( _knob );
@@ -157,7 +159,7 @@ public class MultiPointSlider extends JComponent {
                             _isSelected = true;
                             _startingPoint = mouseEvent.getPoint();
                             _startingValue = _brm.getValue();
-                            Logger.logMsg( "repainting because mouse pressed inside knob" );
+//                            Logger.logMsg( "repainting because mouse pressed inside knob" );
                             repaint();
 
 //                            Logger.logMsg( "mouse pressed:  inside, sP = " + _startingPoint + ", sV = " + _startingValue );
@@ -182,7 +184,7 @@ public class MultiPointSlider extends JComponent {
                             adjustValue( mouseEvent.getPoint() );
 
                             _isSelected = false;
-                            Logger.logMsg( "repainting because mouse released while selected" );
+//                            Logger.logMsg( "repainting because mouse released while selected" );
                             repaint();
 
                         } else {
@@ -194,9 +196,11 @@ public class MultiPointSlider extends JComponent {
                     }
 
                     public void mouseEntered( MouseEvent mouseEvent ) {
+
                     }
 
                     public void mouseExited( MouseEvent mouseEvent ) {
+
                     }
 
                 }
@@ -208,7 +212,6 @@ public class MultiPointSlider extends JComponent {
                     public void mouseDragged( MouseEvent mouseEvent ) {
 
                         if ( _isSelected ) {
-
 
 //                            Logger.logMsg( "mouse dragged:  adjusting" );
                             adjustValue( mouseEvent.getPoint() );
@@ -225,6 +228,7 @@ public class MultiPointSlider extends JComponent {
                     }
 
                     public void mouseMoved( MouseEvent mouseEvent ) {
+
                     }
 
                 }
@@ -264,7 +268,7 @@ public class MultiPointSlider extends JComponent {
 
     public static MpsKnob getDefaultKnob() {
 
-        return _defaultKnob;
+        return DEFAULT_KNOB;
 
     }
 
@@ -320,14 +324,14 @@ public class MultiPointSlider extends JComponent {
         Point startingHotSpot = mapValueToPoint( _startingValue );
 
         Point newPoint = isVerticalOrientation() ?
-                new Point(
-                        startingHotSpot.x,
-                        startingHotSpot.y + moveDistance
-                ) :
-                new Point(
-                        startingHotSpot.x + moveDistance,
-                        startingHotSpot.y
-                );
+                         new Point(
+                                 startingHotSpot.x,
+                                 startingHotSpot.y + moveDistance
+                         ) :
+                         new Point(
+                                 startingHotSpot.x + moveDistance,
+                                 startingHotSpot.y
+                         );
 
         int newValue = mapPointToValue( newPoint );
 
@@ -415,15 +419,27 @@ public class MultiPointSlider extends JComponent {
 
     }
 
+    public int getValue() {
+
+        return _brm.getValue();
+
+    }
+
     private Point mapValueToPoint( int value ) {
 
         if ( _positionOnLine == PositionOnLine.ABOVE || _positionOnLine == PositionOnLine.BELOW ) {
 
-            return new Point( _endSpace + ( _length * ( value - _brm.getMinimum() ) / ( _brm.getMaximum() - _brm.getMinimum() ) ), _linePosition );
+            return new Point(
+                    _endSpace + _length * ( value - _brm.getMinimum() ) / ( _brm.getMaximum() - _brm.getMinimum() ),
+                    _linePosition
+            );
 
         } else {
 
-            return new Point( _linePosition, _endSpace + ( _length * ( value - _brm.getMinimum() ) / ( _brm.getMaximum() - _brm.getMinimum() ) ) );
+            return new Point(
+                    _linePosition,
+                    _endSpace + _length * ( value - _brm.getMinimum() ) / ( _brm.getMaximum() - _brm.getMinimum() )
+            );
 
         }
 
@@ -432,12 +448,12 @@ public class MultiPointSlider extends JComponent {
     private int mapPointToValue( Point p ) {
 
         return _brm.getMinimum() +
-                Math.round(
-                        (
-                                ( ( isVerticalOrientation() ? p.y : p.x ) - _endSpace ) *
-                                        ( _brm.getMaximum() - _brm.getMinimum() )
-                        ) / (float) _length
-                );
+               Math.round(
+                       (
+                               ( ( isVerticalOrientation() ? p.y : p.x ) - _endSpace ) *
+                               ( _brm.getMaximum() - _brm.getMinimum() )
+                       ) / (float)_length
+               );
 
     }
 
@@ -495,17 +511,25 @@ public class MultiPointSlider extends JComponent {
 
     }
 
-//    int _s1Count = 0;
+    private boolean isInteresting() {
+
+        return "one week duration weighting".equals( _name );
+
+    }
+
+    //    int _s1Count = 0;
     public Dimension computeMinimumSize() {
 
-        Logger.logMsg( _name + ":  call to computeMinimumSize()" );
+        if ( isInteresting() ) {
+
+            Logger.logMsg( _name + ":  call to computeMinimumSize()" );
+
+        }
 
         OrientedImage orientedImage = _knob.getOrientedImage( _knobSize, _positionOnLine, _isSelected );
 //        if ( "s3s7".contains( _name ) )
 //        Logger.logMsg( _name + ":  " + orientedImage );
 
-        int breadth = 0;
-        int length = 0;
         int knobBreadth;
         if ( isVerticalOrientation() ) {
 
@@ -517,9 +541,10 @@ public class MultiPointSlider extends JComponent {
 
         }
 
+        int breadth = 0;
         breadth += knobBreadth;
 
-        if ( _paintTicks && ( _minorTickSpacing > 0 || _majorTickSpacing < 0 ) ) {
+        if ( _paintTicks && ( _minorTickSpacing > 0 || _majorTickSpacing > 0 ) ) {
 
             int ticSpace = 0;
             if ( _minorTickSpacing > 0 ) {
@@ -581,13 +606,8 @@ public class MultiPointSlider extends JComponent {
          * Do we need to account for the space consumed by labels?
          */
 
-        if ( _paintLabels ) {
-
-            int maxLabelBreadth = 0;
-            int maxLabelLength = 0;
-            int labelCount = 0;
-            BufferedImage firstLabel = null;
-            BufferedImage lastLabel = null;
+        int length = 0;
+        if ( _paintLabels && _majorTickSpacing > 0 ) {
 
             Graphics2D g2d = (Graphics2D)getGraphics();
             if ( g2d == null ) {
@@ -597,29 +617,42 @@ public class MultiPointSlider extends JComponent {
             }
             g2d.setFont( getFont() );
 
+            int maxLabelBreadth = 0;
+            int maxLabelLength = 0;
+            int labelCount = 0;
+            BufferedImage firstLabel = null;
+            BufferedImage lastLabel = null;
             for ( int value = _brm.getMinimum(); value <= _brm.getMaximum(); value += _majorTickSpacing ) {
 
                 BufferedImage labelImage = getLabel( g2d, value );
 
-                if ( firstLabel == null ) {
+                if ( labelImage == null ) {
 
-                    firstLabel = labelImage;
-
-                }
-
-                lastLabel = labelImage;
-
-                labelCount += 1;
-
-                if ( isVerticalOrientation() ) {
-
-                    maxLabelBreadth = Math.max( maxLabelBreadth, labelImage.getWidth() );
-                    maxLabelLength = Math.max( maxLabelLength, labelImage.getHeight() );
+                    Logger.logMsg( "label image is null when computing size" );
 
                 } else {
 
-                    maxLabelBreadth = Math.max( maxLabelBreadth, labelImage.getHeight() );
-                    maxLabelLength = Math.max( maxLabelLength, labelImage.getWidth() );
+                    if ( firstLabel == null ) {
+
+                        firstLabel = labelImage;
+
+                    }
+
+                    lastLabel = labelImage;
+
+                    labelCount += 1;
+
+                    if ( isVerticalOrientation() ) {
+
+                        maxLabelBreadth = Math.max( maxLabelBreadth, labelImage.getWidth() );
+                        maxLabelLength = Math.max( maxLabelLength, labelImage.getHeight() );
+
+                    } else {
+
+                        maxLabelBreadth = Math.max( maxLabelBreadth, labelImage.getHeight() );
+                        maxLabelLength = Math.max( maxLabelLength, labelImage.getWidth() );
+
+                    }
 
                 }
 
@@ -693,6 +726,7 @@ public class MultiPointSlider extends JComponent {
                 if ( _minorTickSpacing > 0 ) {
 
                     when = "2";
+                    //noinspection UnnecessaryParentheses
                     length = ( ( _brm.getMaximum() - _brm.getMinimum() ) / _minorTickSpacing ) * MINIMUM_TIC_ROOM;
 
                 }
@@ -700,7 +734,10 @@ public class MultiPointSlider extends JComponent {
                 if ( _majorTickSpacing > 0 ) {
 
                     when = "3";
-                    length = Math.max( ( ( _brm.getMaximum() - _brm.getMinimum() ) / _majorTickSpacing ) * MINIMUM_TIC_ROOM, length );
+                    //noinspection UnnecessaryParentheses
+                    length = Math.max(
+                            ( ( _brm.getMaximum() - _brm.getMinimum() ) / _majorTickSpacing ) * MINIMUM_TIC_ROOM, length
+                    );
 
                 }
 
@@ -711,8 +748,11 @@ public class MultiPointSlider extends JComponent {
 
             }
 
-            if ( "s3s7".contains( _name ) )
-                Logger.logMsg( "when = " + when );
+//            if ( "s3s7".contains( _name ) ) {
+//
+//                Logger.logMsg( "when = " + when );
+//
+//            }
 
         }
 
@@ -721,8 +761,11 @@ public class MultiPointSlider extends JComponent {
 
         length = minValueOverhang + length + maxValueOverhang;
 
-        if ( "s3s7".contains( _name ) )
-        Logger.logMsg( _name + "  minVO = " + minValueOverhang + ", maxVO = " + maxValueOverhang + ", es = " + _endSpace + ", l = " + _length );
+//        if ( "s3s7".contains( _name ) ) {
+//
+//            Logger.logMsg( _name + "  minVO = " + minValueOverhang + ", maxVO = " + maxValueOverhang + ", es = " + _endSpace + ", l = " + _length );
+//
+//        }
 
         // We've got it!
 
@@ -731,8 +774,11 @@ public class MultiPointSlider extends JComponent {
 
         if ( isVerticalOrientation() ) {
 
-            _minimumSize = new Dimension( 2 * BORDER_SIZE + breadth, 2 *  BORDER_SIZE + length );
-            actualSize = new Dimension( Math.max( _minimumSize.width, getWidth() ), Math.max( _minimumSize.height, getHeight() ) );
+            _minimumSize = new Dimension( 2 * BORDER_SIZE + breadth, 2 * BORDER_SIZE + length );
+            actualSize = new Dimension(
+                    Math.max( _minimumSize.width, getWidth() ),
+                    Math.max( _minimumSize.height, getHeight() )
+            );
             if ( _minimumSize.height < actualSize.height ) {
 
                 _length = actualSize.height - ( 2 * BORDER_SIZE + minValueOverhang + maxValueOverhang );
@@ -743,7 +789,10 @@ public class MultiPointSlider extends JComponent {
         } else {
 
             _minimumSize = new Dimension( 2 * BORDER_SIZE + length, 2 * BORDER_SIZE + breadth );
-            actualSize = new Dimension( Math.max( _minimumSize.width, getWidth() ), Math.max( _minimumSize.height, getHeight() ) );
+            actualSize = new Dimension(
+                    Math.max( _minimumSize.width, getWidth() ),
+                    Math.max( _minimumSize.height, getHeight() )
+            );
             if ( _minimumSize.width < actualSize.width ) {
 
                 _length = actualSize.width - ( 2 * BORDER_SIZE + minValueOverhang + maxValueOverhang );
@@ -774,12 +823,28 @@ public class MultiPointSlider extends JComponent {
 
         }
 
-        if ( "s3s7".contains( _name ) )
-        Logger.logMsg( "" + _name + ":  breadth = " + breadth + ", length = " + length + ", knob breadth = " + knobBreadth + ", min size = ( " + _minimumSize.getWidth() + ", " + _minimumSize.getHeight() + " ), line position = " + _linePosition );
-        if ( "s3s7".contains( _name ) )
-            Logger.logMsg( _name + ":  " + _minimumSize );
+//        if ( "s3s7".contains( _name ) ) {
+//
+//            Logger.logMsg(
+//                    "" + _name + ":  breadth = " + breadth + ", length = " + length + ", knob breadth = " + knobBreadth + ", min size = ( " +
+//                    _minimumSize.getWidth() + ", " + _minimumSize.getHeight() + " ), line position = " + _linePosition
+//            );
+//
+//            Logger.logMsg( _name + ":  " + _minimumSize );
+//
+//        }
 
 //        Logger.logMsg( "slider \"" + _name + "\" has a computed minimum size of " + _minimumSize );
+
+        if ( isInteresting() && (
+                _lastMinimumSize == null || _lastMinimumSize.width != _minimumSize.width ||
+                _lastMinimumSize.height != _minimumSize.height
+        ) ) {
+
+            Logger.logMsg( _name + "  computePreferredSize() returning " + _minimumSize );
+            _lastMinimumSize = _minimumSize;
+
+        }
 
         return _minimumSize;
 
@@ -789,10 +854,15 @@ public class MultiPointSlider extends JComponent {
 
         Dimension minimumSize = computeMinimumSize();
         Dimension rval = super.getMinimumSize();
-        Logger.logMsg( _name + "  computeMinimumSize() returned " + minimumSize + ", super.getMinimumSize() returned " + rval );
-        rval.width = Math.max( minimumSize.width, rval.width );
-        rval.height = Math.max( minimumSize.height, rval.height );
-        Logger.logMsg( _name + ": getMinimumSize() returned " + rval );
+//        if ( interesting() ) Logger.logMsg( _name + "  computeMinimumSize() returned " + minimumSize + ", super.getMinimumSize() returned " + rval );
+//        rval.width = Math.max( minimumSize.width, rval.width );
+//        rval.height = Math.max( minimumSize.height, rval.height );
+        if ( isInteresting() ) {
+
+            Logger.logMsg( _name + ": getMinimumSize() returned " + rval );
+
+        }
+
         return rval;
 
     }
@@ -800,7 +870,12 @@ public class MultiPointSlider extends JComponent {
     public Dimension getMaximumSize() {
 
         Dimension rval = super.getMaximumSize();
-        Logger.logMsg( _name + ": getMaximumSize() returned " + rval );
+        if ( isInteresting() ) {
+
+            Logger.logMsg( _name + ": getMaximumSize() returned " + rval );
+
+        }
+
         return rval;
 
     }
@@ -809,10 +884,14 @@ public class MultiPointSlider extends JComponent {
 
         Dimension preferredSize = computeMinimumSize();
         Dimension rval = super.getPreferredSize();
-        Logger.logMsg( _name + "  computePreferredSize() returned " + preferredSize + ", super.getPreferredSize() returned " + rval );
         rval.width = Math.max( preferredSize.width, rval.width );
         rval.height = Math.max( preferredSize.height, rval.height );
-        Logger.logMsg( _name + ": getPreferredSize() returned " + rval );
+        if ( isInteresting() ) {
+
+            Logger.logMsg( _name + ": getPreferredSize() returned " + rval );
+
+        }
+
         return rval;
 
     }
@@ -820,14 +899,19 @@ public class MultiPointSlider extends JComponent {
     public Rectangle getBounds() {
 
         Rectangle rval = super.getBounds();
-        Logger.logMsg( _name + ":  getBounds() returned " + rval );
+        if ( isInteresting() ) {
+
+            Logger.logMsg( _name + ":  getBounds() returned " + rval );
+
+        }
+
         return rval;
 
     }
 
     public void setMinimumSize( Dimension size ) {
 
-        if ( _traceSizeChanges ) {
+        if ( _traceSizeChanges && isInteresting() ) {
 
             Logger.logMsg( _name + ":  call to setMinimumSize( " + size + ")" );
 
@@ -839,7 +923,7 @@ public class MultiPointSlider extends JComponent {
 
     public void setMaximumSize( Dimension size ) {
 
-        if ( _traceSizeChanges ) {
+        if ( _traceSizeChanges && isInteresting() ) {
 
             Logger.logMsg( _name + ":  call to setMaximumSize( " + size + ")" );
 
@@ -851,7 +935,7 @@ public class MultiPointSlider extends JComponent {
 
     public void setPreferredSize( Dimension size ) {
 
-        if ( _traceSizeChanges ) {
+        if ( _traceSizeChanges && isInteresting() ) {
 
             Logger.logMsg( _name + ":  call to setPreferredSize( " + size + ")" );
 
@@ -863,7 +947,7 @@ public class MultiPointSlider extends JComponent {
 
     public void setBounds( int x, int y, int width, int height ) {
 
-        if ( _traceSizeChanges ) {
+        if ( _traceSizeChanges && isInteresting() ) {
 
             Logger.logMsg( _name + ":  call to setBounds( " + x + ", " + y + ", " + width + ", " + height + ")" );
 
@@ -875,7 +959,7 @@ public class MultiPointSlider extends JComponent {
 
     public void setBounds( Rectangle bounds ) {
 
-        if ( _traceSizeChanges ) {
+        if ( _traceSizeChanges && isInteresting() ) {
 
             Logger.logMsg( _name + ":  call to setBounds( " + bounds + ")" );
 
@@ -887,10 +971,14 @@ public class MultiPointSlider extends JComponent {
 
     public void paint( Graphics g ) {
 
-        Graphics2D g2d = (Graphics2D) g;
+        Graphics2D g2d = (Graphics2D)g;
         computeDrawingParameters();
 
-        Logger.logMsg( "painting " + _name + " with size ( " + _width + ", " + _height + " )" );
+        if ( isInteresting() ) {
+
+            Logger.logMsg( "painting " + _name + " with size ( " + _width + ", " + _height + " )" );
+
+        }
 
         g.setColor( getBackground() );
         g.fillRect( 0, 0, getWidth(), getHeight() );
@@ -902,7 +990,7 @@ public class MultiPointSlider extends JComponent {
 
         int ticSpace = 0;
 
-        if ( _paintTicks && ( _minorTickSpacing > 0 || _majorTickSpacing < 0 ) ) {
+        if ( _paintTicks && ( _minorTickSpacing > 0 || _majorTickSpacing > 0 ) ) {
 
             if ( _minorTickSpacing > 0 ) {
 
@@ -918,7 +1006,7 @@ public class MultiPointSlider extends JComponent {
 
         }
 
-        if ( _paintLabels ) {
+        if ( _paintLabels && _majorTickSpacing > 0 ) {
 
             ticSpace += GAP_BETWEEN_TICK_MARKS_AND_LABELS;
 
@@ -926,23 +1014,51 @@ public class MultiPointSlider extends JComponent {
 
                 Point valuePoint = mapValueToPoint( value );
                 BufferedImage labelImage = getLabel( g2d, value );
-                switch ( _positionOnLine ) {
+                if ( labelImage == null ) {
 
-                    case ABOVE:
-                        g.drawImage( labelImage, valuePoint.x - labelImage.getWidth() / 2, valuePoint.y + ticSpace, this );
-                        break;
+                    Logger.logMsg( "no label image when drawing slider" );
 
-                    case BELOW:
-                        g.drawImage( labelImage, valuePoint.x - labelImage.getWidth() / 2, valuePoint.y - ( labelImage.getHeight() + ticSpace ), this );
-                        break;
+                } else {
 
-                    case LEFT:
-                        g.drawImage( labelImage, valuePoint.x + ticSpace, valuePoint.y - labelImage.getHeight() / 2, this );
-                        break;
+                    switch ( _positionOnLine ) {
 
-                    case RIGHT:
-                        g.drawImage( labelImage, valuePoint.x - ( labelImage.getWidth() + ticSpace ), valuePoint.y - labelImage.getHeight() / 2, this );
-                        break;
+                        case ABOVE:
+                            g.drawImage(
+                                    labelImage,
+                                    valuePoint.x - labelImage.getWidth() / 2,
+                                    valuePoint.y + ticSpace,
+                                    this
+                            );
+                            break;
+
+                        case BELOW:
+                            g.drawImage(
+                                    labelImage,
+                                    valuePoint.x - labelImage.getWidth() / 2,
+                                    valuePoint.y - ( labelImage.getHeight() + ticSpace ),
+                                    this
+                            );
+                            break;
+
+                        case LEFT:
+                            g.drawImage(
+                                    labelImage,
+                                    valuePoint.x + ticSpace,
+                                    valuePoint.y - labelImage.getHeight() / 2,
+                                    this
+                            );
+                            break;
+
+                        case RIGHT:
+                            g.drawImage(
+                                    labelImage,
+                                    valuePoint.x - ( labelImage.getWidth() + ticSpace ),
+                                    valuePoint.y - labelImage.getHeight() / 2,
+                                    this
+                            );
+                            break;
+
+                    }
 
                 }
 
@@ -1031,7 +1147,7 @@ public class MultiPointSlider extends JComponent {
                 switch ( _positionOnLine ) {
 
                     case ABOVE:
-                        g.drawLine( mark.x, mark.y + 1 + TIC_GAP, mark.x, mark.y + ( 1 + TIC_GAP + tickLength ) );
+                        g.drawLine( mark.x, mark.y + 1 + TIC_GAP, mark.x, mark.y + 1 + TIC_GAP + tickLength );
                         break;
 
                     case BELOW:
@@ -1039,7 +1155,7 @@ public class MultiPointSlider extends JComponent {
                         break;
 
                     case LEFT:
-                        g.drawLine( mark.x + 1 + TIC_GAP, mark.y, mark.x + ( 1 + TIC_GAP + tickLength ), mark.y );
+                        g.drawLine( mark.x + 1 + TIC_GAP, mark.y, mark.x + 1 + TIC_GAP + tickLength, mark.y );
                         break;
 
                     case RIGHT:
@@ -1063,6 +1179,7 @@ public class MultiPointSlider extends JComponent {
 
     }
 
+    @SuppressWarnings("BooleanMethodNameMustStartWithQuestion")
     public boolean paintLabels() {
 
         return _paintLabels;
@@ -1076,7 +1193,7 @@ public class MultiPointSlider extends JComponent {
 
     }
 
-    public Dictionary<Integer,MpsLabel> getLabelTable() {
+    public Dictionary<Integer, MpsLabel> getLabelTable() {
 
         return _labelTable;
 
@@ -1090,7 +1207,7 @@ public class MultiPointSlider extends JComponent {
 
     public static void main( String[] args ) {
 
-        Dictionary<Integer,MpsLabel> labels = new Hashtable<Integer, MpsLabel>();
+        Dictionary<Integer, MpsLabel> labels = new Hashtable<Integer, MpsLabel>();
         labels.put( 2, new MpsLabel( "two" ) );
         labels.put( 20, new MpsLabel( "twenty" ) );
 
@@ -1104,7 +1221,7 @@ public class MultiPointSlider extends JComponent {
         slider.setLabelTable( labels );
         slider.setMinorTickSpacing( 1 );
         slider.setMajorTickSpacing( 2 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( true );
         slider.getModel().setValue( slider.getModel().getMaximum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
@@ -1115,9 +1232,9 @@ public class MultiPointSlider extends JComponent {
         slider.setPositionOnLine( PositionOnLine.BELOW );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( true );
-        slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
+        slider.getModel().setValue( slider.getModel().getMinimum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
         bluePanel.add( slider );
 
@@ -1125,7 +1242,7 @@ public class MultiPointSlider extends JComponent {
         slider.setLabelTable( labels );
         slider.setMinorTickSpacing( 5 );
         slider.setMajorTickSpacing( 10 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( false );
         slider.getModel().setValue( slider.getModel().getMaximum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
@@ -1136,9 +1253,9 @@ public class MultiPointSlider extends JComponent {
         slider.setPositionOnLine( PositionOnLine.BELOW );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( false );
-        slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
+        slider.getModel().setValue( slider.getModel().getMinimum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
         bluePanel.add( slider );
 
@@ -1149,7 +1266,7 @@ public class MultiPointSlider extends JComponent {
         slider.setLabelTable( labels );
         slider.setMinorTickSpacing( 1 );
         slider.setMajorTickSpacing( 2 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( true );
         slider.setPositionOnLine( PositionOnLine.LEFT );
         slider.getModel().setValue( slider.getModel().getMaximum() );
@@ -1173,16 +1290,16 @@ public class MultiPointSlider extends JComponent {
         slider.setPositionOnLine( PositionOnLine.RIGHT );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( true );
-        slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
+        slider.getModel().setValue( slider.getModel().getMinimum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
         redPanel.add( slider );
 
         slider = new MultiPointSlider( "s7", 0, 100 );
         slider.setMinorTickSpacing( 5 );
         slider.setMajorTickSpacing( 10 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( false );
         slider.setPositionOnLine( PositionOnLine.LEFT );
         slider.getModel().setValue( slider.getModel().getMaximum() );
@@ -1194,9 +1311,9 @@ public class MultiPointSlider extends JComponent {
         slider.setPositionOnLine( PositionOnLine.RIGHT );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( false );
-        slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
+        slider.getModel().setValue( slider.getModel().getMinimum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
         redPanel.add( slider );
 
@@ -1256,6 +1373,7 @@ public class MultiPointSlider extends JComponent {
 
     }
 
+    @SuppressWarnings("BooleanMethodNameMustStartWithQuestion")
     public boolean drawSliderLine() {
 
         return _drawSliderLine;
@@ -1295,13 +1413,14 @@ public class MultiPointSlider extends JComponent {
 
     }
 
+    @SuppressWarnings("BooleanMethodNameMustStartWithQuestion")
     public boolean paintTickMarks() {
 
         return _paintTicks;
 
     }
 
-    public void setPaintTickMarks( boolean paintTicks ) {
+    public void setPaintTicks( boolean paintTicks ) {
 
         _paintTicks = paintTicks;
         _minimumSize = null;
@@ -1311,7 +1430,7 @@ public class MultiPointSlider extends JComponent {
     /**
      * Manage a particular orientation of an image.
      * <p/>
-     * Intended to be used by the {@link MultiPointSlider} class.  Probably not all that useful in other contexts.
+     * Intended to be used by the {@link com.obtuse.ui.MultiPointSlider} class.  Probably not all that useful in other contexts.
      */
 
     public static class OrientedImage {
@@ -1320,6 +1439,7 @@ public class MultiPointSlider extends JComponent {
         private final BufferedImage _image;
 
         public OrientedImage( Point hotSpotWithinImage, BufferedImage image ) {
+
             super();
 
             _hotSpotWithinImage = new Point( hotSpotWithinImage.x, hotSpotWithinImage.y );
@@ -1351,7 +1471,7 @@ public class MultiPointSlider extends JComponent {
                     pointWithinImage.x >= 0 && pointWithinImage.x < imageSize.x
                     &&
                     pointWithinImage.y >= 0 && pointWithinImage.y < imageSize.y
-            ) {
+                    ) {
 
                 int argb = _image.getRGB( pointWithinImage.x, pointWithinImage.y );
                 isInside = ( argb & 0xff000000 ) != 0;
@@ -1362,14 +1482,14 @@ public class MultiPointSlider extends JComponent {
 
             }
 
-    //        Logger.logMsg(
-    //                "image @ " + imageLocation +
-    //                ", point @ " + p +
-    //                ", point within image @ " + pointWithinImage +
-    //                ", INSIDE is " + isInside +
-    //                ", hotspot @ " + actualHotSpot +
-    //                ", computed hotspot @ " + computedHotSpot
-    //        );
+            //        Logger.logMsg(
+            //                "image @ " + imageLocation +
+            //                ", point @ " + p +
+            //                ", point within image @ " + pointWithinImage +
+            //                ", INSIDE is " + isInside +
+            //                ", hotspot @ " + actualHotSpot +
+            //                ", computed hotspot @ " + computedHotSpot
+            //        );
 
             return isInside;
 
@@ -1378,8 +1498,8 @@ public class MultiPointSlider extends JComponent {
         public void drawImage( Graphics2D g, Point actualHotSpot ) {
 
             g.translate( actualHotSpot.x, actualHotSpot.y );
-    //            g.drawLine( -5, 0, 5, 0 );
-    //            g.drawLine(  0, -5, 0, 5 );
+            //            g.drawLine( -5, 0, 5, 0 );
+            //            g.drawLine(  0, -5, 0, 5 );
             g.drawImage( _image, -_hotSpotWithinImage.x, -_hotSpotWithinImage.y, null );
             g.translate( -actualHotSpot.x, -actualHotSpot.y );
 
@@ -1387,6 +1507,7 @@ public class MultiPointSlider extends JComponent {
 
         /**
          * Retrieve this image's hotspot.
+         *
          * @return a copy of this image's hotspot (to ensure that caller does not modify the hotspot).
          */
 
@@ -1402,22 +1523,22 @@ public class MultiPointSlider extends JComponent {
 
         }
 
-    //    public int getScreenWidth( ImageObserver imageObserver ) {
-    //
-    //        int width = _image.getWidth( imageObserver );
-    //        if ( _hotSpotWithinImage.x < 0 ) {
-    //
-    //            width += -_hotSpotWithinImage.x;
-    //
-    //        } else if ( _hotSpotWithinImage.x > width ) {
-    //
-    //            width = _hotSpotWithinImage.x;
-    //
-    //        }
-    //
-    //        return width;
-    //
-    //    }
+        //    public int getScreenWidth( ImageObserver imageObserver ) {
+        //
+        //        int width = _image.getWidth( imageObserver );
+        //        if ( _hotSpotWithinImage.x < 0 ) {
+        //
+        //            width += -_hotSpotWithinImage.x;
+        //
+        //        } else if ( _hotSpotWithinImage.x > width ) {
+        //
+        //            width = _hotSpotWithinImage.x;
+        //
+        //        }
+        //
+        //        return width;
+        //
+        //    }
 
         /**
          * Compute the amount of vertical screen space this image will consume.
@@ -1435,16 +1556,16 @@ public class MultiPointSlider extends JComponent {
             if ( _hotSpotWithinImage.y < 0 ) {
 
                 height += -_hotSpotWithinImage.y;
-    //            Logger.logMsg( "- from " + before + " to " + height + ", adjustment " + -_hotSpotWithinImage.y );
+                //            Logger.logMsg( "- from " + before + " to " + height + ", adjustment " + -_hotSpotWithinImage.y );
 
             } else if ( _hotSpotWithinImage.y > height ) {
 
                 height = _hotSpotWithinImage.y + 1;     // deal with zero-origin x and y values
-    //            Logger.logMsg( "+ from " + before + " to " + height + ", adjustment =" + _hotSpotWithinImage.y + "+1");
+                //            Logger.logMsg( "+ from " + before + " to " + height + ", adjustment =" + _hotSpotWithinImage.y + "+1");
 
-    //        } else {
-    //
-    //            Logger.logMsg( "no adjustment" );
+                //        } else {
+                //
+                //            Logger.logMsg( "no adjustment" );
 
             }
 
@@ -1471,7 +1592,8 @@ public class MultiPointSlider extends JComponent {
 
         public String toString() {
 
-            return "OrientedImage( " + getScreenWidth() + 'x' + getScreenHeight() + ", hs = " + _hotSpotWithinImage + " )";
+            return "OrientedImage( " + getScreenWidth() + 'x' + getScreenHeight() + ", hs = " + _hotSpotWithinImage +
+                   " )";
 
         }
 

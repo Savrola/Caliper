@@ -72,7 +72,7 @@ public class MpsTest extends JFrame {
         slider.setLabelTable( labels );
         slider.setMinorTickSpacing( 1 );
         slider.setMajorTickSpacing( 2 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( true );
         slider.getModel().setValue( slider.getModel().getMaximum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
@@ -86,7 +86,7 @@ public class MpsTest extends JFrame {
         slider.setPositionOnLine( MultiPointSlider.PositionOnLine.BELOW );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( true );
         slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
         slider.setMinimumSize( slider.computeMinimumSize() );
@@ -99,7 +99,7 @@ public class MpsTest extends JFrame {
         slider.setLabelTable( labels );
         slider.setMinorTickSpacing( 5 );
         slider.setMajorTickSpacing( 10 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( false );
         slider.getModel().setValue( slider.getModel().getMaximum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
@@ -113,7 +113,7 @@ public class MpsTest extends JFrame {
         slider.setPositionOnLine( MultiPointSlider.PositionOnLine.BELOW );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( false );
         slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
         slider.setMinimumSize( slider.computeMinimumSize() );
@@ -129,7 +129,7 @@ public class MpsTest extends JFrame {
         slider.setLabelTable( labels );
         slider.setMinorTickSpacing( 1 );
         slider.setMajorTickSpacing( 2 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( true );
         slider.setPositionOnLine( MultiPointSlider.PositionOnLine.LEFT );
         slider.getModel().setValue( slider.getModel().getMaximum() );
@@ -156,7 +156,7 @@ public class MpsTest extends JFrame {
         slider.setPositionOnLine( MultiPointSlider.PositionOnLine.RIGHT );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( true );
         slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
         slider.setMinimumSize( slider.computeMinimumSize() );
@@ -168,7 +168,7 @@ public class MpsTest extends JFrame {
         slider = new MultiPointSlider( "s7", 0, 100 );
         slider.setMinorTickSpacing( 5 );
         slider.setMajorTickSpacing( 10 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( false );
         slider.setPositionOnLine( MultiPointSlider.PositionOnLine.LEFT );
         slider.getModel().setValue( slider.getModel().getMaximum() );
@@ -183,7 +183,7 @@ public class MpsTest extends JFrame {
         slider.setPositionOnLine( MultiPointSlider.PositionOnLine.RIGHT );
         slider.setMinorTickSpacing( 50 );
         slider.setMajorTickSpacing( 100 );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setPaintLabels( false );
         slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
         slider.setMinimumSize( slider.computeMinimumSize() );

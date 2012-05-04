@@ -41,7 +41,7 @@ public class MpsTest2 extends JFrame {
 
         slider = new MultiPointSlider( "s3", 0, 10 );
         slider.setPaintLabels( false );
-        slider.setPaintTickMarks( true );
+        slider.setPaintTicks( true );
         slider.setMinorTickSpacing( 1 );
         slider.setMajorTickSpacing( 2 );
         slider.setMinimumSize( slider.computeMinimumSize() );
@@ -54,7 +54,7 @@ public class MpsTest2 extends JFrame {
 
         slider = new MultiPointSlider( "s7", 0, 10 );
         slider.setPaintLabels( false );
-        slider.setPaintTickMarks( false );
+        slider.setPaintTicks( false );
         slider.setMinorTickSpacing( 1 );
         slider.setMajorTickSpacing( 2 );
         slider.setMinimumSize( slider.computeMinimumSize() );

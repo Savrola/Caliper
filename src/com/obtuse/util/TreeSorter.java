@@ -142,9 +142,39 @@ public class TreeSorter<K extends Comparable<? super K>, V> implements Iterable<
 
     }
 
+    /**
+    /**
+     * Return the values associated with a specified key.
+     * The values in the returned collection appear in the order that they were added to this tree sorter.
+     * The returned collection of values is immutable.
+     * @param key the specified key.
+     * @return the values associated with the specified key.
+     */
+
     public Collection<V> getValues( K key ) {
 
-        return _sortedData.get( key );
+        return Collections.unmodifiableCollection( _sortedData.get( key ) );
+
+    }
+
+    /**
+     * Return all the values in this tree sorter in key order.
+     * Values with equal keys are returned in the order that they were added to this tree sorter.
+     * <p/>Every call to this method returns a distinct collection of values.  The caller is free to do
+     * whatever they like to the returned collection.
+     * @return all the values in this tree sorter.
+     */
+
+    public Collection<V> getAllValues() {
+
+        Collection<V> allValues = new LinkedList<V>();
+        for ( K key : _sortedData.keySet() ) {
+
+            allValues.addAll( getValues( key ) );
+
+        }
+
+        return allValues;
 
     }
 
