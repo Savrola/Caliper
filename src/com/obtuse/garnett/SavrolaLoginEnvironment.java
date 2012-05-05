@@ -16,7 +16,7 @@ public class SavrolaLoginEnvironment implements GarnettObject {
 
     private SavrolaStatus _savrolaStatus;
 
-    private long _cookie;
+    private long _cookie = 0L;
 
     private SavrolaCapabilities _capabilities;
 
@@ -34,6 +34,7 @@ public class SavrolaLoginEnvironment implements GarnettObject {
      * @param capabilities the user's universal capabilities.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     public SavrolaLoginEnvironment(
             String accountName,
             SavrolaStatus savrolaStatus,
@@ -53,14 +54,15 @@ public class SavrolaLoginEnvironment implements GarnettObject {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public SavrolaLoginEnvironment( GarnettObjectInputStreamInterface gois )
             throws IOException {
         super();
 
         gois.checkVersion(
-                getGarnettTypeName(),
-                VERSION,
-                VERSION
+                SavrolaLoginEnvironment.class,
+                SavrolaLoginEnvironment.VERSION,
+                SavrolaLoginEnvironment.VERSION
         );
 
         _accountName = gois.readString();
@@ -70,12 +72,14 @@ public class SavrolaLoginEnvironment implements GarnettObject {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public SavrolaCapabilities getCapabilities() {
 
         return _capabilities;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public SavrolaStatus getSavrolaStatus() {
 
         return _savrolaStatus;
@@ -88,19 +92,23 @@ public class SavrolaLoginEnvironment implements GarnettObject {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public void setCachedPassword( byte[] obfuscatedPassword ) {
 
+        //noinspection AssignmentToCollectionOrArrayFieldFromParameter
         _obfuscatedPassword = obfuscatedPassword;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public byte[] getCachedPassword() {
 
         return _obfuscatedPassword;
 
     }
 
-    public long getLongCookie() {
+    @SuppressWarnings("UnusedDeclaration")
+    public long getLoginCookie() {
 
         return _cookie;
 
@@ -121,7 +129,7 @@ public class SavrolaLoginEnvironment implements GarnettObject {
     public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        goos.writeVersion( VERSION );
+        goos.writeVersion( SavrolaLoginEnvironment.VERSION );
         goos.writeString( _accountName );
         goos.writeString( _savrolaStatus.name() );
         goos.writeLong( _cookie );

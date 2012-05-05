@@ -1,13 +1,10 @@
 package com.obtuse.util;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.io.*;
-import java.lang.management.ManagementFactory;
-import java.lang.management.ThreadInfo;
-import java.lang.management.ThreadMXBean;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.SocketException;
+import java.lang.management.*;
+import java.net.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -27,21 +24,22 @@ public class Trace {
 
     public static final DateFormat OUR_DATE_FORMAT = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss.SSS" );
 
-    public static final DateFormat YYMMDD_HHMMSS_FORMAT = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
+//    public static final DateFormat YYMMDD_HHMMSS_FORMAT = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
 
-    private static final Map<Integer, TraceHook> _traceHooks = new TreeMap<Integer, TraceHook>();
+    private static final Map<Integer, TraceHook> s_traceHooks = new TreeMap<Integer, TraceHook>();
 
-    private static final String TRACE_HOOKS_LOCK = new String( "trace hooks lock" );
+    private static final String TRACE_HOOKS_LOCK = "trace hooks lock";
 
-    private static int _nextHookId = 0;
+    @SuppressWarnings("FieldCanBeLocal")
+    private static int s_nextHookId = 0;
 
-    private static boolean _liveTrace = false;
+    private static boolean s_liveTrace = false;
 
-    private static String _programName;
+    private static String s_programName = null;
 
-    private static File _traceFileDirectory = new File( BasicProgramConfigInfo.getWorkingDirectory(), "traces" );
+    private static File s_traceFileDirectory = new File( BasicProgramConfigInfo.getWorkingDirectory(), "traces" );
 
-    public static Map<Long, Thread> _exceptionsInProgress = new TreeMap<Long, Thread>();
+    public static final Map<Long, Thread> s_exceptionsInProgress = new TreeMap<Long, Thread>();
 
     public static final int MAX_FORMATTED_TRACE_DEPTH = 100;
 
@@ -92,7 +90,7 @@ public class Trace {
 
         private long _tid;
 
-        private Throwable _exception;
+        private Throwable _exception = null;
 
         private TraceEvent( String event ) {
             super();
@@ -124,6 +122,7 @@ public class Trace {
 
         }
 
+        @SuppressWarnings("UnusedDeclaration")
         private Throwable getException() {
 
             return _exception;
@@ -132,13 +131,13 @@ public class Trace {
 
         private void emit( List<String> results ) {
 
-            String pfx = OUR_DATE_FORMAT.format( _timestamp ) + " {" + _tid + "}:  ";
+            String pfx = Trace.OUR_DATE_FORMAT.format( _timestamp ) + " {" + _tid + "}:  ";
 
             results.add( pfx + _event );
 
             if ( _exception != null ) {
 
-                captureStackTrace( false, pfx, _exception, results );
+                Trace.captureStackTrace( false, pfx, _exception, results );
 
             }
 
@@ -146,12 +145,12 @@ public class Trace {
 
         public String toString() {
 
-            String msg = OUR_DATE_FORMAT.format( _timestamp ) + " {" + _tid + "}:  " + _event;
+            String msg = Trace.OUR_DATE_FORMAT.format( _timestamp ) + " {" + _tid + "}:  " + _event;
 
             if ( _exception != null ) {
 
                 List<String> results = new LinkedList<String>();
-                captureStackTrace( false, "", _exception, results );
+                Trace.captureStackTrace( false, "", _exception, results );
                 for ( String s : results ) {
 
                     msg += "\n" + s;
@@ -166,9 +165,9 @@ public class Trace {
 
     }
 
-    private static Queue<TraceEvent> _traceEvents = new LinkedList<TraceEvent>();
+    private static Queue<TraceEvent> s_traceEvents = new LinkedList<TraceEvent>();
 
-    private static List<TraceFileManager> _traceFileManagers = new LinkedList<TraceFileManager>();
+    private static final List<TraceFileManager> s_traceFileManagers = new LinkedList<TraceFileManager>();
 
     private static final int MAX_TRACE_EVENTS = 25000;
 
@@ -178,25 +177,28 @@ public class Trace {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void setLiveTrace( boolean value ) {
 
-        _liveTrace = value;
+        Trace.s_liveTrace = value;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void register( TraceFileManager traceFileManager ) {
 
-        synchronized ( _traceFileManagers ) {
+        synchronized ( Trace.s_traceFileManagers ) {
 
-            _traceFileManagers.add( traceFileManager );
+            Trace.s_traceFileManagers.add( traceFileManager );
 
         }
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void setProgramName( String programName ) {
 
-        _programName = programName;
+        Trace.s_programName = programName;
 
     }
 
@@ -212,11 +214,11 @@ public class Trace {
 
     public static int addTraceHook( TraceHook hook ) {
 
-        synchronized ( TRACE_HOOKS_LOCK ) {
+        synchronized ( Trace.TRACE_HOOKS_LOCK ) {
 
-            _nextHookId += 1;
-            _traceHooks.put( _nextHookId - 1, hook );
-            return _nextHookId - 1;
+            Trace.s_nextHookId += 1;
+            Trace.s_traceHooks.put( Trace.s_nextHookId - 1, hook );
+            return Trace.s_nextHookId - 1;
 
         }
 
@@ -230,43 +232,45 @@ public class Trace {
      * @param id the id number of the hook to be deleted.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void removeTraceHook( int id ) {
 
-        synchronized ( TRACE_HOOKS_LOCK ) {
+        synchronized ( Trace.TRACE_HOOKS_LOCK ) {
 
-            _traceHooks.remove( id );
+            Trace.s_traceHooks.remove( id );
 
         }
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public TraceHook getHook( int id ) {
 
-        return _traceHooks.get( id );
+        return Trace.s_traceHooks.get( id );
 
     }
 
     public static void event( String event ) {
 
-        event( event, null );
+        Trace.event( event, null );
 
     }
 
     public static void event( Throwable e ) {
 
-        event( "unexpected exception", e );
+        Trace.event( "unexpected exception", e );
 
     }
 
-    public static void event( String event, Throwable e ) {
+    public static void event( String event, @Nullable Throwable e ) {
 
         Long threadId = Thread.currentThread().getId();
 
-        synchronized ( _exceptionsInProgress ) {
+        synchronized ( Trace.s_exceptionsInProgress ) {
 
             // Avoid recursion
 
-            if ( _exceptionsInProgress.containsKey( threadId ) ) {
+            if ( Trace.s_exceptionsInProgress.containsKey( threadId ) ) {
 
                 return;
 
@@ -276,20 +280,26 @@ public class Trace {
 
         try {
 
-            if ( _liveTrace ) {
+            if ( Trace.s_liveTrace ) {
+
+                //noinspection UseOfSystemOutOrSystemErr
                 System.out.println( "<><> " + event );
                 if ( e != null ) {
+
+                    //noinspection CallToPrintStackTrace
                     e.printStackTrace();
+
                 }
+
             }
 
-            synchronized ( TRACE_HOOKS_LOCK ) {
+            synchronized ( Trace.TRACE_HOOKS_LOCK ) {
 
-                _traceEvents.add( new TraceEvent( event, e ) );
+                Trace.s_traceEvents.add( new TraceEvent( event, e ) );
 
-                if ( _traceEvents.size() > MAX_TRACE_EVENTS ) {
+                if ( Trace.s_traceEvents.size() > Trace.MAX_TRACE_EVENTS ) {
 
-                    _traceEvents.remove();
+                    Trace.s_traceEvents.remove();
 
                 }
 
@@ -297,9 +307,9 @@ public class Trace {
 
         } finally {
 
-            synchronized ( _exceptionsInProgress ) {
+            synchronized ( Trace.s_exceptionsInProgress ) {
 
-                _exceptionsInProgress.remove( threadId );
+                Trace.s_exceptionsInProgress.remove( threadId );
 
             }
 
@@ -315,16 +325,16 @@ public class Trace {
 
         List<TraceEvent> events;
         Map<Integer, TraceHook> hooks;
-        synchronized ( TRACE_HOOKS_LOCK ) {
+        synchronized ( Trace.TRACE_HOOKS_LOCK ) {
 
             events = new LinkedList<TraceEvent>();
-            for ( TraceEvent event : _traceEvents ) {
+            for ( TraceEvent event : Trace.s_traceEvents ) {
                 events.add( event );
             }
 
             hooks = new TreeMap<Integer, TraceHook>();
-            for ( int hookId : _traceHooks.keySet() ) {
-                hooks.put( hookId, _traceHooks.get( hookId ) );
+            for ( int hookId : Trace.s_traceHooks.keySet() ) {
+                hooks.put( hookId, Trace.s_traceHooks.get( hookId ) );
             }
 
         }
@@ -333,7 +343,7 @@ public class Trace {
         try {
 
             String what = "Trace requested at " + new Date() +
-                          ( _programName == null ? "" : " for " + _programName ) +
+                          ( Trace.s_programName == null ? "" : " for " + Trace.s_programName ) +
                           ( why == null ? "" : " (" + why + ")" );
 
             results.add( what );
@@ -397,7 +407,7 @@ public class Trace {
 
             // Process the hooks in the order that they were defined.
 
-            if ( hooks.size() > 0 ) {
+            if ( !hooks.isEmpty() ) {
 
                 results.add( "" );
                 results.add( "trace hooks:" );
@@ -408,6 +418,7 @@ public class Trace {
 
                     results.add( "" );
                     TraceHook hook = hooks.get( hookId );
+                    //noinspection UseOfSystemOutOrSystemErr
                     System.out.println( "doing hook " + hook );
                     List<String> hookResults = hook.run();
 
@@ -433,24 +444,27 @@ public class Trace {
 
     }
 
+    @SuppressWarnings("UseOfSystemOutOrSystemErr")
     public static String emitTrace( String why ) {
 
-        String where = _logFileNameFormatter.format( System.currentTimeMillis() );
+        String where = Trace._logFileNameFormatter.format( System.currentTimeMillis() );
         System.out.println( "where string built" );
-        List<String> results = getTrace( why, where );
+        List<String> results = Trace.getTrace( why, where );
         System.out.println( "results collected" );
 
-        String rval = emitResults( why, results, where, true );
+        String rval = Trace.emitResults( why, results, where, true );
         System.out.println( "file emitted" );
 
+        //noinspection MagicNumber
         ObtuseUtil5.safeSleepMillis( javax.management.timer.Timer.ONE_SECOND * 5L );
         return rval;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static String emitTrace( Throwable e ) {
 
-        return emitTrace( "unexpected exception", e );
+        return Trace.emitTrace( "unexpected exception", e );
 
     }
 
@@ -458,11 +472,11 @@ public class Trace {
 
         if ( e == null ) {
 
-            return emitTrace( why );
+            return Trace.emitTrace( why );
 
         } else {
 
-            String where = _logFileNameFormatter.format( System.currentTimeMillis() );
+            String where = Trace._logFileNameFormatter.format( System.currentTimeMillis() );
             String exceptionDescription = e.getMessage();
             if ( exceptionDescription == null ) {
 
@@ -470,14 +484,11 @@ public class Trace {
 
             }
             String longWhy = ( why == null ? "" : why + " / " ) + exceptionDescription;
-            List<String> results = getTrace(
-                    longWhy,
-                    where
-            );
+            List<String> results = Trace.getTrace( longWhy, where );
 
-            captureStackTrace( true, "", e, results );
+            Trace.captureStackTrace( true, "", e, results );
 
-            return emitResults( longWhy, results, where, true );
+            return Trace.emitResults( longWhy, results, where, true );
 
         }
 
@@ -505,7 +516,7 @@ public class Trace {
 
         }
 
-        String[] trace = formatDeeperStackTrace( e );
+        String[] trace = Trace.formatDeeperStackTrace( e );
         for ( String line : trace ) {
 
             results.add( pfx + line );
@@ -523,19 +534,20 @@ public class Trace {
 
         try {
 
-            _traceFileDirectory.mkdirs();
+            //noinspection ResultOfMethodCallIgnored
+            Trace.s_traceFileDirectory.mkdirs();
 
             File traceFile;
             if ( compressOutput ) {
 
                 traceFname += ".gz";
-                traceFile = new File( _traceFileDirectory, traceFname );
+                traceFile = new File( Trace.s_traceFileDirectory, traceFname );
                 writer = new PrintWriter( new GZIPOutputStream( new FileOutputStream( traceFile ) ) );
 
             } else {
 
-                traceFile = new File( _traceFileDirectory, traceFname );
-                writer = new PrintWriter( new FileOutputStream( new File( _traceFileDirectory, traceFname ) ) );
+                traceFile = new File( Trace.s_traceFileDirectory, traceFname );
+                writer = new PrintWriter( new FileOutputStream( new File( Trace.s_traceFileDirectory, traceFname ) ) );
 
             }
 
@@ -555,7 +567,7 @@ public class Trace {
 
         } finally {
 
-            writer.close();
+            ObtuseUtil5.closeQuietly( writer );
 
         }
 
@@ -563,7 +575,7 @@ public class Trace {
 
         Logger.logMsg( "A trace file has been captured (" + why + ")", null );
 
-        tellTraceFileManagers( traceFname, timeStamp );
+        Trace.tellTraceFileManagers( traceFname, timeStamp );
 
         return traceFname;
 
@@ -576,10 +588,10 @@ public class Trace {
 
             public void run() {
 
-                synchronized ( _traceFileManagers ) {
+                synchronized ( Trace.s_traceFileManagers ) {
 
                     boolean handled = false;
-                    for ( TraceFileManager tfm : _traceFileManagers ) {
+                    for ( TraceFileManager tfm : Trace.s_traceFileManagers ) {
 
                         tfm.newTraceFile( traceFname, timeStamp );
                         handled = true;
@@ -588,9 +600,7 @@ public class Trace {
 
                     if ( !handled ) {
 
-                        Logger.logMsg(
-                                "please email \"" + traceFname + "\" to danny@loapowertools.com", null
-                        );
+                        Logger.logMsg( "please email \"" + traceFname + "\" to danny@loapowertools.com", null );
 
                     }
                 }
@@ -601,6 +611,7 @@ public class Trace {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void startTracePortListener( int port ) {
 
         try {
@@ -626,7 +637,7 @@ public class Trace {
 
                             Socket sock = listenSocket.accept();
                             Logger.logErr( "trace requested" );
-                            emitTrace( "externally requested" );
+                            Trace.emitTrace( "externally requested" );
                             Logger.logErr( "trace done" );
                             ObtuseUtil5.closeQuietly( sock );
 
@@ -636,7 +647,7 @@ public class Trace {
                                     "trace port listener caught an exception/error - thread terminating after one more trace",
                                     e
                             );
-                            emitTrace( "trace port listener failed", e );
+                            Trace.emitTrace( "trace port listener failed", e );
 
                             ObtuseUtil5.closeQuietly( listenSocket );
 
@@ -666,15 +677,16 @@ public class Trace {
 
     public String toString() {
 
-        return "Trace for " + _programName;
+        return "Trace for " + Trace.s_programName;
 
     }
 
-    public static void setDirectory( File tmpLoaPostDir ) {
+    @SuppressWarnings("UnusedDeclaration")
+    public static void setDirectory( File tmpSavrolaDir ) {
 
-        if ( tmpLoaPostDir != null ) {
+        if ( tmpSavrolaDir != null ) {
 
-            _traceFileDirectory = new File( tmpLoaPostDir, "traces" );
+            Trace.s_traceFileDirectory = new File( tmpSavrolaDir, "traces" );
 
         }
 
@@ -683,7 +695,7 @@ public class Trace {
     public static void appendStackTrace( Collection<String> trace, Throwable e ) {
 
         StackTraceElement[] stack = e.getStackTrace();
-        for ( int i = 0; i < stack.length && i < MAX_FORMATTED_TRACE_DEPTH; i += 1 ) {
+        for ( int i = 0; i < stack.length && i < Trace.MAX_FORMATTED_TRACE_DEPTH; i += 1 ) {
 
             StackTraceElement element = stack[i];
             String source;
@@ -705,9 +717,9 @@ public class Trace {
 
         }
 
-        if ( stack.length > MAX_FORMATTED_TRACE_DEPTH ) {
+        if ( stack.length > Trace.MAX_FORMATTED_TRACE_DEPTH ) {
 
-            trace.add( "\t... " + ( stack.length - MAX_FORMATTED_TRACE_DEPTH ) + " more" );
+            trace.add( "\t... " + ( stack.length - Trace.MAX_FORMATTED_TRACE_DEPTH ) + " more" );
 
         }
 
@@ -715,20 +727,20 @@ public class Trace {
 
     public static String[] formatDeeperStackTrace( Throwable e ) {
 
-        Vector<String> trace = new Vector<String>();
+        List<String> trace = new LinkedList<String>();
 
         if ( e.getCause() == null ) {
 
             trace.add( "" + e.getClass().getName() + ": " + e.getLocalizedMessage() );
-            appendStackTrace( trace, e );
+            Trace.appendStackTrace( trace, e );
 
         } else {
 
             trace.add( "" + e.getClass().getName() + ": " + e.getLocalizedMessage() );
 //            trace.add( "\t" + e.getClass().getName() + ":" + e.getLocalizedMessage() );
-            appendStackTrace( trace, e );
+            Trace.appendStackTrace( trace, e );
             trace.add( "Caused by: " + e.getCause().getClass().getName() + ": " + e.getCause().getLocalizedMessage() );
-            appendStackTrace( trace, e.getCause() );
+            Trace.appendStackTrace( trace, e.getCause() );
 
         }
 

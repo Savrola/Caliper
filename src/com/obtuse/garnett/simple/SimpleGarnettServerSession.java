@@ -17,6 +17,7 @@ import java.net.Socket;
 
 public class SimpleGarnettServerSession extends MinimalGarnettSession {
 
+    @SuppressWarnings({ "FieldCanBeLocal", "UnusedDeclaration" })
     private final SimpleGarnettServerManager _serverManager;
 
     public SimpleGarnettServerSession(
@@ -39,11 +40,13 @@ public class SimpleGarnettServerSession extends MinimalGarnettSession {
 
             try {
 
+                @SuppressWarnings("UnusedDeclaration")
                 GarnettMessage nextMessage = getNextMessage();
 
             } catch ( IOException e ) {
 
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                //noinspection CallToPrintStackTrace
+                e.printStackTrace();
 
             }
 
@@ -53,7 +56,7 @@ public class SimpleGarnettServerSession extends MinimalGarnettSession {
 
     @Override
     protected void majorSessionStateChange() {
-        //To change body of implemented methods use File | Settings | File Templates.
+
     }
 
 }

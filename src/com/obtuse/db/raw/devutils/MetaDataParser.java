@@ -13,7 +13,7 @@ import com.obtuse.db.raw.ElephantConnection;
 @SuppressWarnings({ "ClassWithoutToString" })
 public class MetaDataParser {
 
-    //private static Map<String, LoaTypeInfo> _dbTypesToLoaTypes = new HashMap<String, LoaTypeInfo>();
+    //private static Map<String, SavrolaTypeName> _dbTypesToSavrolaTypes = new HashMap<String, SavrolaTypeName>();
 
     private static final ExpectedTableInfo[] NMR_EXPECTED_ABDW_TABLE_NAMES_ARRAY = {
             new ExpectedTableInfo( "nmr", "loaded_program_file", "NmrLoadedProgramFile" ),
@@ -174,7 +174,7 @@ public class MetaDataParser {
     //
     //    } catch ( ObtuseJDBCgetConnectionFailedException e ) {
     //
-    //        Logger.logErr( "unable to connect to Loa database", e );
+    //        Logger.logErr( "unable to connect to Savrola database", e );
     //        System.exit( 1 );
     //
     //    }

@@ -20,7 +20,7 @@ import java.util.*;
 @SuppressWarnings({ "ClassWithoutToString" })
 public class MetaDataParserUtils {
 
-    //private static Map<String, LoaTypeInfo> _dbTypesToLoaTypes = new HashMap<String, LoaTypeInfo>();
+    //private static Map<String, SavrolaTypeName> _dbTypesToSavrolaTypes = new HashMap<String, SavrolaTypeName>();
 
     private static final ExpectedTableInfo[] NMR_EXPECTED_ABDW_TABLE_NAMES_ARRAY = {
             new ExpectedTableInfo( "nmr", "loaded_program_file", "NmrLoadedProgramFile" ),
@@ -106,124 +106,124 @@ public class MetaDataParserUtils {
     private static final String AMRLD_DATABASE_NAME = "abdw-amrld";
 
 //    static {
-//        _dbTypesToLoaTypes.put(
-//                "int4", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "int4", new SavrolaTypeName(
 //                        "int4", "Int", "int", "Integer",
 //                        "Int", "Int", false, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "int2", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "int2", new SavrolaTypeName(
 //                        "int2", "Short", "short", "Short",
 //                        "Short", "Short", false, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "float4", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "float4", new SavrolaTypeName(
 //                        "float4", "Float", "float", "Float",
 //                        "Float", "Float", false, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "float8", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "float8", new SavrolaTypeName(
 //                        "float8", "Double", "double", "Double",
 //                        "Double", "Double", false, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "bigserial", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "bigserial", new SavrolaTypeName(
 //                        "bigserial", "Serial8", "long",
 //                        "Long", "Long", "Long", false, false, true
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "serial", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "serial", new SavrolaTypeName(
 //                        "serial", "Serial", "int",
 //                        "Integer", "Int", "Int", false, false, true
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "text", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "text", new SavrolaTypeName(
 //                        "text", "Text", "String",
 //                        "String", "String", "String", false, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "varchar", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "varchar", new SavrolaTypeName(
 //                        "text", "Text", "String",
 //                        "String", "String", "String", false, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "_text", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "_text", new SavrolaTypeName(
 //                        "_text", "TextArray", "java.util.Array<String>",
 //                        "java.util.Array<String>", "Object", "Object", true, true, false
 //                )
 //        );
-////        _dbTypesToLoaTypes.put(
-////                "_int4", new LoaTypeInfo(
+////        _dbTypesToSavrolaTypes.put(
+////                "_int4", new SavrolaTypeName(
 ////                "_int4", "IntArray", "java.sql.Array",
 ////                "java.sql.Array", "Object", "Object", false, true, false
 ////        )
 ////        );
-//        _dbTypesToLoaTypes.put(
-//                "_int4", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "_int4", new SavrolaTypeName(
 //                        "_int4", "IntArray", "String",
 //                        "String", "String", "String", false, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "bpchar", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "bpchar", new SavrolaTypeName(
 //                        "bpchar", "Text", "String",
 //                        "String", "String", "String", false, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "bytea", new LoaTypeInfo( "bytea", "Bytes", "byte[]", "byte[]", "Bytes", "Bytes", false, false, false )
+//        _dbTypesToSavrolaTypes.put(
+//                "bytea", new SavrolaTypeName( "bytea", "Bytes", "byte[]", "byte[]", "Bytes", "Bytes", false, false, false )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "timestamptz", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "timestamptz", new SavrolaTypeName(
 //                        "timestamptz", "TimestampTZ", "java.sql.Timestamp",
 //                        "java.sql.Timestamp", "Timestamp", "Timestamp", true, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "timestamp", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "timestamp", new SavrolaTypeName(
 //                        "timestamp", "Timestamp", "java.sql.Timestamp",
 //                        "java.sql.Timestamp", "Timestamp", "Timestamp", true, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "date", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "date", new SavrolaTypeName(
 //                        "date", "Date", "java.sql.Date", "java.sql.Date", "Date", "Date", true, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "int8", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "int8", new SavrolaTypeName(
 //                        "int8", "Long", "long",
 //                        "Long", "Long", "Long", false, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "bool", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "bool", new SavrolaTypeName(
 //                        "bool", "Boolean", "boolean", "Boolean",
 //                        "Boolean", "Boolean", false, false, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "inet", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "inet", new SavrolaTypeName(
 //                        "inet", "Inet", "org.postgresql.util.PGobject",
 //                        "org.postgresql.util.PGobject", "Object", "Object", true, true, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "macaddr", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "macaddr", new SavrolaTypeName(
 //                        "macaddr", "Macaddr", "org.postgresql.util.PGobject",
 //                        "org.postgresql.util.PGobject", "Object", "Object", true, true, false
 //                )
 //        );
-//        _dbTypesToLoaTypes.put(
-//                "money", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "money", new SavrolaTypeName(
 //                        "money", "Money", "java.math.BigDecimal",
 //                        "java.math.BigDecimal", "BigDecimal", "BigDecimal", false, false, false
 //                )
@@ -390,59 +390,60 @@ public class MetaDataParserUtils {
     //
     //    private static void testConvertToCamelHumps() {
     //        System.out.println( convertToCamelHumps( "policy_agreed_time" ) );
-    //        System.out.println( convertToCamelHumps( "_loa_apps" ) );
-    //        System.out.println( convertToCamelHumps( "loa__apps" ) );
-    //        System.out.println( convertToCamelHumps( "_loa_apps_" ) );
+    //        System.out.println( convertToCamelHumps( "_savrola_apps" ) );
+    //        System.out.println( convertToCamelHumps( "savrola__apps" ) );
+    //        System.out.println( convertToCamelHumps( "_savrola_apps_" ) );
     //    }
 
     public static void main( String[] args ) {
 
-        ElephantConnection elephantConnection = new ElephantConnection( "127.0.0.1", NMR_DATABASE_NAME );
+        ElephantConnection elephantConnection = new ElephantConnection(
+                "127.0.0.1",
+                MetaDataParserUtils.NMR_DATABASE_NAME
+        );
 
-        connectToDatabase( elephantConnection );
+        MetaDataParserUtils.connectToDatabase( elephantConnection );
 
-        MetaDataParserUtils processor = new MetaDataParserUtils();
-
-        processor.parse(
+        MetaDataParserUtils.parse(
                 elephantConnection,
-                NMR_DATABASE_NAME,
+                MetaDataParserUtils.NMR_DATABASE_NAME,
                 "nmr",
                 "%",
-                NMR_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
+                MetaDataParserUtils.NMR_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
                 new DbClassGeneratorV2( "NielsenDatabaseSupport/src/com/invidi/nielsen/abdw/auto/" ),
                 true
         );
 
-        elephantConnection = new ElephantConnection( "127.0.0.1", AMRLD_DATABASE_NAME );
+        elephantConnection = new ElephantConnection( "127.0.0.1", MetaDataParserUtils.AMRLD_DATABASE_NAME );
 
-        connectToDatabase( elephantConnection );
+        MetaDataParserUtils.connectToDatabase( elephantConnection );
 
-        processor.parse(
+        MetaDataParserUtils.parse(
                 elephantConnection,
-                AMRLD_DATABASE_NAME,
+                MetaDataParserUtils.AMRLD_DATABASE_NAME,
                 "amrld",
                 "%",
-                AMRLD_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
+                MetaDataParserUtils.AMRLD_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
                 new DbClassGeneratorV2( "NielsenDatabaseSupport/src/com/invidi/nielsen/abdw/auto/" ),
                 true
         );
 
-        processor.parse(
+        MetaDataParserUtils.parse(
                 elephantConnection,
-                AMRLD_DATABASE_NAME,
+                MetaDataParserUtils.AMRLD_DATABASE_NAME,
                 "bbm2",
                 "%",
-                BBM2_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
+                MetaDataParserUtils.BBM2_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
                 new DbClassGeneratorV2( "NielsenDatabaseSupport/src/com/invidi/nielsen/abdw/auto/" ),
                 true
         );
 
-        processor.parse(
+        MetaDataParserUtils.parse(
                 elephantConnection,
-                AMRLD_DATABASE_NAME,
+                MetaDataParserUtils.AMRLD_DATABASE_NAME,
                 "tvg",
                 "%",
-                TVG_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
+                MetaDataParserUtils.TVG_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
                 new DbClassGeneratorV2( "NielsenDatabaseSupport/src/com/invidi/nielsen/abdw/auto/" ),
                 true
         );
@@ -466,7 +467,7 @@ public class MetaDataParserUtils {
 
         } catch ( ObtuseJDBCgetConnectionFailedException e ) {
 
-            Logger.logErr( "unable to connect to Loa database", e );
+            Logger.logErr( "unable to connect to Savrola database", e );
             System.exit( 1 );
 
         }

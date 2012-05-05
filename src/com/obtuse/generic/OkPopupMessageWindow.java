@@ -50,7 +50,7 @@ public abstract class OkPopupMessageWindow extends JDialog {
         );
 
         _firstMessageField.setText( "<html>" + firstMessage );
-        if ( secondMessage == null || secondMessage.trim().length() == 0 ) {
+        if ( secondMessage == null || secondMessage.trim().isEmpty() ) {
 
             _secondMessageField.setVisible( false );
 
@@ -61,7 +61,7 @@ public abstract class OkPopupMessageWindow extends JDialog {
         }
 
         // call onCancel() when cross is clicked
-        setDefaultCloseOperation( DO_NOTHING_ON_CLOSE );
+        setDefaultCloseOperation( WindowConstants.DO_NOTHING_ON_CLOSE );
 
         //noinspection RefusedBequest
         addWindowListener(
@@ -152,7 +152,7 @@ public abstract class OkPopupMessageWindow extends JDialog {
 
                     public void run() {
 
-                        OkPopupMessageWindow.this.setVisible( false );
+                        setVisible( false );
                         aborted( why );
 
                     }
@@ -220,26 +220,26 @@ public abstract class OkPopupMessageWindow extends JDialog {
     @SuppressWarnings({ "SameParameterValue" })
     public static void doit( String line1, String button ) {
 
-        doit( line1, null, button, null );
+        OkPopupMessageWindow.doit( line1, null, button, null );
 
     }
 
     @SuppressWarnings({ "SameParameterValue" })
     public static void doit( String line1, String line2, String button ) {
 
-        doit( line1, line2, button, null );
+        OkPopupMessageWindow.doit( line1, line2, button, null );
 
     }
 
     public static void fatal( String line1 ) {
 
-        fatal( line1, null, "Sorry" );
+        OkPopupMessageWindow.fatal( line1, null, "Sorry" );
 
     }
 
     public static void fatal( String line1, String line2 ) {
 
-        fatal( line1, line2, "Sorry" );
+        OkPopupMessageWindow.fatal( line1, line2, "Sorry" );
 
     }
 

@@ -28,14 +28,14 @@ public class MpsTest extends JFrame {
     private JPanel _slider6panel;
     private JPanel _slider7panel;
     private JPanel _slider8panel;
-    private JPanel _slider1;
-    private JPanel _slider2;
-    private JPanel _slider3;
-    private JPanel _slider4;
-    private JPanel _slider5;
-    private JPanel _slider6;
-    private JPanel _slider7;
-    private JPanel _slider8;
+//    private JPanel _slider1;
+//    private JPanel _slider2;
+//    private JPanel _slider3;
+//    private JPanel _slider4;
+//    private JPanel _slider5;
+//    private JPanel _slider6;
+//    private JPanel _slider7;
+//    private JPanel _slider8;
 
     public MpsTest() {
 
@@ -43,13 +43,13 @@ public class MpsTest extends JFrame {
 
         pack();
 
-        for ( JComponent slider : new JComponent[] { _slider1, _slider2, _slider3, _slider4, _slider5, _slider6, _slider7, _slider8 } ) {
-
-            MultiPointSlider mps = (MultiPointSlider)slider;
-            mps.setMinimumSize( mps.computeMinimumSize() );
-            mps.setPreferredSize( mps.computeMinimumSize() );
-
-        }
+//        for ( JComponent slider : new JComponent[] { _slider1, _slider2, _slider3, _slider4, _slider5, _slider6, _slider7, _slider8 } ) {
+//
+//            MultiPointSlider mps = (MultiPointSlider)slider;
+//            mps.setMinimumSize( mps.computeMinimumSize() );
+//            mps.setPreferredSize( mps.computeMinimumSize() );
+//
+//        }
 
     }
 
@@ -62,6 +62,7 @@ public class MpsTest extends JFrame {
 
     }
 
+    @SuppressWarnings({ "MagicNumber", "UseOfObsoleteCollectionType" })
     private void createUIComponents() {
         Dictionary<Integer,MpsLabel> labels = new Hashtable<Integer, MpsLabel>();
         labels.put( 2, new MpsLabel( "two" ) );
@@ -88,7 +89,7 @@ public class MpsTest extends JFrame {
         slider.setMajorTickSpacing( 100 );
         slider.setPaintTicks( true );
         slider.setPaintLabels( true );
-        slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
+        slider.getModel().setValue( slider.getModel().getMinimum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
@@ -115,7 +116,7 @@ public class MpsTest extends JFrame {
         slider.setMajorTickSpacing( 100 );
         slider.setPaintTicks( true );
         slider.setPaintLabels( false );
-        slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
+        slider.getModel().setValue( slider.getModel().getMinimum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
@@ -158,7 +159,7 @@ public class MpsTest extends JFrame {
         slider.setMajorTickSpacing( 100 );
         slider.setPaintTicks( true );
         slider.setPaintLabels( true );
-        slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
+        slider.getModel().setValue( slider.getModel().getMinimum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );
@@ -185,7 +186,7 @@ public class MpsTest extends JFrame {
         slider.setMajorTickSpacing( 100 );
         slider.setPaintTicks( true );
         slider.setPaintLabels( false );
-        slider.getModel().setValue( ( slider.getModel().getMinimum() ) );
+        slider.getModel().setValue( slider.getModel().getMinimum() );
         slider.setMinimumSize( slider.computeMinimumSize() );
         slider.setPreferredSize( slider.computeMinimumSize() );
         slider.setMaximumSize( slider.computeMinimumSize() );

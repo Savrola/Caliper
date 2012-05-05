@@ -143,16 +143,20 @@ public class DefaultMpsKnob extends MpsKnob {
         MultiPointSlider.OrientedImage orientedImage = _rotatedSelectedScaledImages.get( knobSize, positionOnLine, isSelected );
         if ( orientedImage == null ) {
 
-            BufferedImage scaledImage = ImageIconUtils.toBufferedImage(
+            BufferedImage unselectedScaledImage = ImageIconUtils.toBufferedImage(
                     getImage().getScaledInstance(
                             knobSize.integerSize(),
                             -1,
                             Image.SCALE_SMOOTH
                     )
             );
-            BufferedImage selectedScaledImage = ImageIconUtils.changeImageBrightness( scaledImage, 0.9f );
+
+            // Darken the image by about 10%.
+
+            @SuppressWarnings("MagicNumber")
+            BufferedImage selectedScaledImage = ImageIconUtils.changeImageBrightness( unselectedScaledImage, 0.9f );
             BufferedImage rotatedImage;
-            BufferedImage sourceImage = isSelected ? selectedScaledImage : scaledImage;
+            BufferedImage sourceImage = isSelected ? selectedScaledImage : unselectedScaledImage;
             if ( positionOnLine == PositionOnLine.ABOVE ) {
 
                 rotatedImage = sourceImage;

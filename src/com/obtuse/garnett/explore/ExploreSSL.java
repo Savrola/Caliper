@@ -15,21 +15,24 @@ import java.security.cert.*;
 
 public class ExploreSSL {
 
-    private static final SSLContext _sslClientContext;
+    private static final SSLContext SSL_CLIENT_CONTEXT;
 
-    private static final SSLSocketFactory _sslClientSocketFactory;
+    @SuppressWarnings("UnusedDeclaration")
+    private static final SSLSocketFactory s_sslClientSocketFactory;
 
-    private String _serverComponentName;
+//    private String _serverComponentName = null;
 
-    private static int _myIx = 0;
+    @SuppressWarnings("FieldCanBeLocal")
+    private static int s_myIx = 0;
 
     private static class MyTrustManager implements X509TrustManager {
 
         private final X509TrustManager _realTrustManager;
 
-        private X509Certificate[] _certChain;
+        private X509Certificate[] _certChain = null;
 
-        private String _authType;
+        @SuppressWarnings("UnusedDeclaration")
+        private String _authType = null;
 
         private MyTrustManager( X509TrustManager realTrustManager ) {
 
@@ -54,6 +57,7 @@ public class ExploreSSL {
         public void checkServerTrusted( X509Certificate[] certChain, String authType )
                 throws CertificateException {
 
+            //noinspection AssignmentToCollectionOrArrayFieldFromParameter
             _certChain = certChain;
             _authType = authType;
 
@@ -133,13 +137,13 @@ public class ExploreSSL {
             System.exit( 1 );
 
         }
-        _sslClientContext = sslContext;
+        SSL_CLIENT_CONTEXT = sslContext;
 
-        _sslClientSocketFactory = _sslClientContext.getSocketFactory();
+        s_sslClientSocketFactory = ExploreSSL.SSL_CLIENT_CONTEXT.getSocketFactory();
 
     }
 
-    public ExploreSSL() {
+    private ExploreSSL() {
 
         super();
     }
@@ -148,7 +152,7 @@ public class ExploreSSL {
 
         try {
 
-//            InputStream keystoreInputStream = new ByteArrayInputStream( LoaClientKeystore.keystore );
+//            InputStream keystoreInputStream = new ByteArrayInputStream( SavrolaClientKeystore.keystore );
 
             // Get an empty keystore.
 
@@ -157,7 +161,7 @@ public class ExploreSSL {
 
             while ( true ) {
 
-                boolean worked = trialRun( ks, "localhost" );
+                boolean worked = ExploreSSL.trialRun( ks, "localhost" );
 
                 if ( worked ) {
 
@@ -226,6 +230,7 @@ public class ExploreSSL {
 
         Logger.logMsg( "Getting the socket to " + targetHost );
 
+        @SuppressWarnings("MagicNumber")
         SSLSocket sock = (SSLSocket)factory.createSocket( targetHost, 1234 );
 
         try {
@@ -278,8 +283,8 @@ public class ExploreSSL {
             Logger.logMsg( "encoded form is " + cert.getEncoded().length + " bytes long" );
             Logger.logMsg( "cert's class is " + cert.getClass() );
 
-            _myIx += 1;
-            ks.setCertificateEntry( "balzac-" + _myIx, cert );
+            ExploreSSL.s_myIx += 1;
+            ks.setCertificateEntry( "balzac-" + ExploreSSL.s_myIx, cert );
 
             Logger.logMsg( "added to trusted certs" );
             Logger.logMsg( "" );

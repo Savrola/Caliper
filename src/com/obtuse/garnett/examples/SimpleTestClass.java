@@ -6,16 +6,14 @@ import com.obtuse.garnett.exceptions.GarnettSerializationFailedException;
 
 import java.io.IOException;
 
+@SuppressWarnings("UnusedDeclaration")
 public class SimpleTestClass implements GarnettObject {
 
-    public static final GarnettTypeName SIMPLETESTCLASS_CANONICAL_NAME = new GarnettTypeName(
-        SimpleTestClass.class.getCanonicalName()
-    );
-    public static final int SIMPLETESTCLASS_VERSION = 5;
+    public static final int VERSION = 5;
 
-    private Double _d;
-    private int _i1;
-    private Integer _i2;
+    private Double _dd = null;
+    private int _i1 = 0;
+    private Integer _i2 = null;
 
     public SimpleTestClass() {
         super();
@@ -23,19 +21,19 @@ public class SimpleTestClass implements GarnettObject {
     }
 
     public SimpleTestClass(
-            Double d,
+            Double dd,
             int i1,
             Integer i2
     ) {
         super();
 
-        if ( d == null ) {
+        if ( dd == null ) {
 
-            _d = null;
+            _dd = null;
 
         } else {
 
-            _d = new Double( d );
+            _dd = dd;
 
         }
 
@@ -47,30 +45,36 @@ public class SimpleTestClass implements GarnettObject {
 
         } else {
 
-            _i2 = new Integer( i2 );
+            _i2 = i2;
 
         }
 
     }
 
+    @SuppressWarnings({ "UnusedDeclaration", "DuplicateThrows" })
     public SimpleTestClass( GarnettObjectInputStreamInterface gois )
             throws GarnettSerializationFailedException, IOException, GarnettObjectVersionNotSupportedException {
         super();
 
-        gois.checkVersion( SIMPLETESTCLASS_CANONICAL_NAME, SIMPLETESTCLASS_VERSION, SIMPLETESTCLASS_VERSION );
+        gois.checkVersion(
+                SimpleTestClass.class,
+                SimpleTestClass.VERSION,
+                SimpleTestClass.VERSION
+        );
 
-        _d = gois.readOptionalDouble();
+        _dd = gois.readOptionalDouble();
         _i1 = gois.readInt();
         _i2 = gois.readOptionalInteger();
 
     }
 
+    @SuppressWarnings("DuplicateThrows")
     public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws GarnettSerializationFailedException, IOException, GarnettObjectVersionNotSupportedException {
 
-        goos.writeVersion( SIMPLETESTCLASS_VERSION );
+        goos.writeVersion( SimpleTestClass.VERSION );
 
-        goos.writeOptionalDouble( _d );
+        goos.writeOptionalDouble( _dd );
         goos.writeInt( _i1 );
         goos.writeOptionalInteger( _i2 );
 
@@ -78,7 +82,7 @@ public class SimpleTestClass implements GarnettObject {
 
     public GarnettTypeName getGarnettTypeName() {
 
-        return SIMPLETESTCLASS_CANONICAL_NAME;
+        return new GarnettTypeName( SimpleTestClass.class.getCanonicalName() );
 
     }
 

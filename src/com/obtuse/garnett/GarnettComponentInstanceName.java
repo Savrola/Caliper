@@ -17,6 +17,8 @@ import java.util.Arrays;
 
 public class GarnettComponentInstanceName {
 
+    public static final int MAX_INSTANCE_NAME_LENGTH = 256;
+
     private final String _instanceName;
     private final byte[] _instanceNameBytes;
 
@@ -35,10 +37,11 @@ public class GarnettComponentInstanceName {
         _instanceName = instanceName;
         _instanceNameBytes = instanceName.getBytes();
 
-        if ( _instanceNameBytes.length > 256 ) {
+        if ( _instanceNameBytes.length > GarnettComponentInstanceName.MAX_INSTANCE_NAME_LENGTH ) {
 
             throw new IllegalArgumentException(
-                    "component instance name too long (max length in bytes is 256, " +
+                    "component instance name too long (max length in bytes is " +
+                    GarnettComponentInstanceName.MAX_INSTANCE_NAME_LENGTH +", " +
                     "this name's length is " + _instanceNameBytes.length + "," +
                     " this name is \"" + _instanceName + "\")"
             );

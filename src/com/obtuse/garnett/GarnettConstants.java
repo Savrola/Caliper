@@ -8,7 +8,7 @@ package com.obtuse.garnett;
  * Various Garnett implementation constants.
  */
 
-@SuppressWarnings({ "UnusedDeclaration" })
+@SuppressWarnings({ "UnusedDeclaration", "UnqualifiedStaticUsage" })
 public class GarnettConstants {
 
     public static final int GARNETT_OBJECT_STREAM_PROTOCOL_VERSION    = 1;

@@ -22,7 +22,8 @@ public class ButtonInfo {
     private final ImageIcon _pressedIcon;
     private final ImageIcon _unpressedIcon;
     private final Runnable _action;
-    private static float _defaultDarkeningFactor = 0.8f;
+    private static final float DEFAULT_DARKENING_FACTOR = 0.8f;
+    private static float s_defaultDarkeningFactor = ButtonInfo.DEFAULT_DARKENING_FACTOR;
 
     private ButtonInfo( JLabel button, ImageIcon pressedIcon, ImageIcon unpressedIcon, Runnable action ) {
         super();
@@ -36,13 +37,13 @@ public class ButtonInfo {
 
     public static void setDefaultDarkeningFactor( float factor ) {
 
-        _defaultDarkeningFactor = factor;
+        ButtonInfo.s_defaultDarkeningFactor = factor;
 
     }
 
     public static float getDefaultDarkeningFactor() {
 
-        return _defaultDarkeningFactor;
+        return ButtonInfo.s_defaultDarkeningFactor;
 
     }
 
@@ -77,13 +78,13 @@ public class ButtonInfo {
                 String buttonName
     ) {
 
-        return makeButtonLabel(
+        return ButtonInfo.makeButtonLabel(
                 buttonOwner,
                 button,
                 action,
                 buttonName,
                 ImageIconUtils.getDefaultResourceBaseDirectory(),
-                _defaultDarkeningFactor
+                ButtonInfo.s_defaultDarkeningFactor
         );
 
     }
@@ -112,7 +113,7 @@ public class ButtonInfo {
 
 //        ImageIcon pressedIcon = IconImageUtils.fetchIconImage( "button-" + buttonName + "-pressed.png" );
 
-        return makeButtonLabel( buttonOwner, button, action, unpressedIcon, pressedIcon );
+        return ButtonInfo.makeButtonLabel( buttonOwner, button, action, unpressedIcon, pressedIcon );
 
     }
 

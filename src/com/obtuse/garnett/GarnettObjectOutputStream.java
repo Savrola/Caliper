@@ -8,6 +8,7 @@ import com.obtuse.exceptions.HowDidWeGetHereError;
 import com.obtuse.garnett.exceptions.GarnettIllegalArgumentException;
 import com.obtuse.garnett.exceptions.GarnettSerializationFailedException;
 import com.obtuse.util.Logger;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -33,7 +34,7 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
     private ByteBuffer _buffer;
 
-    private SortedMap<GarnettTypeName,Integer> _knownGarnettTypes;
+    private SortedMap<GarnettTypeName,Integer> _knownGarnettTypes = null;
     private int _nextGarnettTypeIndex = 0;
 
     // This is the largest value that we will ever call needRoom for.
@@ -63,7 +64,7 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
         _outChannel = Channels.newChannel( outStream );
 
-        _buffer = ByteBuffer.allocate( INTERNAL_BUFFER_SIZE );
+        _buffer = ByteBuffer.allocate( GarnettObjectOutputStream.INTERNAL_BUFFER_SIZE );
 
         _buffer.putInt( GarnettConstants.GARNETT_OBJECT_STREAM_MAGIC_NUMBER );
         reset();
@@ -173,7 +174,7 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
     }
 
-    public void reset()
+    public final void reset()
             throws IOException {
 
         _knownGarnettTypes = new TreeMap<GarnettTypeName, Integer>();
@@ -342,7 +343,7 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
     }
 
-    public void writeByteArray( byte[] val )
+    public final void writeByteArray( byte[] val )
             throws IOException {
 
         _serializationDepth += 1;
@@ -859,7 +860,7 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
     }
 
-    public void writeOptionalGarnettObject( GarnettObject obj )
+    public void writeOptionalGarnettObject( @Nullable GarnettObject obj )
             throws IOException {
 
         _serializationDepth += 1;
@@ -904,6 +905,7 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
                 int garnettTypeNameLength = garnettTypeNameBytes.length;
                 if ( garnettTypeNameLength > GarnettConstants.MAX_GARNETT_TYPE_NAME_LENGTH ) {
 
+                    //noinspection MagicNumber
                     throw new GarnettSerializationFailedException(
                             "Garnett type name \"" +
                             garnettTypeName.getName().substring( 0, 20 ) +
@@ -946,8 +948,11 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettSessionPrefix getSessionPrefix() {
 
         return _sessionPrefix;
+
     }
+
 }

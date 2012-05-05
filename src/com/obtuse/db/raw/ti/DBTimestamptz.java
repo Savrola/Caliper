@@ -54,7 +54,7 @@ public class DBTimestamptz extends DBValue {
 
     public void setObjectValue( Object value ) {
 
-        _ts = (Timestamp)((Timestamp)value).clone();
+        _ts = (Timestamp)( (java.util.Date)value ).clone();
 
     }
 

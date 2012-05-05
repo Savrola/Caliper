@@ -357,34 +357,34 @@ public abstract class JListManager implements ButtonOwner {
         public static final int INTER_BUTTON_GAP = 3;
 
         private boolean _addButtonIncluded = true;
-        private JLabel     _addButton;
-        private String     _addButtonName;
-        private ButtonInfo _addButtonInfo;
+        private JLabel     _addButton = null;
+        private String     _addButtonName = null;
+        private ButtonInfo _addButtonInfo = null;
 
         private boolean _deleteButtonIncluded = true;
-        private JLabel     _deleteButton;
-        private String     _deleteButtonName;
-        private ButtonInfo _deleteButtonInfo;
+        private JLabel     _deleteButton = null;
+        private String     _deleteButtonName = null;
+        private ButtonInfo _deleteButtonInfo = null;
 
         private boolean _moveUpButtonIncluded = true;
-        private JLabel _moveUpButton;
-        private String _moveUpButtonName;
-        private ButtonInfo _moveUpButtonInfo;
+        private JLabel _moveUpButton = null;
+        private String _moveUpButtonName = null;
+        private ButtonInfo _moveUpButtonInfo = null;
 
         private boolean _moveDownButtonIncluded = true;
-        private JLabel _moveDownButton;
-        private String _moveDownButtonName;
-        private ButtonInfo _moveDownButtonInfo;
+        private JLabel _moveDownButton = null;
+        private String _moveDownButtonName = null;
+        private ButtonInfo _moveDownButtonInfo = null;
 
         private boolean _duplicateButtonIncluded = true;
-        private JLabel     _duplicateButton;
-        private String     _duplicateButtonName;
-        private ButtonInfo _duplicateButtonInfo;
+        private JLabel     _duplicateButton = null;
+        private String     _duplicateButtonName = null;
+        private ButtonInfo _duplicateButtonInfo = null;
 
         private boolean _multipleDeleteAllowed    = false;
         private boolean _multipleDuplicateAllowed = false;
 
-        private boolean _panelReady;
+        private boolean _panelReady = false;
 
         public ButtonPanel() {
 
@@ -431,7 +431,7 @@ public abstract class JListManager implements ButtonOwner {
 
                     if ( _addButtonName == null ) {
 
-                        _addButtonName = DEFAULT_ADD_BUTTON_NAME;
+                        _addButtonName = ButtonPanel.DEFAULT_ADD_BUTTON_NAME;
 
                     }
 
@@ -455,7 +455,7 @@ public abstract class JListManager implements ButtonOwner {
 
                 }
 
-                add( Box.createHorizontalStrut( INTER_BUTTON_GAP ) );
+                add( Box.createHorizontalStrut( ButtonPanel.INTER_BUTTON_GAP ) );
 
                 add( _addButton );
                 firstButton = false;
@@ -468,7 +468,7 @@ public abstract class JListManager implements ButtonOwner {
 
                     if ( _deleteButtonName == null ) {
 
-                        _deleteButtonName = DEFAULT_DELETE_BUTTON_NAME;
+                        _deleteButtonName = ButtonPanel.DEFAULT_DELETE_BUTTON_NAME;
 
                     }
 
@@ -494,7 +494,7 @@ public abstract class JListManager implements ButtonOwner {
 
                 if ( !firstButton ) {
 
-                    add( Box.createHorizontalStrut( INTER_BUTTON_GAP ) );
+                    add( Box.createHorizontalStrut( ButtonPanel.INTER_BUTTON_GAP ) );
                     firstButton = false;
 
                 }
@@ -509,7 +509,7 @@ public abstract class JListManager implements ButtonOwner {
 
                     if ( _moveUpButtonName == null ) {
 
-                        _moveUpButtonName = DEFAULT_MOVE_UP_BUTTON_NAME;
+                        _moveUpButtonName = ButtonPanel.DEFAULT_MOVE_UP_BUTTON_NAME;
 
                     }
 
@@ -535,7 +535,7 @@ public abstract class JListManager implements ButtonOwner {
 
                 if ( !firstButton ) {
 
-                    add( Box.createHorizontalStrut( INTER_BUTTON_GAP ) );
+                    add( Box.createHorizontalStrut( ButtonPanel.INTER_BUTTON_GAP ) );
                     firstButton = false;
 
                 }
@@ -550,7 +550,7 @@ public abstract class JListManager implements ButtonOwner {
 
                     if ( _moveDownButtonName == null ) {
 
-                        _moveDownButtonName = DEFAULT_MOVE_DOWN_BUTTON_NAME;
+                        _moveDownButtonName = ButtonPanel.DEFAULT_MOVE_DOWN_BUTTON_NAME;
 
                     }
 
@@ -576,7 +576,7 @@ public abstract class JListManager implements ButtonOwner {
 
                 if ( !firstButton ) {
 
-                    add( Box.createHorizontalStrut( INTER_BUTTON_GAP ) );
+                    add( Box.createHorizontalStrut( ButtonPanel.INTER_BUTTON_GAP ) );
                     firstButton = false;
 
                 }
@@ -599,7 +599,7 @@ public abstract class JListManager implements ButtonOwner {
 
                     if ( _duplicateButtonName == null ) {
 
-                        _duplicateButtonName = DEFAULT_DUPLICATE_BUTTON_NAME;
+                        _duplicateButtonName = ButtonPanel.DEFAULT_DUPLICATE_BUTTON_NAME;
 
                     }
 
@@ -625,7 +625,7 @@ public abstract class JListManager implements ButtonOwner {
 
                 if ( !firstButton ) {
 
-                    add( Box.createHorizontalStrut( INTER_BUTTON_GAP ) );
+                    add( Box.createHorizontalStrut( ButtonPanel.INTER_BUTTON_GAP ) );
 //                    firstButton = false;
 
                 }
@@ -1184,13 +1184,15 @@ public abstract class JListManager implements ButtonOwner {
 
     private JList _jList;
     private DefaultListModel _listModel;
+    @SuppressWarnings("FieldCanBeLocal")
     private ListSelectionModel _listSelectionModel;
     private JScrollPane _scrollPane;
     private ButtonPanel _buttonPanel;
-    private UndoManager _undoManager;
+    private UndoManager _undoManager = null;
+    @SuppressWarnings("FieldCanBeLocal")
     private final String _name;
-    private ListElementFactory _listElementFactory;
-    private UndoableListElementFactory _undoableListElementFactory;
+    private ListElementFactory _listElementFactory = null;
+    private UndoableListElementFactory _undoableListElementFactory = null;
     private String _resourceBaseDirectory;
 
     /**

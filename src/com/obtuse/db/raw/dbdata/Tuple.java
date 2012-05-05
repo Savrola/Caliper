@@ -16,6 +16,7 @@ import java.util.Map;
  * Copyright © 2012 Daniel Boulet.
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public abstract class Tuple implements Serializable {
 
     private final TableInfo _tableInfo;
@@ -24,9 +25,9 @@ public abstract class Tuple implements Serializable {
 
     private final boolean[] _dirty;
 
-    private boolean _allDirty;
+    private boolean _allDirty = false;
 
-    private static final Map<String, Class<? extends Tuple>> _knownTables = new HashMap<String, Class<? extends Tuple>>();
+    private static final Map<String, Class<? extends Tuple>> s_knownTables = new HashMap<String, Class<? extends Tuple>>();
 
     /**
      * Describe a {@link PreparedStatement} used in an insertion operation.
@@ -73,17 +74,22 @@ public abstract class Tuple implements Serializable {
     protected Tuple( TableInfo tableInfo ) {
         super();
 
-        synchronized ( _knownTables ) {
+        synchronized ( Tuple.s_knownTables ) {
+
             String ucTableName = tableInfo.getTableName().toUpperCase();
-            Class<? extends Tuple> correctClass = _knownTables.get( ucTableName );
+            Class<? extends Tuple> correctClass = Tuple.s_knownTables.get( ucTableName );
             if ( correctClass == null ) {
-                _knownTables.put( ucTableName, getClass() );
+
+                Tuple.s_knownTables.put( ucTableName, getClass() );
+
             } else //noinspection ObjectEquality
                 if ( correctClass != getClass() ) {
+
                     throw new HowDidWeGetHereError(
                             "table \"" + ucTableName + "\" already being used by " + correctClass + ", use with " +
-                            _knownTables.get( ucTableName ) + " not allowed"
+                            Tuple.s_knownTables.get( ucTableName ) + " not allowed"
                     );
+
                 }
 
         }
@@ -146,20 +152,21 @@ public abstract class Tuple implements Serializable {
 
     }
 
-    /**
-     * Initialize a TIMESTAMPTZ column's value.
-     *
-     * @param columnIx the column's index within the table (0-origin here).
-     * @param value    the initial value of the column.
-     *
-     * @deprecated should use the java.sql.Timestamp type to pass timestamps around.
-     */
-
-    protected void initializeTimestampTZValue( int columnIx, long value ) {
-
-        throw new HowDidWeGetHereError( "unsupported method - bye!" );
-
-    }
+//    /**
+//     * Initialize a TIMESTAMPTZ column's value.
+//     *
+//     * @param columnIx the column's index within the table (0-origin here).
+//     * @param value    the initial value of the column.
+//     *
+//     * @deprecated should use the java.sql.Timestamp type to pass timestamps around.
+//     */
+//
+//    @Deprecated
+//    protected void initializeTimestampTZValue( int columnIx, long value ) {
+//
+//        throw new HowDidWeGetHereError( "unsupported method - bye!" );
+//
+//    }
 
     /**
      * Initialize a TEXT column's value.
@@ -168,6 +175,7 @@ public abstract class Tuple implements Serializable {
      * @param value    the initial value of the column.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     protected void initializeTextValue( int columnIx, String value ) {
 
         _values[columnIx] = new DBText( value );
@@ -181,6 +189,7 @@ public abstract class Tuple implements Serializable {
      * @param value    the initial value of the column.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     protected void initializeLongValue( int columnIx, long value ) {
 
         _values[columnIx] = new DBLong( value );
@@ -195,9 +204,10 @@ public abstract class Tuple implements Serializable {
      * @return the value of the column.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     protected int getSerialValue( int columnIx ) {
 
-        return (Integer)_values[columnIx].getObjectValue();
+        return ( (Integer)_values[columnIx].getObjectValue() ).intValue();
 
     }
 
@@ -209,9 +219,10 @@ public abstract class Tuple implements Serializable {
      * @return the value of the column.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     protected int getIntValue( int columnIx ) {
 
-        return (Integer)_values[columnIx].getObjectValue();
+        return ( (Integer)_values[columnIx].getObjectValue() ).intValue();
 
     }
 
@@ -223,6 +234,7 @@ public abstract class Tuple implements Serializable {
      * @return the value of the column.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     protected boolean getBooleanValue( int columnIx ) {
 
         return ( (Boolean)_values[columnIx].getObjectValue() ).booleanValue();
@@ -237,6 +249,7 @@ public abstract class Tuple implements Serializable {
      * @return the value of the column.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     protected long getLongValue( int columnIx ) {
 
         return ( (Long)_values[columnIx].getObjectValue() ).longValue();
@@ -251,6 +264,7 @@ public abstract class Tuple implements Serializable {
      * @return the value of the column.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     protected Timestamp getTimestampTZValue( int columnIx ) {
 
         return (Timestamp)_values[columnIx].getObjectValue();
@@ -265,6 +279,7 @@ public abstract class Tuple implements Serializable {
      * @return the value of the column.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     protected String getTextValue( int columnIx ) {
 
         return (String)_values[columnIx].getObjectValue();
@@ -294,6 +309,7 @@ public abstract class Tuple implements Serializable {
      * @return this Tuple's metadata.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     public TableInfo getTableInfo() {
 
         return _tableInfo;
@@ -309,6 +325,7 @@ public abstract class Tuple implements Serializable {
      *         created; false otherwise.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     public boolean isDirty( String columnName ) {
 
         return _allDirty || _dirty[_tableInfo.getColumnIndex( columnName )];
@@ -331,6 +348,7 @@ public abstract class Tuple implements Serializable {
      * @return true if {@link #setAllDirty()} has been called on this instance.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     public boolean allDirty() {
 
         return _allDirty;

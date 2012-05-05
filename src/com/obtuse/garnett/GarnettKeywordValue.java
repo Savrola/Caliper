@@ -12,15 +12,12 @@ import java.io.IOException;
 
 public class GarnettKeywordValue implements GarnettObject {
 
-    public static final GarnettTypeName GARNETT_LOGIN_RESPONSE_MESSAGE_NAME = new GarnettTypeName(
-            GarnettKeywordValue.class.getCanonicalName()
-    );
-
-    public static int VERSION = 1;
+    public static final int VERSION = 1;
 
     public final String _keyword;
     public String _value;
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettKeywordValue( String keyword, String value ) {
         super();
 
@@ -29,14 +26,15 @@ public class GarnettKeywordValue implements GarnettObject {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettKeywordValue( GarnettObjectInputStreamInterface gois )
             throws IOException {
         super();
 
         gois.checkVersion(
-                GARNETT_LOGIN_RESPONSE_MESSAGE_NAME,
-                VERSION,
-                VERSION
+                GarnettKeywordValue.class,
+                GarnettKeywordValue.VERSION,
+                GarnettKeywordValue.VERSION
         );
 
         _keyword = gois.readString();
@@ -46,14 +44,14 @@ public class GarnettKeywordValue implements GarnettObject {
 
     public GarnettTypeName getGarnettTypeName() {
 
-        return GARNETT_LOGIN_RESPONSE_MESSAGE_NAME;
+        return new GarnettTypeName( GarnettKeywordValue.class.getCanonicalName() );
 
     }
 
     public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        goos.writeVersion( VERSION );
+        goos.writeVersion( GarnettKeywordValue.VERSION );
 
         goos.writeString( _keyword );
         goos.writeOptionalString( _value );

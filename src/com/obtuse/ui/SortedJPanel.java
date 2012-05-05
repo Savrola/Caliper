@@ -18,12 +18,13 @@ import java.awt.event.ActionListener;
 
 public class SortedJPanel extends JPanel {
 
+    @SuppressWarnings("FieldCanBeLocal")
     private final BoxLayout _layoutManager;
 
     public SortedJPanel( int axis ) {
         super();
 
-        //noinspection MagicConstant
+        //noinspection MagicConstant,ThisEscapedInObjectConstruction
         _layoutManager = new BoxLayout( this, axis );
         super.setLayout( _layoutManager );
 
@@ -152,6 +153,7 @@ public class SortedJPanel extends JPanel {
 
     }
 
+    @SuppressWarnings("UnqualifiedStaticUsage")
     public static void main( String[] args ) {
 
         BasicProgramConfigInfo.init( "Obtuse", "Caliper", "SortedJPanel", null );

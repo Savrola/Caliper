@@ -7,24 +7,22 @@ package com.obtuse.garnett.stdmsgs;
 import com.obtuse.garnett.*;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Respond to a login attempt.
  */
 
-public class GarnettLoginResponseMessage extends GarnettResponseMessage implements GarnettObject {
+public class GarnettLoginResponseMessage extends GarnettResponseMessage {
 
-    public static final GarnettTypeName GARNETT_LOGIN_RESPONSE_MESSAGE_NAME = new GarnettTypeName(
-            GarnettLoginResponseMessage.class.getCanonicalName()
-    );
-
-    public static int VERSION = 1;
+    public static final int VERSION = 1;
 
     private final boolean _worked;
     private final LoginResponse _loginResponse;
     private final GarnettKeywordValue[] _accountAttributes;
     private final SavrolaCapabilities _capabilities;
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettLoginResponseMessage(
             long requestId,
             LoginResponse loginResponse,
@@ -34,20 +32,21 @@ public class GarnettLoginResponseMessage extends GarnettResponseMessage implemen
         super( requestId );
 
         _loginResponse = loginResponse;
-        _accountAttributes = accountAttributes;
+        _accountAttributes = Arrays.copyOf( accountAttributes, accountAttributes.length );
         _capabilities = capabilities;
         _worked = capabilities != null;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettLoginResponseMessage( GarnettObjectInputStreamInterface gois )
             throws IOException {
         super( gois );
 
         gois.checkVersion(
-                GARNETT_LOGIN_RESPONSE_MESSAGE_NAME,
-                VERSION,
-                VERSION
+                GarnettLoginResponseMessage.class,
+                GarnettLoginResponseMessage.VERSION,
+                GarnettLoginResponseMessage.VERSION
         );
 
         _worked = gois.readBoolean();
@@ -66,14 +65,14 @@ public class GarnettLoginResponseMessage extends GarnettResponseMessage implemen
 
     public GarnettTypeName getGarnettTypeName() {
 
-        return GARNETT_LOGIN_RESPONSE_MESSAGE_NAME;
+        return new GarnettTypeName( GarnettLoginResponseMessage.class.getCanonicalName() );
 
     }
 
     public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        goos.writeVersion( VERSION );
+        goos.writeVersion( GarnettLoginResponseMessage.VERSION );
         goos.writeBoolean( _worked );
         goos.writeOptionalGarnettObject( _loginResponse );
         goos.writeOptionalGarnettObject( _capabilities );

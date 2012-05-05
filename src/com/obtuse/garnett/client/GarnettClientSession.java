@@ -30,13 +30,16 @@ public class GarnettClientSession extends GarnettSession {
 
     private final byte[] _obfuscatedPassword;
 
+    @SuppressWarnings("FieldCanBeLocal")
     private boolean _fromServerDone = false;
 
+    @SuppressWarnings({ "FieldCanBeLocal", "UnusedDeclaration" })
     private boolean _toServerDone = false;
 
     private static final long INACTIVITY_TIMEOUT =
             DebugUtilities.inIntelliJIDEA() ? Timer.ONE_HOUR : Timer.ONE_MINUTE * 5L;
 
+    @SuppressWarnings("FieldCanBeLocal")
     private int _activationCode = 0;
 
     protected GarnettClientSession(
@@ -63,7 +66,7 @@ public class GarnettClientSession extends GarnettSession {
 
         // We're the client so we are by definition authenticated.
 
-        setAuthenticated( true );
+        setSessionIsAuthenticated();
 
     }
 
@@ -90,6 +93,7 @@ public class GarnettClientSession extends GarnettSession {
 //
 //    }
 
+    @SuppressWarnings("UnusedDeclaration")
     protected GarnettClientSessionManager getClientSessionManager() {
 
         return _garnettClientSessionManager;
@@ -134,12 +138,14 @@ public class GarnettClientSession extends GarnettSession {
 
                 // Limit the "let's get this thing going" game to five minutes.
 
-                if ( System.currentTimeMillis() - attemptStartedTime > INACTIVITY_TIMEOUT ) {
+                if ( System.currentTimeMillis() - attemptStartedTime > GarnettClientSession.INACTIVITY_TIMEOUT ) {
 
                     Logger.logMsg(
                             "Unable to launch proxy session " + getSessionName() + " after " +
-                            INACTIVITY_TIMEOUT / Timer.ONE_MINUTE + " minutes - giving up", null
+                            GarnettClientSession.INACTIVITY_TIMEOUT / Timer.ONE_MINUTE + " minutes - giving up",
+                            null
                     );
+
                     return;
 
                 }
@@ -403,12 +409,14 @@ public class GarnettClientSession extends GarnettSession {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     protected GarnettComponentInstanceName getServerType() {
 
         return _serverInstanceName;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static boolean loggableException( IOException e ) {
 
         String msg = e.getMessage().toLowerCase();
@@ -463,8 +471,11 @@ public class GarnettClientSession extends GarnettSession {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettComponentInstanceName getServerInstanceName() {
 
         return _serverInstanceName;
+
     }
+
 }

@@ -5,9 +5,7 @@ import com.obtuse.util.exceptions.ParsingException;
 import javax.management.timer.Timer;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.*;
 
 /**
  * Various methods for parsing and just generally managing dates.
@@ -71,10 +69,11 @@ public class DateUtils {
     public static ImmutableDate parseMMDDYYYY_HHMM( TimeZone timezone, String token, int lineNumber )
             throws ParsingException {
 
-        synchronized ( MMDDYYYY_HHMM ) {
+        synchronized ( DateUtils.MMDDYYYY_HHMM ) {
 
-            MMDDYYYY_HHMM.setTimeZone( timezone );
-            ImmutableDate date = dateParse( MMDDYYYY_HHMM, token, lineNumber );
+            DateUtils.MMDDYYYY_HHMM.setTimeZone( timezone );
+            ImmutableDate date = DateUtils.dateParse( DateUtils.MMDDYYYY_HHMM, token, lineNumber );
+
             return date;
 
         }
@@ -93,10 +92,11 @@ public class DateUtils {
     public static ImmutableDate parseMMDDYYYY( String token, int lineNumber )
             throws ParsingException {
 
-        synchronized ( MMDDYYYY ) {
+        synchronized ( DateUtils.MMDDYYYY ) {
 
-            MMDDYYYY.setTimeZone( TimeZone.getDefault() );
-            ImmutableDate date = dateParse( MMDDYYYY, token, lineNumber );
+            DateUtils.MMDDYYYY.setTimeZone( TimeZone.getDefault() );
+            ImmutableDate date = DateUtils.dateParse( DateUtils.MMDDYYYY, token, lineNumber );
+
             return date;
 
         }
@@ -115,10 +115,11 @@ public class DateUtils {
 
     public static String formatHHMM( Date dateTime ) {
 
-        synchronized ( HHMM ) {
+        synchronized ( DateUtils.HHMM ) {
 
-            HHMM.setTimeZone( TimeZone.getDefault() );
-            String s = HHMM.format( dateTime );
+            DateUtils.HHMM.setTimeZone( TimeZone.getDefault() );
+            String s = DateUtils.HHMM.format( dateTime );
+
             return s;
 
         }
@@ -152,10 +153,11 @@ public class DateUtils {
 
     public static String formatMMDDYYYY_HHMM( Date dateTime ) {
 
-        synchronized ( MMDDYYYY_HHMM ) {
+        synchronized ( DateUtils.MMDDYYYY_HHMM ) {
 
-            MMDDYYYY_HHMM.setTimeZone( TimeZone.getDefault() );
-            String s = MMDDYYYY_HHMM.format( dateTime );
+            DateUtils.MMDDYYYY_HHMM.setTimeZone( TimeZone.getDefault() );
+            String s = DateUtils.MMDDYYYY_HHMM.format( dateTime );
+
             return s;
 
         }
@@ -174,10 +176,11 @@ public class DateUtils {
 
     public static String formatYYYYMMDD_HHMM( Date dateTime ) {
 
-        synchronized ( YYYYMMDD_HHMM ) {
+        synchronized ( DateUtils.YYYYMMDD_HHMM ) {
 
-            YYYYMMDD_HHMM.setTimeZone( TimeZone.getDefault() );
-            String s = YYYYMMDD_HHMM.format( dateTime );
+            DateUtils.YYYYMMDD_HHMM.setTimeZone( TimeZone.getDefault() );
+            String s = DateUtils.YYYYMMDD_HHMM.format( dateTime );
+
             return s;
 
         }
@@ -196,10 +199,11 @@ public class DateUtils {
 
     public static String formatMMDDYYYY( Date dateTime ) {
 
-        synchronized ( MMDDYYYY ) {
+        synchronized ( DateUtils.MMDDYYYY ) {
 
-            MMDDYYYY.setTimeZone( TimeZone.getDefault() );
-            String s = MMDDYYYY.format( dateTime );
+            DateUtils.MMDDYYYY.setTimeZone( TimeZone.getDefault() );
+            String s = DateUtils.MMDDYYYY.format( dateTime );
+
             return s;
 
         }
@@ -219,10 +223,11 @@ public class DateUtils {
     public static ImmutableDate parseLongDateTime( TimeZone timezone, String token, int lineNumber )
             throws ParsingException {
 
-        synchronized ( WWW_MMM_DD_HHMMSS_YYYY ) {
+        synchronized ( DateUtils.WWW_MMM_DD_HHMMSS_YYYY ) {
 
-            WWW_MMM_DD_HHMMSS_YYYY.setTimeZone( timezone );
-            ImmutableDate date = dateParse( WWW_MMM_DD_HHMMSS_YYYY, token, lineNumber );
+            DateUtils.WWW_MMM_DD_HHMMSS_YYYY.setTimeZone( timezone );
+            ImmutableDate date = DateUtils.dateParse( DateUtils.WWW_MMM_DD_HHMMSS_YYYY, token, lineNumber );
+
             return date;
 
         }
@@ -262,7 +267,8 @@ public class DateUtils {
         synchronized ( DateUtils.HH_MM ) {
 
             DateUtils.HH_MM.setTimeZone( timezone );
-            ImmutableDate date = dateParse( DateUtils.HH_MM, token, lineNumber );
+            ImmutableDate date = DateUtils.dateParse( DateUtils.HH_MM, token, lineNumber );
+
             return date;
 
         }
@@ -282,10 +288,11 @@ public class DateUtils {
     public static ImmutableDate parseMM_DD_YYYY_HH_MM( TimeZone timezone, String token, int lineNumber )
             throws ParsingException {
 
-        synchronized ( MM_DD_YYYY_HH_MM ) {
+        synchronized ( DateUtils.MM_DD_YYYY_HH_MM ) {
 
-            MM_DD_YYYY_HH_MM.setTimeZone( timezone );
-            ImmutableDate date = dateParse( MM_DD_YYYY_HH_MM, token, lineNumber );
+            DateUtils.MM_DD_YYYY_HH_MM.setTimeZone( timezone );
+            ImmutableDate date = DateUtils.dateParse( DateUtils.MM_DD_YYYY_HH_MM, token, lineNumber );
+
             return date;
 
         }
@@ -304,10 +311,11 @@ public class DateUtils {
     public static ImmutableDate parseMM_DD_YYYY( String token, int lineNumber )
             throws ParsingException {
 
-        synchronized ( MM_DD_YYYY ) {
+        synchronized ( DateUtils.MM_DD_YYYY ) {
 
-            MM_DD_YYYY.setTimeZone( TimeZone.getDefault() );
-            ImmutableDate date = dateParse( MM_DD_YYYY, token, lineNumber );
+            DateUtils.MM_DD_YYYY.setTimeZone( TimeZone.getDefault() );
+            ImmutableDate date = DateUtils.dateParse( DateUtils.MM_DD_YYYY, token, lineNumber );
+
             return date;
 
         }
@@ -326,10 +334,11 @@ public class DateUtils {
     public static ImmutableDate parseYYYY_MM_DD( String token, int lineNumber )
             throws ParsingException {
 
-        synchronized ( YYYY_MM_DD ) {
+        synchronized ( DateUtils.YYYY_MM_DD ) {
 
-            YYYY_MM_DD.setTimeZone( TimeZone.getDefault() );
-            ImmutableDate date = dateParse( YYYY_MM_DD, token, lineNumber );
+            DateUtils.YYYY_MM_DD.setTimeZone( TimeZone.getDefault() );
+            ImmutableDate date = DateUtils.dateParse( DateUtils.YYYY_MM_DD, token, lineNumber );
+
             return date;
 
         }
@@ -348,10 +357,11 @@ public class DateUtils {
     public static ImmutableDate parseYYYYMMDD( String token, int lineNumber )
             throws ParsingException {
 
-        synchronized ( YYYYMMDD ) {
+        synchronized ( DateUtils.YYYYMMDD ) {
 
-            YYYYMMDD.setTimeZone( TimeZone.getDefault() );
-            ImmutableDate date = dateParse( YYYYMMDD, token, lineNumber );
+            DateUtils.YYYYMMDD.setTimeZone( TimeZone.getDefault() );
+            ImmutableDate date = DateUtils.dateParse( DateUtils.YYYYMMDD, token, lineNumber );
+
             return date;
 
         }
@@ -370,10 +380,11 @@ public class DateUtils {
 
     public static String formatHH_MM( Date dateTime ) {
 
-        synchronized ( HH_MM ) {
+        synchronized ( DateUtils.HH_MM ) {
 
-            HH_MM.setTimeZone( TimeZone.getDefault() );
-            String s = HH_MM.format( dateTime );
+            DateUtils.HH_MM.setTimeZone( TimeZone.getDefault() );
+            String s = DateUtils.HH_MM.format( dateTime );
+
             return s;
 
         }
@@ -389,6 +400,7 @@ public class DateUtils {
 //
 //            HHMMSSS.setTimeZone( UTC );
 //            String s = HHMMSSS.format( dateTime );
+//
 //            return s;
 //
 //        }
@@ -407,10 +419,11 @@ public class DateUtils {
 
     public static String formatMM_DD_YYYY_HH_MM( Date dateTime ) {
 
-        synchronized ( MM_DD_YYYY_HH_MM ) {
+        synchronized ( DateUtils.MM_DD_YYYY_HH_MM ) {
 
-            MM_DD_YYYY_HH_MM.setTimeZone( TimeZone.getDefault() );
-            String s = MM_DD_YYYY_HH_MM.format( dateTime );
+            DateUtils.MM_DD_YYYY_HH_MM.setTimeZone( TimeZone.getDefault() );
+            String s = DateUtils.MM_DD_YYYY_HH_MM.format( dateTime );
+
             return s;
 
         }
@@ -429,7 +442,7 @@ public class DateUtils {
 
     public static String formatYYYY_MM_DD_HH_MM( Date dateTime ) {
 
-        return formatYYYY_MM_DD_HH_MM( dateTime, TimeZone.getDefault() );
+        return DateUtils.formatYYYY_MM_DD_HH_MM( dateTime, TimeZone.getDefault() );
 
     }
 
@@ -446,10 +459,11 @@ public class DateUtils {
 
     public static String formatYYYY_MM_DD_HH_MM( Date dateTime, TimeZone timeZone ) {
 
-        synchronized ( YYYY_MM_DD_HH_MM ) {
+        synchronized ( DateUtils.YYYY_MM_DD_HH_MM ) {
 
-            YYYY_MM_DD_HH_MM.setTimeZone( timeZone );
-            String s = YYYY_MM_DD_HH_MM.format( dateTime );
+            DateUtils.YYYY_MM_DD_HH_MM.setTimeZone( timeZone );
+            String s = DateUtils.YYYY_MM_DD_HH_MM.format( dateTime );
+
             return s;
 
         }
@@ -468,7 +482,7 @@ public class DateUtils {
 
     public static String formatYYYY_MM_DD_HH_MM_SS( Date dateTime ) {
 
-        return formatYYYY_MM_DD_HH_MM_SS( dateTime, TimeZone.getDefault() );
+        return DateUtils.formatYYYY_MM_DD_HH_MM_SS( dateTime, TimeZone.getDefault() );
 
     }
 
@@ -485,10 +499,11 @@ public class DateUtils {
 
     public static String formatYYYY_MM_DD_HH_MM_SS( Date dateTime, TimeZone timeZone ) {
 
-        synchronized ( YYYY_MM_DD_HH_MM_SS ) {
+        synchronized ( DateUtils.YYYY_MM_DD_HH_MM_SS ) {
 
-            YYYY_MM_DD_HH_MM_SS.setTimeZone( timeZone );
-            String s = YYYY_MM_DD_HH_MM_SS.format( dateTime );
+            DateUtils.YYYY_MM_DD_HH_MM_SS.setTimeZone( timeZone );
+            String s = DateUtils.YYYY_MM_DD_HH_MM_SS.format( dateTime );
+
             return s;
 
         }
@@ -507,7 +522,7 @@ public class DateUtils {
 
     public static String formatYYYY_MM_DD_HH_MM_SS_SSS( Date dateTime ) {
 
-        return formatYYYY_MM_DD_HH_MM_SS_SSS( dateTime, TimeZone.getDefault() );
+        return DateUtils.formatYYYY_MM_DD_HH_MM_SS_SSS( dateTime, TimeZone.getDefault() );
 
     }
 
@@ -524,10 +539,11 @@ public class DateUtils {
 
     public static String formatYYYY_MM_DD_HH_MM_SS_SSS( Date dateTime, TimeZone timeZone ) {
 
-        synchronized ( YYYY_MM_DD_HH_MM_SS_SSS ) {
+        synchronized ( DateUtils.YYYY_MM_DD_HH_MM_SS_SSS ) {
 
-            YYYY_MM_DD_HH_MM_SS_SSS.setTimeZone( timeZone );
-            String s = YYYY_MM_DD_HH_MM_SS_SSS.format( dateTime );
+            DateUtils.YYYY_MM_DD_HH_MM_SS_SSS.setTimeZone( timeZone );
+            String s = DateUtils.YYYY_MM_DD_HH_MM_SS_SSS.format( dateTime );
+
             return s;
 
         }
@@ -544,10 +560,11 @@ public class DateUtils {
 
     public static String formatYYYY_MM_DD_HH_MM_ZZZ( Date dateTime, TimeZone timeZone ) {
 
-        synchronized ( YYYY_MM_DD_HH_MM_ZZZ ) {
+        synchronized ( DateUtils.YYYY_MM_DD_HH_MM_ZZZ ) {
 
-            YYYY_MM_DD_HH_MM_ZZZ.setTimeZone( timeZone );
-            String s = YYYY_MM_DD_HH_MM_ZZZ.format( dateTime );
+            DateUtils.YYYY_MM_DD_HH_MM_ZZZ.setTimeZone( timeZone );
+            String s = DateUtils.YYYY_MM_DD_HH_MM_ZZZ.format( dateTime );
+
             return s;
 
         }
@@ -566,10 +583,11 @@ public class DateUtils {
 
     public static String formatMM_DD_YYYY( Date dateTime ) {
 
-        synchronized ( MM_DD_YYYY ) {
+        synchronized ( DateUtils.MM_DD_YYYY ) {
 
-            MM_DD_YYYY.setTimeZone( TimeZone.getDefault() );
-            String s = MM_DD_YYYY.format( dateTime );
+            DateUtils.MM_DD_YYYY.setTimeZone( TimeZone.getDefault() );
+            String s = DateUtils.MM_DD_YYYY.format( dateTime );
+
             return s;
 
         }
@@ -588,10 +606,11 @@ public class DateUtils {
 
     public static String formatYYYY_MM_DD( Date dateTime ) {
 
-        synchronized ( YYYY_MM_DD ) {
+        synchronized ( DateUtils.YYYY_MM_DD ) {
 
-            YYYY_MM_DD.setTimeZone( TimeZone.getDefault() );
-            String s = YYYY_MM_DD.format( dateTime );
+            DateUtils.YYYY_MM_DD.setTimeZone( TimeZone.getDefault() );
+            String s = DateUtils.YYYY_MM_DD.format( dateTime );
+
             return s;
 
         }
@@ -610,10 +629,11 @@ public class DateUtils {
 
     public static String formatYYMMDD( Date dateTime ) {
 
-        synchronized ( YYMMDD ) {
+        synchronized ( DateUtils.YYMMDD ) {
 
-            YYMMDD.setTimeZone( TimeZone.getDefault() );
-            String s = YYMMDD.format( dateTime );
+            DateUtils.YYMMDD.setTimeZone( TimeZone.getDefault() );
+            String s = DateUtils.YYMMDD.format( dateTime );
+
             return s;
 
         }
@@ -622,18 +642,19 @@ public class DateUtils {
 
     public static String formatDuration( long millis, boolean shortForm ) {
 
-        return formatDuration( millis, 3, shortForm );
+        return DateUtils.formatDuration( millis, 3, shortForm );
+
     }
 
     public static String formatDuration( long millis ) {
 
-        return formatDuration( millis, 3 );
+        return DateUtils.formatDuration( millis, 3 );
 
     }
 
     public static String formatDuration( long millis, int digits ) {
 
-        return formatDuration( millis, digits, false );
+        return DateUtils.formatDuration( millis, digits, false );
 
     }
 
@@ -728,6 +749,5 @@ public class DateUtils {
         return cal.getTime();
 
     }
-
 
 }

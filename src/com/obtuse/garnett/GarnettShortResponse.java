@@ -38,9 +38,9 @@ public class GarnettShortResponse extends GarnettResponseMessage {
         super( gois );
 
         gois.checkVersion(
-                getGarnettTypeName(),
-                VERSION,
-                VERSION
+                GarnettShortResponse.class,
+                GarnettShortResponse.VERSION,
+                GarnettShortResponse.VERSION
         );
 
         _errorCode = GarnettErrorCode.valueOf( gois.readString() );

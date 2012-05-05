@@ -15,21 +15,21 @@ import java.util.prefs.Preferences;
 @SuppressWarnings( { "ClassNamingConvention" } )
 public class BasicProgramConfigInfo {
 
-    private static boolean _initialized = false;
+    private static boolean s_initialized = false;
 
-    private static File _workingDirectory = null;
+    private static File s_workingDirectory = null;
 
-    private static String _vendorName;
+    private static String s_vendorName = null;
 
-    private static String _applicationName;
+    private static String s_applicationName = null;
 
-    private static String _componentName;
+    private static String s_componentName = null;
 
-    private static String _logFileNameFormat;
+    private static String s_logFileNameFormat = null;
 
-    private static Preferences _preferences;
+    private static Preferences s_preferences = null;
 
-    private static DateFormat _dateFormat;
+    private static DateFormat s_dateFormat = null;
 
     /**
      * Initialize this program's basic configuration info.
@@ -50,12 +50,12 @@ public class BasicProgramConfigInfo {
 
     public static void init( String vendorName, String applicationName, String componentName, @Nullable Preferences preferences ) {
 
-        _vendorName = vendorName;
-        _applicationName = applicationName;
-        _componentName = componentName;
-        _preferences = preferences;
+        BasicProgramConfigInfo.s_vendorName = vendorName;
+        BasicProgramConfigInfo.s_applicationName = applicationName;
+        BasicProgramConfigInfo.s_componentName = componentName;
+        BasicProgramConfigInfo.s_preferences = preferences;
 
-        if ( _initialized ) {
+        if ( BasicProgramConfigInfo.s_initialized ) {
 
             throw new IllegalArgumentException( "BasicProgramConfigInfo already initialized" );
 
@@ -72,35 +72,37 @@ public class BasicProgramConfigInfo {
                 File dirLocation = new File( new File( home, "Library" ), "Application Support" );
                 if ( vendorName == null ) {
 
-                    _workingDirectory = new File( dirLocation, applicationName );
+                    BasicProgramConfigInfo.s_workingDirectory = new File( dirLocation, applicationName );
 
                 } else {
 
-                    _workingDirectory = new File( new File( dirLocation, vendorName ), applicationName );
+                    BasicProgramConfigInfo.s_workingDirectory = new File( new File( dirLocation, vendorName ), applicationName );
 
                 }
 
             } else {
 
-                _workingDirectory = new File( new File( home ), "." + applicationName );
+                BasicProgramConfigInfo.s_workingDirectory = new File( new File( home ), "." + applicationName );
 
             }
 
-            _workingDirectory.mkdirs();
+            //noinspection ResultOfMethodCallIgnored
+            BasicProgramConfigInfo.s_workingDirectory.mkdirs();
 
         } else {
 
-            _workingDirectory = null;
+            BasicProgramConfigInfo.s_workingDirectory = null;
 
         }
 
-        _initialized = true;
+        BasicProgramConfigInfo.s_initialized = true;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static boolean isInitialized() {
 
-        return _initialized;
+        return BasicProgramConfigInfo.s_initialized;
 
     }
 
@@ -111,61 +113,65 @@ public class BasicProgramConfigInfo {
 
     public static File getWorkingDirectory() {
 
-        if ( !_initialized ) {
+        if ( !BasicProgramConfigInfo.s_initialized ) {
 
             throw new IllegalArgumentException( "BasicProgramConfigInfo not yet initialized" );
 
         }
 
-        return _workingDirectory;
+        return BasicProgramConfigInfo.s_workingDirectory;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static String getVendorName() {
 
-        return _vendorName;
+        return BasicProgramConfigInfo.s_vendorName;
 
     }
 
     public static String getApplicationName() {
 
-        return _applicationName;
+        return BasicProgramConfigInfo.s_applicationName;
 
     }
 
     public static String getComponentName() {
 
-        return _componentName;
+        return BasicProgramConfigInfo.s_componentName;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static Preferences getPreferences() {
 
-        return _preferences;
+        return BasicProgramConfigInfo.s_preferences;
 
     }
 
     public static String getLogFileNameFormat() {
 
-        return _logFileNameFormat;
+        return BasicProgramConfigInfo.s_logFileNameFormat;
 
     }
 
     public static DateFormat getDateFormat() {
 
-        return _dateFormat;
+        return BasicProgramConfigInfo.s_dateFormat;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void setLogFileNameFormat( String logFileNameFormat ) {
 
-        _logFileNameFormat = logFileNameFormat;
+        BasicProgramConfigInfo.s_logFileNameFormat = logFileNameFormat;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void setDateFormat( DateFormat dateFormat ) {
 
-        _dateFormat = dateFormat;
+        BasicProgramConfigInfo.s_dateFormat = dateFormat;
 
     }
 

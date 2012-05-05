@@ -1,9 +1,7 @@
 package com.obtuse.util;
 
 import java.io.PrintStream;
-import java.util.Comparator;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Measure how long things take.
@@ -22,11 +20,11 @@ public class Measure {
     }
 
     @SuppressWarnings( { "ConstantNamingConvention" })
-    private static final SortedMap<String,CategoryStats> _stats = new TreeMap<String, CategoryStats>();
+    private static final SortedMap<String,CategoryStats> STATS = new TreeMap<String, CategoryStats>();
 
-    private static int _maxCategoryNameLength = 0;
+    private static int s_maxCategoryNameLength = 0;
 
-    private static long _measuringSinceMillis = System.currentTimeMillis();
+    private static long s_measuringSinceMillis = System.currentTimeMillis();
 
     public Measure( String categoryName ) {
         super();
@@ -41,18 +39,19 @@ public class Measure {
         long now = System.currentTimeMillis();
         long delta = now - _startTimeMillis;
 
-        synchronized ( _stats ) {
+        synchronized ( Measure.STATS ) {
 
-            CategoryStats stats = _stats.get( _categoryName );
+            CategoryStats stats = Measure.STATS.get( _categoryName );
             if ( stats == null ) {
 
                 stats = new CategoryStats();
 
-                _stats.put( _categoryName, stats );
+                Measure.STATS.put( _categoryName, stats );
 
-                if ( _categoryName.length() > _maxCategoryNameLength ) {
+                if ( _categoryName.length() > Measure.s_maxCategoryNameLength ) {
 
-                    _maxCategoryNameLength = _categoryName.length();
+                    //noinspection AssignmentToStaticFieldFromInstanceMethod
+                    Measure.s_maxCategoryNameLength = _categoryName.length();
 
                 }
 
@@ -65,9 +64,10 @@ public class Measure {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void showStats( PrintStream where ) {
 
-        showStats( where, false );
+        Measure.showStats( where, false );
 
     }
 
@@ -82,13 +82,14 @@ public class Measure {
                 }
         );
 
-        for ( String categoryName : _stats.keySet() ) {
+        for ( String categoryName : Measure.STATS.keySet() ) {
 
-            CategoryStats stats = _stats.get( categoryName );
+            CategoryStats stats = Measure.STATS.get( categoryName );
 
             double value = (double)stats.n() * stats.mean();
             while ( sorted.containsKey( value ) ) {
 
+                //noinspection MagicNumber
                 value += 0.000001;
 
             }
@@ -100,7 +101,7 @@ public class Measure {
         if ( showTitle ) {
 
                 where.println(
-                    ObtuseUtil5.rpad( "category", _maxCategoryNameLength + 2 )
+                    ObtuseUtil5.rpad( "category", Measure.s_maxCategoryNameLength + 2 )
                     + "   " +
                     ObtuseUtil5.lpad( "count", 10 )
                     + "   " +
@@ -115,10 +116,10 @@ public class Measure {
 
         for ( String categoryName : sorted.values() ) {
 
-            CategoryStats stats = _stats.get( categoryName );
+            CategoryStats stats = Measure.STATS.get( categoryName );
 
             where.println(
-                    ObtuseUtil5.rpad( categoryName, _maxCategoryNameLength + 2 )
+                    ObtuseUtil5.rpad( categoryName, Measure.s_maxCategoryNameLength + 2 )
                     + " : " +
                     ObtuseUtil5.lpad( (long)stats.n(), 10 )
                     + " : " +
@@ -131,20 +132,23 @@ public class Measure {
 
         }
 
+        //noinspection MagicNumber
         where.println("Measuring for " + String.format( "%20.0f", (double)(
-                System.currentTimeMillis() - _measuringSinceMillis
+                System.currentTimeMillis() - Measure.s_measuringSinceMillis
         ) / 1e3 ).trim() + " seconds" );
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void restart() {
 
-        _stats.clear();
-        _maxCategoryNameLength = 0;
-        _measuringSinceMillis = System.currentTimeMillis();
+        Measure.STATS.clear();
+        Measure.s_maxCategoryNameLength = 0;
+        Measure.s_measuringSinceMillis = System.currentTimeMillis();
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void measure( String categoryName, Runnable runnable ) {
 
         Measure measure = new Measure( categoryName );

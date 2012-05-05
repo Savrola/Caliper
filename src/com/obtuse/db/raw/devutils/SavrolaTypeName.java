@@ -8,11 +8,11 @@ import java.io.Serializable;
  * Copyright © 2012 Daniel Boulet.
  */
 
-public class LoaTypeInfo implements Serializable {
+public class SavrolaTypeName implements Serializable {
 
     private final String _dbType;
 
-    private final String _loaType;
+    private final String _savrolaType;
 
     private final String _javaType;
 
@@ -28,23 +28,26 @@ public class LoaTypeInfo implements Serializable {
 
     private final boolean _isSerialType;
 
-    public LoaTypeInfo() {
-        super();
+//    @SuppressWarnings("UnusedDeclaration")
+//    @Deprecated
+//    public SavrolaTypeName() {
+//        super();
+//
+//        _dbType = null;
+//        _savrolaType = null;
+//        _javaType = null;
+//        _nullableJavaType = null;
+//        _resultSetType = null;
+//        _preparedStatementType = null;
+//        _assignmentRequiresCloning = false;
+//        _requiresCast = false;
+//        _isSerialType = false;
+//
+//    }
 
-        _dbType = null;
-        _loaType = null;
-        _javaType = null;
-        _nullableJavaType = null;
-        _resultSetType = null;
-        _preparedStatementType = null;
-        _assignmentRequiresCloning = false;
-        _requiresCast = false;
-        _isSerialType = false;
-    }
-
-    public LoaTypeInfo(
+    public SavrolaTypeName(
             String dbType,
-            String loaType,
+            String savrolaType,
             String javaType,
             String nullableJavaType,
             String resultSetType,
@@ -56,7 +59,7 @@ public class LoaTypeInfo implements Serializable {
         super();
 
         _dbType = dbType;
-        _loaType = loaType;
+        _savrolaType = savrolaType;
         _javaType = javaType;
         _nullableJavaType = nullableJavaType;
         _resultSetType = resultSetType;
@@ -64,55 +67,78 @@ public class LoaTypeInfo implements Serializable {
         _assignmentRequiresCloning = assignmentRequiresCloning;
         _requiresCast = requiresCast;
         _isSerialType = isSerialType;
+
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public String getDBType() {
+
         return _dbType;
+
     }
 
-    public String getLoaType() {
-        return _loaType;
+    public String getSavrolaType() {
+
+        return _savrolaType;
+
     }
 
     public String getJavaType( int nullable ) {
 
         if ( nullable == 1 ) {
+
             return _nullableJavaType;
+
         } else {
+
             return _javaType;
+
         }
 
     }
 
     public String getResultSetType() {
+
         return _resultSetType;
+
     }
 
     public String getPreparedStatementType() {
+
         return _preparedStatementType;
+
     }
 
     public boolean doesAssignmentRequireCloning() {
+
         return _assignmentRequiresCloning;
+
     }
 
     public boolean isSerialType() {
+
         return _isSerialType;
+
     }
 
     public boolean requiresCast() {
+
         return _requiresCast;
+
     }
 
     public String toString() {
-        return "LoaTypeInfo( " +
+
+        return "SavrolaTypeName( " +
                "dbType = " + _dbType + ", " +
-               "loaType = " + _loaType + ", " +
+               "loaType = " + _savrolaType + ", " +
                "javaType = " + _javaType + ", " +
                "resultSetType = " + _resultSetType + ", " +
                "preparedStatementType = " + _preparedStatementType + ", " +
                "assignmentRequiresCloning = " + _assignmentRequiresCloning + ", " +
                "isSerialType = " + _isSerialType +
                " )";
+
     }
+
 }

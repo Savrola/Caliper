@@ -14,11 +14,14 @@ import java.awt.event.ActionListener;
  * Try out MPS class again.
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public class MpsTest2 extends JFrame {
 
     private JPanel _panel1;
     private JButton _quitButton;
+    @SuppressWarnings("FieldCanBeLocal")
     private JComponent _slider1;
+    @SuppressWarnings("FieldCanBeLocal")
     private JComponent _slider2;
     private JPanel _slider1panel;
     private JPanel _zzz;
@@ -37,9 +40,7 @@ public class MpsTest2 extends JFrame {
 
 //        BasicProgramConfigInfo.init( "Obtuse", "MultiPointSlider", "MpsTest2", null );
 
-        MultiPointSlider slider;
-
-        slider = new MultiPointSlider( "s3", 0, 10 );
+        MultiPointSlider slider = new MultiPointSlider( "s3", 0, 10 );
         slider.setPaintLabels( false );
         slider.setPaintTicks( true );
         slider.setMinorTickSpacing( 1 );

@@ -1,6 +1,7 @@
 package com.obtuse.util;
 
 import com.obtuse.db.PostgresConnection;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -8,14 +9,12 @@ import java.net.Socket;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.zip.ZipFile;
 
 /*
- * Copyright 2005, 2006, 2007 Obtuse Systems Corporation
- *
- * $Id: ObtuseUtil.java,v 1.7 2006/07/30 06:53:01 danny Exp $
- *
+ * Copyright 2005-2012 Obtuse Systems Corporation
  */
 
 /**
@@ -50,7 +49,7 @@ public class ObtuseUtil5 {
 
             byte[] sv = bos.toByteArray();
 
-            closeQuietly( oos );
+            ObtuseUtil5.closeQuietly( oos );
 
             return sv;
 
@@ -60,6 +59,7 @@ public class ObtuseUtil5 {
 
             if ( printStackTraceOnError ) {
 
+                //noinspection CallToPrintStackTrace
                 e.printStackTrace();
 
             }
@@ -89,7 +89,7 @@ public class ObtuseUtil5 {
             throws ClassNotFoundException, IOException {
 
         ByteArrayInputStream bis = new ByteArrayInputStream( sv );
-        return recoverSerializedVersion( bis );
+        return ObtuseUtil5.recoverSerializedVersion( bis );
 
     }
 
@@ -121,7 +121,7 @@ public class ObtuseUtil5 {
 
         } finally {
 
-            closeQuietly( ois );
+            ObtuseUtil5.closeQuietly( ois );
 
         }
 
@@ -144,11 +144,11 @@ public class ObtuseUtil5 {
         ByteArrayInputStream bis = new ByteArrayInputStream( sv );
         try {
 
-            return recoverSerializedVersion( bis, printStackTraceOnError );
+            return ObtuseUtil5.recoverSerializedVersion( bis, printStackTraceOnError );
 
         } finally {
 
-            closeQuietly( bis );
+            ObtuseUtil5.closeQuietly( bis );
 
         }
 
@@ -170,7 +170,7 @@ public class ObtuseUtil5 {
 
             ObjectInputStream ois = new ObjectInputStream( is );
             Serializable thing = (Serializable)ois.readObject();
-            closeQuietly( ois );
+            ObtuseUtil5.closeQuietly( ois );
             return thing;
 
         } catch ( IOException e ) {
@@ -179,6 +179,7 @@ public class ObtuseUtil5 {
 
             if ( printStackTraceOnError ) {
 
+                //noinspection CallToPrintStackTrace
                 e.printStackTrace();
 
             }
@@ -191,6 +192,7 @@ public class ObtuseUtil5 {
 
             if ( printStackTraceOnError ) {
 
+                //noinspection CallToPrintStackTrace
                 e.printStackTrace();
 
             }
@@ -201,6 +203,7 @@ public class ObtuseUtil5 {
 
             if ( printStackTraceOnError ) {
 
+                //noinspection CallToPrintStackTrace
                 e.printStackTrace();
 
             }
@@ -231,7 +234,7 @@ public class ObtuseUtil5 {
 
         }
 
-        return readEntireFile( new File( fname ), maxLength, printStackTraceOnError );
+        return ObtuseUtil5.readEntireFile( new File( fname ), maxLength, printStackTraceOnError );
 
     }
 
@@ -261,7 +264,7 @@ public class ObtuseUtil5 {
             fs = new FileInputStream( file );
 
             //noinspection UnnecessaryLocalVariable
-            byte[] contents = readEntireStream( fs, maxLength, printStackTraceOnError );
+            byte[] contents = ObtuseUtil5.readEntireStream( fs, maxLength, printStackTraceOnError );
 
             return contents;
 
@@ -269,6 +272,7 @@ public class ObtuseUtil5 {
 
             if ( printStackTraceOnError ) {
 
+                //noinspection CallToPrintStackTrace
                 e.printStackTrace();
 
             }
@@ -285,7 +289,7 @@ public class ObtuseUtil5 {
 
         } finally {
 
-            closeQuietly( fs );
+            ObtuseUtil5.closeQuietly( fs );
 
         }
 
@@ -331,6 +335,7 @@ public class ObtuseUtil5 {
 
             if ( printStackTraceOnError ) {
 
+                //noinspection CallToPrintStackTrace
                 e.printStackTrace();
 
             }
@@ -354,7 +359,7 @@ public class ObtuseUtil5 {
     @SuppressWarnings( { "BooleanMethodNameMustStartWithQuestion" })
     public static boolean writeBytesToFile( byte[] bytes, String fname, boolean printStackTraceOnError ) {
 
-        return writeBytesToFile( bytes, new File( fname ), printStackTraceOnError );
+        return ObtuseUtil5.writeBytesToFile( bytes, new File( fname ), printStackTraceOnError );
 
     }
 
@@ -377,7 +382,7 @@ public class ObtuseUtil5 {
             fs = new FileOutputStream( file );
 
             //noinspection UnnecessaryLocalVariable
-            boolean rval = writeBytesToStream( bytes, fs, printStackTraceOnError );
+            boolean rval = ObtuseUtil5.writeBytesToStream( bytes, fs, printStackTraceOnError );
 
             return rval;
 
@@ -385,6 +390,7 @@ public class ObtuseUtil5 {
 
             if ( printStackTraceOnError ) {
 
+                //noinspection CallToPrintStackTrace
                 e.printStackTrace();
 
             }
@@ -393,7 +399,7 @@ public class ObtuseUtil5 {
 
         } finally {
 
-            closeQuietly( fs );
+            ObtuseUtil5.closeQuietly( fs );
 
         }
 
@@ -422,6 +428,7 @@ public class ObtuseUtil5 {
 
             if ( printStackTraceOnError ) {
 
+                //noinspection CallToPrintStackTrace
                 e.printStackTrace();
 
             }
@@ -445,7 +452,7 @@ public class ObtuseUtil5 {
 
     public static int getSerializedSize( Serializable thing ) {
 
-        byte[] sv = getSerializedVersion( thing, false );
+        byte[] sv = ObtuseUtil5.getSerializedVersion( thing, false );
         if ( sv == null ) {
 
             return 0;
@@ -469,7 +476,11 @@ public class ObtuseUtil5 {
      */
 
     @SuppressWarnings( { "RawUseOfParameterizedType", "CollectionDeclaredAsConcreteClass" } )
-    public static String validateArgs( String methodName, Vector actual, Class[] expected ) {
+    public static String validateArgs(
+            String methodName,
+            @SuppressWarnings("UseOfObsoleteCollectionType") Vector actual,
+            Class[] expected
+    ) {
 
         if ( actual.size() != expected.length ) {
 
@@ -505,44 +516,102 @@ public class ObtuseUtil5 {
 
     public static String lpad( float value, int width, int digits ) {
 
-        return lpad( (double)value, width, digits );
+        return ObtuseUtil5.lpad( (double)value, width, digits );
 
     }
 
-    public static String lpad( double value, int width, int digits ) {
+    private static DecimalFormat[] s_cachedFormats = new DecimalFormat[1];
 
-        if ( value < 0.0 ) {
+    public static String lpad( double di, int w, int v ) {
 
-            return lpad( "-" + lpad( -value, 0, digits ), width );
+        if ( v >= ObtuseUtil5.s_cachedFormats.length ) {
 
-        }
-
-        long mult = 1L;
-        for ( int i = 0; i < digits; i += 1 ) {
-
-            //noinspection MagicNumber
-            mult *= 10L;
+            DecimalFormat[] tmp = new DecimalFormat[v + 1];
+            System.arraycopy( ObtuseUtil5.s_cachedFormats, 0, tmp, 0, ObtuseUtil5.s_cachedFormats.length );
+            ObtuseUtil5.s_cachedFormats = tmp;
 
         }
 
-        long lv = Math.round( value * (double)mult );
-//        if ( lv == 0 ) {
+        if ( ObtuseUtil5.s_cachedFormats[v] == null ) {
+
+            String format = "0.";
+            for ( int i = 0; i < v; i += 1 ) {
+
+                format += "#";
+
+        }
+
+            ObtuseUtil5.s_cachedFormats[v] = new DecimalFormat( format );
+
+        }
+
+        return ObtuseUtil5.lpad( ObtuseUtil5.s_cachedFormats[v].format( di ), w );
+
+        }
+
+    private static DecimalFormat[] s_cachedZeroFormats = new DecimalFormat[1];
+
+    public static String lpad0( double di, int w, int v ) {
+
+        if ( v >= ObtuseUtil5.s_cachedZeroFormats.length ) {
+
+            DecimalFormat[] tmp = new DecimalFormat[v + 1];
+            System.arraycopy( ObtuseUtil5.s_cachedZeroFormats, 0, tmp, 0, ObtuseUtil5.s_cachedZeroFormats.length );
+            ObtuseUtil5.s_cachedZeroFormats = tmp;
+
+    }
+
+        if ( ObtuseUtil5.s_cachedZeroFormats[v] == null ) {
+
+            String format = "0.";
+            for ( int i = 0; i < v; i += 1 ) {
+
+                format += "0";
+
+            }
+
+            ObtuseUtil5.s_cachedZeroFormats[v] = new DecimalFormat( format );
+
+        }
+
+        return ObtuseUtil5.lpad( ObtuseUtil5.s_cachedZeroFormats[v].format( di ), w );
+
+    }
+
+//    public static String lpad( double value, int width, int digits ) {
 //
-//            return lpad( rpad( "0.", d + 2, '0' ), w );
+//        if ( value < 0.0 ) {
+//
+//            return lpad( "-" + lpad( -value, 0, digits ), width );
 //
 //        }
-        String rv = "" + lv;
-        while ( rv.length() < digits + 1 ) {
-
-            rv = "0" + rv;
-
-        }
-
-        rv = rv.substring( 0, rv.length() - digits ) + '.' + rv.substring( rv.length() - digits );
-
-        return lpad( rv, width );
-
-    }
+//
+//        long mult = 1L;
+//        for ( int i = 0; i < digits; i += 1 ) {
+//
+//            //noinspection MagicNumber
+//            mult *= 10L;
+//
+//        }
+//
+//        long lv = Math.round( value * (double)mult );
+////        if ( lv == 0 ) {
+////
+////            return lpad( rpad( "0.", d + 2, '0' ), w );
+////
+////        }
+//        String rv = "" + lv;
+//        while ( rv.length() < digits + 1 ) {
+//
+//            rv = "0" + rv;
+//
+//        }
+//
+//        rv = rv.substring( 0, rv.length() - digits ) + '.' + rv.substring( rv.length() - digits );
+//
+//        return lpad( rv, width );
+//
+//    }
 
     /**
      * Pad a string on the left to a specified width using a specified padding character.
@@ -558,7 +627,7 @@ public class ObtuseUtil5 {
     public static String lpad( String s, int w, char p ) {
 
         String str = s == null ? "null" : s;
-        return generatePaddingString( w, p, str ) + str;
+        return ObtuseUtil5.generatePaddingString( w, p, str ) + str;
 
     }
 
@@ -601,7 +670,7 @@ public class ObtuseUtil5 {
 
     public static String lpad( String s, int w ) {
 
-        return lpad( s, w, ' ' );
+        return ObtuseUtil5.lpad( s, w, ' ' );
 
     }
 
@@ -619,7 +688,7 @@ public class ObtuseUtil5 {
 
     public static String lpad( long l, int w, char p ) {
 
-        return lpad( "" + l, w, p );
+        return ObtuseUtil5.lpad( "" + l, w, p );
 
     }
 
@@ -638,7 +707,7 @@ public class ObtuseUtil5 {
 
     public static String lpad( long l, int w ) {
 
-        return lpad( "" + l, w );
+        return ObtuseUtil5.lpad( "" + l, w );
 
     }
 
@@ -656,7 +725,7 @@ public class ObtuseUtil5 {
     public static String rpad( String s, int w, char p ) {
 
         String str = s == null ? "null" : s;
-        return str + generatePaddingString( w, p, str );
+        return str + ObtuseUtil5.generatePaddingString( w, p, str );
 
 //        String rval = s == null ? "null" : s;
 //        while ( rval.length() < w ) {
@@ -683,7 +752,7 @@ public class ObtuseUtil5 {
 
     public static String rpad( String s, int w ) {
 
-        return rpad( s, w, ' ' );
+        return ObtuseUtil5.rpad( s, w, ' ' );
 
     }
 
@@ -702,7 +771,7 @@ public class ObtuseUtil5 {
 
     public static String rpad( long l, int w, char p ) {
 
-        return rpad( "" + l, w, p );
+        return ObtuseUtil5.rpad( "" + l, w, p );
 
     }
 
@@ -721,13 +790,14 @@ public class ObtuseUtil5 {
 
     public static String rpad( long l, int w ) {
 
-        return rpad( "" + l, w );
+        return ObtuseUtil5.rpad( "" + l, w );
 
     }
 
     /**
      * Replicate a string a specified number of times.
      * For example, <tt>replicate( "hello", 3 )</tt> yields <tt>"hellohellohello"</tt>.
+     *
      * @param str the string to replicate.
      * @param count the number of copies to be made.
      * @return the replicated string.
@@ -761,8 +831,8 @@ public class ObtuseUtil5 {
         //noinspection UnnecessaryParentheses
 
         return ""
-               + hexvalue( (int)( ( v >> 32 ) & 0x00000000ffffffffL ) )
-               + hexvalue( (int)( v & 0x00000000ffffffffL ) );
+               + ObtuseUtil5.hexvalue( (int)( ( v >> 32 ) & 0x00000000ffffffffL ) )
+               + ObtuseUtil5.hexvalue( (int)( v & 0x00000000ffffffffL ) );
 
     }
 
@@ -779,10 +849,10 @@ public class ObtuseUtil5 {
     public static String hexvalue( int v ) {
 
         return ""
-               + hexvalue( (byte)( ( v >> 24 ) & 0xff ) )
-               + hexvalue( (byte)( ( v >> 16 ) & 0xff ) )
-               + hexvalue( (byte)( ( v >> 8 ) & 0xff ) )
-               + hexvalue( (byte)( v & 0xff ) );
+               + ObtuseUtil5.hexvalue( (byte)( ( v >> 24 ) & 0xff ) )
+               + ObtuseUtil5.hexvalue( (byte)( ( v >> 16 ) & 0xff ) )
+               + ObtuseUtil5.hexvalue( (byte)( ( v >> 8 ) & 0xff ) )
+               + ObtuseUtil5.hexvalue( (byte)( v & 0xff ) );
 
     }
 
@@ -831,7 +901,7 @@ public class ObtuseUtil5 {
         StringBuilder rval = new StringBuilder();
         for ( byte b : bv ) {
 
-            rval.append( hexvalue( b ) );
+            rval.append( ObtuseUtil5.hexvalue( b ) );
 
         }
 
@@ -856,6 +926,7 @@ public class ObtuseUtil5 {
 
         } catch ( InterruptedException e ) {
 
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
 
         }
@@ -873,7 +944,7 @@ public class ObtuseUtil5 {
 
         for ( int offset = 0; offset < data.length; offset += 16 ) {
 
-            StringBuilder rval = new StringBuilder( hexvalue( offset ) ).append( " " );
+            StringBuilder rval = new StringBuilder( ObtuseUtil5.hexvalue( offset ) ).append( " " );
             for ( int j = 0; j < 16; j += 1 ) {
 
                 if ( j % 4 == 0 ) {
@@ -884,7 +955,7 @@ public class ObtuseUtil5 {
 
                 if ( offset + j < data.length ) {
 
-                    rval.append( hexvalue( data[ offset + j ] ) );
+                    rval.append( ObtuseUtil5.hexvalue( data[offset + j] ) );
 
                 } else {
 
@@ -979,10 +1050,11 @@ public class ObtuseUtil5 {
 
     /**
      * Close something while ignoring any {@link IOException}s.
+     *
      * @param thing the thing to be closed.
      */
 
-    public static void closeQuietly( Closeable thing ) {
+    public static void closeQuietly( @Nullable Closeable thing ) {
 
         try {
 
@@ -1000,7 +1072,7 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( ServerSocket sock ) {
+    public static void closeQuietly( @Nullable ServerSocket sock ) {
 
         try {
 
@@ -1018,7 +1090,7 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( Socket sock ) {
+    public static void closeQuietly( @Nullable Socket sock ) {
 
         try {
 
@@ -1036,7 +1108,7 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( ZipFile zipFile ) {
+    public static void closeQuietly( @Nullable ZipFile zipFile ) {
 
         try {
 
@@ -1054,7 +1126,7 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( ResultSet rs ) {
+    public static void closeQuietly( @Nullable ResultSet rs ) {
 
         try {
 
@@ -1072,7 +1144,7 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( PreparedStatement rs ) {
+    public static void closeQuietly( @Nullable PreparedStatement rs ) {
 
         try {
 
@@ -1090,11 +1162,15 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( PostgresConnection postgresConnection ) {
+    public static void closeQuietly( @Nullable PostgresConnection postgresConnection ) {
 
         try {
 
-            postgresConnection.close();
+            if ( postgresConnection != null ) {
+
+                postgresConnection.close();
+
+            }
 
         } catch ( SQLException e ) {
 
@@ -1215,15 +1291,16 @@ public class ObtuseUtil5 {
 
     }
 
-    private static MessageDigest _md5Algorithm;
+    private static MessageDigest s_md5Algorithm = null;
+    @SuppressWarnings("ConstantNamingConvention")
     private static final Long _md5Lock = 0L;
 
     public static String computeMD5( InputStream is )
             throws IOException {
 
-        synchronized ( _md5Lock ) {
+        synchronized ( ObtuseUtil5._md5Lock ) {
 
-            if ( _md5Algorithm == null ) {
+            if ( ObtuseUtil5.s_md5Algorithm == null ) {
 
                 MessageDigest alg;
                 try {
@@ -1238,7 +1315,7 @@ public class ObtuseUtil5 {
 
                 }
 
-                _md5Algorithm = alg;
+                ObtuseUtil5.s_md5Algorithm = alg;
 
             }
 
@@ -1246,7 +1323,7 @@ public class ObtuseUtil5 {
 
             try {
 
-                _md5Algorithm.reset();
+                ObtuseUtil5.s_md5Algorithm.reset();
                 fis = new BufferedInputStream( is );
 
                 //noinspection MagicNumber
@@ -1260,17 +1337,17 @@ public class ObtuseUtil5 {
 
                     }
 
-                    _md5Algorithm.update( buffer, 0, rLen );
+                    ObtuseUtil5.s_md5Algorithm.update( buffer, 0, rLen );
 
                 }
 
-                byte[] digest = _md5Algorithm.digest();
+                byte[] digest = ObtuseUtil5.s_md5Algorithm.digest();
 
-                return hexvalue( digest );
+                return ObtuseUtil5.hexvalue( digest );
 
             } finally {
 
-                closeQuietly( fis );
+                ObtuseUtil5.closeQuietly( fis );
 
             }
         }
@@ -1283,13 +1360,37 @@ public class ObtuseUtil5 {
         FileInputStream fis = new FileInputStream( file );
         try {
 
-            return computeMD5( fis );
+            return ObtuseUtil5.computeMD5( fis );
 
         } finally {
 
-            closeQuietly( fis );
+            ObtuseUtil5.closeQuietly( fis );
 
         }
+
+    }
+
+    public static int safeDivide( int numerator, int denominator ) {
+
+        return denominator == 0 ? 0 : numerator / denominator;
+
+    }
+
+    public static int safeDivide( int numerator, int denominator, int safeReturnValue ) {
+
+        return denominator == 0 ? safeReturnValue : numerator / denominator;
+
+    }
+
+    public static double safeDivide( double numerator, double denominator ) {
+
+        return denominator == 0 ? 0 : numerator / denominator;
+
+    }
+
+    public static double safeDivide( double numerator, double denominator, double safeReturnValue ) {
+
+        return denominator == 0.0 ? safeReturnValue : numerator / denominator;
 
     }
 

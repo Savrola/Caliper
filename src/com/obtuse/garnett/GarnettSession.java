@@ -18,15 +18,13 @@ import java.util.Queue;
 
 public abstract class GarnettSession extends MinimalGarnettSession {
 
-    private boolean _inboundDone = false;
-
     private final Queue<GarnettMessage> _outboundMessageQueue = new LinkedList<GarnettMessage>();
 
     private boolean _outboundQueueDone = false;
 
-    private boolean _isNullSession;
+    private boolean _isNullSession = false;
 
-    private GarnettObject _augmentedLoginData;
+    private GarnettObject _augmentedLoginData = null;
 
     protected GarnettSession( String sessionName, GarnettSessionPrefix sessionPrefix, GarnettSessionType intendedSessionType )
             throws GarnettIllegalArgumentException {
@@ -100,6 +98,7 @@ public abstract class GarnettSession extends MinimalGarnettSession {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public void setAugmentedLoginData( GarnettObject augmentedLoginData ) {
 
         _augmentedLoginData = augmentedLoginData;
@@ -221,6 +220,7 @@ public abstract class GarnettSession extends MinimalGarnettSession {
      * This method should be called before the session is started.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     public void setNullSession() {
 
         outBoundQueueDone();
@@ -370,6 +370,7 @@ public abstract class GarnettSession extends MinimalGarnettSession {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public synchronized void flush()
             throws IOException {
 

@@ -83,6 +83,7 @@ public class UniqueEntity {
 
         }
 
+        @SuppressWarnings("UseOfSystemOutOrSystemErr")
         public static void main( String[] args ) {
 
             SimpleUniqueIdGenerator outerGenerator = new SimpleUniqueIdGenerator();
@@ -110,7 +111,7 @@ public class UniqueEntity {
      */
 
     public UniqueEntity() {
-        this( getDefaultIdGenerator() );
+        this( UniqueEntity.getDefaultIdGenerator() );
     }
 
     /**

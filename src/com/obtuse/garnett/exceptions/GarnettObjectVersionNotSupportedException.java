@@ -8,7 +8,7 @@ import com.obtuse.garnett.GarnettObjectRestorerRegistry;
 import com.obtuse.garnett.GarnettTypeName;
 
 /**
- * Thrown if {@link com.obtuse.garnett.GarnettObjectInputStreamInterface#checkVersion(com.obtuse.garnett.GarnettTypeName, int, int)} determines
+ * Thrown if {@link com.obtuse.garnett.GarnettObjectInputStreamInterface#checkVersion} determines
  * that the version of the object which has just been received is not supported.
  */
 

@@ -17,12 +17,14 @@ import java.net.InetSocketAddress;
  * How a Garnett object input stream behaves.
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public interface GarnettObjectInputStreamInterface extends Closeable {
 
     void close()
             throws IOException;
 
-    int checkVersion( GarnettTypeName garnettTypeName, int oldestSupportedVersion, int newestSupportedVersion )
+    @SuppressWarnings("DuplicateThrows")
+    int checkVersion( Class<? extends GarnettObject> garnettObjectClass, int oldestSupportedVersion, int newestSupportedVersion )
             throws IOException, GarnettObjectVersionNotSupportedException;
 
     Boolean readOptionalBoolean()
@@ -64,6 +66,7 @@ public interface GarnettObjectInputStreamInterface extends Closeable {
     GarnettObject[] readOptionalGarnettObjectArray()
             throws IOException;
 
+    @SuppressWarnings("DuplicateThrows")
     boolean readBoolean()
             throws IOException, GarnettDeserializationFailedException;
 

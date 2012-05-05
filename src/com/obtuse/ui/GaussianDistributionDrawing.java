@@ -17,6 +17,7 @@ public class GaussianDistributionDrawing extends JPanel {
     private final double _to;
 
     public GaussianDistributionDrawing() {
+        //noinspection MagicNumber
         this( new GaussianDistribution( 0.5, 0.5 / 3 ) );
 
     }
@@ -27,6 +28,7 @@ public class GaussianDistributionDrawing extends JPanel {
     }
 
     public GaussianDistributionDrawing( GaussianDistribution gaussianDistribution, double from, double to ) {
+        super();
 
         _gaussianDistribution = gaussianDistribution;
         _from = from;
@@ -38,7 +40,7 @@ public class GaussianDistributionDrawing extends JPanel {
 
     public void paint( Graphics g ) {
 
-        Graphics2D g2d = (Graphics2D) g;
+//        Graphics2D g2d = (Graphics2D) g;
 
 //        Logger.logMsg( "painting gaussian distribution " + _gaussianDistribution + " in (" + getWidth() + "," + getHeight() + ")" );
 
@@ -49,7 +51,8 @@ public class GaussianDistributionDrawing extends JPanel {
 
         int height = getHeight();
 
-        int x[] = new int[getWidth()], y[] = new int[getWidth()];
+        int[] x = new int[getWidth()];
+        int[] y = new int[getWidth()];
 
         for ( int pX = 0; pX < getWidth(); pX += 1 ) {
 

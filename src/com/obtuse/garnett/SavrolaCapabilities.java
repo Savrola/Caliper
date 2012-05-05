@@ -10,11 +10,7 @@ import java.util.*;
 @SuppressWarnings( { "ClassWithoutToString" } )
 public class SavrolaCapabilities implements GarnettObject {
 
-    public static final GarnettTypeName SAVROLA_CAPABILITIES_NAME = new GarnettTypeName(
-            SavrolaCapabilities.class.getCanonicalName()
-    );
-
-    public static int VERSION = 1;
+    public static final int VERSION = 1;
 
     private final SortedMap<String, SavrolaCapability> _universalSavrolaCapabilitiesByName =
             new TreeMap<String, SavrolaCapability>();
@@ -28,13 +24,7 @@ public class SavrolaCapabilities implements GarnettObject {
 //    private final SortedMap<Integer, UniversalSavrolaAppCapability> _universalSavrolaAppCapabilitiesById =
 //            new TreeMap<Integer, UniversalSavrolaAppCapability>();
 
-    private static final byte UNIVERSALCAPABILITIES_FORMAT_VERSION = (byte)1;
-
-    public SavrolaCapabilities() {
-        super();
-
-    }
-
+    @SuppressWarnings("UnusedDeclaration")
     public SavrolaCapabilities(
             SortedMap<String, SavrolaCapability> savrolaCapabilities
     ) {
@@ -44,16 +34,15 @@ public class SavrolaCapabilities implements GarnettObject {
 
     }
 
-    public SavrolaCapabilities(
-            GarnettObjectInputStreamInterface gois
-    )
+    @SuppressWarnings("UnusedDeclaration")
+    public SavrolaCapabilities( GarnettObjectInputStreamInterface gois )
             throws IOException {
         super();
 
         gois.checkVersion(
-                SAVROLA_CAPABILITIES_NAME,
-                VERSION,
-                VERSION
+                SavrolaCapabilities.class,
+                SavrolaCapabilities.VERSION,
+                SavrolaCapabilities.VERSION
         );
 
         int count = gois.readInt();
@@ -65,6 +54,7 @@ public class SavrolaCapabilities implements GarnettObject {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public String[] getAllCapabilityNames() {
 
         SortedSet<String> names = new TreeSet<String>();
@@ -78,6 +68,7 @@ public class SavrolaCapabilities implements GarnettObject {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public boolean hasSavrolaCapability( String capabilityName ) {
 
         if ( !capabilityName.startsWith( "SAVROLA_" ) ) {
@@ -92,20 +83,21 @@ public class SavrolaCapabilities implements GarnettObject {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public boolean hasSavrolaCapability( int capabilityId ) {
 
         return _universalSavrolaCapabilitiesById.containsKey( capabilityId );
 
     }
 
-    public void addCapability( SavrolaCapability savrolaCapability ) {
+    public final void addCapability( SavrolaCapability savrolaCapability ) {
 
         _universalSavrolaCapabilitiesByName.put( savrolaCapability.name(), savrolaCapability );
         _universalSavrolaCapabilitiesById.put( savrolaCapability.ordinal(), savrolaCapability );
 
     }
 
-    public void addCapabilities( SortedMap<String, SavrolaCapability> capabilities ) {
+    public final void addCapabilities( SortedMap<String, SavrolaCapability> capabilities ) {
 
         for ( SavrolaCapability capability : capabilities.values() ) {
 
@@ -115,6 +107,7 @@ public class SavrolaCapabilities implements GarnettObject {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     boolean hasCapability( SavrolaCapability savrolaCapability ) {
 
         return _universalSavrolaCapabilitiesByName.containsKey( savrolaCapability.name() );
@@ -123,14 +116,14 @@ public class SavrolaCapabilities implements GarnettObject {
 
     public GarnettTypeName getGarnettTypeName() {
 
-        return SAVROLA_CAPABILITIES_NAME;
+        return new GarnettTypeName( SavrolaCapabilities.class.getCanonicalName() );
 
     }
 
     public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        goos.writeVersion( VERSION );
+        goos.writeVersion( SavrolaCapabilities.VERSION );
 
         goos.writeInt( _universalSavrolaCapabilitiesById.size() );
         for ( SavrolaCapability capability : _universalSavrolaCapabilitiesById.values() ) {

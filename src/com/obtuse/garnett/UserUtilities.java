@@ -43,7 +43,7 @@ public class UserUtilities {
      * Specifies whether or not debug-mode is enabled. If true then debug output is written to stdout.
      */
 
-    private static boolean _debugMode = false;
+    private static boolean s_debugMode = false;
 
     /**
      * The current versions of the obfuscation algorithm implemented by this class.
@@ -101,13 +101,13 @@ public class UserUtilities {
 
         }
 
-        if ( !VALID_ACCOUNT_NAME_PATTERN.matcher( accountName ).matches() ) {
+        if ( !UserUtilities.VALID_ACCOUNT_NAME_PATTERN.matcher( accountName ).matches() ) {
 
             throw new GarnettInvalidAccountNameException( "\"" + accountName + "\" contains invalid characters" );
 
         }
 
-        for ( char ch : FORBIDDEN_ACCOUNT_NAME_CHARACTERS.toCharArray() ) {
+        for ( char ch : UserUtilities.FORBIDDEN_ACCOUNT_NAME_CHARACTERS.toCharArray() ) {
 
             if ( accountName.indexOf( (int) ch ) >= 0 ) {
 
@@ -141,7 +141,7 @@ public class UserUtilities {
             throws
             GarnettInvalidAccountNameException {
 
-        validateAccountName( accountName );
+        UserUtilities.validateAccountName( accountName );
 
         if ( componentAccountName ) {
 
@@ -155,7 +155,7 @@ public class UserUtilities {
 
         } else {
 
-            if ( !VALID_EMAIL_ADDRESS_PATTERN.matcher( accountName ).matches() || accountName.endsWith( "@internal" ) ) {
+            if ( !UserUtilities.VALID_EMAIL_ADDRESS_PATTERN.matcher( accountName ).matches() || accountName.endsWith( "@internal" ) ) {
 
                 throw new GarnettInvalidAccountNameException( "\"" + accountName + "\" is not a valid email address" );
 
@@ -177,7 +177,8 @@ public class UserUtilities {
 
         try {
 
-            validateAccountName( accountName );
+            UserUtilities.validateAccountName( accountName );
+
             return true;
 
         } catch ( GarnettInvalidAccountNameException e ) {
@@ -201,7 +202,8 @@ public class UserUtilities {
 
         try {
 
-            validateNewAccountName( name, internal );
+            UserUtilities.validateNewAccountName( name, internal );
+
             return true;
 
         } catch ( GarnettInvalidAccountNameException e ) {
@@ -277,7 +279,7 @@ public class UserUtilities {
             GarnettInvalidPasswordException {
 
         CharBuffer cb = CharBuffer.wrap( password );
-        if ( !VALID_PASSWORD_PATTERN.matcher( cb ).matches() ) {
+        if ( !UserUtilities.VALID_PASSWORD_PATTERN.matcher( cb ).matches() ) {
 
             throw new GarnettInvalidPasswordException( "password contains invalid characters" );
 
@@ -295,7 +297,8 @@ public class UserUtilities {
 
         try {
 
-            validatePassword( password, newPassword );
+            UserUtilities.validatePassword( password, newPassword );
+
             return true;
 
         } catch ( GarnettInvalidPasswordException e ) {
@@ -310,8 +313,8 @@ public class UserUtilities {
 
         try {
 
-            validateAccountName( accountName );
-            validateNewAccountName( accountName, internal );
+            UserUtilities.validateAccountName( accountName );
+            UserUtilities.validateNewAccountName( accountName, internal );
             Logger.logMsg( "account name \"" + accountName + "\" is valid" );
 
         } catch ( GarnettInvalidAccountNameException e ) {
@@ -326,7 +329,7 @@ public class UserUtilities {
 
         try {
 
-            validatePassword( password.toCharArray(), true );
+            UserUtilities.validatePassword( password.toCharArray(), true );
             Logger.logMsg( "password \"" + password + "\" is valid" );
 
         } catch ( GarnettInvalidPasswordException e ) {
@@ -352,11 +355,11 @@ public class UserUtilities {
             throws
             GarnettInvalidAccountNameException {
 
-        validateAccountName( new String( original ) );
+        UserUtilities.validateAccountName( new String( original ) );
 
         try {
 
-            return obfuscate( original );
+            return UserUtilities.obfuscate( original );
 
         } catch ( GarnettInvalidCharacterException e ) {
 
@@ -383,11 +386,11 @@ public class UserUtilities {
             throws
             GarnettInvalidAccountNameException {
 
-        validateAccountName( new String( original ) );
+        UserUtilities.validateAccountName( new String( original ) );
 
         try {
 
-            return obfuscate( original, version );
+            return UserUtilities.obfuscate( original, version );
 
         } catch ( GarnettInvalidCharacterException e ) {
 
@@ -419,7 +422,7 @@ public class UserUtilities {
             // The call to validatePassword could throw a GarnettInvalidPasswordException which will terminate this method.
             // It could also throw a GarnettPasswordTooShortException which we will ignore.
 
-            validatePassword( original, isNewPassword );
+            UserUtilities.validatePassword( original, isNewPassword );
 
         } catch ( GarnettPasswordTooShortException e ) {
 
@@ -433,7 +436,7 @@ public class UserUtilities {
 
         try {
 
-            return obfuscate( original );
+            return UserUtilities.obfuscate( original );
 
         } catch ( GarnettInvalidCharacterException e ) {
 
@@ -458,7 +461,7 @@ public class UserUtilities {
             throws
             GarnettInvalidCharacterException {
 
-        return obfuscate( original, (int) OBFUSCATION_VERSION_PORTABLE );
+        return UserUtilities.obfuscate( original, (int) UserUtilities.OBFUSCATION_VERSION_PORTABLE );
 
     }
 
@@ -478,10 +481,10 @@ public class UserUtilities {
             throws
             GarnettInvalidCharacterException {
 
-        if ( version == (int) OBFUSCATION_VERSION_PORTABLE ) {
+        if ( version == (int)UserUtilities.OBFUSCATION_VERSION_PORTABLE ) {
 
-            //noinspection MagicNumber
-            return obfuscate( original, GarnettObfuscationRandom.portableSeed & 0x0000ffff, version );
+            //noinspection MagicNumber,ConstantValueVariableUse
+            return UserUtilities.obfuscate( original, GarnettObfuscationRandom.portableSeed & 0x0000ffff, version );
 
         }
 
@@ -508,7 +511,7 @@ public class UserUtilities {
         try {
 
             //noinspection MagicNumber
-            return obfuscate( original, seed, seedSource[0] & 0xff );
+            return UserUtilities.obfuscate( original, seed, seedSource[0] & 0xff );
 
         } catch ( GarnettInvalidCharacterException e ) {
 
@@ -534,25 +537,25 @@ public class UserUtilities {
             GarnettInvalidCharacterException {
 
         byte[] rval;
-        if ( version == OBFUSCATION_VERSION_PORTABLE ) {
+        if ( version == UserUtilities.OBFUSCATION_VERSION_PORTABLE ) {
 
-            rval = new byte[OBFUSCATED_HEADER_SIZE + original.length];
+            rval = new byte[UserUtilities.OBFUSCATED_HEADER_SIZE + original.length];
 
             Random obfuscator = new GarnettObfuscationRandom( (long)seed );
             obfuscator.nextBytes( rval );
-            if ( _debugMode ) {
+            if ( UserUtilities.s_debugMode ) {
 
                 Logger.logMsg( "hash:" );
                 ObtuseUtil5.dump( rval );
 
             }
 
-            rval[0] = (byte) version;
+            rval[0] = UserUtilities.OBFUSCATION_VERSION_PORTABLE;
             rval[1] = (byte) ( seed >> 8 );
             //noinspection MagicNumber
             rval[2] = (byte) ( seed & 0xff );
 
-            if ( _debugMode ) {
+            if ( UserUtilities.s_debugMode ) {
 
                 Logger.logMsg( "original seed is " + seed );
 
@@ -561,7 +564,7 @@ public class UserUtilities {
             for ( int i = 0; i < original.length; i += 1 ) {
 
                 char ch = original[i];
-                int ix = VALID_CHARACTERS.indexOf( (int) ch );
+                int ix = UserUtilities.VALID_CHARACTERS.indexOf( (int)ch );
                 if ( ix < 0 ) {
 
                     throw new GarnettInvalidCharacterException(
@@ -574,7 +577,7 @@ public class UserUtilities {
 
             }
 
-//        } else if ( (int) version == (int) OBFUSCATION_VERSION_NONE ) {
+//        } else if ( (int) version == (int) UserUtilities.OBFUSCATION_VERSION_NONE ) {
 //
 //            if ( GenericAutomagicUpgrader.isDefaultDeployment() ) {
 //
@@ -584,7 +587,7 @@ public class UserUtilities {
 //
 //            rval = new byte[OBFUSCATED_HEADER_SIZE + original.length];  // header is used for version only
 //
-//            rval[0] = OBFUSCATION_VERSION_NONE;
+//            rval[0] = UserUtilities.OBFUSCATION_VERSION_NONE;
 //            rval[1] = (byte) 0;
 //            rval[2] = (byte) 0;
 //
@@ -630,14 +633,14 @@ public class UserUtilities {
         char[] rval;
         byte obfuscationAlgorithmVersion = obfuscated[0];
 
-        if ( obfuscationAlgorithmVersion == OBFUSCATION_VERSION_PORTABLE ) {
+        if ( obfuscationAlgorithmVersion == UserUtilities.OBFUSCATION_VERSION_PORTABLE ) {
 
             rval = new char[obfuscated.length - 3];
 
             //noinspection UnnecessaryParentheses,MagicNumber
             int seed = ( ( obfuscated[1] & 0xff ) << 8 ) | ( obfuscated[2] & 0xff );
 
-            if ( _debugMode ) {
+            if ( UserUtilities.s_debugMode ) {
 
                 Logger.logMsg( "recovered seed is " + seed );
 
@@ -646,7 +649,7 @@ public class UserUtilities {
             Random obfuscator = new GarnettObfuscationRandom( (long)seed );
             byte[] hash = new byte[obfuscated.length];
             obfuscator.nextBytes( hash );
-            if ( _debugMode ) {
+            if ( UserUtilities.s_debugMode ) {
 
                 Logger.logMsg( "hash:" );
                 ObtuseUtil5.dump( hash );
@@ -658,7 +661,7 @@ public class UserUtilities {
                 try {
 
                     int ix = hash[3 + i] ^ obfuscated[3 + i];
-                    rval[i] = VALID_CHARACTERS.charAt( ix );
+                    rval[i] = UserUtilities.VALID_CHARACTERS.charAt( ix );
 
                 } catch ( IndexOutOfBoundsException e ) {
 
@@ -669,7 +672,7 @@ public class UserUtilities {
 
             }
 
-//        } else if ( obfuscationAlgorithmVersion == OBFUSCATION_VERSION_NONE ) {
+//        } else if ( obfuscationAlgorithmVersion == UserUtilities.OBFUSCATION_VERSION_NONE ) {
 //
 //            if ( GenericAutomagicUpgrader.isDefaultDeployment() ) {
 //
@@ -700,21 +703,19 @@ public class UserUtilities {
     private static void checkObfuscation( String testData )
             throws GarnettInvalidCharacterException, ObtuseProtocolErrorException {
 
-        byte[] ob;
-        char[] an;
-
-//        ob = obfuscate( testData.toCharArray(), 42, OBFUSCATION_VERSION_NONE );
-//        assert ( ob[0] == OBFUSCATION_VERSION_NONE );
+        //        ob = obfuscate( testData.toCharArray(), 42, UserUtilities.OBFUSCATION_VERSION_NONE );
+//        assert ( ob[0] == UserUtilities.OBFUSCATION_VERSION_NONE );
 //        assert ( ob.length == testData.length() + OBFUSCATED_HEADER_SIZE );
 //        an = elucidate( ob );
 //        assert ( an.length == testData.length() );
 //        assert ( ( new String( an ) ).equals( testData ) );
 //        Logger.logMsg( testData + " == " + new String( an ) );
 
-        ob = obfuscate( testData.toCharArray(), 42, OBFUSCATION_VERSION_PORTABLE );
-        assert ob[0] == OBFUSCATION_VERSION_PORTABLE;
-        assert ob.length == testData.length() + OBFUSCATED_HEADER_SIZE;
-        an = elucidate( ob );
+        //noinspection MagicNumber
+        byte[] ob = UserUtilities.obfuscate( testData.toCharArray(), 42, UserUtilities.OBFUSCATION_VERSION_PORTABLE );
+        assert ob[0] == UserUtilities.OBFUSCATION_VERSION_PORTABLE;
+        assert ob.length == testData.length() + UserUtilities.OBFUSCATED_HEADER_SIZE;
+        char[] an = UserUtilities.elucidate( ob );
         assert an.length == testData.length();
         assert new String( an ).equals( testData );
         Logger.logMsg( testData + " == " + new String( an ) );
@@ -722,47 +723,51 @@ public class UserUtilities {
     }
 
 
+    @SuppressWarnings("CallToPrintStackTrace")
     public static void main( String[] args ) throws ObtuseProtocolErrorException {
 
-        checkAccountName( "danny", false );
-        checkAccountName( "dan ny", false );
-        checkAccountName( "dan/ny", false );
-        checkAccountName( "dan\\ny", false );
-        checkAccountName( "{danny}", false );
-        checkAccountName( "danny@matilda.com", false );
-        checkAccountName( "danny@", false );
-        checkAccountName( "@matilda.com", false );
-        checkAccountName( "danny@matilda", false );
-        checkPassword( "hello" );
-        checkPassword( "abcdef" );
-        checkPassword( "hello there world" );
-        checkPassword( "{testing}" );
-        checkPassword( "copyright ©" );
+        UserUtilities.checkAccountName( "danny", false );
+        UserUtilities.checkAccountName( "dan ny", false );
+        UserUtilities.checkAccountName( "dan/ny", false );
+        UserUtilities.checkAccountName( "dan\\ny", false );
+        UserUtilities.checkAccountName( "{danny}", false );
+        UserUtilities.checkAccountName( "danny@matilda.com", false );
+        UserUtilities.checkAccountName( "danny@", false );
+        UserUtilities.checkAccountName( "@matilda.com", false );
+        UserUtilities.checkAccountName( "danny@matilda", false );
+        UserUtilities.checkPassword( "hello" );
+        UserUtilities.checkPassword( "abcdef" );
+        UserUtilities.checkPassword( "hello there world" );
+        UserUtilities.checkPassword( "{testing}" );
+        UserUtilities.checkPassword( "copyright ©" );
         Logger.logMsg( "© == " + ObtuseUtil5.hexvalue( "©".getBytes() ) );
 
         try {
 
             // A couple of quick tests that use the various algorithms...
 
-            byte[] ob = obfuscateAccountName( "AnAccountName".toCharArray() );
-            char[] an = elucidate( ob );
-            assert new String( an ).equals( "AnAccountName" );
+            byte[] ob = UserUtilities.obfuscateAccountName( "AnAccountName".toCharArray() );
+            char[] an = UserUtilities.elucidate( ob );
+            assert "AnAccountName".equals( new String( an ) );
 
-//            ob = obfuscateAccountName( "AnAccountName".toCharArray(), OBFUSCATION_VERSION_NUMBER );
+//            ob = obfuscateAccountName( "AnAccountName".toCharArray(), UserUtilities.UserUtilities.OBFUSCATION_VERSION_NUMBER );
 //            an = elucidate( ob );
 //            assert ( ( new String( an ) ).equals( "AnAccountName" ) );
 //
-//            ob = obfuscateAccountName( "AnAccountName".toCharArray(), OBFUSCATION_VERSION_NONE );
+//            ob = obfuscateAccountName( "AnAccountName".toCharArray(), UserUtilities.UserUtilities.OBFUSCATION_VERSION_NONE );
 //            an = elucidate( ob );
 //            assert ( ( new String( an ) ).equals( "AnAccountName" ) );
 
-            ob = obfuscateAccountName( "AnAccountName".toCharArray(), OBFUSCATION_VERSION_PORTABLE );
-            an = elucidate( ob );
-            assert new String( an ).equals( "AnAccountName" );
+            ob = UserUtilities.obfuscateAccountName(
+                    "AnAccountName".toCharArray(),
+                    UserUtilities.OBFUSCATION_VERSION_PORTABLE
+            );
+            an = UserUtilities.elucidate( ob );
+            assert "AnAccountName".equals( new String( an ) );
 
-            ob = obfuscatePassword( "A password".toCharArray(), false );
-            an = elucidate( ob );
-            assert new String( an ).equals( "A password" );
+            ob = UserUtilities.obfuscatePassword( "A password".toCharArray(), false );
+            an = UserUtilities.elucidate( ob );
+            assert "A password".equals( new String( an ) );
 
             // If client obfuscates using clear text, make sure server can elucidate
             // it correctly. Server might internally re-obfuscate using original algorithm
@@ -779,14 +784,14 @@ public class UserUtilities {
             //       with the Java clients and the Mac client doesn't use the obfuscated account ids that are sent
             //       from server to client.
 
-            checkObfuscation( "A String of Characters" );
-            checkObfuscation( "" );
-            checkObfuscation( "a" );
+            UserUtilities.checkObfuscation( "A String of Characters" );
+            UserUtilities.checkObfuscation( "" );
+            UserUtilities.checkObfuscation( "a" );
             Boolean gotIt = false;
 
             try {
 
-                checkObfuscation( "a with ©©©© weird characters" );
+                UserUtilities.checkObfuscation( "a with ©©©© weird characters" );
 
             } catch ( GarnettInvalidCharacterException e ) {
 

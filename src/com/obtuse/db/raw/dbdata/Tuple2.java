@@ -11,13 +11,15 @@ import java.sql.*;
  * Copyright © 2012 Daniel Boulet.
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public abstract class Tuple2 {
 
     private final TableInfo _tableInfo;
 
     private final boolean[] _dirty;
 
-    private boolean _allDirty;
+    @SuppressWarnings({ "FieldCanBeLocal" })
+    private boolean _allDirty = false;
 
     protected Tuple2() {
         super();

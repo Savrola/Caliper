@@ -8,23 +8,13 @@ import java.io.IOException;
 
 public class LoginResponse implements GarnettObject {
 
-    public static final GarnettTypeName LOGIN_RESPONSE_NAME = new GarnettTypeName(
-            LoginResponse.class.getCanonicalName()
-    );
+    public static final int VERSION = 1;
 
-    public static int VERSION = 1;
+    private SavrolaLoginEnvironment _loginEnv = null;
 
-    private SavrolaLoginEnvironment _loginEnv;
+    private LoginResultCode _loginResultCode = null;
 
-    private LoginResultCode _loginResultCode;
-
-    private static final byte EDGARLOGINRESPONSE_FORMAT_VERSION = (byte)1;
-
-    public LoginResponse() {
-        super();
-
-    }
-
+    @SuppressWarnings("UnusedDeclaration")
     public LoginResponse( SavrolaLoginEnvironment loginEnv ) {
         super();
 
@@ -39,6 +29,7 @@ public class LoginResponse implements GarnettObject {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public LoginResponse( LoginResultCode loginResultCode ) {
         super();
 
@@ -53,14 +44,15 @@ public class LoginResponse implements GarnettObject {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public LoginResponse( GarnettObjectInputStreamInterface gois )
             throws IOException {
         super();
 
         gois.checkVersion(
-                LOGIN_RESPONSE_NAME,
-                VERSION,
-                VERSION
+                LoginResponse.class,
+                LoginResponse.VERSION,
+                LoginResponse.VERSION
         );
 
         _loginEnv = (SavrolaLoginEnvironment)gois.readOptionalGarnettObject();
@@ -68,12 +60,14 @@ public class LoginResponse implements GarnettObject {
 
     }
 
-    public SavrolaLoginEnvironment getLoaLoginEnvironment() {
+    @SuppressWarnings("UnusedDeclaration")
+    public SavrolaLoginEnvironment getSavrolaLoginEnvironment() {
 
         return _loginEnv;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public LoginResultCode getResultCode() {
 
         return _loginResultCode;
@@ -88,7 +82,7 @@ public class LoginResponse implements GarnettObject {
 
     public GarnettTypeName getGarnettTypeName() {
 
-        return LOGIN_RESPONSE_NAME;
+        return new GarnettTypeName( LoginResponse.class.getCanonicalName() );
 
     }
 
@@ -96,7 +90,7 @@ public class LoginResponse implements GarnettObject {
             throws
             IOException {
 
-        goos.writeVersion( VERSION );
+        goos.writeVersion( LoginResponse.VERSION );
 
         goos.writeOptionalGarnettObject( _loginEnv );
         goos.writeString( _loginResultCode.name() );

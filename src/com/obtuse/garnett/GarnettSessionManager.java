@@ -21,10 +21,10 @@ public abstract class GarnettSessionManager extends Thread {
 
     private final SortedMap<String, GarnettMessageHandler> _messageHandlers = new TreeMap<String, GarnettMessageHandler>();
 
-    private final static List<LoginResponseMessageHandler> _globalLoginResponseHandlers =
+    private static final List<LoginResponseMessageHandler> s_globalLoginResponseHandlers =
             new LinkedList<LoginResponseMessageHandler>();
 
-    private boolean _authenticatedSessionManager;
+    private boolean _authenticatedSessionManager = false;
 
     protected GarnettSessionManager( String name ) {
         super( name );
@@ -65,9 +65,9 @@ public abstract class GarnettSessionManager extends Thread {
         if ( garnettMessage instanceof GarnettLoginResponseMessage ) {
 
             List<LoginResponseMessageHandler> handlers = new LinkedList<LoginResponseMessageHandler>();
-            synchronized ( _globalLoginResponseHandlers ) {
+            synchronized ( GarnettSessionManager.s_globalLoginResponseHandlers ) {
 
-                handlers.addAll( _globalLoginResponseHandlers );
+                handlers.addAll( GarnettSessionManager.s_globalLoginResponseHandlers );
 
             }
 
@@ -81,11 +81,11 @@ public abstract class GarnettSessionManager extends Thread {
 
         if ( requestResponseHandler != null ) {
 
-            String[] requiredLoaCapabilities = requestResponseHandler.requiredCapabilities();
-            String[] forbiddenLoaCapabilities = requestResponseHandler.forbiddenCapabilities();
+            String[] requiredSavrolaCapabilities = requestResponseHandler.requiredCapabilities();
+            String[] forbiddenSavrolaCapabilities = requestResponseHandler.forbiddenCapabilities();
 
-            boolean authenticationRequired = requiredLoaCapabilities != null && requiredLoaCapabilities.length > 0 ||
-                                             forbiddenLoaCapabilities != null && forbiddenLoaCapabilities.length > 0 ||
+            boolean authenticationRequired = requiredSavrolaCapabilities != null && requiredSavrolaCapabilities.length > 0 ||
+                                             forbiddenSavrolaCapabilities != null && forbiddenSavrolaCapabilities.length > 0 ||
                                              requestResponseHandler.authenticationRequired();
 
             // While arguably not necessary given the existence of the GarnettUnauthenticatedMessage
@@ -106,7 +106,7 @@ public abstract class GarnettSessionManager extends Thread {
             if ( garnettSession instanceof KnowsCapabilities ) {
 
                 if ( !( (KnowsCapabilities)garnettSession ).checkCapabilities(
-                        requiredLoaCapabilities, forbiddenLoaCapabilities
+                        requiredSavrolaCapabilities, forbiddenSavrolaCapabilities
                 ) ) {
 
                     // The type of this response might not be acceptable to the requestor.
@@ -184,12 +184,13 @@ public abstract class GarnettSessionManager extends Thread {
 
     public abstract GarnettComponentInstanceName getServerInstanceName();
 
+    @SuppressWarnings("UnusedDeclaration")
     public static void registerGlobalLoginResponseHandler( LoginResponseMessageHandler handler ) {
 
-        synchronized ( _globalLoginResponseHandlers ) {
+        synchronized ( GarnettSessionManager.s_globalLoginResponseHandlers ) {
 
-            removeGlobalLoginResponseHandler( handler );
-            _globalLoginResponseHandlers.add( handler );
+            GarnettSessionManager.removeGlobalLoginResponseHandler( handler );
+            GarnettSessionManager.s_globalLoginResponseHandlers.add( handler );
 
         }
 
@@ -197,9 +198,9 @@ public abstract class GarnettSessionManager extends Thread {
 
     public static void removeGlobalLoginResponseHandler( LoginResponseMessageHandler handler ) {
 
-        synchronized ( _globalLoginResponseHandlers ) {
+        synchronized ( GarnettSessionManager.s_globalLoginResponseHandlers ) {
 
-            _globalLoginResponseHandlers.remove( handler );
+            GarnettSessionManager.s_globalLoginResponseHandlers.remove( handler );
 
         }
 
@@ -226,6 +227,7 @@ public abstract class GarnettSessionManager extends Thread {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public void registerRequestResponseHandler(
             Class<? extends GarnettRequestMessage> messageClass,
             GarnettRequestResponseHandler requestResponseHandler
@@ -253,6 +255,7 @@ public abstract class GarnettSessionManager extends Thread {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public void sendPingRequest( final PingRegistry pingRegistry, PingListener pingListener )
             throws GarnettIllegalArgumentException {
 
@@ -268,7 +271,7 @@ public abstract class GarnettSessionManager extends Thread {
 
                     public void processMessage( GarnettSession garnettSession, GarnettMessage garnettMessage ) {
 
-                        pingRegistry.gotPingReply( ( (GarnettPingResponseMessage)garnettMessage ).getRequestId() );
+                        pingRegistry.gotPingReply( ( (GarnettResponseMessage)garnettMessage ).getRequestId() );
 
                         garnettSession.sessionEnds();
 

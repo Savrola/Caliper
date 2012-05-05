@@ -18,9 +18,9 @@ import java.io.IOException;
 
 public class GarnettClientSslTools {
 
-    private static final SSLContext _sslClientContext;
+    private static final SSLContext SSL_CLIENT_CONTEXT;
 
-    private static final SSLSocketFactory _sslClientSocketFactory;
+    private static final SSLSocketFactory SSL_CLIENT_SOCKET_FACTORY;
 
 //    private static final SSLContext _sslAlfredClientContext;
 //
@@ -47,9 +47,9 @@ public class GarnettClientSslTools {
 
         }
 
-        _sslClientContext = sslContext;
+        SSL_CLIENT_CONTEXT = sslContext;
 
-        _sslClientSocketFactory = _sslClientContext.getSocketFactory();
+        SSL_CLIENT_SOCKET_FACTORY = GarnettClientSslTools.SSL_CLIENT_CONTEXT.getSocketFactory();
 
     }
 
@@ -59,7 +59,7 @@ public class GarnettClientSslTools {
 
     public static SSLSocketFactory getSslClientSocketFactory() {
 
-        return _sslClientSocketFactory;
+        return GarnettClientSslTools.SSL_CLIENT_SOCKET_FACTORY;
 
     }
 

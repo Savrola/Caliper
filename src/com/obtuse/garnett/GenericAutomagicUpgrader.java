@@ -10,6 +10,11 @@ package com.obtuse.garnett;
 
 public class GenericAutomagicUpgrader {
 
+    private GenericAutomagicUpgrader() {
+        super();
+
+    }
+
     public static String getDeploymentName() {
 
         return "devel";
@@ -24,7 +29,7 @@ public class GenericAutomagicUpgrader {
 
     public static boolean isDefaultDeployment() {
 
-        return "default".equals( getDeploymentName() );
+        return "default".equals( GenericAutomagicUpgrader.getDeploymentName() );
 
     }
 

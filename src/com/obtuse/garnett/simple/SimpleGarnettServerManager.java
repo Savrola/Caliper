@@ -20,7 +20,10 @@ import java.net.*;
 
 public class SimpleGarnettServerManager extends Thread {
 
+    public static final int DEBUG_LISTEN_PORT = 1234;
+    @SuppressWarnings("FieldCanBeLocal")
     private final InetSocketAddress _listenSocketAddress;
+    @SuppressWarnings("FieldCanBeLocal")
     private final GarnettServerSslTools _serverSslTools;
     private final ServerSocket _listenSocket;
     private final String _what;
@@ -52,9 +55,10 @@ public class SimpleGarnettServerManager extends Thread {
 
     public void run() {
 
+        //noinspection InfiniteLoopStatement
         while ( true ) {
 
-            Socket sessionSocket = null;
+            Socket sessionSocket;
 
             try {
 
@@ -125,7 +129,7 @@ public class SimpleGarnettServerManager extends Thread {
                     new GarnettComponentInstanceName( "Fred" ),
                     0,
                     serverSslTools,
-                    new InetSocketAddress( "localhost", 1234 )
+                    new InetSocketAddress( "localhost", SimpleGarnettServerManager.DEBUG_LISTEN_PORT )
 
             );
 

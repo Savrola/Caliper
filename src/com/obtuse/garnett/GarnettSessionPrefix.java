@@ -109,6 +109,7 @@ public class GarnettSessionPrefix implements Comparable<GarnettSessionPrefix> {
             
             _podNumber = bb.getInt();
             
+            @SuppressWarnings("MagicNumber")
             int nameLen = ( bb.get() & 0xff ) + 1;
             
             byte[] componentInstanceNameBytes = new byte[nameLen];
@@ -189,6 +190,7 @@ public class GarnettSessionPrefix implements Comparable<GarnettSessionPrefix> {
 
     public static void main( String[] args ) {
 
+        @SuppressWarnings({ "MagicNumber", "UnusedDeclaration" })
         GarnettSessionPrefix gsp = new GarnettSessionPrefix( new GarnettComponentInstanceName( "hello world" ), 17 );
 
         System.exit( 0 );

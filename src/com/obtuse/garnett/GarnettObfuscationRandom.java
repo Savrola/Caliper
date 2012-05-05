@@ -7,27 +7,33 @@ import java.util.Random;
  */
 
 /**
- * This is java.util.Random's implementation as documented in Java 1.4.2 javadoc.  We use this to obfuscated
+ * This is java.util.Random's implementation as documented in Java 1.6 javadoc.  We use this to obfuscated
  * account names and passwords so that developers and maintainers do not accidentally see someone's password.
  */
 
+@SuppressWarnings("MagicNumber")
 public class GarnettObfuscationRandom extends Random {
 
     public static final int portableSeed = 326483;
 
-    private long seed;
+    private long _seed;
 
     public GarnettObfuscationRandom( long seed ) {
 
         super( seed );
-        this.seed = seed;
+        //noinspection UnnecessaryParentheses
+        _seed = ( seed ^ 0x5DEECE66DL ) & ( ( 1L << 48 ) - 1 );
 
     }
 
     protected int next( int bits ) {
 
-        seed = ( seed * 0x5DEECE66DL + 0xBL ) & ( ( 1L << 48 ) - 1 );
-        return ( (int)( seed >>> ( 48 - bits ) ) );
+        //noinspection UnnecessaryParentheses
+        _seed = ( _seed * 0x5DEECE66DL + 0xBL ) & ( ( 1L << 48 ) - 1 );
+
+        //noinspection UnnecessaryParentheses
+        return ( (int)( _seed >>> ( 48 - bits ) ) );
+
     }
 
     public void nextBytes( byte[] bytes ) {
@@ -36,7 +42,7 @@ public class GarnettObfuscationRandom extends Random {
 
             for ( int i = 0; i < bytes.length; i++ ) {
 
-                int n = this.next( 8 );
+                int n = next( 8 );
                 bytes[i] = (byte)( n & 0x000000FF );
 
             }
@@ -55,11 +61,13 @@ public class GarnettObfuscationRandom extends Random {
 
         if ( ( n & -n ) == n ) { // i.e., n is a power of 2
 
+            //noinspection UnnecessaryParentheses
             return (int)( ( n * (long)next( 31 ) ) >> 31 );
 
         }
 
         int bits, val;
+        //noinspection UnnecessaryParentheses
         do {
 
             bits = next( 31 );

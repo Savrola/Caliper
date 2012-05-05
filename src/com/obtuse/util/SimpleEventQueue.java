@@ -544,6 +544,7 @@ public class SimpleEventQueue<T extends SimpleEvent> {
 
     }
 
+    @SuppressWarnings("MagicNumber")
     public static void main( String[] args ) {
 
         BasicProgramConfigInfo.init( "Obtuse", "SimpleEventQueue", "Test", null );

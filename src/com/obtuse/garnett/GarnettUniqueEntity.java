@@ -14,11 +14,7 @@ import java.io.IOException;
 
 public abstract class GarnettUniqueEntity implements GarnettObject {
 
-    public static final GarnettTypeName GARNETT_UNIQUE_ENTITY_NAME = new GarnettTypeName(
-            GarnettUniqueEntity.class.getCanonicalName()
-    );
-
-    public static int VERSION = 1;
+    public static final int VERSION = 1;
 
     private final Long _id;
 
@@ -33,7 +29,7 @@ public abstract class GarnettUniqueEntity implements GarnettObject {
             throws IOException {
         super();
 
-        gois.checkVersion( GARNETT_UNIQUE_ENTITY_NAME, VERSION, VERSION );
+        gois.checkVersion( GarnettUniqueEntity.class, GarnettUniqueEntity.VERSION, GarnettUniqueEntity.VERSION );
 
         _id = gois.readLong();
 
@@ -42,15 +38,15 @@ public abstract class GarnettUniqueEntity implements GarnettObject {
     public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        goos.writeVersion( VERSION );
+        goos.writeVersion( GarnettUniqueEntity.VERSION );
 
-        goos.writeLong( _id );
+        goos.writeLong( _id.longValue() );
 
     }
 
     public final long getId() {
 
-        return _id;
+        return _id.longValue();
 
     }
 

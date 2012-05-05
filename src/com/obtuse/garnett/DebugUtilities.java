@@ -18,7 +18,7 @@ import java.util.*;
 @SuppressWarnings("UnusedDeclaration")
 public class DebugUtilities {
 
-    private static final Properties _systemProperties = System.getProperties();
+    private static final Properties s_systemProperties = System.getProperties();
 
     private static final int DEFAULT_PORT = 443;
 
@@ -26,34 +26,35 @@ public class DebugUtilities {
 
     private static final int FIVE_MINUTES = 5 * (int)Timer.ONE_MINUTE;
 
-    private static final int _alfredListenPort;
+    private static final int ALFRED_LISTEN_PORT;
 
-    private static final int _socketSessionInactivityTimeout;
+    private static final int SOCKET_SESSION_INACTIVITY_TIMEOUT;
 
-    private static final boolean _inIntelliJIDEA;
+    private static final boolean IN_INTELLIJ_IDEA;
 
     static {
 
-        if ( checkIntellijIDE() ) {
+        if ( DebugUtilities.checkIntellijIDE() ) {
 
-            _inIntelliJIDEA = true;
+            IN_INTELLIJ_IDEA = true;
 
+            //noinspection UseOfSystemOutOrSystemErr
             System.out.println( "we're running within the IntelliJ IDEA environment" );
 
-            _alfredListenPort = INTELLIJ_PORT + 3000;
+            ALFRED_LISTEN_PORT = DebugUtilities.INTELLIJ_PORT + 3000;
 
-            _socketSessionInactivityTimeout = (int)Timer.ONE_HOUR;
+            SOCKET_SESSION_INACTIVITY_TIMEOUT = (int)Timer.ONE_HOUR;
 
         } else {
 
-            _inIntelliJIDEA = false;
+            IN_INTELLIJ_IDEA = false;
 
 //            _nevilleSlcListenPort = DEFAULT_PORT;
 //            _mackenzieSlcListenPort = DEFAULT_PORT;
 //            _vanHorneSlcListenPort = DEFAULT_PORT;
-            _alfredListenPort = DEFAULT_PORT;
+            ALFRED_LISTEN_PORT = DebugUtilities.DEFAULT_PORT;
 
-            _socketSessionInactivityTimeout = FIVE_MINUTES;
+            SOCKET_SESSION_INACTIVITY_TIMEOUT = DebugUtilities.FIVE_MINUTES;
 
         }
         Security.addProvider( new Provider() );
@@ -104,7 +105,7 @@ public class DebugUtilities {
 
     private static boolean checkIntellijIDE() {
 
-        String libpath = _systemProperties.getProperty( "java.library.path" );
+        String libpath = DebugUtilities.s_systemProperties.getProperty( "java.library.path" );
         //noinspection RedundantIfStatement
         if ( libpath.contains( "IntelliJ IDEA" ) ) {
 
@@ -120,13 +121,13 @@ public class DebugUtilities {
 
     public static boolean inIntelliJIDEA() {
 
-        return _inIntelliJIDEA;
+        return DebugUtilities.IN_INTELLIJ_IDEA;
 
     }
 
     public static String getMackenzieHostname( String deploymentName, int podNumber ) {
 
-        if ( _inIntelliJIDEA ) {
+        if ( DebugUtilities.IN_INTELLIJ_IDEA ) {
 
             return "localhost";
 
@@ -153,7 +154,7 @@ public class DebugUtilities {
 
     public static String getAlfredHostname( String deploymentName, int podNumber ) {
 
-        if ( _inIntelliJIDEA ) {
+        if ( DebugUtilities.IN_INTELLIJ_IDEA ) {
 
             return "localhost";
 
@@ -167,19 +168,19 @@ public class DebugUtilities {
 
     public static String getAlfredHostname( int podNumber ) {
 
-        return getAlfredHostname( GenericAutomagicUpgrader.getDeploymentName(), podNumber );
+        return DebugUtilities.getAlfredHostname( GenericAutomagicUpgrader.getDeploymentName(), podNumber );
 
     }
 
     public static String getAlfredHostname() {
 
-        return getAlfredHostname( GenericAutomagicUpgrader.getPodNumber() );
+        return DebugUtilities.getAlfredHostname( GenericAutomagicUpgrader.getPodNumber() );
 
     }
 
     public static String getThumbNailMailHttpdHostname( int podNumber ) {
 
-        if ( _inIntelliJIDEA ) {
+        if ( DebugUtilities.IN_INTELLIJ_IDEA ) {
 
             return "localhost";
 
@@ -193,7 +194,7 @@ public class DebugUtilities {
 
     public static boolean testSubscriptionMode() {
 
-        return !GenericAutomagicUpgrader.isDefaultDeployment() || inIntelliJIDEA();
+        return !GenericAutomagicUpgrader.isDefaultDeployment() || DebugUtilities.inIntelliJIDEA();
 
 //        return false;
 
@@ -202,9 +203,9 @@ public class DebugUtilities {
     @SuppressWarnings({ "MagicNumber" })
     public static long getSubscriptionDurationMillis() {
 
-        if ( testSubscriptionMode() ) {
+        if ( DebugUtilities.testSubscriptionMode() ) {
 
-            return Timer.ONE_DAY * ( (long)getSubscriptionDurationInRenewalUnits() + 2L );      // two days grace
+            return Timer.ONE_DAY * ( (long)DebugUtilities.getSubscriptionDurationInRenewalUnits() + 2L );      // two days grace
 
         } else {
 
@@ -216,7 +217,7 @@ public class DebugUtilities {
 
     public static char getSubscriptionDurationCode() {
 
-        if ( testSubscriptionMode() ) {
+        if ( DebugUtilities.testSubscriptionMode() ) {
 
             return 'D';
 
@@ -259,17 +260,17 @@ public class DebugUtilities {
 
     public static long getSubscriptionPlanRenewalTimeMillis( long startTimeMillis ) {
 
-        return getSubscriptionPlanRenewalTimeMillis(
+        return DebugUtilities.getSubscriptionPlanRenewalTimeMillis(
                 startTimeMillis,
-                getSubscriptionDurationCode(),
-                getSubscriptionDurationInRenewalUnits()
+                DebugUtilities.getSubscriptionDurationCode(),
+                DebugUtilities.getSubscriptionDurationInRenewalUnits()
         );
 
     }
 
     public static int getSubscriptionDurationInRenewalUnits() {
 
-        if ( testSubscriptionMode() ) {
+        if ( DebugUtilities.testSubscriptionMode() ) {
 
             return 2;
 
@@ -283,7 +284,8 @@ public class DebugUtilities {
 
     public static String getPayPalSubscriptionPeriodString() {
 
-        return "" + getSubscriptionDurationInRenewalUnits() + ' ' + getSubscriptionDurationCode();
+        return "" + DebugUtilities.getSubscriptionDurationInRenewalUnits() + ' ' +
+               DebugUtilities.getSubscriptionDurationCode();
 
 //        if ( testSubscriptionMode() ) {
 //
@@ -298,11 +300,14 @@ public class DebugUtilities {
 
     public static int getAlfredListenPort() {
 
-        return _alfredListenPort;
+        return DebugUtilities.ALFRED_LISTEN_PORT;
+
     }
 
     public static int getSocketSessionInactivityTimeout() {
 
-        return _socketSessionInactivityTimeout;
+        return DebugUtilities.SOCKET_SESSION_INACTIVITY_TIMEOUT;
+
     }
+
 }

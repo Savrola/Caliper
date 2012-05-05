@@ -21,14 +21,15 @@ public class GarnettPingRequestMessage extends GarnettRequestMessage {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettPingRequestMessage( GarnettObjectInputStreamInterface gois )
             throws IOException {
         super();
 
         gois.checkVersion(
-                getGarnettTypeName(),
-                VERSION,
-                VERSION
+                GarnettPingRequestMessage.class,
+                GarnettPingRequestMessage.VERSION,
+                GarnettPingRequestMessage.VERSION
         );
 
     }
@@ -42,16 +43,14 @@ public class GarnettPingRequestMessage extends GarnettRequestMessage {
 
     public GarnettTypeName getGarnettTypeName() {
 
-        return new GarnettTypeName(
-                GarnettPingRequestMessage.class.getCanonicalName()
-        );
+        return new GarnettTypeName( GarnettPingRequestMessage.class.getCanonicalName() );
 
     }
 
     public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        goos.writeVersion( VERSION );
+        goos.writeVersion( GarnettPingRequestMessage.VERSION );
         super.serializeContents( goos );
 
     }

@@ -14,10 +14,6 @@ import java.io.IOException;
 
 public abstract class GarnettResponseMessage extends GarnettMessage {
 
-    public static final GarnettTypeName GARNETT_RESPONSE_MESSAGE_NAME = new GarnettTypeName(
-            GarnettResponseMessage.class.getCanonicalName()
-    );
-
     public static final int VERSION = 1;
 
     private final long _requestId;
@@ -34,9 +30,9 @@ public abstract class GarnettResponseMessage extends GarnettMessage {
         super( gois );
 
         gois.checkVersion(
-                GARNETT_RESPONSE_MESSAGE_NAME,
-                VERSION,
-                VERSION
+                GarnettResponseMessage.class,
+                GarnettResponseMessage.VERSION,
+                GarnettResponseMessage.VERSION
         );
 
         _requestId = gois.readLong();
@@ -53,7 +49,7 @@ public abstract class GarnettResponseMessage extends GarnettMessage {
     public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        goos.writeVersion( VERSION );
+        goos.writeVersion( GarnettResponseMessage.VERSION );
 
         goos.writeLong( _requestId );
 

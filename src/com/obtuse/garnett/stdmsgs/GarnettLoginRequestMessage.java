@@ -17,10 +17,6 @@ import java.io.IOException;
 
 public class GarnettLoginRequestMessage extends GarnettRequestMessage {
 
-    public static final GarnettTypeName GARNETT_LOGIN_MESSAGE_NAME = new GarnettTypeName(
-            GarnettLoginRequestMessage.class.getCanonicalName()
-    );
-
     public static final int VERSION = 1;
 
     /**
@@ -33,7 +29,7 @@ public class GarnettLoginRequestMessage extends GarnettRequestMessage {
 
     private final byte[] _obfuscatedPassword;
 
-    private GarnettObject _augmentedData;
+    private GarnettObject _augmentedData = null;
 
     /**
      * The code number sent to the user via email which activates their account.
@@ -47,6 +43,7 @@ public class GarnettLoginRequestMessage extends GarnettRequestMessage {
 
         Logger.logMsg( "new login message" );
         _obfuscatedAccountName = UserUtilities.obfuscateAccountName( accountName.toCharArray() );
+        //noinspection AssignmentToCollectionOrArrayFieldFromParameter
         _obfuscatedPassword = obfuscatedPassword;
         _activationCode = activationCode;
 
@@ -60,14 +57,15 @@ public class GarnettLoginRequestMessage extends GarnettRequestMessage {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettLoginRequestMessage( GarnettObjectInputStreamInterface gois )
             throws IOException {
         super();
 
         gois.checkVersion(
-                GARNETT_LOGIN_MESSAGE_NAME,
-                VERSION,
-                VERSION
+                GarnettLoginRequestMessage.class,
+                GarnettLoginRequestMessage.VERSION,
+                GarnettLoginRequestMessage.VERSION
         );
 
         _obfuscatedAccountName = gois.readByteArray();
@@ -103,18 +101,21 @@ public class GarnettLoginRequestMessage extends GarnettRequestMessage {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public String getClearAccountName() {
 
         return _clearAccountName;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public byte[] getObfuscatedAccountName() {
 
         return _obfuscatedAccountName;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public byte[] getObfuscatedPassword() {
 
         return _obfuscatedPassword;
@@ -123,7 +124,7 @@ public class GarnettLoginRequestMessage extends GarnettRequestMessage {
 
     public GarnettTypeName getGarnettTypeName() {
 
-        return GARNETT_LOGIN_MESSAGE_NAME;
+        return new GarnettTypeName( GarnettLoginRequestMessage.class.getCanonicalName() );
 
     }
 
@@ -131,7 +132,7 @@ public class GarnettLoginRequestMessage extends GarnettRequestMessage {
             throws IOException {
 
         super.serializeContents( goos );
-        goos.writeVersion( VERSION );
+        goos.writeVersion( GarnettLoginRequestMessage.VERSION );
 
         goos.writeByteArray( _obfuscatedAccountName );
         goos.writeOptionalByteArray( _obfuscatedPassword );
@@ -146,12 +147,14 @@ public class GarnettLoginRequestMessage extends GarnettRequestMessage {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public long getActivationCode() {
 
         return _activationCode;
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettObject getAugmentedData() {
 
         return _augmentedData;

@@ -22,6 +22,7 @@ import java.util.TreeMap;
  * Deserialize Garnett data from an input stream.
  */
 
+@SuppressWarnings("UnusedDeclaration")
 public class GarnettObjectInputStream extends InputStream implements GarnettObjectInputStreamInterface {
 
     private static byte[] generateExpectedTags( byte mandatoryTag ) {
@@ -33,36 +34,46 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
 
     }
 
-    private static final byte[] EXPECTED_PREFIX_TAGS = generateExpectedTags( GarnettConstants.PREFIX_TAG );
-    private static final byte[] EXPECTED_BOOLEAN_TAGS = generateExpectedTags( GarnettConstants.BOOLEAN_TAG );
-    private static final byte[] EXPECTED_BYTE_TAGS = generateExpectedTags( GarnettConstants.BYTE_TAG );
-    private static final byte[] EXPECTED_BYTE_ARRAY_TAGS = generateExpectedTags( GarnettConstants.BYTE_ARRAY_TAG );
-    private static final byte[] EXPECTED_STRING_TAGS = generateExpectedTags( GarnettConstants.STRING_TAG );
-    private static final byte[] EXPECTED_CHAR_TAGS = generateExpectedTags( GarnettConstants.CHAR_TAG );
-    private static final byte[] EXPECTED_DOUBLE_TAGS = generateExpectedTags( GarnettConstants.DOUBLE_TAG );
-    private static final byte[] EXPECTED_FLOAT_TAGS = generateExpectedTags( GarnettConstants.FLOAT_TAG );
-    private static final byte[] EXPECTED_INTEGER_TAGS = generateExpectedTags( GarnettConstants.INT_TAG );
-    private static final byte[] EXPECTED_LONG_TAGS = generateExpectedTags( GarnettConstants.LONG_TAG );
-    private static final byte[] EXPECTED_SHORT_TAGS = generateExpectedTags( GarnettConstants.SHORT_TAG );
-    private static final byte[] EXPECTED_INET_ADDRESS_TAGS = generateExpectedTags( GarnettConstants.INET_ADDRESS_TAG );
-    private static final byte[] EXPECTED_INET_SOCKET_ADDRESS_TAGS = generateExpectedTags( GarnettConstants.INET_SOCKET_ADDRESS_TAG );
-    private static final byte[] EXPECTED_DATE_TAGS = generateExpectedTags( GarnettConstants.DATE_TAG );
-    private static final byte[] EXPECTED_GARNETT_OBJECT_ARRAY_TAGS = generateExpectedTags( GarnettConstants.GARNETT_OBJECT_ARRAY_TAG );
+    @SuppressWarnings("MismatchedReadAndWriteOfArray")
+    private static final byte[] EXPECTED_PREFIX_TAGS = GarnettObjectInputStream.generateExpectedTags(
+            GarnettConstants.PREFIX_TAG );
+    private static final byte[] EXPECTED_BOOLEAN_TAGS = GarnettObjectInputStream.generateExpectedTags( GarnettConstants.BOOLEAN_TAG );
+    private static final byte[] EXPECTED_BYTE_TAGS = GarnettObjectInputStream.generateExpectedTags( GarnettConstants.BYTE_TAG );
+    private static final byte[] EXPECTED_BYTE_ARRAY_TAGS = GarnettObjectInputStream.generateExpectedTags(
+            GarnettConstants.BYTE_ARRAY_TAG
+    );
+    private static final byte[] EXPECTED_STRING_TAGS = GarnettObjectInputStream.generateExpectedTags( GarnettConstants.STRING_TAG );
+    private static final byte[] EXPECTED_CHAR_TAGS = GarnettObjectInputStream.generateExpectedTags( GarnettConstants.CHAR_TAG );
+    private static final byte[] EXPECTED_DOUBLE_TAGS = GarnettObjectInputStream.generateExpectedTags( GarnettConstants.DOUBLE_TAG );
+    private static final byte[] EXPECTED_FLOAT_TAGS = GarnettObjectInputStream.generateExpectedTags( GarnettConstants.FLOAT_TAG );
+    private static final byte[] EXPECTED_INTEGER_TAGS = GarnettObjectInputStream.generateExpectedTags( GarnettConstants.INT_TAG );
+    private static final byte[] EXPECTED_LONG_TAGS = GarnettObjectInputStream.generateExpectedTags( GarnettConstants.LONG_TAG );
+    private static final byte[] EXPECTED_SHORT_TAGS = GarnettObjectInputStream.generateExpectedTags( GarnettConstants.SHORT_TAG );
+    private static final byte[] EXPECTED_INET_ADDRESS_TAGS = GarnettObjectInputStream.generateExpectedTags(
+            GarnettConstants.INET_ADDRESS_TAG
+    );
+    private static final byte[] EXPECTED_INET_SOCKET_ADDRESS_TAGS = GarnettObjectInputStream.generateExpectedTags(
+            GarnettConstants.INET_SOCKET_ADDRESS_TAG
+    );
+    private static final byte[] EXPECTED_DATE_TAGS = GarnettObjectInputStream.generateExpectedTags( GarnettConstants.DATE_TAG );
+    private static final byte[] EXPECTED_GARNETT_OBJECT_ARRAY_TAGS = GarnettObjectInputStream.generateExpectedTags(
+            GarnettConstants.GARNETT_OBJECT_ARRAY_TAG
+    );
     private static final byte[] EXPECTED_OPTIONAL_GARNETT_OBJECT_TAGS =
-            new byte[] {
+            {
                     GarnettConstants.GARNETT_OBJECT_TAG,
                     GarnettConstants.MISSING_GARNETT_OBJECT_TAG,
                     GarnettConstants.FIRST_GARNETT_OBJECT_TAG
             };
     private static final byte[] EXPECTED_MANDATORY_GARNETT_OBJECT_TAGS =
-            new byte[] {
+            {
                     GarnettConstants.GARNETT_OBJECT_TAG,
                     GarnettConstants.FIRST_GARNETT_OBJECT_TAG
             };
 
     private final int _maxGarnettObjectSize;
     private Integer _byteOffsetBeforeExtractingGarnettObject = null;
-    private GarnettTypeName _topLevelGarnettTypeName;
+    private GarnettTypeName _topLevelGarnettTypeName = null;
 
     private int _totalBytesRead = 0;
     private final InputStream _inStream;
@@ -114,11 +125,11 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
 
         _inChannel = Channels.newChannel( inStream );
 
-        _buffer = ByteBuffer.allocate( INTERNAL_BUFFER_SIZE );
+        _buffer = ByteBuffer.allocate( GarnettObjectInputStream.INTERNAL_BUFFER_SIZE );
         _buffer.clear();
         _buffer.flip();
 
-        needBytes( GarnettConstants.INTEGER_SIZE );
+        internalNeedBytes( GarnettConstants.INTEGER_SIZE );
         int magic = _buffer.getInt();
         if ( magic != GarnettConstants.GARNETT_OBJECT_STREAM_MAGIC_NUMBER ) {
 
@@ -137,6 +148,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettObjectInputStream(
             InputStream inStream,
             GarnettObjectRestorerRegistry restorerRegistry
@@ -186,7 +198,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
                     "Garnett input stream not properly terminated (got 0x" +
                     ObtuseUtil5.hexvalue( (byte)streamTerminator ) +
                     " instead of expected 0x" +
-                    ObtuseUtil5.hexvalue( (byte)GarnettConstants.END_OF_STREAM_TAG ) +
+                    ObtuseUtil5.hexvalue( GarnettConstants.END_OF_STREAM_TAG ) +
                     ")"
             );
 
@@ -233,6 +245,13 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
     public int needBytes( int neededRoom )
             throws IOException {
 
+        return internalNeedBytes( neededRoom );
+
+    }
+
+    public final int internalNeedBytes( int neededRoom )
+            throws IOException {
+
         if ( _maxGarnettObjectSize > 0 && _byteOffsetBeforeExtractingGarnettObject != null ) {
 
             int objectSizeSoFar = getTotalBytesConsumed() - _byteOffsetBeforeExtractingGarnettObject.intValue();
@@ -270,7 +289,9 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
                 Logger.logMsg( "BADNEWS:  needBytes failed to read any bytes on a read attempt" );
                 throw new HowDidWeGetHereError( "needBytes failed to read any bytes on a read attempt" );
 
-            } else if ( bytesRead < 0 ) {
+            }
+
+            if ( bytesRead < 0 ) {
 
                 _done = true;
                 _buffer.flip();
@@ -427,7 +448,8 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
 
     }
 
-    public int checkVersion( GarnettTypeName garnettTypeName, int oldestSupportedVersion, int newestSupportedVersion )
+    @SuppressWarnings("DuplicateThrows")
+    public int checkVersion( Class<? extends GarnettObject> garnettObjectClass, int oldestSupportedVersion, int newestSupportedVersion )
             throws IOException, GarnettObjectVersionNotSupportedException {
 
         _serializationDepth += 1;
@@ -440,11 +462,11 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
             if ( version < oldestSupportedVersion || version > newestSupportedVersion ) {
 
                 throw new GarnettObjectVersionNotSupportedException(
-                        "version " + version + " found in stream for " + garnettTypeName + " not supported " +
+                        "version " + version + " found in stream for " + garnettObjectClass + " not supported " +
                         "(oldest supported version is " + oldestSupportedVersion + ", " +
                         "newest supported version is " + newestSupportedVersion + ")",
                         _restorerRegistry,
-                        garnettTypeName
+                        new GarnettTypeName( garnettObjectClass.getCanonicalName() )
 
                 );
 
@@ -466,7 +488,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_BOOLEAN_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_BOOLEAN_TAGS );
             if ( (int)tag == (int)GarnettConstants.BOOLEAN_TAG ) {
 
                 needBytes( 1 );
@@ -484,7 +506,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
 
                     throw new IOException(
                             "readOptionalBoolean:  expected 0x00 or 0x01 but got 0x" +
-                            ObtuseUtil5.hexvalue( (byte)b )
+                            ObtuseUtil5.hexvalue( b )
                     );
 
                 }
@@ -526,7 +548,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
 
                 throw new IOException(
                         "readBoolean:  expected 0x00 or 0x01 but got 0x" +
-                        ObtuseUtil5.hexvalue( (byte)b )
+                        ObtuseUtil5.hexvalue( b )
                 );
 
             }
@@ -545,13 +567,14 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_BYTE_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_BYTE_TAGS );
             if ( (int)tag == (int)GarnettConstants.BYTE_TAG ) {
 
                 needBytes( 1 );
+                @SuppressWarnings("UnnecessaryLocalVariable")
                 byte b = _buffer.get();
 
-                return new Byte( b );
+                return b;
 
             } else {
 
@@ -576,6 +599,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
             expectPrimitiveTag( GarnettConstants.BYTE_TAG );
 
             needBytes( 1 );
+            @SuppressWarnings("UnnecessaryLocalVariable")
             byte b = _buffer.get();
 
             return b;
@@ -594,7 +618,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_BYTE_ARRAY_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_BYTE_ARRAY_TAGS );
             if ( (int)tag == (int)GarnettConstants.BYTE_ARRAY_TAG ) {
 
                 return readByteArray();
@@ -613,7 +637,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
 
     }
 
-    public byte[] readByteArray()
+    public final byte[] readByteArray()
             throws IOException {
 
         _serializationDepth += 1;
@@ -657,7 +681,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_STRING_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_STRING_TAGS );
             if ( (int)tag == (int)GarnettConstants.STRING_TAG ) {
 
                 needBytes( GarnettConstants.INTEGER_SIZE );
@@ -739,13 +763,14 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_CHAR_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_CHAR_TAGS );
             if ( (int)tag == (int)GarnettConstants.CHAR_TAG ) {
 
                 needBytes( GarnettConstants.CHAR_SIZE );
+                @SuppressWarnings("UnnecessaryLocalVariable")
                 char ch = _buffer.getChar();
 
-                return new Character( ch );
+                return ch;
 
             } else {
 
@@ -770,6 +795,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
             expectPrimitiveTag( GarnettConstants.CHAR_TAG );
 
             needBytes( GarnettConstants.CHAR_SIZE );
+            @SuppressWarnings("UnnecessaryLocalVariable")
             char ch = _buffer.getChar();
 
             return ch;
@@ -788,13 +814,14 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_DOUBLE_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_DOUBLE_TAGS );
             if ( (int)tag == (int)GarnettConstants.DOUBLE_TAG ) {
 
                 needBytes( GarnettConstants.DOUBLE_SIZE );
+                @SuppressWarnings("UnnecessaryLocalVariable")
                 double d = _buffer.getDouble();
 
-                return new Double( d );
+                return d;
 
             } else {
 
@@ -819,6 +846,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
             expectPrimitiveTag( GarnettConstants.DOUBLE_TAG );
 
             needBytes( GarnettConstants.DOUBLE_SIZE );
+            @SuppressWarnings("UnnecessaryLocalVariable")
             double d = _buffer.getDouble();
 
             return d;
@@ -837,13 +865,14 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_FLOAT_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_FLOAT_TAGS );
             if ( (int)tag == (int)GarnettConstants.FLOAT_TAG ) {
 
                 needBytes( GarnettConstants.FLOAT_SIZE );
+                @SuppressWarnings("UnnecessaryLocalVariable")
                 float f = _buffer.getFloat();
 
-                return new Float( f );
+                return f;
 
             } else {
 
@@ -868,6 +897,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
             expectPrimitiveTag( GarnettConstants.FLOAT_TAG );
 
             needBytes( GarnettConstants.FLOAT_SIZE );
+            @SuppressWarnings("UnnecessaryLocalVariable")
             float f = _buffer.getFloat();
 
             return f;
@@ -886,13 +916,14 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_INTEGER_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_INTEGER_TAGS );
             if ( (int)tag == (int)GarnettConstants.INT_TAG ) {
 
                 needBytes( GarnettConstants.INTEGER_SIZE );
+                @SuppressWarnings("UnnecessaryLocalVariable")
                 int i = _buffer.getInt();
 
-                return new Integer( i );
+                return i;
 
             } else {
 
@@ -917,6 +948,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
             expectPrimitiveTag( GarnettConstants.INT_TAG );
 
             needBytes( GarnettConstants.INTEGER_SIZE );
+            @SuppressWarnings("UnnecessaryLocalVariable")
             int i = _buffer.getInt();
 
             return i;
@@ -935,13 +967,14 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_LONG_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_LONG_TAGS );
             if ( (int)tag == (int)GarnettConstants.LONG_TAG ) {
 
                 needBytes( GarnettConstants.LONG_SIZE );
+                @SuppressWarnings("UnnecessaryLocalVariable")
                 long l = _buffer.getLong();
 
-                return new Long( l );
+                return l;
 
             } else {
 
@@ -966,6 +999,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
             expectPrimitiveTag( GarnettConstants.LONG_TAG );
 
             needBytes( GarnettConstants.LONG_SIZE );
+            @SuppressWarnings("UnnecessaryLocalVariable")
             long l = _buffer.getLong();
 
             return l;
@@ -984,13 +1018,14 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_SHORT_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_SHORT_TAGS );
             if ( (int)tag == (int)GarnettConstants.SHORT_TAG ) {
 
                 needBytes( GarnettConstants.SHORT_SIZE );
+                @SuppressWarnings("UnnecessaryLocalVariable")
                 short sh = _buffer.getShort();
 
-                return new Short( sh );
+                return sh;
 
             } else {
 
@@ -1015,6 +1050,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
             expectPrimitiveTag( GarnettConstants.SHORT_TAG );
 
             needBytes( GarnettConstants.SHORT_SIZE );
+            @SuppressWarnings("UnnecessaryLocalVariable")
             short sh = _buffer.getShort();
 
             return sh;
@@ -1033,7 +1069,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_INET_ADDRESS_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_INET_ADDRESS_TAGS );
             if ( (int)tag == (int)GarnettConstants.INET_ADDRESS_TAG ) {
 
                 needBytes( 1 );
@@ -1090,7 +1126,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_INET_SOCKET_ADDRESS_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_INET_SOCKET_ADDRESS_TAGS );
             if ( (int)tag == (int)GarnettConstants.INET_SOCKET_ADDRESS_TAG ) {
 
                 InetAddress inetAddress = readOptionalInetAddress();
@@ -1141,7 +1177,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_DATE_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_DATE_TAGS );
             if ( (int)tag == (int)GarnettConstants.DATE_TAG ) {
 
                 return readDate();
@@ -1185,7 +1221,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_OPTIONAL_GARNETT_OBJECT_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_OPTIONAL_GARNETT_OBJECT_TAGS );
             if ( (int)tag == (int)GarnettConstants.MISSING_GARNETT_OBJECT_TAG ) {
 
                 return null;
@@ -1208,7 +1244,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_GARNETT_OBJECT_ARRAY_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_GARNETT_OBJECT_ARRAY_TAGS );
             if ( tag == GarnettConstants.MISSING_GARNETT_OBJECT_ARRAY_TAG ) {
 
                 return null;
@@ -1265,7 +1301,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
         _serializationDepth += 1;
         try {
 
-            byte tag = expectPrimitiveTags( EXPECTED_MANDATORY_GARNETT_OBJECT_TAGS );
+            byte tag = expectPrimitiveTags( GarnettObjectInputStream.EXPECTED_MANDATORY_GARNETT_OBJECT_TAGS );
 
             return extractMandatoryGarnettObject( "readGarnettObject", tag );
 
@@ -1373,6 +1409,7 @@ public class GarnettObjectInputStream extends InputStream implements GarnettObje
             // Of course, all sorts of other things could go wrong once the actual instantiation
             // begins . . .
 
+            @SuppressWarnings("UnnecessaryLocalVariable")
             GarnettObject obj = _restorerRegistry.instantiateInstance( this, garnettTypeName );
 
             return obj;

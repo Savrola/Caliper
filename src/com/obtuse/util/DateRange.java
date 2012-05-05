@@ -29,14 +29,17 @@ public class DateRange extends Range<Date> {
 
     public boolean equals( Object rhs ) {
 
-        return rhs instanceof DateRange && ((DateRange)rhs).getStartValue().equals( getStartValue() ) && ((DateRange)rhs).getEndValue().equals( getEndValue() );
+        //noinspection OverlyStrongTypeCast
+        return rhs instanceof DateRange &&
+               ( (DateRange)rhs ).getStartValue().equals( getStartValue() ) &&
+               ( (DateRange)rhs ).getEndValue().equals( getEndValue() );
 
     }
 
     @SuppressWarnings( { "RefusedBequest" } )
     public String format( Date value ) {
 
-        return YYYYMMDD.format( value );
+        return DateRange.YYYYMMDD.format( value );
 
     }
 

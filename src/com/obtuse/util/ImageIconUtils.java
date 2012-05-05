@@ -7,10 +7,7 @@ package com.obtuse.util;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.ColorModel;
-import java.awt.image.PixelGrabber;
-import java.awt.image.RescaleOp;
+import java.awt.image.*;
 import java.net.URL;
 
 /**
@@ -20,7 +17,7 @@ import java.net.URL;
 @SuppressWarnings( { "UnusedDeclaration" } )
 public class ImageIconUtils {
 
-    private static String _resourcesBaseDirectory = ".";
+    private static String s_resourcesBaseDirectory = ".";
 
 //    static {
 //
@@ -53,25 +50,25 @@ public class ImageIconUtils {
 
     public static ImageIcon fetchIconImage( String fileName ) {
 
-        return fetchIconImage( fileName, 0 );
+        return ImageIconUtils.fetchIconImage( fileName, 0 );
 
     }
 
     public static void setDefaultResourcesDirectory( String resourcesBaseDirectory ) {
 
-        _resourcesBaseDirectory = resourcesBaseDirectory;
+        ImageIconUtils.s_resourcesBaseDirectory = resourcesBaseDirectory;
 
     }
 
     public static String getDefaultResourceBaseDirectory() {
 
-        return _resourcesBaseDirectory;
+        return ImageIconUtils.s_resourcesBaseDirectory;
 
     }
 
     public static ImageIcon fetchIconImage( String fileName, int size ) {
 
-        return fetchIconImage( fileName, size, _resourcesBaseDirectory );
+        return ImageIconUtils.fetchIconImage( fileName, size, ImageIconUtils.s_resourcesBaseDirectory );
 
     }
 
@@ -140,7 +137,7 @@ public class ImageIconUtils {
             return (BufferedImage)xImage;
 
         }
-        return copyToBufferedImage( xImage );
+        return ImageIconUtils.copyToBufferedImage( xImage );
 
 
     }
@@ -169,7 +166,7 @@ public class ImageIconUtils {
         // Determine if the image has transparent pixels; for this method's
         // implementation, see Determining If an Image Has Transparent Pixels
 
-        boolean hasAlpha = hasAlpha(image);
+        boolean hasAlpha = ImageIconUtils.hasAlpha(image);
 
         // Create a buffered image with a format that's compatible with the screen
 
@@ -271,17 +268,17 @@ public class ImageIconUtils {
      * Create a new {@link java.awt.image.BufferedImage} which is brighter or darker than the specified {@link java.awt.Image}.
      *
      * @param image the image to be brightened or darkened.
-     * @param scaleFactor how much the image is to be brightened (if greater than 1) or darkened (if less than 1).
+     * @param factor how much the image is to be brightened (if greater than 1) or darkened (if less than 1).
      * For example, 1.2 makes the image 20% brighter whereas 0.8 makes the image 20% darker.
      *
      * @return the brighter or darker image (always a new image even if the scaling factor is 1.0).
      */
 
-    public static BufferedImage changeImageBrightness( Image image, float scaleFactor ) {
+    public static BufferedImage changeImageBrightness( Image image, float factor ) {
 
-        BufferedImage bufferedVersion = copyToBufferedImage( image );
+        BufferedImage bufferedVersion = ImageIconUtils.copyToBufferedImage( image );
 
-        RescaleOp op = new RescaleOp(scaleFactor, 0, null);
+        RescaleOp op = new RescaleOp( factor, 0, null );
         op.filter( bufferedVersion, bufferedVersion );
 
         return bufferedVersion;
@@ -300,7 +297,7 @@ public class ImageIconUtils {
 
     public static ImageIcon changeImageIconBrightness( ImageIcon imageIcon, float scaleFactor ) {
 
-        return new ImageIcon( changeImageBrightness( imageIcon.getImage(), scaleFactor ) );
+        return new ImageIcon( ImageIconUtils.changeImageBrightness( imageIcon.getImage(), scaleFactor ) );
 
     }
 

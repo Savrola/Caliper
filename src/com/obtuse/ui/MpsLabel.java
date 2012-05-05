@@ -1,8 +1,6 @@
 package com.obtuse.ui;
 
-import com.obtuse.util.ImageIconUtils;
-import com.obtuse.util.Logger;
-import com.obtuse.util.ObtuseUtil5;
+import com.obtuse.util.*;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;

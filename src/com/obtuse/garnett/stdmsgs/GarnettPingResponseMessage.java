@@ -15,26 +15,24 @@ import java.io.IOException;
 
 public class GarnettPingResponseMessage extends GarnettResponseMessage {
 
-    public static final GarnettTypeName GARNETT_PING_RESPONSE_MESSAGE_NAME = new GarnettTypeName(
-            GarnettPingResponseMessage.class.getCanonicalName()
-    );
-
     public static final int VERSION = 1;
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettPingResponseMessage( long requestId )
             throws GarnettInvalidAccountNameException {
         super( requestId );
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public GarnettPingResponseMessage( GarnettObjectInputStreamInterface gois )
             throws IOException {
         super( gois );
 
         gois.checkVersion(
-                GARNETT_PING_RESPONSE_MESSAGE_NAME,
-                VERSION,
-                VERSION
+                GarnettPingResponseMessage.class,
+                GarnettPingResponseMessage.VERSION,
+                GarnettPingResponseMessage.VERSION
         );
 
     }
@@ -47,14 +45,16 @@ public class GarnettPingResponseMessage extends GarnettResponseMessage {
 
     public GarnettTypeName getGarnettTypeName() {
 
-        return GARNETT_PING_RESPONSE_MESSAGE_NAME;
+        return new GarnettTypeName(
+                GarnettPingResponseMessage.class.getCanonicalName()
+        );
 
     }
 
     public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        goos.writeVersion( VERSION );
+        goos.writeVersion( GarnettPingResponseMessage.VERSION );
         super.serializeContents( goos );
 
     }

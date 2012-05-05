@@ -13,11 +13,15 @@ import java.net.URL;
 
 public class ResourceUtils {
 
+    private ResourceUtils() {
+        super();
+    }
+
     public static BufferedInputStream openResource( String fileName, String resourceBaseDirectory )
             throws IOException {
 
         String resourcePath = resourceBaseDirectory + '/' + fileName;
-        URL url = null;
+        URL url;
         try {
 
             url = ImageIconUtils.class.getClassLoader().getResource( resourcePath );

@@ -28,10 +28,10 @@ public class TreeSorter<K extends Comparable<? super K>, V> implements Iterable<
 
         private Iterator<K> _outerIterator;
 
-        private K _currentKey;
+        private K _currentKey = null;
 
-        private Iterator<V> _innerIterator;
-        private List<V> _currentList;
+        private Iterator<V> _innerIterator = null;
+        private List<V> _currentList = null;
 
         private TreeSorterIterator() {
             super();
@@ -178,7 +178,7 @@ public class TreeSorter<K extends Comparable<? super K>, V> implements Iterable<
 
     }
 
-    public void add( K key, V value ) {
+    public final void add( K key, V value ) {
 
         Collection<V> values = _sortedData.get( key );
         if ( values == null ) {
@@ -285,6 +285,7 @@ public class TreeSorter<K extends Comparable<? super K>, V> implements Iterable<
 
         for ( String v : sorter ) {
 
+            //noinspection UseOfSystemOutOrSystemErr
             System.out.println( v );
 
         }

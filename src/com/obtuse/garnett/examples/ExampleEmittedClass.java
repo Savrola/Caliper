@@ -15,27 +15,27 @@ import java.io.*;
  * This example explores what a Java variant of a user-designed class might look like.
  */
 
+@SuppressWarnings("MagicNumber")
 public class ExampleEmittedClass implements GarnettObject {
 
     public static final int BASE_CLASS_VERSION = 42;
-    public static final GarnettTypeName BASE_CLASS_CANONICAL_NAME = new GarnettTypeName(
-            ExampleEmittedClass.class.getCanonicalName()
-    );
 
-    public static class InheritedEmittedClass extends ExampleEmittedClass implements GarnettObject {
+    public static class InheritedEmittedClass extends ExampleEmittedClass {
 
         public static final int INHERITED_CLASS_VERSION = 24;
-        public static final GarnettTypeName INHERITED_CLASS_CANONICAL_NAME = new GarnettTypeName(
-                InheritedEmittedClass.class.getCanonicalName()
-        );
 
         private final String _stringValue;
 
+        @SuppressWarnings("DuplicateThrows")
         public InheritedEmittedClass( GarnettObjectInputStreamInterface gois )
                 throws GarnettSerializationFailedException, IOException, GarnettObjectVersionNotSupportedException {
             super( gois );
 
-            gois.checkVersion( INHERITED_CLASS_CANONICAL_NAME, INHERITED_CLASS_VERSION, INHERITED_CLASS_VERSION );
+            gois.checkVersion(
+                    InheritedEmittedClass.class,
+                    InheritedEmittedClass.INHERITED_CLASS_VERSION,
+                    InheritedEmittedClass.INHERITED_CLASS_VERSION
+            );
 
             _stringValue = gois.readOptionalString();
 
@@ -53,7 +53,7 @@ public class ExampleEmittedClass implements GarnettObject {
 
             super.serializeContents( goos );
 
-            goos.writeVersion( INHERITED_CLASS_VERSION );
+            goos.writeVersion( InheritedEmittedClass.INHERITED_CLASS_VERSION );
 
             goos.writeOptionalString( _stringValue );
 
@@ -63,7 +63,7 @@ public class ExampleEmittedClass implements GarnettObject {
         @Override
         public GarnettTypeName getGarnettTypeName() {
 
-            return INHERITED_CLASS_CANONICAL_NAME;
+            return new GarnettTypeName( InheritedEmittedClass.class.getCanonicalName() );
 
         }
 
@@ -77,11 +77,16 @@ public class ExampleEmittedClass implements GarnettObject {
 
     private final int _finalInt;
 
+    @SuppressWarnings("DuplicateThrows")
     public ExampleEmittedClass( GarnettObjectInputStreamInterface gois )
             throws GarnettSerializationFailedException, IOException, GarnettObjectVersionNotSupportedException {
         super();
 
-        gois.checkVersion( BASE_CLASS_CANONICAL_NAME, BASE_CLASS_VERSION, BASE_CLASS_VERSION );
+        gois.checkVersion(
+                ExampleEmittedClass.class,
+                ExampleEmittedClass.BASE_CLASS_VERSION,
+                ExampleEmittedClass.BASE_CLASS_VERSION
+        );
 
         _finalInt = gois.readInt();
 
@@ -96,14 +101,14 @@ public class ExampleEmittedClass implements GarnettObject {
 
     public GarnettTypeName getGarnettTypeName() {
 
-        return BASE_CLASS_CANONICAL_NAME;
+        return new GarnettTypeName( ExampleEmittedClass.class.getCanonicalName() );
 
     }
 
     public void serializeContents( GarnettObjectOutputStreamInterface goos )
             throws IOException {
 
-        goos.writeVersion( BASE_CLASS_VERSION );
+        goos.writeVersion( ExampleEmittedClass.BASE_CLASS_VERSION );
 
         goos.writeInt( _finalInt );
 
@@ -120,16 +125,15 @@ public class ExampleEmittedClass implements GarnettObject {
         BasicProgramConfigInfo.init( "Obtuse", "Garnett", "Test", null );
         String testFilename = "test.goos";
 
-        testSerialization( testFilename );
+        ExampleEmittedClass.testSerialization( testFilename );
 
-        testDeserialization( testFilename );
+        ExampleEmittedClass.testDeserialization( testFilename );
 
     }
 
     private static void testDeserialization( String testFilename ) {
 
-        GarnettObjectInputStream gois = null;
-        BufferedInputStream inStream = null;
+        BufferedInputStream inStream;
         try {
 
             inStream = new BufferedInputStream(
@@ -144,11 +148,14 @@ public class ExampleEmittedClass implements GarnettObject {
 
         }
 
+        final GarnettObjectInputStream gois;
         try {
+
             gois = new GarnettObjectInputStream(
                     0,
                     inStream
             );
+
         } catch ( IOException e ) {
 
             Logger.logErr( testFilename + ":  unable to create GOIS", e );
@@ -172,7 +179,7 @@ public class ExampleEmittedClass implements GarnettObject {
         try {
 
             gois.getRestorerRegistry().addGarnettObjectFactory(
-                    InheritedEmittedClass.BASE_CLASS_CANONICAL_NAME,
+                    new GarnettTypeName( ExampleEmittedClass.class.getCanonicalName() ),
                     new GarnettObjectRestorerRegistry.GarnettObjectFactory() {
 
                         public GarnettObject instantiateInstance(
@@ -189,7 +196,7 @@ public class ExampleEmittedClass implements GarnettObject {
             );
 
             gois.getRestorerRegistry().addGarnettObjectFactory(
-                    InheritedEmittedClass.INHERITED_CLASS_CANONICAL_NAME,
+                    new GarnettTypeName( InheritedEmittedClass.class.getCanonicalName() ),
                     new GarnettObjectRestorerRegistry.GarnettObjectFactory() {
 
                         public GarnettObject instantiateInstance(
@@ -229,11 +236,7 @@ public class ExampleEmittedClass implements GarnettObject {
 
             try {
 
-                if ( gois != null ) {
-
-                    gois.close();
-
-                }
+                gois.close();
 
             } catch ( IOException e ) {
 

@@ -3,6 +3,7 @@ package com.obtuse.db.raw.devutils;
 import com.obtuse.db.raw.ti.DBType;
 import com.obtuse.db.raw.ti.TableInfo;
 import com.obtuse.util.Logger;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -17,139 +18,142 @@ import java.util.Map;
  * Copyright © 2012 Daniel Boulet.
  */
 
-@SuppressWarnings( { "ClassWithoutToString" } )
+@SuppressWarnings({ "ClassWithoutToString" })
 public class DbClassGeneratorV2 implements DbClassGenerator {
 
-    private static Map<String, LoaTypeInfo> _dbTypesToLoaTypes = new HashMap<String, LoaTypeInfo>();
+    private static final Map<String, SavrolaTypeName> s_dbTypesToSavrolaTypes = new HashMap<String, SavrolaTypeName>();
 
     private final String _autoDirectoryName;
 
     static {
-        _dbTypesToLoaTypes.put(
-                "int4", new LoaTypeInfo(
-                        "int4", "Int", "int", "Integer",
-                        "Int", "Int", false, false, false
-                )
+
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "int4", new SavrolaTypeName(
+                "int4", "Int", "int", "Integer",
+                "Int", "Int", false, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "int2", new LoaTypeInfo(
-                        "int2", "Short", "short", "Short",
-                        "Short", "Short", false, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "int2", new SavrolaTypeName(
+                "int2", "Short", "short", "Short",
+                "Short", "Short", false, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "float4", new LoaTypeInfo(
-                        "float4", "Float", "float", "Float",
-                        "Float", "Float", false, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "float4", new SavrolaTypeName(
+                "float4", "Float", "float", "Float",
+                "Float", "Float", false, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "float8", new LoaTypeInfo(
-                        "float8", "Double", "double", "Double",
-                        "Double", "Double", false, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "float8", new SavrolaTypeName(
+                "float8", "Double", "double", "Double",
+                "Double", "Double", false, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "bigserial", new LoaTypeInfo(
-                        "bigserial", "Serial8", "long",
-                        "Long", "Long", "Long", false, false, true
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "bigserial", new SavrolaTypeName(
+                "bigserial", "Serial8", "long",
+                "Long", "Long", "Long", false, false, true
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "serial", new LoaTypeInfo(
-                        "serial", "Serial", "int",
-                        "Integer", "Int", "Int", false, false, true
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "serial", new SavrolaTypeName(
+                "serial", "Serial", "int",
+                "Integer", "Int", "Int", false, false, true
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "text", new LoaTypeInfo(
-                        "text", "Text", "String",
-                        "String", "String", "String", false, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "text", new SavrolaTypeName(
+                "text", "Text", "String",
+                "String", "String", "String", false, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "varchar", new LoaTypeInfo(
-                        "text", "Text", "String",
-                        "String", "String", "String", false, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "varchar", new SavrolaTypeName(
+                "text", "Text", "String",
+                "String", "String", "String", false, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "_text", new LoaTypeInfo(
-                        "_text", "TextArray", "java.util.Array<String>",
-                        "java.util.Array<String>", "Object", "Object", true, true, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "_text", new SavrolaTypeName(
+                "_text", "TextArray", "java.util.Array<String>",
+                "java.util.Array<String>", "Object", "Object", true, true, false
+        )
         );
-//        _dbTypesToLoaTypes.put(
-//                "_int4", new LoaTypeInfo(
+//        _dbTypesToSavrolaTypes.put(
+//                "_int4", new SavrolaTypeName(
 //                "_int4", "IntArray", "java.sql.Array",
 //                "java.sql.Array", "Object", "Object", false, true, false
 //        )
 //        );
-        _dbTypesToLoaTypes.put(
-                "_int4", new LoaTypeInfo(
-                        "_int4", "IntArray", "String",
-                        "String", "String", "String", false, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "_int4", new SavrolaTypeName(
+                "_int4", "IntArray", "String",
+                "String", "String", "String", false, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "bpchar", new LoaTypeInfo(
-                        "bpchar", "Text", "String",
-                        "String", "String", "String", false, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "bpchar", new SavrolaTypeName(
+                "bpchar", "Text", "String",
+                "String", "String", "String", false, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "bytea", new LoaTypeInfo( "bytea", "Bytes", "byte[]", "byte[]", "Bytes", "Bytes", false, false, false )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "bytea",
+                new SavrolaTypeName( "bytea", "Bytes", "byte[]", "byte[]", "Bytes", "Bytes", false, false, false )
         );
-        _dbTypesToLoaTypes.put(
-                "timestamptz", new LoaTypeInfo(
-                        "timestamptz", "TimestampTZ", "java.sql.Timestamp",
-                        "java.sql.Timestamp", "Timestamp", "Timestamp", true, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "timestamptz", new SavrolaTypeName(
+                "timestamptz", "TimestampTZ", "java.sql.Timestamp",
+                "java.sql.Timestamp", "Timestamp", "Timestamp", true, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "timestamp", new LoaTypeInfo(
-                        "timestamp", "Timestamp", "java.sql.Timestamp",
-                        "java.sql.Timestamp", "Timestamp", "Timestamp", true, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "timestamp", new SavrolaTypeName(
+                "timestamp", "Timestamp", "java.sql.Timestamp",
+                "java.sql.Timestamp", "Timestamp", "Timestamp", true, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "date", new LoaTypeInfo(
-                        "date", "Date", "java.sql.Date", "java.sql.Date", "Date", "Date", true, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "date", new SavrolaTypeName(
+                "date", "Date", "java.sql.Date", "java.sql.Date", "Date", "Date", true, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "int8", new LoaTypeInfo(
-                        "int8", "Long", "long",
-                        "Long", "Long", "Long", false, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "int8", new SavrolaTypeName(
+                "int8", "Long", "long",
+                "Long", "Long", "Long", false, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "bool", new LoaTypeInfo(
-                        "bool", "Boolean", "boolean", "Boolean",
-                        "Boolean", "Boolean", false, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "bool", new SavrolaTypeName(
+                "bool", "Boolean", "boolean", "Boolean",
+                "Boolean", "Boolean", false, false, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "inet", new LoaTypeInfo(
-                        "inet", "Inet", "org.postgresql.util.PGobject",
-                        "org.postgresql.util.PGobject", "Object", "Object", true, true, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "inet", new SavrolaTypeName(
+                "inet", "Inet", "org.postgresql.util.PGobject",
+                "org.postgresql.util.PGobject", "Object", "Object", true, true, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "macaddr", new LoaTypeInfo(
-                        "macaddr", "Macaddr", "org.postgresql.util.PGobject",
-                        "org.postgresql.util.PGobject", "Object", "Object", true, true, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "macaddr", new SavrolaTypeName(
+                "macaddr", "Macaddr", "org.postgresql.util.PGobject",
+                "org.postgresql.util.PGobject", "Object", "Object", true, true, false
+        )
         );
-        _dbTypesToLoaTypes.put(
-                "money", new LoaTypeInfo(
-                        "money", "Money", "java.math.BigDecimal",
-                        "java.math.BigDecimal", "BigDecimal", "BigDecimal", false, false, false
-                )
+        DbClassGeneratorV2.s_dbTypesToSavrolaTypes.put(
+                "money", new SavrolaTypeName(
+                "money", "Money", "java.math.BigDecimal",
+                "java.math.BigDecimal", "BigDecimal", "BigDecimal", false, false, false
+        )
         );
     }
 
     public DbClassGeneratorV2( String autoDirectoryName ) {
+
         super();
 
         _autoDirectoryName = autoDirectoryName;
@@ -165,11 +169,11 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
      * identifier being passed to this method.
      *
      * @param identifier the identifier to be converted to CamelHumpsStyle.
-     *
      * @return the identifier in CamelHumpsStyle.
      */
 
     public static String convertToCamelHumps( String identifier ) {
+
         String id = identifier;
         String rval = "";
 
@@ -179,7 +183,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
             rval += id.substring( 0, underscoreOffset );
             underscoreOffset += 1;
             id = id.substring( underscoreOffset );
-            if ( id.length() > 0 ) {
+            if ( !id.isEmpty() ) {
                 id = id.substring( 0, 1 ).toUpperCase() + id.substring( 1 );
             }
         }
@@ -223,34 +227,44 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
             writer.println();
             writer.println( "/*" );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println( " */" );
             writer.println();
@@ -270,7 +284,8 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
             // Generate the singleton's declaration and constructor invocation.
 
             writer.println(
-                    "    private static " + tupleCarrierName + "TableInfo _singleton = new " + tupleCarrierName + "TableInfo();"
+                    "    private static " + tupleCarrierName + "TableInfo _singleton = new " + tupleCarrierName +
+                    "TableInfo();"
             );
             writer.println();
 
@@ -283,7 +298,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
             for ( ColumnMetaData metaData : columnMetaData ) {
                 String columnName = metaData.getDbColumnName();
                 writer.println(
-                        "        dc" + metaData.getLoaTypeInfo().getLoaType() + "( \"" +
+                        "        dc" + metaData.getSavrolaTypeInfo().getSavrolaType() + "( \"" +
                         columnName.toUpperCase() + "\" );"
                 );
             }
@@ -308,7 +323,8 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
                     "} instance from the current row of a {@link ResultSet}."
             );
             writer.println( "     * <p/>" );
-            writer.println( "     * <b>IMPORTANT:</b> this method assumes that the {@link ResultSet} was the result of" );
+            writer.println( "     * <b>IMPORTANT:</b> this method assumes that the {@link ResultSet} was the result " +
+                            "of" );
             writer.println( "     * a query equivalent to \"SELECT * FROM " + tableName + " ...\"." );
             writer.println( "     *" );
             writer.println(
@@ -325,23 +341,23 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
             writer.println( "        return new " + tupleCarrierName + "(" );
 
             for ( int i = 0; i < columnMetaData.length; i += 1 ) {
-                LoaTypeInfo loaTypeInfo = columnMetaData[i].getLoaTypeInfo();
+                SavrolaTypeName savrolaTypeName = columnMetaData[i].getSavrolaTypeInfo();
                 String typeName;
                 if ( columnMetaData[i].getNullable() == 1 && !"money".equals( columnMetaData[i].getDbType() ) ) {
                     typeName = "Object";
                 } else {
-                    typeName = loaTypeInfo.getResultSetType();
+                    typeName = savrolaTypeName.getResultSetType();
                 }
                 writer.println(
                         "            " +
-                        ( columnMetaData[i].getNullable() == 1 ? "(" + loaTypeInfo.getJavaType( 1 ) + ")" : "" ) +
-                             (
-                                     loaTypeInfo.requiresCast() ?
-                                     "(" + loaTypeInfo.getJavaType(
-                                             columnMetaData[i].getNullable()
-                                     ) + ")" : ""
-                             ) +
-                               "rs.get" + typeName + "( " + (
+                        ( columnMetaData[i].getNullable() == 1 ? "(" + savrolaTypeName.getJavaType( 1 ) + ")" : "" ) +
+                        (
+                                savrolaTypeName.requiresCast() ?
+                                "(" + savrolaTypeName.getJavaType(
+                                        columnMetaData[i].getNullable()
+                                ) + ")" : ""
+                        ) +
+                        "rs.get" + typeName + "( " + (
                                 i + 1
                         ) + " )" + ( i < columnMetaData.length - 1 ? "," : "" )
                 );
@@ -372,7 +388,9 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
         String tupleCarrierName = tableMetaData.getExpectedTableInfo().getTupleCarrierName();
 
         PrintWriter writer =
-                new PrintWriter( "NielsenDatabaseSupport/src/com/invidi/nielsen/abdw/auto/" + tupleCarrierName + ".java" );
+                new PrintWriter(
+                        "NielsenDatabaseSupport/src/com/invidi/nielsen/abdw/auto/" + tupleCarrierName + ".java"
+                );
 
         try {
 
@@ -398,34 +416,44 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
             writer.println();
             writer.println( "/*" );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println(
-                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT EDIT THIS FILE"
+                    " * IMPORTANT:  this file is automatically generated via {@link MetaDataParserUtils} - DO NOT " +
+                    "EDIT THIS FILE"
             );
             writer.println( " */" );
             writer.println();
@@ -443,7 +471,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
             for ( ColumnMetaData metaData : columnMetaData ) {
                 writer.println( "    /**" );
                 writer.println(
-                        "     * The " + metaData.getDbColumnName() + "/" + metaData.getLoaColumnName() +
+                        "     * The " + metaData.getDbColumnName() + "/" + metaData.getSavrolaColumnName() +
                         " column."
                 );
                 writer.println( "     * <br>DB column name:  " + metaData.getDbColumnName() );
@@ -454,8 +482,8 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
                 writer.println( "     */" );
                 writer.println();
                 writer.println(
-                        "    private " + metaData.getLoaTypeInfo().getJavaType( metaData.getNullable() ) +
-                        " _" + metaData.getLoaColumnName() + ";"
+                        "    private " + metaData.getSavrolaTypeInfo().getJavaType( metaData.getNullable() ) +
+                        " _" + metaData.getSavrolaColumnName() + ";"
                 );
                 writer.println();
             }
@@ -472,8 +500,8 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
             writer.println( "    public " + tupleCarrierName + "(" );
 
             for ( int i = 0; i < columnMetaData.length; i += 1 ) {
-                String typeName = columnMetaData[i].getLoaTypeInfo().getJavaType( columnMetaData[i].getNullable() );
-                String columnName = columnMetaData[i].getLoaColumnName();
+                String typeName = columnMetaData[i].getSavrolaTypeInfo().getJavaType( columnMetaData[i].getNullable() );
+                String columnName = columnMetaData[i].getSavrolaColumnName();
                 writer.println(
                         "            " + typeName + " " + columnName + ( i < columnMetaData.length - 1 ? "," : "" )
                 );
@@ -484,17 +512,17 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
             writer.println();
 
             for ( ColumnMetaData metaData : columnMetaData ) {
-                if ( metaData.getLoaTypeInfo().doesAssignmentRequireCloning() ) {
+                if ( metaData.getSavrolaTypeInfo().doesAssignmentRequireCloning() ) {
                     writer.println(
-                            "        _" + metaData.getLoaColumnName() + " = " +
-                            metaData.getLoaColumnName() + " == null ? null : (" +
-                            metaData.getLoaTypeInfo().getJavaType( metaData.getNullable() ) + ")" +
-                            metaData.getLoaColumnName() + ".clone();"
+                            "        _" + metaData.getSavrolaColumnName() + " = " +
+                            metaData.getSavrolaColumnName() + " == null ? null : (" +
+                            metaData.getSavrolaTypeInfo().getJavaType( metaData.getNullable() ) + ")" +
+                            metaData.getSavrolaColumnName() + ".clone();"
                     );
                 } else {
                     writer.println(
-                            "        _" + metaData.getLoaColumnName() + " = " +
-                            metaData.getLoaColumnName() + ";"
+                            "        _" + metaData.getSavrolaColumnName() + " = " +
+                            metaData.getSavrolaColumnName() + ";"
                     );
                 }
             }
@@ -518,46 +546,47 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
 
             for ( ColumnMetaData metaData : columnMetaData ) {
 
-                String javaTypeName = metaData.getLoaTypeInfo().getJavaType( metaData.getNullable() );
-                String loaColumnName = metaData.getLoaColumnName();
+                String javaTypeName = metaData.getSavrolaTypeInfo().getJavaType( metaData.getNullable() );
+                String savrolaColumnName = metaData.getSavrolaColumnName();
                 String dbColumnName = metaData.getDbColumnName();
-                String ucLoaColumnName = loaColumnName.substring( 0, 1 ).toUpperCase() + loaColumnName.substring( 1 );
+                String ucSavrolaColumnName = savrolaColumnName.substring( 0, 1 ).toUpperCase() + savrolaColumnName.substring( 1 );
 
-                writer.println( "    public " + javaTypeName + " get" + ucLoaColumnName + "() {" );
+                writer.println( "    public " + javaTypeName + " get" + ucSavrolaColumnName + "() {" );
                 writer.println();
-                if ( metaData.getLoaTypeInfo().doesAssignmentRequireCloning() ) {
+                if ( metaData.getSavrolaTypeInfo().doesAssignmentRequireCloning() ) {
                     writer.println(
-                            "        return _" + loaColumnName + " == null ? null : " +
-                            "(" + javaTypeName + ")_" + loaColumnName + ".clone();"
+                            "        return _" + savrolaColumnName + " == null ? null : " +
+                            "(" + javaTypeName + ")_" + savrolaColumnName + ".clone();"
                     );
                 } else {
-                    writer.println( "        return _" + loaColumnName + ";" );
+                    writer.println( "        return _" + savrolaColumnName + ";" );
                 }
                 writer.println();
                 writer.println( "    }" );
                 writer.println();
 
-                if ( metaData.getLoaTypeInfo().isSerialType() ) {
+                if ( metaData.getSavrolaTypeInfo().isSerialType() ) {
 
                     writer.println(
-                            "    // No setter for " + loaColumnName + " because it is a serial column in the database"
+                            "    // No setter for " + savrolaColumnName + " because it is a serial column in the database"
                     );
                     writer.println();
 
                 } else {
 
                     writer.println(
-                            "    public void set" + ucLoaColumnName + "( " + javaTypeName + " " + loaColumnName + " ) {"
+                            "    public void set" + ucSavrolaColumnName + "( " + javaTypeName + " " + savrolaColumnName + " ) {"
                     );
                     writer.println();
-                    //                writer.println("        _" + loaColumnName + " = copy" + loaTypeName + "Value( " + loaColumnName + " );" );
-                    if ( metaData.getLoaTypeInfo().doesAssignmentRequireCloning() ) {
+                    //                writer.println("        _" + savrolaColumnName + " = copy" + loaTypeName + "Value(
+                    // " + savrolaColumnName + " );" );
+                    if ( metaData.getSavrolaTypeInfo().doesAssignmentRequireCloning() ) {
                         writer.println(
-                                "        if ( " + loaColumnName + " == null ) {"
+                                "        if ( " + savrolaColumnName + " == null ) {"
                         );
                         writer.println();
                         writer.println(
-                                "            _" + loaColumnName + " = null;"
+                                "            _" + savrolaColumnName + " = null;"
                         );
                         writer.println();
                         writer.println(
@@ -565,7 +594,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
                         );
                         writer.println();
                         writer.println(
-                                "            _" + loaColumnName + " = (" + javaTypeName + ")" + loaColumnName +
+                                "            _" + savrolaColumnName + " = (" + javaTypeName + ")" + savrolaColumnName +
                                 ".clone();"
                         );
                         writer.println();
@@ -574,7 +603,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
                         );
                     } else {
 
-                        writer.println( "        _" + loaColumnName + " = " + loaColumnName + ";" );
+                        writer.println( "        _" + savrolaColumnName + " = " + savrolaColumnName + ";" );
 
                     }
 
@@ -599,14 +628,15 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
     }
 
     @SuppressWarnings({ "UnusedDeclaration" })
-    public static LoaTypeInfo lookupTypeInfo( String typeName ) {
+    public static SavrolaTypeName lookupTypeInfo( String typeName ) {
 
-        return _dbTypesToLoaTypes.get( typeName );
+        return DbClassGeneratorV2.s_dbTypesToSavrolaTypes.get( typeName );
 
     }
-    //public static Map<String, LoaTypeInfo> getdbTypesToLoaTypes() {
+
+    //public static Map<String, SavrolaTypeName> getdbTypesToSavrolaTypes() {
     //
-    //    return Collections.unmodifiableMap( _dbTypesToLoaTypes );
+    //    return Collections.unmodifiableMap( _dbTypesToSavrolaTypes );
     //
     //}
 
@@ -618,7 +648,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
      * @param columnMetaData description of the table's columns.
      */
 
-    @SuppressWarnings( { "UnusedDeclaration" } )
+    @SuppressWarnings({ "UnusedDeclaration" })
     private void generateUpdateResultSetMethod(
             PrintWriter writer,
             String tableName,
@@ -633,8 +663,8 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
         int ix = 1;
         for ( ColumnMetaData metaData : columnMetaData ) {
 
-            LoaTypeInfo loaTypeInfo = metaData.getLoaTypeInfo();
-            if ( loaTypeInfo.isSerialType() ) {
+            SavrolaTypeName savrolaTypeName = metaData.getSavrolaTypeInfo();
+            if ( savrolaTypeName.isSerialType() ) {
 
                 writer.println( "        // skipping serial column " + metaData.getDbColumnName() );
 
@@ -642,23 +672,23 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
 
                 writer.println(
                         "            " + (
-                                metaData.getNullable() == 1 ? "if ( _" + metaData.getLoaColumnName() +
+                                metaData.getNullable() == 1 ? "if ( _" + metaData.getSavrolaColumnName() +
                                                               " == null ) { rs.updateObject( " + ix +
-                                                                                                    ", null ); } else { " : ""
+                                                              ", null ); } else { " : ""
                         ) +
-                          "rs.update" + loaTypeInfo.getPreparedStatementType() + "( " +
-                          ix + ", " +
-                          (
-                                  loaTypeInfo.doesAssignmentRequireCloning()
-                                  ?
-                                  "_" + metaData.getLoaColumnName() + " == null ? null : (" +
-                                  loaTypeInfo.getJavaType( metaData.getNullable() ) + ")_" +
-                                  metaData.getLoaColumnName() + ".clone()"
-                                  :
-                                  "_" + metaData.getLoaColumnName()
-                          ) +
-                            " );" +
-                            ( metaData.getNullable() == 1 ? " }" : "" )
+                        "rs.update" + savrolaTypeName.getPreparedStatementType() + "( " +
+                        ix + ", " +
+                        (
+                                savrolaTypeName.doesAssignmentRequireCloning()
+                                ?
+                                "_" + metaData.getSavrolaColumnName() + " == null ? null : (" +
+                                savrolaTypeName.getJavaType( metaData.getNullable() ) + ")_" +
+                                metaData.getSavrolaColumnName() + ".clone()"
+                                :
+                                "_" + metaData.getSavrolaColumnName()
+                        ) +
+                        " );" +
+                        ( metaData.getNullable() == 1 ? " }" : "" )
                 );
             }
 
@@ -675,10 +705,10 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
     /**
      * Generate a method which inserts an instance into the appropriate DB table.
      *
-     * @param writer            where to write the method.
-     * @param schemaTableName   the table that the method is being generated for.
-     * @param tupleCarrierName  the class used to carry around instances of the table's rows.
-     * @param columnMetaData    description of the table's columns.
+     * @param writer           where to write the method.
+     * @param schemaTableName  the table that the method is being generated for.
+     * @param tupleCarrierName the class used to carry around instances of the table's rows.
+     * @param columnMetaData   description of the table's columns.
      */
 
     private void generateInsertMethod(
@@ -689,7 +719,8 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
     ) {
 
         writer.println(
-                "    public BundledKeys insert( ElephantConnection elephantConnection, boolean retrieveAutogeneratedKeys )"
+                "    public BundledKeys insert( ElephantConnection elephantConnection, " +
+                "boolean retrieveAutogeneratedKeys )"
         );
         writer.println( "            throws" );
         writer.println( "            SQLException {" );
@@ -698,7 +729,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
 
         String comma = "";
         for ( ColumnMetaData metaData : columnMetaData ) {
-            if ( metaData.getLoaTypeInfo().isSerialType() ) {
+            if ( metaData.getSavrolaTypeInfo().isSerialType() ) {
             } else {
                 stmt += comma + " " + metaData.getDbColumnName();
                 comma = ", ";
@@ -709,7 +740,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
 
         comma = "";
         for ( ColumnMetaData metaData : columnMetaData ) {
-            if ( metaData.getLoaTypeInfo().isSerialType() ) {
+            if ( metaData.getSavrolaTypeInfo().isSerialType() ) {
             } else {
                 stmt += comma + " ?";
                 comma = ", ";
@@ -728,8 +759,8 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
         int ix = 1;
         for ( ColumnMetaData metaData : columnMetaData ) {
 
-            LoaTypeInfo loaTypeInfo = metaData.getLoaTypeInfo();
-            if ( loaTypeInfo.isSerialType() ) {
+            SavrolaTypeName savrolaTypeName = metaData.getSavrolaTypeInfo();
+            if ( savrolaTypeName.isSerialType() ) {
 
                 writer.println( "            // skipping serial column " + metaData.getDbColumnName() );
 
@@ -737,23 +768,23 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
 
                 writer.println(
                         "            " + (
-                                metaData.getNullable() == 1 ? "if ( _" + metaData.getLoaColumnName() +
+                                metaData.getNullable() == 1 ? "if ( _" + metaData.getSavrolaColumnName() +
                                                               " == null ) { ps.setObject( " + ix +
-                                                                                                 ", null ); } else { " : ""
+                                                              ", null ); } else { " : ""
                         ) +
-                          "ps.set" + loaTypeInfo.getPreparedStatementType() + "( " +
-                          ix + ", " +
-                          (
-                                  loaTypeInfo.doesAssignmentRequireCloning()
-                                  ?
-                                  "_" + metaData.getLoaColumnName() + " == null ? null : (" +
-                                  loaTypeInfo.getJavaType( metaData.getNullable() ) + ")_" +
-                                  metaData.getLoaColumnName() + ".clone()"
-                                  :
-                                  "_" + metaData.getLoaColumnName()
-                          ) +
-                            " );" +
-                            ( metaData.getNullable() == 1 ? " }" : "" )
+                        "ps.set" + savrolaTypeName.getPreparedStatementType() + "( " +
+                        ix + ", " +
+                        (
+                                savrolaTypeName.doesAssignmentRequireCloning()
+                                ?
+                                "_" + metaData.getSavrolaColumnName() + " == null ? null : (" +
+                                savrolaTypeName.getJavaType( metaData.getNullable() ) + ")_" +
+                                metaData.getSavrolaColumnName() + ".clone()"
+                                :
+                                "_" + metaData.getSavrolaColumnName()
+                        ) +
+                        " );" +
+                        ( metaData.getNullable() == 1 ? " }" : "" )
                 );
                 ix += 1;
 
@@ -764,9 +795,10 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
         writer.println();
 
         writer.println(
-                "            return executeInsertStatement( insertStatement, ps, elephantConnection, " + tupleCarrierName +
+                "            return executeInsertStatement( insertStatement, ps, elephantConnection, " +
+                tupleCarrierName +
                 "TableInfo.ti().getSequenceNames(), " + tupleCarrierName +
-                                                                  "TableInfo.ti().getSerialColumnNumbers(), retrieveAutogeneratedKeys );"
+                "TableInfo.ti().getSerialColumnNumbers(), retrieveAutogeneratedKeys );"
         );
 
         writer.println();
@@ -785,7 +817,6 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
      * Verify that the current versions of the {@link TableInfo} classes match the current database metadata.
      *
      * @param tableMetaData the current database metadata.
-     *
      * @return true if they match; false (and messages sent to Logger.logErr) otherwise.
      */
 
@@ -830,23 +861,23 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
                     consistencyError(
                             "table info class " + tableInfoClassName + " states that column " + ( i + 1 ) +
                             " is named " +
-                                         "\"" + columnNames[i] + "\" but the database states that the column's name is \"" +
-                                                                                                                           dbColumnName + "\"", null
+                            "\"" + columnNames[i] + "\" but the database states that the column's name is \"" +
+                            dbColumnName + "\"", null
                     );
                     return false;
                 }
 
-                String dbColumnType = metaDataArray[i].getLoaTypeInfo().getLoaType().toUpperCase();
+                String dbColumnType = metaDataArray[i].getSavrolaTypeInfo().getSavrolaType().toUpperCase();
                 if ( !dbColumnType.equals( columnTypes[i].toString() ) ) {
                     consistencyError(
                             "table info class " + tableInfoClassName + " states that column " + ( i + 1 ) + " is a " +
                             "\"" + columnTypes[i] + "\" but the database states that the column is a \"" +
-                                                                                                         dbColumnType + "\"", null
+                            dbColumnType + "\"", null
                     );
                     return false;
                 }
 
-                if ( metaDataArray[i].getLoaTypeInfo().isSerialType() ) {
+                if ( metaDataArray[i].getSavrolaTypeInfo().isSerialType() ) {
                     serialCount += 1;
                 }
 
@@ -890,7 +921,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
 
     }
 
-    private void consistencyError( String msg, Throwable e ) {
+    private void consistencyError( String msg, @Nullable Throwable e ) {
 
         Logger.logErr( "Database does not match running software:  " + msg, e );
 

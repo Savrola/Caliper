@@ -18,22 +18,25 @@ import java.util.*;
 
 public abstract class MinimalGarnettSession extends Thread {
 
-    private static final SortedMap<Long,MinimalGarnettSession> _sessions = new TreeMap<Long, MinimalGarnettSession>();
-    private static int _maxSessionsActive;
-    private static int _totalSessionCount;
+    private static final SortedMap<Long,MinimalGarnettSession> s_sessions = new TreeMap<Long, MinimalGarnettSession>();
+    private static int s_maxSessionsActive = 0;
+    @SuppressWarnings({ "FieldCanBeLocal", "UnusedDeclaration" })
+    private static int s_totalSessionCount = 0;
     private static final long INACTIVITY_TIMEOUT = DebugUtilities.inIntelliJIDEA() ? Timer.ONE_HOUR : Timer.ONE_MINUTE;
     public static final int PROXIED_PROTOCOL_VERSION_CODE = 0x10;
 
-    private Socket _socket;
+    private Socket _socket = null;
+    @SuppressWarnings("FieldCanBeLocal")
     private final Long _socketLock = 0L;
-    private GarnettObjectInputStreamInterface _inbound;
-    private GarnettObjectOutputStreamInterface _outbound;
+    private GarnettObjectInputStreamInterface _inbound = null;
+    private GarnettObjectOutputStreamInterface _outbound = null;
+    @SuppressWarnings("FieldCanBeLocal")
     private final Long _inboundLock = 0L;
     private final String _sessionName;
     private final long _sessionId;
-    private GarnettSessionPrefix _sessionPrefix;
+    private GarnettSessionPrefix _sessionPrefix = null;
     private boolean _done = false;
-    private long _lastActivityTime;
+    private long _lastActivityTime = 0L;
     private final boolean _isServerSession;
     private GarnettSessionType _sessionType = GarnettSessionType.VIRGIN;
     private boolean _authenticated = false;
@@ -45,11 +48,12 @@ public abstract class MinimalGarnettSession extends Thread {
         _sessionName = sessionName;
         _isServerSession = isServerSession;
 
-        synchronized ( _sessions ) {
+        synchronized ( MinimalGarnettSession.s_sessions ) {
 
             long sessionId;
 
-            while ( _sessions.containsKey( sessionId = RandomCentral.nextLong() ) ) {
+            //noinspection NestedAssignment
+            while ( MinimalGarnettSession.s_sessions.containsKey( sessionId = RandomCentral.nextLong() ) ) {
 
                 // Just keep spinning.
 
@@ -67,24 +71,35 @@ public abstract class MinimalGarnettSession extends Thread {
 
             }
 
-            _sessions.put( sessionId, this );
+            MinimalGarnettSession.s_sessions.put( sessionId, this );
 
-            _totalSessionCount += 1;
-
-            if ( _sessions.size() > _maxSessionsActive ) {
-
-                _maxSessionsActive = _sessions.size();
-
-                String msg = "new session " + getSessionName() +
-                             " brings historical maximum number of sessions to " + _sessions.size();
-
-                Logger.logMsg( msg );
-
-            }
+            MinimalGarnettSession.countSession( getSessionName() );
 
             Trace.event( "new session " + getSessionName() );
 
             _sessionId = sessionId;
+
+        }
+
+    }
+
+    private static void countSession( String sessionName ) {
+
+        synchronized ( MinimalGarnettSession.s_sessions ) {
+
+            MinimalGarnettSession.s_totalSessionCount += 1;
+
+            if ( MinimalGarnettSession.s_sessions.size() > MinimalGarnettSession.s_maxSessionsActive ) {
+
+                MinimalGarnettSession.s_maxSessionsActive = MinimalGarnettSession.s_sessions.size();
+
+                Logger.logMsg(
+                        "new session " + sessionName +
+                        " brings historical maximum number of sessions to " +
+                        MinimalGarnettSession.s_sessions.size()
+                );
+
+            }
 
         }
 
@@ -137,6 +152,7 @@ public abstract class MinimalGarnettSession extends Thread {
      * @throws GarnettIllegalArgumentException if the session prefix has already been set to a non-null value.
      */
 
+    @SuppressWarnings("UnusedDeclaration")
     protected void setSessionPrefix( GarnettSessionPrefix sessionPrefix )
             throws GarnettIllegalArgumentException {
 
@@ -159,7 +175,7 @@ public abstract class MinimalGarnettSession extends Thread {
 
             public void run() {
 
-                runDms();
+                MinimalGarnettSession.runDms();
 
             }
 
@@ -178,11 +194,14 @@ public abstract class MinimalGarnettSession extends Thread {
 
             List<MinimalGarnettSession> doomedSessions = new LinkedList<MinimalGarnettSession>();
 
-            synchronized ( _sessions ) {
+            synchronized ( MinimalGarnettSession.s_sessions ) {
 
-                for ( MinimalGarnettSession session : _sessions.values() ) {
+                for ( MinimalGarnettSession session : MinimalGarnettSession.s_sessions.values() ) {
 
-                    if ( System.currentTimeMillis() - session.lastActivityTime() > INACTIVITY_TIMEOUT ) {
+                    if (
+                            System.currentTimeMillis() - session.lastActivityTime() >
+                            MinimalGarnettSession.INACTIVITY_TIMEOUT
+                    ) {
 
                         Trace.event( "session " + session.getSessionName() + " is doomed" );
                         doomedSessions.add( session );
@@ -337,14 +356,14 @@ public abstract class MinimalGarnettSession extends Thread {
 
         boolean knownSession = false;
         int remaining = 0;
-        synchronized ( _sessions ) {
+        synchronized ( MinimalGarnettSession.s_sessions ) {
 
-            if ( _sessions.containsKey( getSessionId() ) ) {
+            if ( MinimalGarnettSession.s_sessions.containsKey( getSessionId() ) ) {
 
                 // Remove it from our table.
 
-                _sessions.remove( getSessionId() );
-                remaining = _sessions.size();
+                MinimalGarnettSession.s_sessions.remove( getSessionId() );
+                remaining = MinimalGarnettSession.s_sessions.size();
                 Trace.event( "dropping session " + getSessionName() + " (" + remaining + " left)" );
 
                 knownSession = true;
@@ -352,7 +371,7 @@ public abstract class MinimalGarnettSession extends Thread {
             }
 
             //noinspection NotifyWithoutCorrespondingWait
-            _sessions.notifyAll();
+            MinimalGarnettSession.s_sessions.notifyAll();
 
         }
 
@@ -380,7 +399,7 @@ public abstract class MinimalGarnettSession extends Thread {
         if ( knownSession ) {
 
             String msg = "SLC session " + getSessionName() + " ends (" + remaining + " sessions still active, " +
-                         _maxSessionsActive + " max sessions active)";
+                         MinimalGarnettSession.s_maxSessionsActive + " max sessions active)";
 
             Trace.event( msg );
 
@@ -404,7 +423,7 @@ public abstract class MinimalGarnettSession extends Thread {
 
     }
 
-    public String getSessionName() {
+    public final String getSessionName() {
 
         return _sessionName;
 
@@ -483,6 +502,7 @@ public abstract class MinimalGarnettSession extends Thread {
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public void setSessionType( GarnettSessionType sessionType )
             throws GarnettIllegalArgumentException {
 
@@ -498,7 +518,7 @@ public abstract class MinimalGarnettSession extends Thread {
 
     }
 
-    protected void setAuthenticated( boolean authenticated ) {
+    protected void setSessionIsAuthenticated() {
 
         _authenticated = true;
 

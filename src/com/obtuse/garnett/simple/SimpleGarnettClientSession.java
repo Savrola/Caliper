@@ -25,7 +25,9 @@ import java.net.Socket;
 public class SimpleGarnettClientSession extends MinimalGarnettSession {
 
     private final InetSocketAddress _serverAddress;
+    @SuppressWarnings({ "FieldCanBeLocal", "UnusedDeclaration" })
     private final GarnettComponentInstanceName _serverInstanceName;
+    @SuppressWarnings({ "FieldCanBeLocal", "UnusedDeclaration" })
     private final int _pod;
     private SSLSocketFactory _sslSocketFactory;
     private static final int DEFAULT_LOGIN_RETRY_COUNT = 5;
@@ -51,7 +53,9 @@ public class SimpleGarnettClientSession extends MinimalGarnettSession {
     public void connect()
             throws IOException, GarnettUnsupportedProtocolVersionException, GarnettIllegalArgumentException {
 
-        Socket socket = _sslSocketFactory.createSocket( _serverAddress.getAddress(), 1234 );
+        Socket socket = _sslSocketFactory.createSocket( _serverAddress.getAddress(),
+                                                        SimpleGarnettServerManager.DEBUG_LISTEN_PORT
+        );
         setSocket( socket );
 
     }
@@ -62,7 +66,7 @@ public class SimpleGarnettClientSession extends MinimalGarnettSession {
     )
             throws GarnettInvalidAccountNameException, IOException {
 
-        return doLogin( userName, obfuscatedPassword, null, null, DEFAULT_LOGIN_RETRY_COUNT );
+        return doLogin( userName, obfuscatedPassword, null, null, SimpleGarnettClientSession.DEFAULT_LOGIN_RETRY_COUNT );
 
     }
 
@@ -88,27 +92,25 @@ public class SimpleGarnettClientSession extends MinimalGarnettSession {
                         1
                         :
                         (
-                                maxAttemptCount > MAXIMUM_LOGIN_RETRY_COUNT
+                                maxAttemptCount > SimpleGarnettClientSession.MAXIMUM_LOGIN_RETRY_COUNT
                                 ?
-                                MAXIMUM_LOGIN_RETRY_COUNT
+                                SimpleGarnettClientSession.MAXIMUM_LOGIN_RETRY_COUNT
                                 :
                                 maxAttemptCount
                         )
                 );
 
-            GarnettLoginRequestMessage loginMessage;
-
-            loginMessage = optionalActivationCode == null ?
-                           new GarnettLoginRequestMessage(
-                                   userName,
-                                   obfuscatedPassword
-                           )
-                                                :
-                           new GarnettLoginRequestMessage(
-                                   userName,
-                                   obfuscatedPassword,
-                                   optionalActivationCode
-                           );
+            GarnettLoginRequestMessage loginMessage = optionalActivationCode == null ?
+                                                      new GarnettLoginRequestMessage(
+                                                              userName,
+                                                              obfuscatedPassword
+                                                      )
+                                                                                     :
+                                                      new GarnettLoginRequestMessage(
+                                                              userName,
+                                                              obfuscatedPassword,
+                                                              optionalActivationCode.intValue()
+                                                      );
 
             if ( optionalAugmentedLoginData != null ) {
 
@@ -201,7 +203,7 @@ public class SimpleGarnettClientSession extends MinimalGarnettSession {
         try {
 
             session = new SimpleGarnettClientSession(
-                    new InetSocketAddress( "localhost", 1234 ),
+                    new InetSocketAddress( "localhost", SimpleGarnettServerManager.DEBUG_LISTEN_PORT ),
                     new GarnettComponentInstanceName( "Fred" ),
                     GarnettSessionType.COMMAND,
                     1

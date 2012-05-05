@@ -14,8 +14,8 @@ import java.util.NoSuchElementException;
 
 public class MyIntSet implements Iterable<Long>, Serializable {
 
-    private long[] _valueBits;
-    private long   _startValue;
+    private long[] _valueBits = null;
+    private long   _startValue = 0L;
 
     public MyIntSet() {
 
@@ -27,26 +27,30 @@ public class MyIntSet implements Iterable<Long>, Serializable {
 
         if ( _valueBits == null ) {
 
+            // Take a wild guess that the first value is in the middle of a modest range of bits.
+
+            //noinspection MagicNumber
             _valueBits = new long[25];
-            _startValue = value - 12 * 64;
+            //noinspection MagicNumber
+            _startValue = value - 12 * Long.SIZE;
 
         }
 //        Logger.logMsg( "before adding " + value + ":  " + this );
 
-//        if ( value >= _startValue && value < _startValue + _valueBits.length * 64 ) {
+//        if ( value >= _startValue && value < _startValue + _valueBits.length * Long.SIZE ) {
 //
 //
 //        } else
         if ( value < _startValue ) {
 
-            long newStartValue = _startValue - ( ( _startValue - value ) / 64 + 10 ) * 64;
-            long lastValue = _startValue + 64 * _valueBits.length - 1;
-            long[] newArray = new long[( (int)( lastValue + 1 - newStartValue ) / 64 )];
+            long newStartValue = _startValue - ( ( _startValue - value ) / Long.SIZE + 10 ) * Long.SIZE;
+            long lastValue = _startValue + Long.SIZE * _valueBits.length - 1;
+            long[] newArray = new long[( (int)( lastValue + 1 - newStartValue ) / Long.SIZE )];
             System.arraycopy(
                     _valueBits,
                     0,
                     newArray,
-                    (int)( _startValue - newStartValue ) / 64,
+                    (int)( _startValue - newStartValue ) / Long.SIZE,
                     _valueBits.length
             );
 
@@ -54,11 +58,11 @@ public class MyIntSet implements Iterable<Long>, Serializable {
             _startValue = newStartValue;
 //            Logger.logMsg( "after growing left:  " + this );
 
-        } else if ( value >= _startValue + _valueBits.length * 64 ) {
+        } else if ( value >= _startValue + _valueBits.length * Long.SIZE ) {
 
-            long lastValue = _startValue + 64 * _valueBits.length - 1;
-            long newLastValue = lastValue + ( ( value - lastValue ) / 64 + 10 ) * 64;
-            long[] newArray = new long[( (int)( newLastValue + 1 - _startValue ) / 64 )];
+            long lastValue = _startValue + Long.SIZE * _valueBits.length - 1;
+            long newLastValue = lastValue + ( ( value - lastValue ) / Long.SIZE + 10 ) * Long.SIZE;
+            long[] newArray = new long[( (int)( newLastValue + 1 - _startValue ) / Long.SIZE )];
             System.arraycopy( _valueBits, 0, newArray, 0, _valueBits.length );
 
             _valueBits = newArray;
@@ -67,7 +71,7 @@ public class MyIntSet implements Iterable<Long>, Serializable {
         }
 
         //noinspection UnnecessaryParentheses
-        _valueBits[( (int)( value - _startValue ) / 64 )] |= 1L << ( ( value - _startValue ) & 63 );
+        _valueBits[( (int)( value - _startValue ) / Long.SIZE )] |= 1L << ( ( value - _startValue ) & ( Long.SIZE - 1 ) );
 
 //        Logger.logMsg( "after adding " + value + ":  " + this );
 
@@ -77,7 +81,7 @@ public class MyIntSet implements Iterable<Long>, Serializable {
 
         for ( int i = 0; i < _valueBits.length; i += 1 ) {
 
-            for ( int j = 0; j < 64; j += 1 ) {
+            for ( int j = 0; j < Long.SIZE; j += 1 ) {
 
                 //noinspection UnnecessaryParentheses
                 if ( ( _valueBits[i] & ( 1L << j ) ) != 0 ) {
@@ -104,8 +108,8 @@ public class MyIntSet implements Iterable<Long>, Serializable {
 
                             } else {
 
-                                long rval = _startValue + _nextI * 64 + _nextJ;
-                                if ( _nextJ == 64 ) {
+                                long rval = _startValue + _nextI * Long.SIZE + _nextJ;
+                                if ( _nextJ == Long.SIZE ) {
                                     _nextI += 1;
                                     _nextJ = 0;
                                 } else {
@@ -114,7 +118,7 @@ public class MyIntSet implements Iterable<Long>, Serializable {
 
                                 for ( int i = _nextI; i < _valueBits.length; i += 1 ) {
 
-                                    for ( int j = _nextJ; j < 64; j += 1 ) {
+                                    for ( int j = _nextJ; j < Long.SIZE; j += 1 ) {
 
                                         //noinspection UnnecessaryParentheses
                                         if ( ( _valueBits[i] & ( 1L << j ) ) != 0 ) {
@@ -181,11 +185,11 @@ public class MyIntSet implements Iterable<Long>, Serializable {
 //        String comma = "";
 //        for ( int i = 0; i < _valueBits.length; i += 1 ) {
 //
-//            for ( int j = 0; j < 64; j += 1 ) {
+//            for ( int j = 0; j < Long.SIZE; j += 1 ) {
 //
 //                if ( ( _valueBits[i] & ( 1L << j ) ) != 0 ) {
 //
-//                    rval.append( comma ).append( _startValue + i * 64 + j );
+//                    rval.append( comma ).append( _startValue + i * Long.SIZE + j );
 //                    comma = ", ";
 //
 //                }
@@ -202,7 +206,7 @@ public class MyIntSet implements Iterable<Long>, Serializable {
 
         StringBuilder rval2 = new StringBuilder();
         String comma = "";
-        //noinspection ForLoopReplaceableByForEach
+        //noinspection ForLoopReplaceableByForEach,ForLoopWithMissingComponent
         for ( Iterator<Long> iter = iterator(); iter.hasNext(); ) {
 
             rval2.append( comma ).append( iter.next() );
@@ -226,6 +230,7 @@ public class MyIntSet implements Iterable<Long>, Serializable {
 //
 //    }
 
+    @SuppressWarnings("MagicNumber")
     public static void main( String[] args ) {
 
         MyIntSet set = new MyIntSet();
