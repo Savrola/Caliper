@@ -19,8 +19,9 @@
           <grid id="fc933" binding="_weightPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <minimum-size width="250" height="-1"/>
+                <maximum-size width="250" height="-1"/>
               </grid>
             </constraints>
             <properties/>
@@ -54,7 +55,7 @@
                     <children>
                       <component id="dfb39" class="javax.swing.JLabel" binding="_currentWeightLabel">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Label"/>
@@ -66,23 +67,12 @@
               </grid>
             </children>
           </grid>
-          <grid id="c1a3d" binding="_previewPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <minimum-size width="-1" height="80"/>
-                <preferred-size width="-1" height="80"/>
-              </grid>
-            </constraints>
-            <properties/>
-            <border type="etched" title="Preview"/>
-            <children/>
-          </grid>
           <grid id="2a53" binding="_centerPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <minimum-size width="250" height="-1"/>
+                <maximum-size width="250" height="-1"/>
               </grid>
             </constraints>
             <properties/>
@@ -131,8 +121,9 @@
           <grid id="f1b6a" binding="_standardDeviationPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <minimum-size width="250" height="-1"/>
+                <maximum-size width="250" height="-1"/>
               </grid>
             </constraints>
             <properties/>
@@ -177,6 +168,19 @@
                 </children>
               </grid>
             </children>
+          </grid>
+          <grid id="c1a3d" binding="_previewPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="150" height="80"/>
+                <preferred-size width="150" height="80"/>
+                <maximum-size width="150" height="80"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="etched" title="Preview"/>
+            <children/>
           </grid>
         </children>
       </grid>

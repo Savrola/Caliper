@@ -64,13 +64,24 @@ public class GaussianDistribution {
 
     }
 
+    public void emitAsXml( NestedXMLPrinter ps ) {
+
+        ps.emitTag(
+                "GD",
+                new String[] {
+                        "center=" + getCenter(),
+                        "stdev=" + getStandardDeviation()
+                }
+        );
+
+    }
+
     public String toString() {
 
         return "GaussianDistribution( " + _center + ", " + _standardDeviation + " )";
 
     }
 
-    @SuppressWarnings({ "MagicNumber", "UseOfSystemOutOrSystemErr" })
     private static void doit( Random rng, double center, double standardDeviation, int nTrials ) {
 
         GaussianDistribution dp = new GaussianDistribution( center, standardDeviation );
@@ -115,14 +126,13 @@ public class GaussianDistribution {
 
     private static final int NTRIALS = 1000000;
 
-    @SuppressWarnings("MagicNumber")
     public static void main( String[] args ) {
 
         Random rng = new MersenneTwister();
-        GaussianDistribution.doit( rng, 0.0, 1.0, GaussianDistribution.NTRIALS );
-        GaussianDistribution.doit( rng, 0.0, 2.0, GaussianDistribution.NTRIALS );
-        GaussianDistribution.doit( rng, 10.0, 3.0, GaussianDistribution.NTRIALS );
-        GaussianDistribution.doit( rng, 0.0, 0.1, GaussianDistribution.NTRIALS );
+        doit( rng, 0.0, 1.0, NTRIALS );
+        doit( rng, 0.0, 2.0, NTRIALS );
+        doit( rng, 10.0, 3.0, NTRIALS );
+        doit( rng, 0.0, 0.1, NTRIALS );
 
     }
 

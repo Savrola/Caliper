@@ -10,7 +10,7 @@ import java.awt.*;
 import java.util.*;
 
 /**
- * %%% Clever words go here!
+ * A widget for configurating a gaussian distribution.
  * <p/>
  * Copyright © 2012 Invidi Technologies Corporation
  * Copyright © 2012 Obtuse Systems Corporation
@@ -57,25 +57,19 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
     private java.util.List<ChangeListener> _changeListeners = new LinkedList<ChangeListener>();
 
     @SuppressWarnings("StaticVariableNamingConvention")
-    private static final Dictionary<Integer, MpsLabel> s_0to1byQuartersLabels;
+    private static final Dictionary<Integer,MpsLabel> S_0TO_1BY_QUARTERS_LABELS;
     private GaussianDistributionDrawing _gdd;
 
     static {
 
-        //noinspection UseOfObsoleteCollectionType
-        s_0to1byQuartersLabels = new Hashtable<Integer, MpsLabel>();
-        GaussianDistributionConfiguratorWidget.s_0to1byQuartersLabels.put( 0, new MpsLabel( "0.0" ) );
-        //noinspection MagicNumber
-        GaussianDistributionConfiguratorWidget.s_0to1byQuartersLabels.put( 250, new MpsLabel( "0.25" ) );
-        //noinspection MagicNumber
-        GaussianDistributionConfiguratorWidget.s_0to1byQuartersLabels.put( 500, new MpsLabel( "0.5" ) );
-        //noinspection MagicNumber
-        GaussianDistributionConfiguratorWidget.s_0to1byQuartersLabels.put( 750, new MpsLabel( "0.75" ) );
-        GaussianDistributionConfiguratorWidget.s_0to1byQuartersLabels.put( 1000, new MpsLabel( "1.0" ) );
+        Hashtable<Integer,MpsLabel> ht = MpsLabel.makeLabels( 0, 1000, 250, 3 );
+        S_0TO_1BY_QUARTERS_LABELS = ObtuseUtil5.unmodifiableHashtable( ht );
 
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public GaussianDistributionConfiguratorWidget() {
+
         this(
                 GaussianDistributionConfiguratorWidget.DEFAULT_WEIGHT,
                 GaussianDistributionConfiguratorWidget.DEFAULT_CENTER,
@@ -110,9 +104,25 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
         //noinspection MagicNumber
         configureSlider( _weightSlider, 0, 1000, (int)( weight * 1000 ), 250, 0, null );
         //noinspection MagicNumber
-        configureSlider( _centerSlider, 0, 1000, (int)( center * 1000 ), 250, 0, GaussianDistributionConfiguratorWidget.s_0to1byQuartersLabels );
+        configureSlider(
+                _centerSlider,
+                0,
+                1000,
+                (int)( center * 1000 ),
+                250,
+                0,
+                GaussianDistributionConfiguratorWidget.S_0TO_1BY_QUARTERS_LABELS
+        );
         //noinspection MagicNumber
-        configureSlider( _standardDeviationSlider, 0, 1000, (int)( stdDev * 1000 ), 250, 0, GaussianDistributionConfiguratorWidget.s_0to1byQuartersLabels );
+        configureSlider(
+                _standardDeviationSlider,
+                0,
+                1000,
+                (int)( stdDev * 1000 ),
+                250,
+                0,
+                GaussianDistributionConfiguratorWidget.S_0TO_1BY_QUARTERS_LABELS
+        );
 
         _weightSlider.getModel().addChangeListener(
                 new ChangeListener() {
@@ -205,9 +215,9 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
 
     }
 
-    public ProportionalGaussianDistribution getProportionalGaussianDistribution() {
+    public WeightedGaussianDistribution getProportionalGaussianDistribution() {
 
-        return new ProportionalGaussianDistribution( getWeight(), getCenter(), getStandardDeviation() );
+        return new WeightedGaussianDistribution( getWeight(), getCenter(), getStandardDeviation() );
 
     }
 
@@ -242,12 +252,20 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
                         _standardDeviationSlider.getValue() / GaussianDistributionConfiguratorWidget.SCALING_FACTOR
                 )
         );
+
         _currentWeightLabel.setText( "" + _weightSlider.getModel().getValue() );
-        _currentCenteredAtLabel.setText( "" + ObtuseUtil5.lpad0( _centerSlider.getModel().getValue() /
-                                                                 GaussianDistributionConfiguratorWidget.SCALING_FACTOR, 6, 3 ) );
+        _currentCenteredAtLabel.setText(
+                "" + ObtuseUtil5.lpad0(
+                        _centerSlider.getModel().getValue() /
+                        GaussianDistributionConfiguratorWidget.SCALING_FACTOR, 6, 3
+                )
+        );
+
         _currentStdDevLabel.setText(
-                "" + ObtuseUtil5.lpad0( _standardDeviationSlider.getModel().getValue() /
-                                        GaussianDistributionConfiguratorWidget.SCALING_FACTOR, 6, 3 )
+                "" + ObtuseUtil5.lpad0(
+                        _standardDeviationSlider.getModel().getValue() /
+                        GaussianDistributionConfiguratorWidget.SCALING_FACTOR, 6, 3
+                )
         );
 
     }
@@ -278,7 +296,6 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
 
         _weightSlider = new MultiPointSlider( "weight", 1, 1000 );
 
-        //noinspection MagicNumber
         _centerSlider = new MultiPointSlider( "center", 0, 1000, 25 );
 
         _standardDeviationSlider = new MultiPointSlider( "standard deviation", 1, 1000 );
@@ -301,11 +318,11 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
                 new GaussianDistributionConfiguratorWidget( .43f, .3f, .15f / 2 )
         };
 
-        final ProportionalGaussianDistributionsDrawing pgdd = new ProportionalGaussianDistributionsDrawing();
+        final StackedGaussianDistributionsDrawing pgdd = new StackedGaussianDistributionsDrawing();
         pgdd.setMinimumSize( new Dimension( 100, 100 ) );
         pgdd.setPreferredSize( new Dimension( 100, 100 ) );
         pgdd.setDistributions(
-                new ProportionalGaussianDistribution[] {
+                new WeightedGaussianDistribution[] {
                         widgets[0].getProportionalGaussianDistribution(),
                         widgets[1].getProportionalGaussianDistribution(),
                         widgets[2].getProportionalGaussianDistribution(),
@@ -322,7 +339,7 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
                         public void stateChanged( ChangeEvent changeEvent ) {
 
                             pgdd.setDistributions(
-                                    new ProportionalGaussianDistribution[] {
+                                    new WeightedGaussianDistribution[] {
                                             widgets[0].getProportionalGaussianDistribution(),
                                             widgets[1].getProportionalGaussianDistribution(),
                                             widgets[2].getProportionalGaussianDistribution(),

@@ -12,17 +12,19 @@ import static com.obtuse.ui.MultiPointSlider.OrientedImage;
 import static com.obtuse.ui.MultiPointSlider.PositionOnLine;
 
 /**
- * The implementation of {@link MpsKnob} used by default by the {@link MultiPointSlider} class.
+ * The implementation of {@link MpsKnob} used by default by the {@link com.obtuse.ui.MultiPointSlider} class.
  */
 
 public class DefaultMpsKnob extends MpsKnob {
 
     private SortedMap<PositionOnLine, Double> _rotations =
             new TreeMap<PositionOnLine, Double>();
-    private ThreeDimensionalSortedMap<MpsKnobSize, PositionOnLine, Boolean, OrientedImage> _rotatedSelectedScaledImages =
+    private ThreeDimensionalSortedMap<MpsKnobSize, PositionOnLine, Boolean, OrientedImage>
+            _rotatedSelectedScaledImages =
             new ThreeDimensionalTreeMap<MpsKnobSize, PositionOnLine, Boolean, OrientedImage>();
 
     public DefaultMpsKnob( Image image ) {
+
         super( image );
 
         for ( PositionOnLine position : PositionOnLine.values() ) {
@@ -135,28 +137,29 @@ public class DefaultMpsKnob extends MpsKnob {
     }
 
     @Override
-    public MultiPointSlider.OrientedImage getOrientedImage( MpsKnobSize knobSize, PositionOnLine positionOnLine, boolean isSelected ) {
+    public MultiPointSlider.OrientedImage getOrientedImage(
+            MpsKnobSize knobSize,
+            PositionOnLine positionOnLine,
+            boolean isSelected
+    ) {
 
         int ks = knobSize.integerSize();
-        Point hotSpot;
 
-        MultiPointSlider.OrientedImage orientedImage = _rotatedSelectedScaledImages.get( knobSize, positionOnLine, isSelected );
+        MultiPointSlider.OrientedImage orientedImage =
+                _rotatedSelectedScaledImages.get( knobSize, positionOnLine, isSelected );
         if ( orientedImage == null ) {
 
-            BufferedImage unselectedScaledImage = ImageIconUtils.toBufferedImage(
+            BufferedImage scaledImage = ImageIconUtils.toBufferedImage(
                     getImage().getScaledInstance(
                             knobSize.integerSize(),
                             -1,
                             Image.SCALE_SMOOTH
                     )
             );
-
-            // Darken the image by about 10%.
-
-            @SuppressWarnings("MagicNumber")
-            BufferedImage selectedScaledImage = ImageIconUtils.changeImageBrightness( unselectedScaledImage, 0.9f );
+            BufferedImage selectedScaledImage = ImageIconUtils.changeImageBrightness( scaledImage, 0.9f );
             BufferedImage rotatedImage;
-            BufferedImage sourceImage = isSelected ? selectedScaledImage : unselectedScaledImage;
+            BufferedImage sourceImage = isSelected ? selectedScaledImage : scaledImage;
+            Point hotSpot;
             if ( positionOnLine == PositionOnLine.ABOVE ) {
 
                 rotatedImage = sourceImage;
@@ -172,9 +175,9 @@ public class DefaultMpsKnob extends MpsKnob {
                             BufferedImage.TYPE_INT_ARGB
                     );
 
-                    Graphics2D g2d = (Graphics2D) rotatedImage.getGraphics();
+                    Graphics2D g2d = (Graphics2D)rotatedImage.getGraphics();
                     Double rotation = _rotations.get( positionOnLine );
-                    g2d.rotate( rotation );
+                    g2d.rotate( rotation.doubleValue() );
 //                            g2d.setColor( Color.RED );
 //                            g2d.drawLine( 0, 0, 50, 50 );
 //                            g2d.setColor( Color.BLUE );
@@ -210,9 +213,8 @@ public class DefaultMpsKnob extends MpsKnob {
                             BufferedImage.TYPE_INT_ARGB
                     );
 
-
-                    Graphics2D g2d = (Graphics2D) rotatedImage.getGraphics();
-                    g2d.rotate( _rotations.get( PositionOnLine.BELOW ) );
+                    Graphics2D g2d = (Graphics2D)rotatedImage.getGraphics();
+                    g2d.rotate( _rotations.get( PositionOnLine.BELOW ).doubleValue() );
 //                            g2d.setColor( Color.RED );
 //                            g2d.drawLine( 0, 0, 50, 50 );
 //                            g2d.setColor( Color.BLUE );
@@ -238,6 +240,5 @@ public class DefaultMpsKnob extends MpsKnob {
         return orientedImage;
 
     }
-
 
 }

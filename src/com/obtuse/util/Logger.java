@@ -7,8 +7,8 @@ import java.text.*;
 import java.util.*;
 
 /*
- * Copyright © 2012 Daniel Boulet.
- * Copyright © 2012 Daniel Boulet.
+ * Copyright © 2005, 2006, 2007 Loa Corporation.
+ * Copyright © 2011 Daniel Boulet.
  */
 
 /**
@@ -23,19 +23,19 @@ import java.util.*;
 
 public class Logger {
 
-    private List<LoggerListener> _listeners = new LinkedList<LoggerListener>();
+    private List<LoggerListener> s_listeners = new LinkedList<LoggerListener>();
 
-    private StringBuffer _currentMessage = new StringBuffer();
+    private StringBuffer s_currentMessage = new StringBuffer();
 
-    private File _outputFile = null;
+    private File s_outputFile = null;
 
-    private String _outputFileName = null;
+    private String s_outputFileName = null;
 
-    private PrintStream _outputStream;
+    private PrintStream s_outputStream;
 
-    private Date _messageStartTime = null;
+    private Date s_messageStartTime = null;
 
-    private PrintStream _mirror = null;     // If non-null, all messages sent to this logger are also sent here.
+    private PrintStream s_mirror = null;     // If non-null, all messages sent to this logger are also sent here.
 
     private static Logger s_stdout = null;
 
@@ -91,18 +91,20 @@ public class Logger {
     public Logger( File outputFile, boolean append )
             throws
             FileNotFoundException {
+
         super();
 
-        _outputFile = outputFile;
-        _outputStream = new PrintStream( new FileOutputStream( outputFile, append ), true );
+        s_outputFile = outputFile;
+        s_outputStream = new PrintStream( new FileOutputStream( outputFile, append ), true );
 
     }
 
     public Logger( String outputFileName, PrintStream outputStream ) {
+
         super();
 
-        _outputFileName = outputFileName;
-        _outputStream = outputStream;
+        s_outputFileName = outputFileName;
+        s_outputStream = outputStream;
 
     }
 
@@ -117,9 +119,9 @@ public class Logger {
         // Note:  use of != instead of equals() is deliberate!
 
         //noinspection ObjectEquality
-        if ( _outputStream != System.out && _outputStream != System.err && _outputStream != null ) {
+        if ( s_outputStream != System.out && s_outputStream != System.err && s_outputStream != null ) {
 
-            _outputStream.close();
+            s_outputStream.close();
 
         }
 
@@ -128,11 +130,12 @@ public class Logger {
     }
 
     /**
-     * Set this logger's mirror to the specified {@link java.io.PrintStream}. Any existing mirror is closed if it is open and
+     * Set this logger's mirror to the specified {@link java.io.PrintStream}. Any existing mirror is closed if it is
+     * open and
      * neither {@link System#out} nor {@link System#err}).
      *
      * @param mirrorName the name of the mirror file/device/whatever.
-     * @param mirror the PrintStream which is to be sent a copy of everything which is emitted by this Logger.
+     * @param mirror     the PrintStream which is to be sent a copy of everything which is emitted by this Logger.
      */
 
     private void internalSetMirror( String mirrorName, PrintStream mirror ) {
@@ -141,15 +144,15 @@ public class Logger {
         // Note:  use of != instead of equals() is deliberate!
 
         //noinspection ObjectEquality
-        if ( _mirror != null && _mirror != System.out && _mirror != System.err ) {
+        if ( s_mirror != null && s_mirror != System.out && s_mirror != System.err ) {
 
             println( "\n%%% mirror file closed" );
-            _mirror.close();
+            s_mirror.close();
 
         }
 
-        _mirror = mirror;
-        if ( _mirror != null ) {
+        s_mirror = mirror;
+        if ( s_mirror != null ) {
 
             if ( mirrorName == null ) {
 
@@ -181,40 +184,40 @@ public class Logger {
 
     private void printSegment( String s ) {
 
-        if ( _messageStartTime == null ) {
+        if ( s_messageStartTime == null ) {
 
-            _messageStartTime = new Date();
+            s_messageStartTime = new Date();
         }
 
-        _currentMessage.append( s );
+        s_currentMessage.append( s );
 
     }
 
     private void printNewline() {
 
-        if ( _messageStartTime == null ) {
+        if ( s_messageStartTime == null ) {
 
-            _messageStartTime = new Date();
+            s_messageStartTime = new Date();
 
         }
 
-        String formattedMessageStartTime = Logger.OUR_DATE_FORMAT.format( _messageStartTime );
-        if ( _outputStream != null ) {
+        String formattedMessageStartTime = Logger.OUR_DATE_FORMAT.format( s_messageStartTime );
+        if ( s_outputStream != null ) {
 
             //noinspection UnnecessaryParentheses
-            _outputStream.println(
+            s_outputStream.println(
                     MessageFormat.format(
                             "{0}:  {1}",
                             formattedMessageStartTime,
-                            _currentMessage.toString()
+                            s_currentMessage.toString()
                     )
             );
 
         }
 
-        if ( _mirror != null ) {
+        if ( s_mirror != null ) {
 
-            _mirror.println( formattedMessageStartTime + ":  " + _currentMessage.toString() );
+            s_mirror.println( formattedMessageStartTime + ":  " + s_currentMessage.toString() );
 
         }
 
@@ -230,7 +233,7 @@ public class Logger {
 
         synchronized ( this ) {
 
-            tmpListeners = new LinkedList<LoggerListener>( _listeners );
+            tmpListeners = new LinkedList<LoggerListener>( s_listeners );
 
         }
 
@@ -238,14 +241,14 @@ public class Logger {
 
         for ( LoggerListener listener : tmpListeners ) {
 
-            listener.logMessage( _messageStartTime, _currentMessage.toString() );
+            listener.logMessage( s_messageStartTime, s_currentMessage.toString() );
 
         }
 
         Trace.event( "done processing listeners" );
 
-        _currentMessage = new StringBuffer();
-        _messageStartTime = null;
+        s_currentMessage = new StringBuffer();
+        s_messageStartTime = null;
 
     }
 
@@ -254,10 +257,15 @@ public class Logger {
         //noinspection UnnecessaryLocalVariable
         String s = Xs;
         int last = 0;
-        int ix;
 
-        //noinspection NestedAssignment
-        while ( ( ix = s.indexOf( (int)'\n', last ) ) >= last ) {
+        while ( true ) {
+
+            int ix = s.indexOf( (int)'\n', last );
+            if ( ix < last ) {
+
+                break;
+
+            }
 
             String nextSection = s.substring( last, ix );
             printSegment( nextSection );
@@ -298,15 +306,15 @@ public class Logger {
 
     public synchronized void flush() {
 
-        if ( _outputStream != null ) {
+        if ( s_outputStream != null ) {
 
-            _outputStream.flush();
+            s_outputStream.flush();
 
         }
 
-        if ( _mirror != null ) {
+        if ( s_mirror != null ) {
 
-            _mirror.flush();
+            s_mirror.flush();
 
         }
 
@@ -353,7 +361,7 @@ public class Logger {
 
     public File getOutputFile() {
 
-        return _outputFile;
+        return s_outputFile;
 
     }
 
@@ -365,13 +373,13 @@ public class Logger {
 
     public String getOutputFileName() {
 
-        if ( _outputFile == null ) {
+        if ( s_outputFile == null ) {
 
-            return _outputFileName;
+            return s_outputFileName;
 
         } else {
 
-            return _outputFile.getPath();
+            return s_outputFile.getPath();
 
         }
 
@@ -396,14 +404,14 @@ public class Logger {
                 Logger.s_stdout.setMirror(
                         Logger.LOGS_DIRECTORY.getPath() + "/" +
                         ( Logger.s_programName == null ? Logger.COMPONENT_NAME : Logger.s_programName ) +
-                        "_stdout_" + Logger.LOG_FILE_NAME_FORMATTER.format( new Date() ),
-                        -1L
+                        "_stdout_" + Logger.LOG_FILE_NAME_FORMATTER
+                                           .format( new Date() ), -1L
                 );
 
             } catch ( FileNotFoundException e ) {
 
                 // it was worth a shot.
-                Trace.event("caught an exception trying to set stdout's mirror", e );
+                Trace.event( "caught an exception trying to set stdout's mirror", e );
 
             }
 
@@ -432,7 +440,8 @@ public class Logger {
                 Logger.s_stderr.setMirror(
                         Logger.LOGS_DIRECTORY.getPath() + "/" +
                         ( Logger.s_programName == null ? Logger.COMPONENT_NAME : Logger.s_programName ) +
-                        "_stderr_" + Logger.LOG_FILE_NAME_FORMATTER.format( new Date() ), -1L
+                        "_stderr_" + Logger.LOG_FILE_NAME_FORMATTER
+                                           .format( new Date() ), -1L
                 );
 
             } catch ( FileNotFoundException e ) {
@@ -501,7 +510,7 @@ public class Logger {
 
     public static void logMsg( String msg ) {
 
-        Trace.event(msg);
+        Trace.event( msg );
         Logger.getStdout().println( Logger.getPrefix() + msg );
 
     }
@@ -528,20 +537,22 @@ public class Logger {
 
     /**
      * Send something to a Logger.
+     *
      * @param msg what to send.
      */
 
     public void msg( String msg ) {
 
-        Trace.event(msg);
+        Trace.event( msg );
         println( Logger.getPrefix() + msg );
 
     }
 
     /**
      * Log something with an optional throwable to a Logger.
+     *
      * @param msg the message.
-     * @param e the throwable (ignored if null).
+     * @param e   the throwable (ignored if null).
      */
 
     public void msg( String msg, Throwable e ) {
@@ -566,7 +577,7 @@ public class Logger {
      * Send a log message to the 'user friendly' logger and a probably different message to stdout.
      *
      * @param friendly the 'user friendly' message.
-     * @param geek the 'geek-readable' message (if null then the friendly message takes its place).
+     * @param geek     the 'geek-readable' message (if null then the friendly message takes its place).
      */
 
     public static void logMsg( String friendly, @Nullable String geek ) {
@@ -607,7 +618,7 @@ public class Logger {
      * Send a log message to the 'user friendly' logger and a probably different message to stderr.
      *
      * @param friendly the 'user friendly' message.
-     * @param geek the 'geek-readable' message (if null then the friendly message takes its place).
+     * @param geek     the 'geek-readable' message (if null then the friendly message takes its place).
      */
 
     public static void logErr( String friendly, String geek ) {
@@ -630,7 +641,7 @@ public class Logger {
      * Send a log message and a stack trace to stderr.
      *
      * @param msg the message to be printed.
-     * @param e the throwable containing the stack trace.
+     * @param e   the throwable containing the stack trace.
      */
 
     public static void logErr( String msg, Throwable e ) {
@@ -651,11 +662,11 @@ public class Logger {
      * stack trace to stderr.
      *
      * @param friendly the 'user friendly' message.
-     * @param geek the 'geek-readable' message (if null then the friendly message takes its place).
-     * @param e the throwable containing the stack trace.
+     * @param geek     the 'geek-readable' message (if null then the friendly message takes its place).
+     * @param e        the throwable containing the stack trace.
      */
 
-    public static void logErr( String friendly, String geek, Throwable e ) {
+    public static void logErr( String friendly, @Nullable String geek, Throwable e ) {
 
         Logger.getFriendly().println( friendly );
         if ( geek == null ) {
@@ -672,12 +683,13 @@ public class Logger {
 
     /**
      * Add a listener.
+     *
      * @param listener the listener to be added to this instance's list of listeners.
      */
 
     public synchronized void addListener( LoggerListener listener ) {
 
-        _listeners.add( listener );
+        s_listeners.add( listener );
 
     }
 

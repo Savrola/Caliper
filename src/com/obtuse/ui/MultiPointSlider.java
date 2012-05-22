@@ -23,8 +23,7 @@ import java.util.*;
 @SuppressWarnings("UnusedDeclaration")
 public class MultiPointSlider extends JComponent {
 
-    @SuppressWarnings("FieldCanBeLocal")
-    private boolean _forceWhiteBackground = false;
+    private static final boolean FORCE_TEST_BACKGROUND_COLOR = false;
 
     public static final int MINIMUM_LINE_LENGTH = 25;
     public static final int MINIMUM_LABEL_GAP_SPACE = 2;
@@ -523,6 +522,7 @@ public class MultiPointSlider extends JComponent {
     }
 
     //    int _s1Count = 0;
+    @SuppressWarnings("ConstantConditions")
     public Dimension computeMinimumSize() {
 
         if ( isInteresting() ) {
@@ -789,21 +789,28 @@ public class MultiPointSlider extends JComponent {
 
         if ( isVerticalOrientation() ) {
 
-            _minimumSize = new Dimension( 2 * MultiPointSlider.BORDER_SIZE + breadth, 2 * MultiPointSlider.BORDER_SIZE + length );
+            _minimumSize = new Dimension(
+                    2 * MultiPointSlider.BORDER_SIZE + breadth,
+                    2 * MultiPointSlider.BORDER_SIZE + length
+            );
             actualSize = new Dimension(
                     Math.max( _minimumSize.width, getWidth() ),
                     Math.max( _minimumSize.height, getHeight() )
             );
             if ( _minimumSize.height < actualSize.height ) {
 
-                _length = actualSize.height - ( 2 * MultiPointSlider.BORDER_SIZE + minValueOverhang + maxValueOverhang );
+                _length =
+                        actualSize.height - ( 2 * MultiPointSlider.BORDER_SIZE + minValueOverhang + maxValueOverhang );
                 _minimumSize.height = actualSize.height;
 
             }
 
         } else {
 
-            _minimumSize = new Dimension( 2 * MultiPointSlider.BORDER_SIZE + length, 2 * MultiPointSlider.BORDER_SIZE + breadth );
+            _minimumSize = new Dimension(
+                    2 * MultiPointSlider.BORDER_SIZE + length,
+                    2 * MultiPointSlider.BORDER_SIZE + breadth
+            );
             actualSize = new Dimension(
                     Math.max( _minimumSize.width, getWidth() ),
                     Math.max( _minimumSize.height, getHeight() )
@@ -996,11 +1003,15 @@ public class MultiPointSlider extends JComponent {
 
         if ( isInteresting() ) {
 
-            Logger.logMsg( "painting " + _name + " with size ( " + _width + ", " + _height + " )" );
+            Logger.logMsg(
+                    "painting " + _name + " with size ( " + _width + ", " + _height + " ) and background " +
+                    getBackground()
+            );
 
         }
 
-        g.setColor( _forceWhiteBackground ? Color.WHITE : getBackground() );
+        //noinspection ConstantConditions
+        g.setColor( MultiPointSlider.FORCE_TEST_BACKGROUND_COLOR ? Color.WHITE : getBackground() );
         g.fillRect( 0, 0, getWidth(), getHeight() );
 
 //        g.setColor( Color.WHITE );
@@ -1167,19 +1178,39 @@ public class MultiPointSlider extends JComponent {
                 switch ( _positionOnLine ) {
 
                     case ABOVE:
-                        g.drawLine( mark.x, mark.y + 1 + MultiPointSlider.TIC_GAP, mark.x, mark.y + 1 + MultiPointSlider.TIC_GAP + tickLength );
+                        g.drawLine(
+                                mark.x,
+                                mark.y + 1 + MultiPointSlider.TIC_GAP,
+                                mark.x,
+                                mark.y + 1 + MultiPointSlider.TIC_GAP + tickLength
+                        );
                         break;
 
                     case BELOW:
-                        g.drawLine( mark.x, mark.y - ( 1 + MultiPointSlider.TIC_GAP ), mark.x, mark.y - ( 1 + MultiPointSlider.TIC_GAP + tickLength ) );
+                        g.drawLine(
+                                mark.x,
+                                mark.y - ( 1 + MultiPointSlider.TIC_GAP ),
+                                mark.x,
+                                mark.y - ( 1 + MultiPointSlider.TIC_GAP + tickLength )
+                        );
                         break;
 
                     case LEFT:
-                        g.drawLine( mark.x + 1 + MultiPointSlider.TIC_GAP, mark.y, mark.x + 1 + MultiPointSlider.TIC_GAP + tickLength, mark.y );
+                        g.drawLine(
+                                mark.x + 1 + MultiPointSlider.TIC_GAP,
+                                mark.y,
+                                mark.x + 1 + MultiPointSlider.TIC_GAP + tickLength,
+                                mark.y
+                        );
                         break;
 
                     case RIGHT:
-                        g.drawLine( mark.x - ( 1 + MultiPointSlider.TIC_GAP ), mark.y, mark.x - ( 1 + MultiPointSlider.TIC_GAP + tickLength ), mark.y );
+                        g.drawLine(
+                                mark.x - ( 1 + MultiPointSlider.TIC_GAP ),
+                                mark.y,
+                                mark.x - ( 1 + MultiPointSlider.TIC_GAP + tickLength ),
+                                mark.y
+                        );
                         break;
 
                 }
@@ -1226,7 +1257,6 @@ public class MultiPointSlider extends JComponent {
 
     }
 
-    @SuppressWarnings("MagicNumber")
     public static void main( String[] args ) {
 
         @SuppressWarnings("UseOfObsoleteCollectionType")
@@ -1497,7 +1527,6 @@ public class MultiPointSlider extends JComponent {
                     ) {
 
                 int argb = _image.getRGB( pointWithinImage.x, pointWithinImage.y );
-                //noinspection MagicNumber
                 isInside = ( argb & 0xff000000 ) != 0;
 
             } else {

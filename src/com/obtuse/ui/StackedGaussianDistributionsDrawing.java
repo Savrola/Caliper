@@ -1,7 +1,7 @@
 package com.obtuse.ui;
 
 import com.obtuse.util.BasicProgramConfigInfo;
-import com.obtuse.util.ProportionalGaussianDistribution;
+import com.obtuse.util.WeightedGaussianDistribution;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,42 +15,37 @@ import java.util.Collection;
  * Copyright © 2012 Obtuse Systems Corporation
  */
 
-public class ProportionalGaussianDistributionsDrawing extends JPanel {
+public class StackedGaussianDistributionsDrawing extends JPanel {
 
-    private ProportionalGaussianDistribution[] _gaussianDistributions;
+    private WeightedGaussianDistribution[] _gds;
     private final double _from;
     private final double _to;
 
-    public ProportionalGaussianDistributionsDrawing() {
+    public StackedGaussianDistributionsDrawing() {
         //noinspection MagicNumber
-        this( new ProportionalGaussianDistribution( 1.0, 0.5, 0.5 / 3 ) );
+        this(
+                new WeightedGaussianDistribution[] {
+                        new WeightedGaussianDistribution( 1.0, 0.5, 0.5 / 3 )
+                },
+                0.0,
+                1.0
+        );
 
     }
 
-    public ProportionalGaussianDistributionsDrawing( ProportionalGaussianDistribution gaussianDistribution ) {
+//    public StackedGaussianDistributionsDrawing( GaussianDistribution gd ) {
+//        this( gd, 0.0, 1.0 );
+//    }
 
-        this( gaussianDistribution, 0.0, 1.0 );
-
-    }
-
-    public ProportionalGaussianDistributionsDrawing(
-            ProportionalGaussianDistribution gaussianDistribution,
+    public StackedGaussianDistributionsDrawing(
+            WeightedGaussianDistribution[] gds,
             double from,
             double to
     ) {
 
-        this( new ProportionalGaussianDistribution[] { gaussianDistribution }, from, to );
-
-    }
-
-    public ProportionalGaussianDistributionsDrawing(
-            ProportionalGaussianDistribution[] gaussianDistributions,
-            double from,
-            double to
-    ) {
         super();
 
-        _gaussianDistributions = Arrays.copyOf( gaussianDistributions, gaussianDistributions.length );
+        _gds = Arrays.copyOf( gds, gds.length );
         _from = from;
         _to = to;
 
@@ -66,17 +61,25 @@ public class ProportionalGaussianDistributionsDrawing extends JPanel {
 
 //        Graphics2D g2d = (Graphics2D)g;
 
-//        Logger.logMsg( "painting gaussian distribution " + _gaussianDistribution + " in (" + getWidth() + "," + getHeight() + ")" );
+//        Logger.logMsg( "painting gaussian distribution " + _gd + " in (" + getWidth() + "," + getHeight() + ")" );
+
+        ( (Graphics2D)g ).setRenderingHint(
+                RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON
+        );
 
         g.setColor( getBackground() );
+//        g.setColor( Color.WHITE );
         g.fillRect( 0, 0, getWidth(), getHeight() );
+//        ( (Graphics2D)g ).scale( 0.1, 0.1 );
+//        ( (Graphics2D)g ).setStroke( new BasicStroke( 10f ) );
 
         double maxY = 0.0;
         for ( int pX = 0; pX < getWidth(); pX += 1 ) {
 
             double rX = mapXtoDrawing( pX, 0, getWidth() - 1, _from, _to );
             double rY = 0.0;
-            for ( ProportionalGaussianDistribution gd : _gaussianDistributions ) {
+            for ( WeightedGaussianDistribution gd : _gds ) {
 
                 rY += gd.getY( rX ) * gd.getWeight();
 
@@ -90,7 +93,7 @@ public class ProportionalGaussianDistributionsDrawing extends JPanel {
 
         }
 
-//        for ( ProportionalGaussianDistribution gd : _gaussianDistributions ) {
+//        for ( WeightedGaussianDistribution gd : _gds ) {
 //
 //            maxY += gd.getY( gd.getCenter() ) * gd.getWeight();
 //
@@ -111,7 +114,7 @@ public class ProportionalGaussianDistributionsDrawing extends JPanel {
 
             double rX = mapXtoDrawing( pX, 0, getWidth() - 1, _from, _to );
             double rY = 0.0;
-            for ( ProportionalGaussianDistribution gd : _gaussianDistributions ) {
+            for ( WeightedGaussianDistribution gd : _gds ) {
 
                 rY += gd.getY( rX ) * gd.getWeight();
 
@@ -119,7 +122,7 @@ public class ProportionalGaussianDistributionsDrawing extends JPanel {
 //            Logger.logMsg( "pX = " + pX + ", rX = " + rX + ", rY = " + rY + ", scaled to " + ( rY / maxY ) );
 
             x[pX] = pX;
-            y[pX] = (int)( height * ( 1.0 - rY / maxY ) );
+            y[pX] = (int)( ( height - 1 ) * ( 1.0 - rY / maxY ) );
 
 //            g.drawLine( pX, 1 + (int)( height * ( rY / maxY ) ), pX, 1 + (int)( height * ( rY / maxY ) ) );
 
@@ -142,7 +145,7 @@ public class ProportionalGaussianDistributionsDrawing extends JPanel {
         BasicProgramConfigInfo.init( "Obtuse", "Shared", "GDD", null );
 
         JFrame xx = new JFrame();
-        ProportionalGaussianDistributionsDrawing gdd = new ProportionalGaussianDistributionsDrawing();
+        StackedGaussianDistributionsDrawing gdd = new StackedGaussianDistributionsDrawing();
         xx.setContentPane( gdd );
         xx.pack();
         xx.setVisible( true );
@@ -150,25 +153,18 @@ public class ProportionalGaussianDistributionsDrawing extends JPanel {
     }
 
     @SuppressWarnings("UnusedDeclaration")
-    public void setDistribution( ProportionalGaussianDistribution gaussianDistribution ) {
+    public void setDistributions( Collection<WeightedGaussianDistribution> gds ) {
 
-        setDistributions( new ProportionalGaussianDistribution[] { gaussianDistribution } );
-
-    }
-
-    @SuppressWarnings("UnusedDeclaration")
-    public void setDistributions( Collection<ProportionalGaussianDistribution> gaussianDistributions ) {
-
-        _gaussianDistributions =
-                gaussianDistributions.toArray( new ProportionalGaussianDistribution[gaussianDistributions.size()] );
+        _gds =
+                gds.toArray( new WeightedGaussianDistribution[gds.size()] );
 
         repaint();
 
     }
 
-    public void setDistributions( ProportionalGaussianDistribution[] gaussianDistributions ) {
+    public void setDistributions( WeightedGaussianDistribution[] gds ) {
 
-        _gaussianDistributions = Arrays.copyOf( gaussianDistributions, gaussianDistributions.length );
+        _gds = Arrays.copyOf( gds, gds.length );
         repaint();
 
     }

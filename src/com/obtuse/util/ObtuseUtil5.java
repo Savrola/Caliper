@@ -1,7 +1,6 @@
 package com.obtuse.util;
 
 import com.obtuse.db.PostgresConnection;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -24,7 +23,143 @@ import java.util.zip.ZipFile;
 @SuppressWarnings({ "UnusedDeclaration" })
 public class ObtuseUtil5 {
 
+    @SuppressWarnings("UseOfObsoleteCollectionType")
+    private static class UnmodifiableHashtable<K, V> extends Hashtable<K, V> {
+
+        private boolean _readonly;
+        private final Hashtable<? extends K, ? extends V> _ht;
+
+        private UnmodifiableHashtable( Hashtable<? extends K, ? extends V> ht ) {
+
+            super( ht );
+            _ht = ht;
+            _readonly = false;
+        }
+
+        private void makeReadonly() {
+
+            _readonly = true;
+
+        }
+
+        public void clear() {
+
+            if ( _readonly ) {
+
+                throw new UnsupportedOperationException( "attempt to modify an unmodifiable Dictionary/Hashtable" );
+
+            } else {
+
+                super.clear();
+
+            }
+
+        }
+
+        public Set<Map.Entry<K, V>> entrySet() {
+
+            if ( _readonly ) {
+
+                //noinspection unchecked,rawtypes
+
+                return (Set)Collections.unmodifiableSet( _ht.entrySet() );
+
+            } else {
+
+                return super.entrySet();
+
+            }
+
+        }
+
+        public Set<K> keySet() {
+
+            if ( _readonly ) {
+
+                return Collections.unmodifiableSet( _ht.keySet() );
+
+            } else {
+
+                return super.keySet();
+
+            }
+
+        }
+
+        public V put( K key, V value ) {
+
+            if ( _readonly ) {
+
+                throw new UnsupportedOperationException( "attempt to modify an unmodifiable Dictionary/Hashtable" );
+
+            } else {
+
+                return super.put( key, value );
+
+            }
+
+        }
+
+        public void putAll( Map<? extends K, ? extends V> t ) {
+
+            if ( _readonly ) {
+
+                throw new UnsupportedOperationException( "attempt to modify an unmodifiable Dictionary/Hashtable" );
+
+            } else {
+
+                super.putAll( t );
+
+            }
+
+        }
+
+        public void rehash() {
+
+            if ( _readonly ) {
+
+                // Been there, done that.
+
+            } else {
+
+                super.rehash();
+
+            }
+
+        }
+
+        public V remove( Object key ) {
+
+            if ( _readonly ) {
+
+                throw new UnsupportedOperationException( "attempt to modify an unmodifiable Dictionary/Hashtable" );
+
+            } else {
+
+                return super.remove( key );
+
+            }
+
+        }
+
+        public Collection<V> values() {
+
+            if ( _readonly ) {
+
+                return Collections.unmodifiableCollection( _ht.values() );
+
+            } else {
+
+                return super.values();
+
+            }
+
+        }
+
+    }
+
     private ObtuseUtil5() {
+
         super();
     }
 
@@ -33,11 +168,10 @@ public class ObtuseUtil5 {
      *
      * @param thing                  the object which is to be serialized.
      * @param printStackTraceOnError true if a stack trace should be printed if anything goes wrong.
-     *
      * @return the serialized form of <tt>thing</tt> or null if serialization fails.
      */
 
-    @SuppressWarnings( { "SameParameterValue" } )
+    @SuppressWarnings({ "SameParameterValue" })
     public static byte[] getSerializedVersion( Serializable thing, boolean printStackTraceOnError ) {
 
         try {
@@ -74,9 +208,7 @@ public class ObtuseUtil5 {
      * Turn a byte array back into a serializable thing. Throws an exception if something goes wrong.
      *
      * @param sv the serialized form of the object.
-     *
      * @return the de-serialized object or null if de-serialization fails.
-     *
      * @throws java.io.IOException    if an I/O error occurs reading from the {@link InputStream} or a deserialization
      *                                error occurs (see {@link ObjectInputStream#readObject()} for details on what can
      *                                go wrong).
@@ -98,9 +230,7 @@ public class ObtuseUtil5 {
      * and de-serialized. The stream is left ready to have the next object read from it.
      *
      * @param is the input stream that the serialized object is to be read from.
-     *
      * @return the de-serialized object or null if something goes wrong.
-     *
      * @throws java.io.IOException    if an I/O error occurs reading from the {@link InputStream} or a deserialization
      *                                error occurs (see {@link ObjectInputStream#readObject()} for details on what can
      *                                go wrong).
@@ -114,7 +244,7 @@ public class ObtuseUtil5 {
         try {
 
             ois = new ObjectInputStream( is );
-            @SuppressWarnings( { "UnnecessaryLocalVariable" })
+            @SuppressWarnings({ "UnnecessaryLocalVariable" })
             Serializable thing = (Serializable)ois.readObject();
 
             return thing;
@@ -132,7 +262,6 @@ public class ObtuseUtil5 {
      *
      * @param sv                     the serialized form of the object.
      * @param printStackTraceOnError true if a stack trace should be printed if anything goes wrong.
-     *
      * @return the de-serialized object or null if de-serialization fails.
      */
 
@@ -160,7 +289,6 @@ public class ObtuseUtil5 {
      *
      * @param is                     the input stream that the serialized object is to be read from.
      * @param printStackTraceOnError true if a stack trace should be printed if anything goes wrong.
-     *
      * @return the de-serialized object or null if something goes wrong.
      */
 
@@ -221,7 +349,6 @@ public class ObtuseUtil5 {
      * @param maxLength              the maximum number of bytes to read (if the file is longer than this then the
      *                               excess data is silently not returned).
      * @param printStackTraceOnError specifies whether or not a stack trace is to be printed if an i/o error occurs.
-     *
      * @return a byte array containing the data read from the file or null if the file could not be read for any reason.
      *         A zero-length byte array is returned if the file exists but contains no data.
      */
@@ -245,7 +372,6 @@ public class ObtuseUtil5 {
      * @param maxLength              the maximum number of bytes to read (if the file is longer than this then the
      *                               excess data is silently not returned).
      * @param printStackTraceOnError specifies whether or not a stack trace is to be printed if an i/o error occurs.
-     *
      * @return a byte array containing the data read from the file or null if the file could not be read for any reason.
      *         A zero-length byte array is returned if the file exists but contains no data.
      */
@@ -303,7 +429,6 @@ public class ObtuseUtil5 {
      * @param maxLength              the maximum number of bytes to read (if the stream's contents are longer than this
      *                               then the excess data is left in the stream).
      * @param printStackTraceOnError specifies whether or not a stack trace is to be printed if an i/o error occurs.
-     *
      * @return a byte array containing the data read from the file or null if the file could not be read for any reason.
      *         A zero-length byte array is returned if the stream contains no data.
      */
@@ -318,15 +443,15 @@ public class ObtuseUtil5 {
 
         try {
 
-            byte[] tmp = new byte[ maxLength ];
+            byte[] tmp = new byte[maxLength];
             int actualLen = is.read( tmp );
             if ( actualLen <= 0 ) {
 
-                return new byte[ 0 ];
+                return new byte[0];
 
             }
 
-            byte[] contents = new byte[ actualLen ];
+            byte[] contents = new byte[actualLen];
             System.arraycopy( tmp, 0, contents, 0, actualLen );
 
             return contents;
@@ -352,11 +477,10 @@ public class ObtuseUtil5 {
      * @param bytes                  the byte array to be written.
      * @param fname                  the name of the file to be written.
      * @param printStackTraceOnError specifies whether or not a stack trace is to be printed if an i/o error occurs.
-     *
      * @return true if the operation succeeded and false otherwise.
      */
 
-    @SuppressWarnings( { "BooleanMethodNameMustStartWithQuestion" })
+    @SuppressWarnings({ "BooleanMethodNameMustStartWithQuestion" })
     public static boolean writeBytesToFile( byte[] bytes, String fname, boolean printStackTraceOnError ) {
 
         return ObtuseUtil5.writeBytesToFile( bytes, new File( fname ), printStackTraceOnError );
@@ -369,11 +493,10 @@ public class ObtuseUtil5 {
      * @param bytes                  the byte array to be written.
      * @param file                   the file to be written.
      * @param printStackTraceOnError specifies whether or not a stack trace is to be printed if an i/o error occurs.
-     *
      * @return true if the operation succeeded and false otherwise.
      */
 
-    @SuppressWarnings( { "BooleanMethodNameMustStartWithQuestion" })
+    @SuppressWarnings({ "BooleanMethodNameMustStartWithQuestion" })
     public static boolean writeBytesToFile( byte[] bytes, File file, boolean printStackTraceOnError ) {
 
         FileOutputStream fs = null;
@@ -411,11 +534,10 @@ public class ObtuseUtil5 {
      * @param bytes                  the byte array to be written to the stream.
      * @param os                     the {@link OutputStream} to write the byte array to.
      * @param printStackTraceOnError specifies whether or not a stack trace is to be printed if an i/o error occurs.
-     *
      * @return true if it worked, false otherwise.
      */
 
-    @SuppressWarnings( { "BooleanMethodNameMustStartWithQuestion" })
+    @SuppressWarnings({ "BooleanMethodNameMustStartWithQuestion" })
     public static boolean writeBytesToStream( byte[] bytes, OutputStream os, boolean printStackTraceOnError ) {
 
         try {
@@ -446,7 +568,6 @@ public class ObtuseUtil5 {
      *              serialized form of the object is discarded - it is often much more sensible to just serialize the
      *              object using {@link #getSerializedVersion} and then just get the length of the returned byte
      *              array).
-     *
      * @return the length of the serialized form of the object.
      */
 
@@ -471,11 +592,10 @@ public class ObtuseUtil5 {
      * @param methodName the method which is to be called.
      * @param actual     the actual parameters which are to be passed to the method.
      * @param expected   a description of the parameter types which are expected.
-     *
      * @return null if arguments are valid and an appropriate error message otherwise.
      */
 
-    @SuppressWarnings( { "RawUseOfParameterizedType", "CollectionDeclaredAsConcreteClass" } )
+    @SuppressWarnings({ "RawUseOfParameterizedType", "CollectionDeclaredAsConcreteClass" })
     public static String validateArgs(
             String methodName,
             @SuppressWarnings("UseOfObsoleteCollectionType") Vector actual,
@@ -539,7 +659,7 @@ public class ObtuseUtil5 {
 
                 format += "#";
 
-        }
+            }
 
             ObtuseUtil5.s_cachedFormats[v] = new DecimalFormat( format );
 
@@ -547,7 +667,7 @@ public class ObtuseUtil5 {
 
         return ObtuseUtil5.lpad( ObtuseUtil5.s_cachedFormats[v].format( di ), w );
 
-        }
+    }
 
     private static DecimalFormat[] s_cachedZeroFormats = new DecimalFormat[1];
 
@@ -559,7 +679,7 @@ public class ObtuseUtil5 {
             System.arraycopy( ObtuseUtil5.s_cachedZeroFormats, 0, tmp, 0, ObtuseUtil5.s_cachedZeroFormats.length );
             ObtuseUtil5.s_cachedZeroFormats = tmp;
 
-    }
+        }
 
         if ( ObtuseUtil5.s_cachedZeroFormats[v] == null ) {
 
@@ -620,7 +740,6 @@ public class ObtuseUtil5 {
      * @param w the width (i.e. length) of the padded string (if the string is already longer than this then the string
      *          itself is returned as-is).
      * @param p the character to be used to pad the string on the left if it is shorter than <tt>w</tt>.
-     *
      * @return the padded string or the original string if it is already at least as wide as <tt>w</tt>.
      */
 
@@ -644,7 +763,7 @@ public class ObtuseUtil5 {
 
             }
 
-            padString = new String(padArray);
+            padString = new String( padArray );
 
         } else {
 
@@ -664,7 +783,6 @@ public class ObtuseUtil5 {
      * @param s the string to be padded.
      * @param w the width (i.e. length) of the padded string (if the string is already longer than this then the string
      *          itself is returned as-is).
-     *
      * @return the padded string or the original string if it is already at least as wide as <tt>w</tt>.
      */
 
@@ -681,7 +799,6 @@ public class ObtuseUtil5 {
      * @param w the width (i.e. length) of the padded string representation (if the string representation is already
      *          longer than this then the string representation itself is returned as-is).
      * @param p the character to be used to pad the string representation on the left if it is shorter than <tt>w</tt>.
-     *
      * @return the padded string representation or the actual string representation if it is already at least as wide as
      *         <tt>w</tt>.
      */
@@ -700,7 +817,6 @@ public class ObtuseUtil5 {
      * @param l the long whose string representation is to be padded.
      * @param w the width (i.e. length) of the padded string representation (if the string representation is already
      *          longer than this then the string representation itself is returned as-is).
-     *
      * @return the padded string representation or the actual string representation if it is already at least as wide as
      *         <tt>w</tt>.
      */
@@ -718,7 +834,6 @@ public class ObtuseUtil5 {
      * @param w the width (i.e. length) of the padded string (if the string is already longer than this then the string
      *          itself is returned as-is).
      * @param p the character to be used to pad the string on the right if it is shorter than <tt>w</tt>.
-     *
      * @return the padded string or the original string if it is already at least as wide as <tt>w</tt>.
      */
 
@@ -746,7 +861,6 @@ public class ObtuseUtil5 {
      * @param s the string to be padded.
      * @param w the width (i.e. length) of the padded string (if the string is already longer than this then the string
      *          itself is returned as-is).
-     *
      * @return the padded string or the original string if it is already at least as wide as <tt>w</tt>.
      */
 
@@ -764,7 +878,6 @@ public class ObtuseUtil5 {
      *          longer than this then the string representation itself is returned as-is).
      * @param p the character to be used to pad the string representation on the right if it is shorter than
      *          <tt>w</tt>.
-     *
      * @return the padded string representation or the actual string representation if it is already at least as wide as
      *         <tt>w</tt>.
      */
@@ -783,7 +896,6 @@ public class ObtuseUtil5 {
      * @param l the long whose string representation is to be padded.
      * @param w the width (i.e. length) of the padded string representation (if the string representation is already
      *          longer than this then the string representation itself is returned as-is).
-     *
      * @return the padded string representation or the actual string representation if it is already at least as wide as
      *         <tt>w</tt>.
      */
@@ -798,7 +910,7 @@ public class ObtuseUtil5 {
      * Replicate a string a specified number of times.
      * For example, <tt>replicate( "hello", 3 )</tt> yields <tt>"hellohellohello"</tt>.
      *
-     * @param str the string to replicate.
+     * @param str   the string to replicate.
      * @param count the number of copies to be made.
      * @return the replicated string.
      */
@@ -821,11 +933,10 @@ public class ObtuseUtil5 {
      * <tt>"000000000000001b"</tt>. Note that the string is always 16 characters long.
      *
      * @param v the long value whose hex representation is to be returned.
-     *
      * @return the hex representation of <tt>v</tt>.
      */
 
-    @SuppressWarnings( { "MagicNumber" } )
+    @SuppressWarnings({ "MagicNumber" })
     public static String hexvalue( long v ) {
 
         //noinspection UnnecessaryParentheses
@@ -841,11 +952,10 @@ public class ObtuseUtil5 {
      * <tt>"0000001b"</tt>. Note that the string is always 8 characters long.
      *
      * @param v the int value whose hex representation is to be returned.
-     *
      * @return the hex representation of <tt>v</tt>.
      */
 
-    @SuppressWarnings( { "UnnecessaryParentheses", "MagicNumber" } )
+    @SuppressWarnings({ "UnnecessaryParentheses", "MagicNumber" })
     public static String hexvalue( int v ) {
 
         return ""
@@ -861,11 +971,10 @@ public class ObtuseUtil5 {
      * )</tt> yields <tt>"1b"</tt>. Note that the returned string is always two characters long.
      *
      * @param v the byte value whose hex representation is to be returned.
-     *
      * @return the hex representation of <tt>v</tt>.
      */
 
-    @SuppressWarnings( { "UnnecessaryParentheses", "MagicNumber" } )
+    @SuppressWarnings({ "UnnecessaryParentheses", "MagicNumber" })
     public static String hexvalue( byte v ) {
 
         int high = ( v >> 4 ) & 0xf;
@@ -886,7 +995,6 @@ public class ObtuseUtil5 {
      * consume quite a bit of memory if the byte array is sufficiently large.
      *
      * @param bv the byte array to be converted.
-     *
      * @return the hex representation of <tt>v</tt>.
      */
 
@@ -939,7 +1047,7 @@ public class ObtuseUtil5 {
      * @param data the byte array to be formatted and printed onto {@link System#out}.
      */
 
-    @SuppressWarnings( { "MagicNumber" } )
+    @SuppressWarnings({ "MagicNumber" })
     public static void dump( byte[] data ) {
 
         for ( int offset = 0; offset < data.length; offset += 16 ) {
@@ -969,7 +1077,7 @@ public class ObtuseUtil5 {
 
             for ( int j = 0; j < 16 && offset + j < data.length; j += 1 ) {
 
-                byte b = data[ offset + j ];
+                byte b = data[offset + j];
                 //noinspection ImplicitNumericConversion
                 if ( b < ' ' || b > '~' ) {
 
@@ -993,7 +1101,6 @@ public class ObtuseUtil5 {
      * Escape ampersands and less-than characters in a string using HTML-style &amp;amp; and &amp;lt; constructs.
      *
      * @param str the string to be escaped.
-     *
      * @return the escaped string.
      */
 
@@ -1054,7 +1161,7 @@ public class ObtuseUtil5 {
      * @param thing the thing to be closed.
      */
 
-    public static void closeQuietly( @Nullable Closeable thing ) {
+    public static void closeQuietly( Closeable thing ) {
 
         try {
 
@@ -1072,7 +1179,7 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( @Nullable ServerSocket sock ) {
+    public static void closeQuietly( ServerSocket sock ) {
 
         try {
 
@@ -1090,7 +1197,7 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( @Nullable Socket sock ) {
+    public static void closeQuietly( Socket sock ) {
 
         try {
 
@@ -1108,7 +1215,7 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( @Nullable ZipFile zipFile ) {
+    public static void closeQuietly( ZipFile zipFile ) {
 
         try {
 
@@ -1126,7 +1233,7 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( @Nullable ResultSet rs ) {
+    public static void closeQuietly( ResultSet rs ) {
 
         try {
 
@@ -1144,7 +1251,7 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( @Nullable PreparedStatement rs ) {
+    public static void closeQuietly( PreparedStatement rs ) {
 
         try {
 
@@ -1162,15 +1269,11 @@ public class ObtuseUtil5 {
 
     }
 
-    public static void closeQuietly( @Nullable PostgresConnection postgresConnection ) {
+    public static void closeQuietly( PostgresConnection postgresConnection ) {
 
         try {
 
-            if ( postgresConnection != null ) {
-
-                postgresConnection.close();
-
-            }
+            postgresConnection.close();
 
         } catch ( SQLException e ) {
 
@@ -1185,31 +1288,32 @@ public class ObtuseUtil5 {
      */
 
     public static void doNothing() {
+
     }
 
     /**
      * Use double quotes to escape commas and quotes in the way that MS Excel seems to do it.
      * <p/>
-     *     Some examples are probably in order.
-     *     <ul>
-     *         <li>if the string is
-     *         <blockquote><tt>hello world</tt></blockquote>
-     *         then the output is the string itself (unchanged).
-     *         <li>if the string is
-     *         <blockquote><tt>hello,world</tt></blockquote>
-     *         then the output is
-     *         <blockquote><tt>"hello,world"</tt></blockquote>
-     *         <li>if the string is
-     *         <blockquote><tt>"hello" world</tt></blockquote>
-     *         then the output is
-     *         <blockquote><tt>"""hello"" world"</tt></blockquote>
-     *         <li>if the string is
-     *         <blockquote><tt>hello ",world"</tt></blockquote>
-     *         the the output is
-     *         <blockquote><tt>"hello "",world"""</tt></blockquote>
-     *     </ul>
-     *     Note that all the double quotes in the above examples actually appear in the strings.
-     *     In other words, the above examples do <b>NOT</b> use double quotes to enclose strings.
+     * Some examples are probably in order.
+     * <ul>
+     * <li>if the string is
+     * <blockquote><tt>hello world</tt></blockquote>
+     * then the output is the string itself (unchanged).
+     * <li>if the string is
+     * <blockquote><tt>hello,world</tt></blockquote>
+     * then the output is
+     * <blockquote><tt>"hello,world"</tt></blockquote>
+     * <li>if the string is
+     * <blockquote><tt>"hello" world</tt></blockquote>
+     * then the output is
+     * <blockquote><tt>"""hello"" world"</tt></blockquote>
+     * <li>if the string is
+     * <blockquote><tt>hello ",world"</tt></blockquote>
+     * the the output is
+     * <blockquote><tt>"hello "",world"""</tt></blockquote>
+     * </ul>
+     * Note that all the double quotes in the above examples actually appear in the strings.
+     * In other words, the above examples do <b>NOT</b> use double quotes to enclose strings.
      *
      * @param string the string to be enquoted.
      * @return the original string if it does not contain quotes or commas; the enquoted string otherwise.
@@ -1398,16 +1502,18 @@ public class ObtuseUtil5 {
      * Add the contents of an array to a collection and return the collection.
      * <p/>Returning the collection facilitates certain constructs including:
      * <blockquote>
-     *     <tt>doit( ObtuseUtil5.addAll( new LinkedList&lt;String>(), new String[] { "hello", "there", "world" } );</tt>
+     * <tt>doit( ObtuseUtil5.addAll( new LinkedList&lt;String>(), new String[] { "hello", "there", "world" } );</tt>
      * </blockquote>
-     * @param collection the collection to which things are to be added.
+     *
+     * @param collection  the collection to which things are to be added.
      * @param newElements the new elements to add to the collection.
      * @return the collection after the elements have been added.
      */
 
     public static <T> Collection<T> addAll(
             Collection<T> collection,
-            T... newElements ) {
+            T... newElements
+    ) {
 
         Collections.addAll( collection, newElements );
         return collection;
@@ -1433,5 +1539,28 @@ public class ObtuseUtil5 {
 //        System.exit( 0 );
 //
 //    }
+
+    /**
+     * Returns an unmodifiable view of the specified hash table.
+     * This method allows modules to provide users with "read-only" access to internal hash tables (including {@link
+     * Dictionary}s).
+     * Query operations on the returned hash table "read through" to the specified hash table,
+     * and attempts to modify the returned hash table, whether direct or via its collection views,
+     * result in an UnsupportedOperationException.
+     *
+     * @param ht the hash table for which an unmodifiable view is to be returned.
+     * @return an unmodifiable view of the specified hash table.
+     */
+
+    @SuppressWarnings({ "CollectionDeclaredAsConcreteClass", "UseOfObsoleteCollectionType" })
+    public static <K, V> Hashtable<K, V> unmodifiableHashtable( final Hashtable<? extends K, ? extends V> ht ) {
+
+        UnmodifiableHashtable<K, V> unmodifiableHashtable = new UnmodifiableHashtable<K, V>( ht );
+
+        unmodifiableHashtable.makeReadonly();
+
+        return unmodifiableHashtable;
+
+    }
 
 }
