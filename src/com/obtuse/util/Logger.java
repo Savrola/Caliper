@@ -7,35 +7,37 @@ import java.text.*;
 import java.util.*;
 
 /*
- * Copyright © 2005, 2006, 2007 Loa Corporation.
+ * Copyright © 2005, 2006, 2007 Daniel Boulet.
  * Copyright © 2011 Daniel Boulet.
  */
 
 /**
  * Manage a simple logging facility.
  * <p/>
- * Note that {@link BasicProgramConfigInfo#init} <b><u>MUST</u></b> be called before this class is used in any way which triggers
+ * Note that {@link BasicProgramConfigInfo#init} <b><u>MUST</u></b> be called before this class is used in any way
+ * which triggers
  * the invocation of this class's static initializer(s).  Experience seems to indicate that it is sufficient to call
  * {@link BasicProgramConfigInfo#init} before invoking any method defined by this class (your mileage may vary).
  *
- * @noinspection ClassWithoutToString, ForLoopReplaceableByForEach, RawUseOfParameterizedType, UseOfSystemOutOrSystemErr, UnusedDeclaration
+ * @noinspection ClassWithoutToString, ForLoopReplaceableByForEach, RawUseOfParameterizedType,
+ * UseOfSystemOutOrSystemErr, UnusedDeclaration
  */
 
 public class Logger {
 
-    private List<LoggerListener> s_listeners = new LinkedList<LoggerListener>();
+    private List<LoggerListener> _listeners = new LinkedList<LoggerListener>();
 
-    private StringBuffer s_currentMessage = new StringBuffer();
+    private StringBuffer _currentMessage = new StringBuffer();
 
-    private File s_outputFile = null;
+    private File _outputFile = null;
 
-    private String s_outputFileName = null;
+    private String _outputFileName = null;
 
-    private PrintStream s_outputStream;
+    private PrintStream _outputStream;
 
-    private Date s_messageStartTime = null;
+    private Date _messageStartTime = null;
 
-    private PrintStream s_mirror = null;     // If non-null, all messages sent to this logger are also sent here.
+    private PrintStream _mirror = null;     // If non-null, all messages sent to this logger are also sent here.
 
     private static Logger s_stdout = null;
 
@@ -94,8 +96,8 @@ public class Logger {
 
         super();
 
-        s_outputFile = outputFile;
-        s_outputStream = new PrintStream( new FileOutputStream( outputFile, append ), true );
+        _outputFile = outputFile;
+        _outputStream = new PrintStream( new FileOutputStream( outputFile, append ), true );
 
     }
 
@@ -103,8 +105,8 @@ public class Logger {
 
         super();
 
-        s_outputFileName = outputFileName;
-        s_outputStream = outputStream;
+        _outputFileName = outputFileName;
+        _outputStream = outputStream;
 
     }
 
@@ -119,9 +121,9 @@ public class Logger {
         // Note:  use of != instead of equals() is deliberate!
 
         //noinspection ObjectEquality
-        if ( s_outputStream != System.out && s_outputStream != System.err && s_outputStream != null ) {
+        if ( _outputStream != System.out && _outputStream != System.err && _outputStream != null ) {
 
-            s_outputStream.close();
+            _outputStream.close();
 
         }
 
@@ -144,15 +146,15 @@ public class Logger {
         // Note:  use of != instead of equals() is deliberate!
 
         //noinspection ObjectEquality
-        if ( s_mirror != null && s_mirror != System.out && s_mirror != System.err ) {
+        if ( _mirror != null && _mirror != System.out && _mirror != System.err ) {
 
             println( "\n%%% mirror file closed" );
-            s_mirror.close();
+            _mirror.close();
 
         }
 
-        s_mirror = mirror;
-        if ( s_mirror != null ) {
+        _mirror = mirror;
+        if ( _mirror != null ) {
 
             if ( mirrorName == null ) {
 
@@ -184,40 +186,40 @@ public class Logger {
 
     private void printSegment( String s ) {
 
-        if ( s_messageStartTime == null ) {
+        if ( _messageStartTime == null ) {
 
-            s_messageStartTime = new Date();
+            _messageStartTime = new Date();
         }
 
-        s_currentMessage.append( s );
+        _currentMessage.append( s );
 
     }
 
     private void printNewline() {
 
-        if ( s_messageStartTime == null ) {
+        if ( _messageStartTime == null ) {
 
-            s_messageStartTime = new Date();
+            _messageStartTime = new Date();
 
         }
 
-        String formattedMessageStartTime = Logger.OUR_DATE_FORMAT.format( s_messageStartTime );
-        if ( s_outputStream != null ) {
+        String formattedMessageStartTime = Logger.OUR_DATE_FORMAT.format( _messageStartTime );
+        if ( _outputStream != null ) {
 
             //noinspection UnnecessaryParentheses
-            s_outputStream.println(
+            _outputStream.println(
                     MessageFormat.format(
                             "{0}:  {1}",
                             formattedMessageStartTime,
-                            s_currentMessage.toString()
+                            _currentMessage.toString()
                     )
             );
 
         }
 
-        if ( s_mirror != null ) {
+        if ( _mirror != null ) {
 
-            s_mirror.println( formattedMessageStartTime + ":  " + s_currentMessage.toString() );
+            _mirror.println( formattedMessageStartTime + ":  " + _currentMessage.toString() );
 
         }
 
@@ -233,7 +235,7 @@ public class Logger {
 
         synchronized ( this ) {
 
-            tmpListeners = new LinkedList<LoggerListener>( s_listeners );
+            tmpListeners = new LinkedList<LoggerListener>( _listeners );
 
         }
 
@@ -241,14 +243,14 @@ public class Logger {
 
         for ( LoggerListener listener : tmpListeners ) {
 
-            listener.logMessage( s_messageStartTime, s_currentMessage.toString() );
+            listener.logMessage( _messageStartTime, _currentMessage.toString() );
 
         }
 
         Trace.event( "done processing listeners" );
 
-        s_currentMessage = new StringBuffer();
-        s_messageStartTime = null;
+        _currentMessage = new StringBuffer();
+        _messageStartTime = null;
 
     }
 
@@ -306,15 +308,15 @@ public class Logger {
 
     public synchronized void flush() {
 
-        if ( s_outputStream != null ) {
+        if ( _outputStream != null ) {
 
-            s_outputStream.flush();
+            _outputStream.flush();
 
         }
 
-        if ( s_mirror != null ) {
+        if ( _mirror != null ) {
 
-            s_mirror.flush();
+            _mirror.flush();
 
         }
 
@@ -361,7 +363,7 @@ public class Logger {
 
     public File getOutputFile() {
 
-        return s_outputFile;
+        return _outputFile;
 
     }
 
@@ -373,13 +375,13 @@ public class Logger {
 
     public String getOutputFileName() {
 
-        if ( s_outputFile == null ) {
+        if ( _outputFile == null ) {
 
-            return s_outputFileName;
+            return _outputFileName;
 
         } else {
 
-            return s_outputFile.getPath();
+            return _outputFile.getPath();
 
         }
 
@@ -689,7 +691,7 @@ public class Logger {
 
     public synchronized void addListener( LoggerListener listener ) {
 
-        s_listeners.add( listener );
+        _listeners.add( listener );
 
     }
 
