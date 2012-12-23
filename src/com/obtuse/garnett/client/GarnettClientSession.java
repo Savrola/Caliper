@@ -30,7 +30,7 @@ public class GarnettClientSession extends GarnettSession {
 
     private final byte[] _obfuscatedPassword;
 
-    @SuppressWarnings("FieldCanBeLocal")
+    @SuppressWarnings({ "FieldCanBeLocal", "CanBeFinal" })
     private boolean _fromServerDone = false;
 
     @SuppressWarnings({ "FieldCanBeLocal", "UnusedDeclaration" })
@@ -39,16 +39,16 @@ public class GarnettClientSession extends GarnettSession {
     private static final long INACTIVITY_TIMEOUT =
             DebugUtilities.inIntelliJIDEA() ? Timer.ONE_HOUR : Timer.ONE_MINUTE * 5L;
 
-    @SuppressWarnings("FieldCanBeLocal")
+    @SuppressWarnings({ "FieldCanBeLocal", "CanBeFinal" })
     private int _activationCode = 0;
 
     protected GarnettClientSession(
             GarnettClientSessionManager garnettClientSessionManager,
             InetSocketAddress serverAddress,
             GarnettComponentInstanceName serverInstanceName,
-            int podNumber,
+            @SuppressWarnings("SameParameterValue") int podNumber,
             GarnettSessionType intendedGarnettSessionType,
-            String userName,
+            @SuppressWarnings("SameParameterValue") String userName,
             byte[] obfuscatedPassword
     )
             throws GarnettIllegalArgumentException {

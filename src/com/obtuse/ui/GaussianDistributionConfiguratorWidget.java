@@ -54,7 +54,7 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
             _standardDeviationPanel
     };
 
-    private java.util.List<ChangeListener> _changeListeners = new LinkedList<ChangeListener>();
+    private final java.util.List<ChangeListener> _changeListeners = new LinkedList<ChangeListener>();
 
     @SuppressWarnings("StaticVariableNamingConvention")
     private static final Dictionary<Integer,MpsLabel> S_0TO_1BY_QUARTERS_LABELS;
@@ -62,6 +62,7 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
 
     static {
 
+        @SuppressWarnings({ "MagicNumber", "UseOfObsoleteCollectionType" })
         Hashtable<Integer,MpsLabel> ht = MpsLabel.makeLabels( 0, 1000, 250, 3 );
         S_0TO_1BY_QUARTERS_LABELS = ObtuseUtil5.unmodifiableHashtable( ht );
 
@@ -270,6 +271,7 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
 
     }
 
+    @SuppressWarnings("SameParameterValue")
     private void configureSlider(
             MultiPointSlider slider,
             int minimum,
@@ -296,6 +298,7 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
 
         _weightSlider = new MultiPointSlider( "weight", 1, 1000 );
 
+        //noinspection MagicNumber
         _centerSlider = new MultiPointSlider( "center", 0, 1000, 25 );
 
         _standardDeviationSlider = new MultiPointSlider( "standard deviation", 1, 1000 );

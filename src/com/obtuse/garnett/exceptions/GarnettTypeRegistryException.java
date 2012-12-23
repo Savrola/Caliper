@@ -53,7 +53,7 @@ public abstract class GarnettTypeRegistryException extends IOException {
     }
 
     protected GarnettTypeRegistryException(
-            GarnettObjectRestorerRegistry garnettObjectRestorerRegistry,
+            @SuppressWarnings("SameParameterValue") GarnettObjectRestorerRegistry garnettObjectRestorerRegistry,
             GarnettTypeName garnettTypeName,
             String message,
             Throwable cause
@@ -67,7 +67,7 @@ public abstract class GarnettTypeRegistryException extends IOException {
     }
 
     protected GarnettTypeRegistryException(
-            GarnettObjectRestorerRegistry garnettObjectRestorerRegistry,
+            @SuppressWarnings("SameParameterValue") GarnettObjectRestorerRegistry garnettObjectRestorerRegistry,
             GarnettTypeName garnettTypeName,
             Throwable cause
     ) {

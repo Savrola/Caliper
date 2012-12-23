@@ -249,7 +249,7 @@ public abstract class GarnettSessionManager extends Thread {
 
     }
 
-    protected void setAuthenticatedSessionManager( boolean authenticatedSessionManager ) {
+    protected void setAuthenticatedSessionManager( @SuppressWarnings("SameParameterValue") boolean authenticatedSessionManager ) {
 
         _authenticatedSessionManager = authenticatedSessionManager;
 

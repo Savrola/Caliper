@@ -21,7 +21,7 @@ import java.awt.*;
 @SuppressWarnings({ "ClassWithoutToString", "deprecation" })
 public class MacCustomization extends OSLevelCustomizations {
 
-    private Application _app;
+    private final Application _app;
 
     /**
      * Perform various Mac OS X specific customizations.

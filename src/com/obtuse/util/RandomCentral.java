@@ -26,15 +26,15 @@ public class RandomCentral {
 
     public static RandomCentral getInstance() {
 
-        return _ourInstance;
+        return RandomCentral._ourInstance;
 
     }
 
     public static long nextLong() {
 
-        synchronized ( getInstance() ) {
+        synchronized ( RandomCentral.getInstance() ) {
 
-            return getInstance()._generator.nextLong();
+            return RandomCentral.getInstance()._generator.nextLong();
 
         }
 
@@ -42,9 +42,9 @@ public class RandomCentral {
 
     public static int nextInt() {
 
-        synchronized ( getInstance() ) {
+        synchronized ( RandomCentral.getInstance() ) {
 
-            return getInstance()._generator.nextInt();
+            return RandomCentral.getInstance()._generator.nextInt();
 
         }
 
@@ -52,9 +52,9 @@ public class RandomCentral {
 
     public static int nextInt( int n ) {
 
-        synchronized ( getInstance() ) {
+        synchronized ( RandomCentral.getInstance() ) {
 
-            return getInstance()._generator.nextInt( n );
+            return RandomCentral.getInstance()._generator.nextInt( n );
 
         }
 

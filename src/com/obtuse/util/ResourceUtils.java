@@ -17,6 +17,7 @@ public class ResourceUtils {
         super();
     }
 
+    @SuppressWarnings("SameParameterValue")
     public static BufferedInputStream openResource( String fileName, String resourceBaseDirectory )
             throws IOException {
 

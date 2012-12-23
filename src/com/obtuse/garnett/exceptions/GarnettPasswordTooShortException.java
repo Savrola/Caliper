@@ -10,7 +10,7 @@ import com.obtuse.util.Trace;
  * Thrown if an attempt is made to manipulate a password which is too short.
  */
 
-@SuppressWarnings( { "ClassWithoutToString" } )
+@SuppressWarnings({ "ClassWithoutToString", "SameParameterValue" })
 public class GarnettPasswordTooShortException extends GarnettInvalidPasswordException {
 
     public GarnettPasswordTooShortException() {

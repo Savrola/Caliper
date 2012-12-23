@@ -21,6 +21,7 @@ public class GaussianDistributionDrawing extends StackedGaussianDistributionsDra
 
     }
 
+    @SuppressWarnings("SameParameterValue")
     public GaussianDistributionDrawing(
             GaussianDistribution gd,
             double from,

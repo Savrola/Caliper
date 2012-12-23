@@ -82,6 +82,7 @@ public class GaussianDistribution {
 
     }
 
+    @SuppressWarnings("MagicNumber")
     private static void doit( Random rng, double center, double standardDeviation, int nTrials ) {
 
         GaussianDistribution dp = new GaussianDistribution( center, standardDeviation );
@@ -110,6 +111,7 @@ public class GaussianDistribution {
 
         }
 
+        //noinspection UseOfSystemOutOrSystemErr
         System.out.println(
                 "center = " + ObtuseUtil5.lpad( center, 0, 4 ) +
                 ", expected standard deviation = " + ObtuseUtil5.lpad( standardDeviation, 0, 4 ) +
@@ -126,13 +128,14 @@ public class GaussianDistribution {
 
     private static final int NTRIALS = 1000000;
 
+    @SuppressWarnings("MagicNumber")
     public static void main( String[] args ) {
 
         Random rng = new MersenneTwister();
-        doit( rng, 0.0, 1.0, NTRIALS );
-        doit( rng, 0.0, 2.0, NTRIALS );
-        doit( rng, 10.0, 3.0, NTRIALS );
-        doit( rng, 0.0, 0.1, NTRIALS );
+        GaussianDistribution.doit( rng, 0.0, 1.0, GaussianDistribution.NTRIALS );
+        GaussianDistribution.doit( rng, 0.0, 2.0, GaussianDistribution.NTRIALS );
+        GaussianDistribution.doit( rng, 10.0, 3.0, GaussianDistribution.NTRIALS );
+        GaussianDistribution.doit( rng, 0.0, 0.1, GaussianDistribution.NTRIALS );
 
     }
 

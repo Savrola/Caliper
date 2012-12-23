@@ -43,6 +43,6 @@ public enum GarnettSessionType {
      * Sessions start out life as virgins which is actually identical to NOAUTH.
      */
 
-    public static final GarnettSessionType VIRGIN = NO_AUTH;
+    public static final GarnettSessionType VIRGIN = GarnettSessionType.NO_AUTH;
 
 }

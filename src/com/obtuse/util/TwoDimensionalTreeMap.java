@@ -4,10 +4,7 @@ package com.obtuse.util;
  * Copyright © 2011 Obtuse Systems Corporation
  */
 
-import java.util.Collection;
-import java.util.Set;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * A sorted map with two dimensions/indices.
@@ -26,7 +23,7 @@ import java.util.TreeMap;
 
 public class TwoDimensionalTreeMap<T1,T2,V> implements TwoDimensionalSortedMap<T1,T2,V> {
 
-    private SortedMap<T1,SortedMap<T2,V>> _map = new TreeMap<T1,SortedMap<T2,V>>();
+    private final SortedMap<T1,SortedMap<T2,V>> _map = new TreeMap<T1,SortedMap<T2,V>>();
 
     public TwoDimensionalTreeMap() {
         super();

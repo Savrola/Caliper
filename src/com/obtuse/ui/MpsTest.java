@@ -38,6 +38,7 @@ public class MpsTest extends JFrame {
 //    private JPanel _slider8;
 
     public MpsTest() {
+        super();
 
         setContentPane( _panel1 );
 

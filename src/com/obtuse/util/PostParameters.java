@@ -12,7 +12,7 @@ import java.util.*;
 @SuppressWarnings( { "ClassWithoutToString" } )
 public class PostParameters implements Serializable {
 
-    private Map<String, String> _parameters = new TreeMap<String, String>();
+    private final Map<String, String> _parameters = new TreeMap<String, String>();
 
     private static final byte POSTPARAMETERS_FORMAT_VERSION = (byte)1;
 
@@ -133,7 +133,7 @@ public class PostParameters implements Serializable {
             InterruptedException {
         super();
 
-        decodeParms( encodedParms, this );
+        PostParameters.decodeParms( encodedParms, this );
     }
 
     public PostParameters( PostParameters source ) {
@@ -243,8 +243,8 @@ public class PostParameters implements Serializable {
             if ( sep >= 0 ) {
 
                 p.setParameter(
-                        decodePercent( e.substring( 0, sep ) ).trim(),
-                        decodePercent( e.substring( sep + 1 ) )
+                        PostParameters.decodePercent( e.substring( 0, sep ) ).trim(),
+                        PostParameters.decodePercent( e.substring( sep + 1 ) )
                 );
 
             }
@@ -264,7 +264,8 @@ public class PostParameters implements Serializable {
     public static String decodePercent( String str ) {
         try {
             StringBuffer sb = new StringBuffer();
-            int i = 0;
+            @SuppressWarnings("TooBroadScope") int i = 0;
+            //noinspection ForLoopWithMissingComponent
             for ( ; i < str.length(); i++ ) {
                 char c = str.charAt( i );
                 switch ( c ) {

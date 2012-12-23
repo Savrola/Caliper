@@ -19,7 +19,7 @@ public class GarnettClientSessionManager extends GarnettSessionManager {
 
     private ServerSocket _newSmtpProxyListenSocket;
 
-    @SuppressWarnings({ "FieldAccessedSynchronizedAndUnsynchronized" })
+    @SuppressWarnings({ "FieldAccessedSynchronizedAndUnsynchronized", "CanBeFinal" })
     private ServerSocket _currentSmtpProxyListenSocket = null;
 
     private InetSocketAddress _cachedServerAddress = null;
@@ -62,6 +62,7 @@ public class GarnettClientSessionManager extends GarnettSessionManager {
     public GarnettClientSession createSession( GarnettSessionType intendedSessionType )
             throws GarnettIllegalArgumentException {
 
+        @SuppressWarnings("UnnecessaryLocalVariable")
         GarnettClientSession garnettClientSession = new GarnettClientSession(
                 this,
                 getServerAddress(),

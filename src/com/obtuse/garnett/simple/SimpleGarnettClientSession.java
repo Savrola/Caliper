@@ -22,6 +22,7 @@ import java.net.Socket;
  * An easy to use Garnett client facility.
  */
 
+@SuppressWarnings("SameParameterValue")
 public class SimpleGarnettClientSession extends MinimalGarnettSession {
 
     private final InetSocketAddress _serverAddress;

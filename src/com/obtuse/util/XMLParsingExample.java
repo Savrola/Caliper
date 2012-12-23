@@ -23,12 +23,13 @@ public class XMLParsingExample {
 
         BasicProgramConfigInfo.init( "Obtuse", "XML", "ParsingExample", null );
 
-        parseOnTheFly( XMLParsingExample.INPUT_FILENAME );
+        XMLParsingExample.parseOnTheFly( XMLParsingExample.INPUT_FILENAME );
 
-        loadEntireDocument( XMLParsingExample.INPUT_FILENAME );
+        XMLParsingExample.loadEntireDocument( XMLParsingExample.INPUT_FILENAME );
 
     }
 
+    @SuppressWarnings("SameParameterValue")
     private static void parseOnTheFly( String inputFilename ) {
 
         SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -88,6 +89,7 @@ public class XMLParsingExample {
 
     }
 
+    @SuppressWarnings("SameParameterValue")
     private static void loadEntireDocument( String inputFilename ) {
 
         Document doc;

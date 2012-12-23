@@ -41,7 +41,10 @@ public class ExampleEmittedClass implements GarnettObject {
 
         }
 
-        public InheritedEmittedClass( int intValue, String stringValue ) {
+        public InheritedEmittedClass(
+                @SuppressWarnings("SameParameterValue") int intValue,
+                @SuppressWarnings("SameParameterValue") String stringValue
+        ) {
             super( intValue );
 
             _stringValue = stringValue;

@@ -4,7 +4,7 @@ import java.util.*;
 
 public class JulianDate {
 
-    private static GregorianCalendar s_gregorianCalendar = new GregorianCalendar();
+    private static final GregorianCalendar s_gregorianCalendar = new GregorianCalendar();
 
     /**
      * Returns the Julian day number that begins at noon of

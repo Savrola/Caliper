@@ -90,7 +90,7 @@ public class GarnettSessionPrefix implements Comparable<GarnettSessionPrefix> {
             throws GarnettIllegalArgumentException, GarnettUnsupportedProtocolVersionException {
         super();
 
-        _sessionPrefix = sessionPrefix;
+        _sessionPrefix = Arrays.copyOf( sessionPrefix, sessionPrefix.length );
 
         try {
 

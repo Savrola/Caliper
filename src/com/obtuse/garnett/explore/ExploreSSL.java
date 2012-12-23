@@ -203,7 +203,7 @@ public class ExploreSSL {
         }
     }
 
-    private static boolean trialRun( KeyStore ks, String targetHost )
+    private static boolean trialRun( KeyStore ks, @SuppressWarnings("SameParameterValue") String targetHost )
             throws
             NoSuchAlgorithmException,
             KeyStoreException,

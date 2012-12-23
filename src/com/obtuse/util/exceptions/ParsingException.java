@@ -6,6 +6,7 @@ package com.obtuse.util.exceptions;
  * Copyright © 2009 Invidi Technologies Corporation
  */
 
+@SuppressWarnings("SameParameterValue")
 public class ParsingException extends Exception {
 
     public static enum ErrorType {

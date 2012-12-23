@@ -9,6 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Jetbrains annotations" level="project" />
     <orderEntry type="library" name="Postgres" level="project" />
+    <orderEntry type="module" module-name="Third Party" />
   </component>
 </module>
 

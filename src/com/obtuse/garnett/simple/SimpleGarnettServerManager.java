@@ -18,6 +18,7 @@ import java.net.*;
  * A relatively easy to use Garnett server facility.
  */
 
+@SuppressWarnings("SameParameterValue")
 public class SimpleGarnettServerManager extends Thread {
 
     public static final int DEBUG_LISTEN_PORT = 1234;

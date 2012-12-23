@@ -20,9 +20,9 @@ public abstract class TableInfo implements Serializable {
     private final String _schemaName;
     private final String _tableName;
 
-    private SortedMap<Integer,String> _columnNames = new TreeMap<Integer, String>();
-    private Map<String,Integer> _columnName2columnIndex = new HashMap<String, Integer>();
-    private SortedMap<Integer,DBType> _columnTypes = new TreeMap<Integer, DBType>();
+    private final SortedMap<Integer,String> _columnNames = new TreeMap<Integer, String>();
+    private final Map<String,Integer> _columnName2columnIndex = new HashMap<String, Integer>();
+    private final SortedMap<Integer,DBType> _columnTypes = new TreeMap<Integer, DBType>();
     private String[] _columnNamesArray;
     private String[] _sequenceNamesArray;
     private int[] _serialColumnNumbersArray;
@@ -42,7 +42,7 @@ public abstract class TableInfo implements Serializable {
     protected TableInfo( String schemaName, String tableName ) {
         super();
 
-        synchronized ( _knownTables ) {
+        synchronized ( TableInfo._knownTables ) {
 
             String ucTableName;
             if ( schemaName != null ) {
@@ -55,15 +55,15 @@ public abstract class TableInfo implements Serializable {
 
             }
 
-            if ( _knownTables.containsKey( ucTableName ) ) {
+            if ( TableInfo._knownTables.containsKey( ucTableName ) ) {
 
                 throw new HowDidWeGetHereError(
-                        "table name \"" + ucTableName + "\" already defined by " + _knownTables.get( ucTableName )
+                        "table name \"" + ucTableName + "\" already defined by " + TableInfo._knownTables.get( ucTableName )
                 );
 
             }
 
-            _knownTables.put( ucTableName, getClass() );
+            TableInfo._knownTables.put( ucTableName, getClass() );
 
         }
 

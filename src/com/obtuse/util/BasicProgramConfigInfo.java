@@ -48,7 +48,12 @@ public class BasicProgramConfigInfo {
      * This value may be <tt>null</tt> in which case the application name will generally be used.
      */
 
-    public static void init( String vendorName, String applicationName, String componentName, @Nullable Preferences preferences ) {
+    public static void init(
+            @SuppressWarnings("SameParameterValue") String vendorName,
+            @SuppressWarnings("SameParameterValue") String applicationName,
+            @SuppressWarnings("SameParameterValue") String componentName,
+            @SuppressWarnings("SameParameterValue") @Nullable Preferences preferences
+    ) {
 
         BasicProgramConfigInfo.s_vendorName = vendorName;
         BasicProgramConfigInfo.s_applicationName = applicationName;

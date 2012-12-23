@@ -72,6 +72,7 @@ public class Range<T extends Comparable<T>> implements Serializable {
     public boolean completelyContains( Range<T> rhs )
             throws RejectRangeException {
 
+        //noinspection RedundantIfStatement
         if ( _startValue.compareTo( rhs.getStartValue() ) <= 0 && rhs.getEndValue().compareTo( _endValue ) <= 0 ) {
 
             return true;

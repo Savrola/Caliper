@@ -9,11 +9,12 @@ import java.util.Stack;
  * Copyright © 2012 Daniel Boulet
  */
 
-public class SimpleXmlContentHandler extends DefaultHandler implements ContentHandler {
+@SuppressWarnings("SameParameterValue")
+public class SimpleXmlContentHandler extends DefaultHandler {
 
     private Locator _locator;
 
-    private Stack<String> _nesting = new Stack<String>();
+    private final Stack<String> _nesting = new Stack<String>();
     private final boolean _logActivity;
 
     public SimpleXmlContentHandler( boolean logActivity ) {

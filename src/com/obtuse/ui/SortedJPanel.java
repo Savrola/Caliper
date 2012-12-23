@@ -21,6 +21,7 @@ public class SortedJPanel extends JPanel {
     @SuppressWarnings("FieldCanBeLocal")
     private final BoxLayout _layoutManager;
 
+    @SuppressWarnings("SameParameterValue")
     public SortedJPanel( int axis ) {
         super();
 
@@ -106,7 +107,7 @@ public class SortedJPanel extends JPanel {
 
     private static class MyJPanel extends JPanel implements SortableJComponent {
 
-        private String _label;
+        private final String _label;
 
         private MyJPanel( String label ) {
             super();

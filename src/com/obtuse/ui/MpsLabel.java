@@ -16,7 +16,7 @@ import java.util.Hashtable;
  * Describe a label on the slider line for an {@link MultiPointSlider}.
  */
 
-@SuppressWarnings("UnusedDeclaration")
+@SuppressWarnings({ "UnusedDeclaration", "UseOfObsoleteCollectionType" })
 public class MpsLabel {
 
     private final String _textLabel;

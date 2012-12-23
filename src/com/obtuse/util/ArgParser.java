@@ -14,7 +14,7 @@ import java.util.TreeMap;
 @SuppressWarnings({"ClassWithoutToString"})
 public class ArgParser {
 
-    private Map<String, Arg> _args = new TreeMap<String, Arg>();
+    private final Map<String, Arg> _args = new TreeMap<String, Arg>();
 
     public ArgParser( Arg[] args ) {
         super();

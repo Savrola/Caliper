@@ -72,7 +72,7 @@ public abstract class YesNoPopupMessageWindow
         }
 
         // call onCancel() when cross is clicked
-        setDefaultCloseOperation( DO_NOTHING_ON_CLOSE );
+        setDefaultCloseOperation( WindowConstants.DO_NOTHING_ON_CLOSE );
 
         //noinspection RefusedBequest
         addWindowListener(
@@ -269,7 +269,7 @@ public abstract class YesNoPopupMessageWindow
             final Runnable alternativeRunnable
     ) {
 
-        doit( line1, null, defaultLabel, alternativeLabel, defaultRunnable, alternativeRunnable );
+        YesNoPopupMessageWindow.doit( line1, null, defaultLabel, alternativeLabel, defaultRunnable, alternativeRunnable );
 
     }
 

@@ -10,7 +10,7 @@ import com.obtuse.util.Trace;
  * Thrown if an invalid character is found in a password or a user name.
  */
 
-@SuppressWarnings( { "ClassWithoutToString" } )
+@SuppressWarnings({ "ClassWithoutToString", "SameParameterValue" })
 public class GarnettInvalidCharacterException extends Exception {
 
     public GarnettInvalidCharacterException() {

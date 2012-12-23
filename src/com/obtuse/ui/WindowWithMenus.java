@@ -16,18 +16,18 @@ import java.util.LinkedList;
 @SuppressWarnings( { "FieldCanBeLocal" } )
 public abstract class WindowWithMenus extends TrackedWindow implements PreferencesHandler {
 
-    private JMenuBar _menuBar;
+    private final JMenuBar _menuBar;
 
-    private JMenu _fileMenu;
+    private final JMenu _fileMenu;
 
-    private JMenuItem _preferencesMenuItem;
+    private final JMenuItem _preferencesMenuItem;
 
     private JCheckBoxMenuItem _showLogsMenuItem;
 
-    private static Collection<WindowWithMenus> s_allWindowsWithLogsMenuItem = new LinkedList<WindowWithMenus>();
+    private static final Collection<WindowWithMenus> s_allWindowsWithLogsMenuItem = new LinkedList<WindowWithMenus>();
     private static boolean s_showLogsMode;
 
-    @SuppressWarnings( { "ClassWithoutToString" } )
+    @SuppressWarnings({ "ClassWithoutToString", "SameParameterValue" })
     protected WindowWithMenus( String appName, String windowName, boolean includeLogsMenuItem ) {
         super( appName, windowName );
 

@@ -152,7 +152,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
         );
     }
 
-    public DbClassGeneratorV2( String autoDirectoryName ) {
+    public DbClassGeneratorV2( @SuppressWarnings("SameParameterValue") String autoDirectoryName ) {
 
         super();
 

@@ -14,7 +14,7 @@ public class SimpleEventQueue<T extends SimpleEvent> {
     private long _now;
     private long _endTime = Long.MAX_VALUE;
 
-    private boolean _traceMode = false;
+    private final boolean _traceMode = false;
 
     /**
      * A wrapper for a set of simultaneous clock events and the timestamp associated with all of them.
@@ -70,7 +70,7 @@ public class SimpleEventQueue<T extends SimpleEvent> {
 
         public String toString() {
 
-            return "TimestampedClockEventContainer( " + _eventTime + ", " + eventsToString( _events ) + " )";
+            return "TimestampedClockEventContainer( " + _eventTime + ", " + SimpleEventQueue.eventsToString( _events ) + " )";
 
         }
 
@@ -138,6 +138,7 @@ public class SimpleEventQueue<T extends SimpleEvent> {
 
     }
 
+    @SuppressWarnings("SameParameterValue")
     public void showQueue( String why, boolean hideEmpties ) {
 
         StringBuilder msg = new StringBuilder( why ).append( ":  [ " );
@@ -145,7 +146,7 @@ public class SimpleEventQueue<T extends SimpleEvent> {
 
             if ( !_eventQueue.get( when ).isEmpty() || !hideEmpties ) {
 
-                msg.append( "   " ).append( eventsToString( _eventQueue.get( when ) ) );
+                msg.append( "   " ).append( SimpleEventQueue.eventsToString( _eventQueue.get( when ) ) );
 
             }
 
@@ -163,6 +164,7 @@ public class SimpleEventQueue<T extends SimpleEvent> {
 
     }
 
+    @SuppressWarnings("SameParameterValue")
     public void setEndTime( long when ) {
 
         _endTime = when;

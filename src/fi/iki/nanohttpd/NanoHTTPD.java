@@ -57,14 +57,14 @@ public abstract class NanoHTTPD {
      * HTTP response. Return one of these from serve().
      */
 
-    @SuppressWarnings( { "ClassWithoutToString" } )
+    @SuppressWarnings({ "ClassWithoutToString", "SameParameterValue" })
     public class Response {
 
         /**
          * HTTP status code after processing, e.g. "200 OK", HTTP_OK
          */
 
-        private String _status;
+        private final String _status;
 
         /**
          * MIME type of content, e.g. "text/html"
@@ -82,7 +82,7 @@ public abstract class NanoHTTPD {
          * Headers for the HTTP response. Use addHeader() to add lines.
          */
 
-        private Properties _header = new Properties();
+        private final Properties _header = new Properties();
 
         /**
          * Default constructor: response = HTTP_OK, data = mime = 'null'
@@ -730,7 +730,7 @@ public abstract class NanoHTTPD {
 
         }
 
-        private Socket _mySocket;
+        private final Socket _mySocket;
     }
 
     /**
@@ -778,7 +778,7 @@ public abstract class NanoHTTPD {
     }
 
     @SuppressWarnings("FieldCanBeLocal")
-    private int _myTcpPort;
+    private final int _myTcpPort;
 
     private File _myFileDir = null;
 

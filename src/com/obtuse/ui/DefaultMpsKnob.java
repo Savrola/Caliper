@@ -17,7 +17,8 @@ import static com.obtuse.ui.MultiPointSlider.PositionOnLine;
 
 public class DefaultMpsKnob extends MpsKnob {
 
-    private SortedMap<PositionOnLine, Double> _rotations =
+    public static final float ORIENTED_IMAGE_BRIGHTNESS_FACTOR = 0.9f;
+    private final SortedMap<PositionOnLine, Double> _rotations =
             new TreeMap<PositionOnLine, Double>();
     private ThreeDimensionalSortedMap<MpsKnobSize, PositionOnLine, Boolean, OrientedImage>
             _rotatedSelectedScaledImages =
@@ -156,7 +157,10 @@ public class DefaultMpsKnob extends MpsKnob {
                             Image.SCALE_SMOOTH
                     )
             );
-            BufferedImage selectedScaledImage = ImageIconUtils.changeImageBrightness( scaledImage, 0.9f );
+            BufferedImage selectedScaledImage = ImageIconUtils.changeImageBrightness(
+                    scaledImage,
+                    DefaultMpsKnob.ORIENTED_IMAGE_BRIGHTNESS_FACTOR
+            );
             BufferedImage rotatedImage;
             BufferedImage sourceImage = isSelected ? selectedScaledImage : scaledImage;
             Point hotSpot;

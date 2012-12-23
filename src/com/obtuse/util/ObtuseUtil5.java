@@ -1,6 +1,7 @@
 package com.obtuse.util;
 
 import com.obtuse.db.PostgresConnection;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -56,6 +57,7 @@ public class ObtuseUtil5 {
 
         }
 
+        @NotNull
         public Set<Map.Entry<K, V>> entrySet() {
 
             if ( _readonly ) {
@@ -72,6 +74,7 @@ public class ObtuseUtil5 {
 
         }
 
+        @NotNull
         public Set<K> keySet() {
 
             if ( _readonly ) {
@@ -142,6 +145,7 @@ public class ObtuseUtil5 {
 
         }
 
+        @NotNull
         public Collection<V> values() {
 
             if ( _readonly ) {
@@ -444,17 +448,44 @@ public class ObtuseUtil5 {
         try {
 
             byte[] tmp = new byte[maxLength];
-            int actualLen = is.read( tmp );
-            if ( actualLen <= 0 ) {
+            int totalLength = 0;
+            while ( totalLength < maxLength ) {
+
+                int chunkLength = is.read( tmp, totalLength, maxLength - totalLength );
+                if ( chunkLength <= 0 ) {
+
+                    break;
+
+                }
+
+                totalLength += chunkLength;
+
+            }
+
+            if ( totalLength == 0 ) {
 
                 return new byte[0];
 
             }
+//            int actualLen = is.read( tmp );
+//            if ( actualLen <= 0 ) {
+//
+//                return new byte[0];
+//
+//            }
 
-            byte[] contents = new byte[actualLen];
-            System.arraycopy( tmp, 0, contents, 0, actualLen );
+            if ( totalLength == maxLength ) {
 
-            return contents;
+                return tmp;
+
+            } else {
+
+                byte[] contents = new byte[totalLength];
+                System.arraycopy( tmp, 0, contents, 0, totalLength );
+
+                return contents;
+
+            }
 
         } catch ( IOException e ) {
 

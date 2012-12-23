@@ -11,8 +11,8 @@ import java.util.TreeMap;
 
 public class TableMetaData {
 
-    private ExpectedTableInfo _expectedTableInfo;
-    private SortedMap<Integer,ColumnMetaData> _columnMetaData = new TreeMap<Integer, ColumnMetaData>();
+    private final ExpectedTableInfo _expectedTableInfo;
+    private final SortedMap<Integer,ColumnMetaData> _columnMetaData = new TreeMap<Integer, ColumnMetaData>();
 
     public TableMetaData( ExpectedTableInfo expectedTableInfo ) {
         super();

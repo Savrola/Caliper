@@ -147,7 +147,7 @@ public class UniqueEntity {
 
     public static UniqueIdGenerator getDefaultIdGenerator() {
 
-        return _defaultIdGenerator;
+        return UniqueEntity._defaultIdGenerator;
 
     }
 

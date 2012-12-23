@@ -17,6 +17,7 @@ public class LoginResponseMessageHandler implements GarnettMessageHandler {
 
     private boolean _done = false;
 
+    @SuppressWarnings("CanBeFinal")
     private String _userName;
 
     public LoginResponseMessageHandler( String userName ) {

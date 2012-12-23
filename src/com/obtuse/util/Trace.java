@@ -84,11 +84,11 @@ public class Trace {
 
     private static class TraceEvent {
 
-        private String _event;
+        private final String _event;
 
-        private long _timestamp;
+        private final long _timestamp;
 
-        private long _tid;
+        private final long _tid;
 
         private Throwable _exception = null;
 
@@ -525,6 +525,7 @@ public class Trace {
 
     }
 
+    @SuppressWarnings("SameParameterValue")
     private static String emitResults( String why, List<String> results, String where, boolean compressOutput ) {
 
         final long timeStamp = System.currentTimeMillis();

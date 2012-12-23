@@ -11,6 +11,7 @@ import java.io.IOException;
  * across a {@link com.obtuse.garnett.GarnettSession} before the session is connected.
  */
 
+@SuppressWarnings("SameParameterValue")
 public class GarnettOutBoundQueueDoneException extends IOException {
 
     public GarnettOutBoundQueueDoneException( String message ) {

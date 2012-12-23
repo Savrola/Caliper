@@ -46,7 +46,7 @@ public abstract class OSLevelCustomizations {
 
     public static OSLevelCustomizations getCustomizer( AboutWindowHandler aboutWindowHandler ) {
 
-        if ( !_gotOSLevelCustomizations ) {
+        if ( !OSLevelCustomizations._gotOSLevelCustomizations ) {
 
             if ( OSLevelCustomizations.onMacOsX() ) {
 
@@ -64,7 +64,7 @@ public abstract class OSLevelCustomizations {
                             macSpecificCode.getDeclaredMethod( methodName, new Class[] { AboutWindowHandler.class, QuitCatcher.class } );
                     createInstance.setAccessible( true );
                     //noinspection RedundantArrayCreation
-                    _osLevelCustomizations = (OSLevelCustomizations)createInstance.invoke( null, new Object[] { aboutWindowHandler, null } );
+                    OSLevelCustomizations._osLevelCustomizations = (OSLevelCustomizations)createInstance.invoke( null, new Object[] { aboutWindowHandler, null } );
 
                 } catch ( ClassNotFoundException e ) {
 
@@ -88,11 +88,11 @@ public abstract class OSLevelCustomizations {
 
             }
 
-            _gotOSLevelCustomizations = true;
+            OSLevelCustomizations._gotOSLevelCustomizations = true;
 
         }
 
-        return _osLevelCustomizations;
+        return OSLevelCustomizations._osLevelCustomizations;
 
     }
 

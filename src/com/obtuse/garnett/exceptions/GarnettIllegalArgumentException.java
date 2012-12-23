@@ -10,6 +10,7 @@ package com.obtuse.garnett.exceptions;
  * See the documentation for the method that threw the exception for more info.
  */
 
+@SuppressWarnings("SameParameterValue")
 public class GarnettIllegalArgumentException extends Exception {
 
     public GarnettIllegalArgumentException() {

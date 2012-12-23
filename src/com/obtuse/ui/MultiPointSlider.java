@@ -1257,6 +1257,7 @@ public class MultiPointSlider extends JComponent {
 
     }
 
+    @SuppressWarnings("MagicNumber")
     public static void main( String[] args ) {
 
         @SuppressWarnings("UseOfObsoleteCollectionType")
@@ -1527,6 +1528,7 @@ public class MultiPointSlider extends JComponent {
                     ) {
 
                 int argb = _image.getRGB( pointWithinImage.x, pointWithinImage.y );
+                //noinspection MagicNumber
                 isInside = ( argb & 0xff000000 ) != 0;
 
             } else {

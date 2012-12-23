@@ -104,7 +104,7 @@ public class MetaDataParser {
 
     public static void main( String[] args ) {
 
-        ElephantConnection elephantConnection = new ElephantConnection( "127.0.0.1", NMR_DATABASE_NAME );
+        ElephantConnection elephantConnection = new ElephantConnection( "127.0.0.1", MetaDataParser.NMR_DATABASE_NAME );
 
         MetaDataParserUtils.connectToDatabase( elephantConnection );
 
@@ -112,44 +112,44 @@ public class MetaDataParser {
 
         MetaDataParserUtils.parse(
                 elephantConnection,
-                NMR_DATABASE_NAME,
+                MetaDataParser.NMR_DATABASE_NAME,
                 "nmr",
                 "%",
-                NMR_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
+                MetaDataParser.NMR_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
                 new DbClassGeneratorV2( "NielsenDatabaseSupport/src/com/invidi/nielsen/abdw/auto/" ),
                 true
         );
 
-        elephantConnection = new ElephantConnection( "127.0.0.1", AMRLD_DATABASE_NAME );
+        elephantConnection = new ElephantConnection( "127.0.0.1", MetaDataParser.AMRLD_DATABASE_NAME );
 
         MetaDataParserUtils.connectToDatabase( elephantConnection );
 
         MetaDataParserUtils.parse(
                 elephantConnection,
-                AMRLD_DATABASE_NAME,
+                MetaDataParser.AMRLD_DATABASE_NAME,
                 "amrld",
                 "%",
-                AMRLD_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
+                MetaDataParser.AMRLD_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
                 new DbClassGeneratorV2( "NielsenDatabaseSupport/src/com/invidi/nielsen/abdw/auto/" ),
                 true
         );
 
         MetaDataParserUtils.parse(
                 elephantConnection,
-                AMRLD_DATABASE_NAME,
+                MetaDataParser.AMRLD_DATABASE_NAME,
                 "bbm2",
                 "%",
-                BBM2_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
+                MetaDataParser.BBM2_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
                 new DbClassGeneratorV2( "NielsenDatabaseSupport/src/com/invidi/nielsen/abdw/auto/" ),
                 true
         );
 
         MetaDataParserUtils.parse(
                 elephantConnection,
-                AMRLD_DATABASE_NAME,
+                MetaDataParser.AMRLD_DATABASE_NAME,
                 "tvg",
                 "%",
-                TVG_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
+                MetaDataParser.TVG_EXPECTED_ABDW_TABLE_NAMES_ARRAY,
                 new DbClassGeneratorV2( "NielsenDatabaseSupport/src/com/invidi/nielsen/abdw/auto/" ),
                 true
         );

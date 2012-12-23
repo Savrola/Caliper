@@ -75,7 +75,7 @@ public class GarnettShortResponse extends GarnettResponseMessage {
             throws IOException {
 
         super.serializeContents( goos );
-        goos.writeVersion( VERSION );
+        goos.writeVersion( GarnettShortResponse.VERSION );
 
         goos.writeString( _errorCode.name() );
 

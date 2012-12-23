@@ -10,7 +10,7 @@ import com.obtuse.util.Trace;
  * Something is wrong with an account name.
  */
 
-@SuppressWarnings( { "ClassWithoutToString" } )
+@SuppressWarnings({ "ClassWithoutToString", "SameParameterValue" })
 public class GarnettInvalidAccountNameException extends Exception {
 
     public GarnettInvalidAccountNameException() {

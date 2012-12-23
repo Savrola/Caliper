@@ -331,7 +331,7 @@ public abstract class MinimalGarnettSession extends Thread {
 
     protected abstract void doRun();
 
-    public void sessionEnds( int delaySeconds ) {
+    public void sessionEnds( @SuppressWarnings("SameParameterValue") int delaySeconds ) {
 
         long waitStartTime = System.currentTimeMillis();
 
@@ -524,6 +524,7 @@ public abstract class MinimalGarnettSession extends Thread {
 
     }
 
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     protected boolean isAuthenticated() {
 
         return _authenticated;

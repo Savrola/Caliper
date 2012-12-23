@@ -133,6 +133,7 @@ public class StackedGaussianDistributionsDrawing extends JPanel {
 
     }
 
+    @SuppressWarnings("SameParameterValue")
     private double mapXtoDrawing( int pX, int minD, int maxD, double minR, double maxR ) {
 
         //noinspection UnnecessaryParentheses

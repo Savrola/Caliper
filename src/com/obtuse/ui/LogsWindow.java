@@ -32,7 +32,7 @@ public class LogsWindow extends WindowWithMenus {
 
     private JButton _closeButton;
 
-    private DefaultListModel _messagesList = new DefaultListModel();
+    private final DefaultListModel _messagesList = new DefaultListModel();
 
     private static final Long WINDOW_LOCK = 0L;
 
@@ -52,6 +52,7 @@ public class LogsWindow extends WindowWithMenus {
 
     private JMenuItem _copyMenuItem = null;
 
+    @SuppressWarnings("CanBeFinal")
     private Clipboard _systemClipboard;
 
     private static final String WINDOW_NAME = "LogsWindow";

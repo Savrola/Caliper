@@ -27,6 +27,7 @@ public class GenericAutomagicUpgrader {
 
     }
 
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public static boolean isDefaultDeployment() {
 
         return "default".equals( GenericAutomagicUpgrader.getDeploymentName() );

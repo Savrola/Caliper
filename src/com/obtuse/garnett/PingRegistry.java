@@ -10,7 +10,7 @@ import java.util.*;
 
 public class PingRegistry implements PingListener {
 
-    private List<PingListener> _pingListeners = new LinkedList<PingListener>();
+    private final List<PingListener> _pingListeners = new LinkedList<PingListener>();
 
     private boolean _done = false;
 
@@ -44,6 +44,7 @@ public class PingRegistry implements PingListener {
 
     public synchronized boolean gotPingReply( long requestId ) {
 
+        //noinspection ForLoopWithMissingComponent
         for ( Iterator<PingListener> it = _pingListeners.iterator(); it.hasNext(); ) {
 
             PingListener pingListener = it.next();

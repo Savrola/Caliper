@@ -32,7 +32,7 @@ public class GarnettObjectOutputStream extends OutputStream implements GarnettOb
 
     private int _serializationDepth = 0;
 
-    private ByteBuffer _buffer;
+    private final ByteBuffer _buffer;
 
     private SortedMap<GarnettTypeName,Integer> _knownGarnettTypes = null;
     private int _nextGarnettTypeIndex = 0;

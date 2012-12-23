@@ -14,6 +14,7 @@ import java.util.TreeMap;
  * Manage the various {@link com.obtuse.garnett.GarnettObject}s which a {@link GarnettObjectInputStreamInterface} must be able to instantiate.
  */
 
+@SuppressWarnings("SameParameterValue")
 public class GarnettObjectRestorerRegistry {
 
     private final SortedMap<GarnettTypeName,GarnettObjectFactory> _factories = new TreeMap<GarnettTypeName, GarnettObjectFactory>();

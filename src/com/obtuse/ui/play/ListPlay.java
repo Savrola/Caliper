@@ -34,6 +34,7 @@ public class ListPlay extends JFrame {
     }
 
     public ListPlay() {
+        super();
 
         setContentPane( _panel1 );
 

@@ -1,5 +1,7 @@
 package com.obtuse.db.raw.dbdata;
 
+import java.util.Arrays;
+
 /**
  * Encapsulate the return value of an insertion operation.
  * <p/>
@@ -14,8 +16,8 @@ public class BundledKeys {
     public BundledKeys( long[] keys, int[] keyColumnIxs ) {
         super();
 
-        _keys = keys;
-        _keyColumnIxs = keyColumnIxs;
+        _keys = Arrays.copyOf( keys, keys.length );
+        _keyColumnIxs = Arrays.copyOf( keyColumnIxs, keyColumnIxs.length );
 
     }
 

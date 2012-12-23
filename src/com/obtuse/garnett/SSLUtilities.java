@@ -232,20 +232,20 @@ public class SSLUtilities {
             throws
             GarnettSSLChannelCreationFailedException {
 
-        synchronized ( _sslContexts ) {
+        synchronized ( SSLUtilities._sslContexts ) {
 
             SSLContextWrapper tmp = new SSLContextWrapper( clientMode, keystoreFileName, keystorePassword );
-            if ( _sslContexts.containsKey( tmp ) ) {
+            if ( SSLUtilities._sslContexts.containsKey( tmp ) ) {
 
 //                Logger.logMsg( "reusing SSL cert(s) from " + keystoreFileName );
-                return _sslContexts.get( tmp ).getSSLContext();
+                return SSLUtilities._sslContexts.get( tmp ).getSSLContext();
 
             } else {
 
 //                Logger.logMsg( "loading SSL cert(s) from " + keystoreFileName );
 
                 tmp.setSSLContext(
-                        createWrappedSSLContext(
+                        SSLUtilities.createWrappedSSLContext(
                                 clientMode,
                                 keystoreInputStream,
                                 keystorePassword,
@@ -253,7 +253,7 @@ public class SSLUtilities {
                         )
                 );
 
-                _sslContexts.put( tmp, tmp );
+                SSLUtilities._sslContexts.put( tmp, tmp );
                 return tmp.getSSLContext();
 
             }
@@ -300,7 +300,7 @@ public class SSLUtilities {
     public static SSLContext getOurClientSSLContext()
             throws GarnettSSLChannelCreationFailedException, IOException {
 
-        return getSSLContext(
+        return SSLUtilities.getSSLContext(
                 true,
                 "GarnettClient.keystore",
                 ResourceUtils.openResource( "GarnettClient.keystore", "com/obtuse/garnett/resources" ),
@@ -407,7 +407,7 @@ public class SSLUtilities {
         try {
 
             keyStoreInputStream = new FileInputStream( keystoreFile );
-            return createWrappedSSLContext( clientMode, keyStoreInputStream, keystorePassword, keyPassword );
+            return SSLUtilities.createWrappedSSLContext( clientMode, keyStoreInputStream, keystorePassword, keyPassword );
 
         } finally {
 
@@ -425,7 +425,7 @@ public class SSLUtilities {
 
         try {
 
-            return createSSLContext( clientMode, keyStoreInputStream, keystorePassword, keyPassword );
+            return SSLUtilities.createSSLContext( clientMode, keyStoreInputStream, keystorePassword, keyPassword );
 
         } catch ( NoSuchAlgorithmException e ) {
 

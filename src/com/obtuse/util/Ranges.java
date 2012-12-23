@@ -37,7 +37,7 @@ public class Ranges<T extends Comparable<T>> implements Iterable<Range<T>>, Seri
     );
 
     @SuppressWarnings( { "ClassWithoutToString" } )
-    private RangeFactory<T> _rangeFactory;
+    private final RangeFactory<T> _rangeFactory;
 
     public Ranges( Range<T> range, RangeFactory<T> rangeFactory )
             throws RejectRangeException {
@@ -298,37 +298,37 @@ public class Ranges<T extends Comparable<T>> implements Iterable<Range<T>>, Seri
 
         Ranges<Integer> ranges = new Ranges<Integer>( rangeFactory );
 
-        doit( ranges, 0, 0 );
-        doit( ranges, 10, 10 );
-        doit( ranges, 1, 9 );
-        doit( ranges, 20, 30 );
-        doit( ranges, 40, 50 );
-        doit( ranges, -5, 55 );
+        Ranges.doit( ranges, 0, 0 );
+        Ranges.doit( ranges, 10, 10 );
+        Ranges.doit( ranges, 1, 9 );
+        Ranges.doit( ranges, 20, 30 );
+        Ranges.doit( ranges, 40, 50 );
+        Ranges.doit( ranges, -5, 55 );
 
         Logger.logMsg( "starting again" );
 
         ranges = new Ranges<Integer>( rangeFactory );
 
-        doit( ranges, 1, 10 );
-        doit( ranges, -10, -1 );
-        doit( ranges, -1, 1 );
-        doit( ranges, -20, -10 );
-        doit( ranges, 10, 20 );
-        doit( ranges, -30, -21 );
-        doit( ranges, 21, 30 );
+        Ranges.doit( ranges, 1, 10 );
+        Ranges.doit( ranges, -10, -1 );
+        Ranges.doit( ranges, -1, 1 );
+        Ranges.doit( ranges, -20, -10 );
+        Ranges.doit( ranges, 10, 20 );
+        Ranges.doit( ranges, -30, -21 );
+        Ranges.doit( ranges, 21, 30 );
 
         Logger.logMsg( "starting again" );
         ranges = new Ranges<Integer>( rangeFactory );
 
-        doit( ranges, 1, 10 );
-        doit( ranges, 5, 15 );
-        doit( ranges, -5, 5 );
+        Ranges.doit( ranges, 1, 10 );
+        Ranges.doit( ranges, 5, 15 );
+        Ranges.doit( ranges, -5, 5 );
 
     }
 
     private static void doit( Ranges<Integer> ranges, int start, int end ) {
 
-        doit( ranges, new Range<Integer>( start, end, (long)start, (long)end ) );
+        Ranges.doit( ranges, new Range<Integer>( start, end, (long)start, (long)end ) );
 
     }
 
