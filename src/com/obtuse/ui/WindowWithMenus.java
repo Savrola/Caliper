@@ -1,6 +1,5 @@
 package com.obtuse.ui;
 
-import com.obtuse.generic.OkPopupMessageWindow;
 import com.obtuse.util.*;
 
 import javax.swing.*;
