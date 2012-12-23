@@ -1,4 +1,4 @@
-package com.obtuse.generic;
+package com.obtuse.ui;
 
 import com.obtuse.util.ObtuseUtil5;
 
