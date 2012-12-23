@@ -14,7 +14,7 @@ import java.net.URL;
  * Utility methods for creating icons from images stored in our resources package.
  */
 
-@SuppressWarnings( { "UnusedDeclaration" } )
+@SuppressWarnings({ "UnusedDeclaration" })
 public class ImageIconUtils {
 
     private static String s_resourcesBaseDirectory = ".";
@@ -44,6 +44,7 @@ public class ImageIconUtils {
 //    }
 
     private ImageIconUtils() {
+
         super();
 
     }
@@ -117,43 +118,45 @@ public class ImageIconUtils {
 
     /**
      * Get a {@link java.awt.image.BufferedImage} version of an {@link java.awt.Image}.
-     * Identical to {@link #copyToBufferedImage(java.awt.Image)} except that the original image is returned if it is a {@link java.awt.image.BufferedImage}.
+     * Identical to {@link #copyToBufferedImage(java.awt.Image)} except that the original image is returned if it is a {@link java.awt.image
+     * .BufferedImage}.
      * <p/>
      * This method came from
      * <blockquote>
      * http://www.exampledepot.com/egs/java.awt.image/Image2Buf.html
      * </blockquote>
-     * I (danny) don't know the terms of use as their "Terms of Use" link didn't do anything in either Safari or Firefox on my Mac OS X Snow Leopard system.
+     * I (danny) don't know the terms of use as their "Terms of Use" link didn't do anything in either Safari or Firefox on my Mac OS X Snow
+     * Leopard system.
      *
      * @param xImage the image to be converted.
-     *
-     * @return the original image if it is a {@link java.awt.image.BufferedImage}; otherwise, the original image converted to a {@link java.awt.image.BufferedImage}.
+     * @return the original image if it is a {@link java.awt.image.BufferedImage}; otherwise, the original image converted to a {@link java.awt
+     * .image.BufferedImage}.
      */
 
-    public static BufferedImage toBufferedImage(Image xImage) {
+    public static BufferedImage toBufferedImage( Image xImage ) {
 
-        if (xImage instanceof BufferedImage) {
+        if ( xImage instanceof BufferedImage ) {
 
             return (BufferedImage)xImage;
 
         }
         return ImageIconUtils.copyToBufferedImage( xImage );
 
-
     }
 
     /**
      * Make a {@link java.awt.image.BufferedImage} copy of an {@link java.awt.Image}.
-     * Identical to {@link #toBufferedImage(java.awt.Image)} except that a new image is returned even if the original image is a {@link java.awt.image.BufferedImage}.
+     * Identical to {@link #toBufferedImage(java.awt.Image)} except that a new image is returned even if the original image is a {@link java.awt
+     * .image.BufferedImage}.
      * <p/>
      * This method came from
      * <blockquote>
      * http://www.exampledepot.com/egs/java.awt.image/Image2Buf.html
      * </blockquote>
-     * I (danny) don't know the terms of use as their "Terms of Use" link didn't do anything in either Safari or Firefox on my Mac OS X Snow Leopard system.
+     * I (danny) don't know the terms of use as their "Terms of Use" link didn't do anything in either Safari or Firefox on my Mac OS X Snow
+     * Leopard system.
      *
      * @param xImage the image to be converted.
-     *
      * @return a copy of the original image.
      */
 
@@ -161,12 +164,12 @@ public class ImageIconUtils {
 
         // This code ensures that all the pixels in the image are loaded
 
-        Image image = new ImageIcon(xImage).getImage();
+        Image image = new ImageIcon( xImage ).getImage();
 
         // Determine if the image has transparent pixels; for this method's
         // implementation, see Determining If an Image Has Transparent Pixels
 
-        boolean hasAlpha = ImageIconUtils.hasAlpha(image);
+        boolean hasAlpha = ImageIconUtils.hasAlpha( image );
 
         // Create a buffered image with a format that's compatible with the screen
 
@@ -176,7 +179,7 @@ public class ImageIconUtils {
 
             // Determine the type of transparency of the new buffered image
             int transparency = Transparency.OPAQUE;
-            if (hasAlpha) {
+            if ( hasAlpha ) {
 
                 transparency = Transparency.BITMASK;
 
@@ -186,26 +189,27 @@ public class ImageIconUtils {
             GraphicsDevice gs = ge.getDefaultScreenDevice();
             GraphicsConfiguration gc = gs.getDefaultConfiguration();
             bImage = gc.createCompatibleImage(
-                    image.getWidth(null), image.getHeight(null), transparency);
+                    image.getWidth( null ), image.getHeight( null ), transparency
+            );
 
-        } catch (HeadlessException e) {
+        } catch ( HeadlessException e ) {
 
             // The system does not have a screen
 
         }
 
-        if (bImage == null) {
+        if ( bImage == null ) {
 
             // Create a buffered image using the default color model
 
             int type = BufferedImage.TYPE_INT_RGB;
-            if (hasAlpha) {
+            if ( hasAlpha ) {
 
                 type = BufferedImage.TYPE_INT_ARGB;
 
             }
 
-            bImage = new BufferedImage(image.getWidth(null), image.getHeight(null), type);
+            bImage = new BufferedImage( image.getWidth( null ), image.getHeight( null ), type );
 
         }
 
@@ -215,7 +219,7 @@ public class ImageIconUtils {
 
         // Paint the image onto the buffered image
 
-        g.drawImage(image, 0, 0, null);
+        g.drawImage( image, 0, 0, null );
         g.dispose();
 
         return bImage;
@@ -224,22 +228,22 @@ public class ImageIconUtils {
 
     /**
      * This method returns true if the specified image has transparent pixels.
-     *<p/>
+     * <p/>
      * This method came from
      * <blockquote>
      * http://www.exampledepot.com/egs/java.awt.image/HasAlpha.html
      * </blockquote>
-     * I (danny) don't know the terms of use as their "Terms of Use" link didn't do anything in either Safari or Firefox on my Mac OS X Snow Leopard system.
+     * I (danny) don't know the terms of use as their "Terms of Use" link didn't do anything in either Safari or Firefox on my Mac OS X Snow
+     * Leopard system.
      *
      * @param image the image to be inspected.
-     *
      * @return true if the image has transparent pixels; false otherwise.
      */
 
-    public static boolean hasAlpha(Image image) {
+    public static boolean hasAlpha( Image image ) {
 
         // If buffered image, the color model is readily available
-        if (image instanceof BufferedImage) {
+        if ( image instanceof BufferedImage ) {
 
             BufferedImage bImage = (BufferedImage)image;
             return bImage.getColorModel().hasAlpha();
@@ -248,13 +252,13 @@ public class ImageIconUtils {
 
         // Use a pixel grabber to retrieve the image's color model;
         // grabbing a single pixel is usually sufficient
-        PixelGrabber pg = new PixelGrabber(image, 0, 0, 1, 1, false);
+        PixelGrabber pg = new PixelGrabber( image, 0, 0, 1, 1, false );
         //noinspection EmptyCatchBlock
         try {
 
             pg.grabPixels();
 
-        } catch (InterruptedException e) {
+        } catch ( InterruptedException e ) {
 
         }
 
@@ -267,10 +271,9 @@ public class ImageIconUtils {
     /**
      * Create a new {@link java.awt.image.BufferedImage} which is brighter or darker than the specified {@link java.awt.Image}.
      *
-     * @param image the image to be brightened or darkened.
+     * @param image  the image to be brightened or darkened.
      * @param factor how much the image is to be brightened (if greater than 1) or darkened (if less than 1).
-     * For example, 1.2 makes the image 20% brighter whereas 0.8 makes the image 20% darker.
-     *
+     *               For example, 1.2 makes the image 20% brighter whereas 0.8 makes the image 20% darker.
      * @return the brighter or darker image (always a new image even if the scaling factor is 1.0).
      */
 
@@ -288,10 +291,9 @@ public class ImageIconUtils {
     /**
      * Create a new {@link javax.swing.ImageIcon} which is brighter or darker than the specified {@link javax.swing.ImageIcon}.
      *
-     * @param imageIcon the {@link javax.swing.ImageIcon} to be brightened or darkened.
+     * @param imageIcon   the {@link javax.swing.ImageIcon} to be brightened or darkened.
      * @param scaleFactor how much the {@link javax.swing.ImageIcon} is to be brightened (if greater than 1) or darkened (if less than 1).
-     * For example, 1.2 makes the image 20% brighter whereas 0.8 makes the image 20% darker.
-     *
+     *                    For example, 1.2 makes the image 20% brighter whereas 0.8 makes the image 20% darker.
      * @return the brighter or darker image (always a new {@link javax.swing.ImageIcon} even if the scaling factor is 1.0).
      */
 

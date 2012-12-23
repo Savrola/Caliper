@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Caliper.iml" filepath="$PROJECT_DIR$/Caliper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Third Party/Third Party.iml" filepath="$PROJECT_DIR$/Third Party/Third Party.iml" />
     </modules>
   </component>
 </project>
