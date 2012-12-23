@@ -5,709 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5464cd35-ae85-4a2e-a138-8145a5db6189" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/images/10px.calendar.icon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/images/10px.red.arrow.left.double.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/images/10px.red.arrow.left.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/images/10px.red.arrow.right.double.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/images/10px.red.arrow.right.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/images/8px.red.X.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/ui/Colors.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/ui/Date_selector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/ui/Date_selector_dialog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/ui/Date_selector_panel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/ui/Navigable_date_selector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/ui/Popup_dialog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/holub/ui/Titled_date_selector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/AddComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/AverageComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/BurnComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/ColorBurnComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/ColorComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/ColorDodgeComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/ContourComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/DarkenComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/DifferenceComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/DodgeComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/ExclusionComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/HardLightComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/HueComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/LightenComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/MiscComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/MiscCompositeContext.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/MultiplyComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/NegationComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/OverlayComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/PinLightComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/RGBComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/SaturationComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/ScreenComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/SoftLightComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/SubtractComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/composite/ValueComposite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/AbstractBufferedImageOp.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ApplyMaskFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ArrayColormap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/AverageFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/BicubicScaleFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/BinaryFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/BlockFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/BlurFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/BorderFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/BoxBlurFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/BrushedMetalFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/BumpFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/CausticsFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/CellularFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ChannelMixFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/CheckFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ChromaKeyFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ChromeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/CircleFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ColorHalftoneFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/Colormap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/CompositeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/CompoundFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ContourFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ContrastFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ConvolveFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/CropFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/CrystallizeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/CurlFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/Curve.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/CurvesFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/DeinterlaceFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/DespeckleFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/DiffuseFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/DiffusionFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/DilateFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/DisplaceFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/DissolveFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/DitherFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/DoGFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/EdgeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/EmbossFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/EqualizeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ErodeAlphaFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ErodeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ExposureFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/FBMFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/FadeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/FeedbackFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/FieldWarpFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/FillFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/FlareFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/FlipFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/Flush3DFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/FourColorFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/GainFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/GammaFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/GaussianFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/GlintFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/GlowFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/Gradient.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/GradientFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/GradientWipeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/GrayFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/GrayscaleColormap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/GrayscaleFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/HSBAdjustFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/HalftoneFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/HighPassFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/Histogram.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ImageCombiningFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ImageMath.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ImageUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/InterpolateFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/InvertAlphaFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/InvertFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/IteratedFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/JavaLnFFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/KaleidoscopeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/KeyFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/LaplaceFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/LensBlurFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/LevelsFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/LifeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/LightFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/LinearColormap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/LookupFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MapColorsFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MapFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MarbleFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MarbleTexFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MaskFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MaximumFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MedianFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MinimumFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MirrorFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MotionBlurFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MotionBlurOp.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/MutatableFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/NoiseFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/OctTreeQuantizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/OffsetFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/OilFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/OpacityFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/OutlineFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/PerspectiveFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/PinchFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/PixelUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/PlasmaFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/PointFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/PointillizeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/PolarFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/PosterizeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/PremultiplyFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/QuantizeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/Quantizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/QuiltFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/RGBAdjustFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/RaysFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ReduceNoiseFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/RenderTextFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/RescaleFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/RippleFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/RotateFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SaturationFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ScaleFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ScratchFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ShadeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ShadowFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ShapeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SharpenFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ShatterFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ShearFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ShineFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SkeletonFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SkyFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SmartBlurFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SmearFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SolarizeFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SparkleFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/Spectrum.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SpectrumColormap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SphereFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SplineColormap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/StampFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SwimFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/SwizzleFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/TextureFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/ThresholdFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/TileImageFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/TransferFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/TransformFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/TransitionFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/TritoneFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/TwirlFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/UnpremultiplyFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/UnsharpFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/VariableBlurFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/WarpFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/WarpGrid.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/WaterFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/WeaveFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/WholeImageFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/WoodFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/BinaryFunction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/BlackFunction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/CellularFunction2D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/CompositeFunction1D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/CompoundFunction2D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/FBM.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/FFT.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/FractalSumFunction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/Function1D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/Function2D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/Function3D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/ImageFunction2D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/MarbleFunction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/MathFunction1D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/Noise.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/RidgedFBM.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/SCNoise.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/TurbulenceFunction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/math/VLNoise.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/vecmath/AxisAngle4f.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/vecmath/Color4f.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/vecmath/Matrix4f.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/vecmath/Point3f.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/vecmath/Point4f.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/vecmath/Quat4f.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/vecmath/Tuple3f.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/vecmath/Tuple4f.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/vecmath/Vector3f.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/jhlabs/vecmath/Vector4f.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/analysis/mxConstantCostFunction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/analysis/mxDistanceCostFunction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/analysis/mxFibonacciHeap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/analysis/mxGraphAnalysis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/analysis/mxICostFunction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/analysis/mxUnionFind.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/analysis/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/canvas/mxBasicCanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/canvas/mxGraphics2DCanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/canvas/mxGraphicsCanvas2D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/canvas/mxHtmlCanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/canvas/mxICanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/canvas/mxICanvas2D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/canvas/mxImageCanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/canvas/mxSvgCanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/canvas/mxVmlCanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/canvas/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/ClickHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/CustomCanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/FixedPoints.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/GraphEditor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/HelloWorld.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/Port.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/SchemaEditor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/UserObject.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/Validation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/BasicGraphEditor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/DefaultFileFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/EditorAboutFrame.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/EditorActions.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/EditorKeyboardHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/EditorMenuBar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/EditorPalette.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/EditorPopupMenu.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/EditorRuler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/EditorToolBar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/JTableRenderer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/SchemaEditorMenuBar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/SchemaEditorToolBar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/SchemaGraphComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/editor/ShadowBorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/actor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/alignbottom.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/aligncenter.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/alignleft.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/alignmiddle.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/alignright.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/aligntop.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/arrow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/bell.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/block_end.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/block_start.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/bold.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/bottom.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/box.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/cancel_end.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/cancel_intermediate.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/center.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/classic_end.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/classic_start.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/cloud.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/collapse.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/connect.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/connect.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/connector.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/copy.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/cube_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/cut.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/cylinder.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/delete.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/diagram.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/diamond_end.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/diamond_start.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/doubleellipse.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/down.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/dude3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/earth.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/ellipse.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/entity.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/entity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/error.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/event.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/event_end.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/event_intermediate.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/expand.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/fillcolor.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/fit.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/font.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/fontcolor.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/fork.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/gear.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/group.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/hexagon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/hline.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/house.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/house.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/image.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/inclusive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/italic.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/left.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/linecolor.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/maximize.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/merge.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/message.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/message_end.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/message_intermediate.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/middle.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/minimize.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/multiple.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/new.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/open.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/open_end.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/open_start.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/outline.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/oval_end.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/oval_start.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/package.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/pagesetup.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/pan.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/paste.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/plain.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/preferences.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/preview.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/print.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/printer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/rectangle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/redo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/resize.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/rhombus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/right.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/rounded.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/rule.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/save.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/saveas.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/select.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/server.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/straight.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/straight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/swimlane.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/terminate.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/timer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/toback.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/tofront.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/top.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/tree.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/triangle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/undo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/ungroup.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/up.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/vertical.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/vertical.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/workplace.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/wrench.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/zoom.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/zoomactual.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/zoomin.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/images/zoomout.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/basic-style.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/default-style.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/editor.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/editor_de.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/editor_es.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/editor_fr.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/editor_it.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/editor_ja.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/editor_nl.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/editor_pt.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/editor_ru.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/examples/swing/resources/editor_zh-CN.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/gd/mxGdDocument.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/gd/mxGdEdge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/gd/mxGdNode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlConstants.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlData.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlEdge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlGraph.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlKey.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlKeyManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlNode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlPort.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlShapeEdge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlShapeNode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/graphml/mxGraphMlUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxCellCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxChildChangeCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxCodecRegistry.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxGdCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxGenericChangeCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxGraphMlCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxModelCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxObjectCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxRootChangeCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxStylesheetCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxTerminalChangeCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/mxVdxCodec.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/PageShapeIDKey.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxDelegateShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxGeneralShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxMasterElement.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxMasterShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxMastersManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxPropertiesManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxStyleSheet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxStyleSheetManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxVdxConstants.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxVdxShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxVdxShapeForm.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxVdxTextParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/io/vdx/mxVdxUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/hierarchical/model/mxGraphAbstractHierarchyCell.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/hierarchical/model/mxGraphHierarchyEdge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/hierarchical/model/mxGraphHierarchyModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/hierarchical/model/mxGraphHierarchyNode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/hierarchical/model/mxGraphHierarchyRank.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/hierarchical/mxHierarchicalLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/hierarchical/stage/mxCoordinateAssignment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/hierarchical/stage/mxHierarchicalLayoutStage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/hierarchical/stage/mxMedianHybridCrossingReduction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/hierarchical/stage/mxMinimumCycleRemover.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/mxCircleLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/mxCompactTreeLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/mxEdgeLabelLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/mxFastOrganicLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/mxGraphLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/mxIGraphLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/mxOrganicLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/mxParallelEdgeLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/mxPartitionLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/mxStackLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/orthogonal/model/mxOrthogonalModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/orthogonal/model/mxPointPair.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/orthogonal/model/mxPointSequence.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/orthogonal/model/mxSegment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/orthogonal/mxOrthogonalLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/layout/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/model/mxCell.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/model/mxCellPath.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/model/mxGeometry.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/model/mxGraphModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/model/mxICell.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/model/mxIGraphModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/model/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/reader/mxDomOutputParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/reader/mxGraphViewImageReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/reader/mxGraphViewReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/reader/mxSaxOutputHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/reader/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/resources/graph.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/resources/graph_de.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/resources/graph_es.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/resources/graph_fr.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/resources/graph_it.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/resources/graph_ja.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/resources/graph_nl.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/resources/graph_pt.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/resources/graph_ru.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/resources/graph_zh.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxActorShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxArrowShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxBasicShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxCloudShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxConnectorShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxCurveLabelShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxCurveShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxCylinderShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxDefaultTextShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxDoubleEllipseShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxEllipseShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxHexagonShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxHtmlTextShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxIMarker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxIShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxITextShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxImageShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxLabelShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxLineShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxMarkerRegistry.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxRectangleShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxRhombusShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxStencilShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxSwimlaneShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/shape/mxTriangleShape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/sharing/mxSession.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/sharing/mxSharedGraphModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/sharing/mxSharedState.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/sharing/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxCellHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxCellMarker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxCellTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxConnectPreview.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxConnectionHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxEdgeHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxElbowEdgeHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxGraphHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxGraphTransferHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxInsertHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxKeyboardHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxMovePreview.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxPanningHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxRotationHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxRubberband.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxSelectionCellsHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/mxVertexHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/handler/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/images/collapsed.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/images/expanded.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/images/rotate.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/images/warning.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/mxGraphComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/mxGraphOutline.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/util/mxAnimation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/util/mxCellOverlay.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/util/mxGraphActions.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/util/mxGraphTransferable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/util/mxICellOverlay.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/util/mxMorphing.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/util/mxMouseAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/util/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/view/mxCellEditor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/view/mxCellStatePreview.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/view/mxICellEditor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/view/mxInteractiveCanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/swing/view/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxBase64.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxCellRenderer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxConstants.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxCurve.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxEvent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxEventObject.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxEventSource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxImage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxImageBundle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxLightweightLabel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxLine.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxPoint.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxRectangle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxResources.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxSpline.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxSpline1D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxUndoManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxUndoableEdit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/mxUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/png/mxPngEncodeParam.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/png/mxPngImageEncoder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/png/mxPngSuggestedPaletteEntry.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/png/mxPngTextDecoder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/AWTPathProducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/AWTPolygonProducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/AWTPolylineProducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/AbstractParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/CSSConstants.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/DefaultErrorHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/ErrorHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/ExtendedGeneralPath.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/ExtendedPathIterator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/NormalizingReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/NumberParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/ParseException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/Parser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/PathHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/PathParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/PointsHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/PointsParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/ShapeProducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/util/svg/StringNormalizingReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxCellState.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxConnectionConstraint.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxEdgeStyle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxGraph.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxGraphSelectionModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxGraphView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxLayoutManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxMultiplicity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxPerimeter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxSpaceManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxStyleRegistry.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxStylesheet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxSwimlaneManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/mxTemporaryCellStates.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/src/com/mxgraph/view/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/DebugUtilities.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettComponentInstanceName.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettConstants.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettControlMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettErrorCode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettIndividuallyAuthenticatedMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettKeywordValue.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettMessageHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettName.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettObfuscationRandom.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettObject.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettObjectInputStream.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettObjectInputStreamInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettObjectOutputStream.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettObjectOutputStreamInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettObjectRestorerRegistry.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettRequestResponseHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSession.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionPrefix.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettSessionType.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettShortResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettTypeName.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettUnauthenticatedMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GarnettUniqueEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/GenericAutomagicUpgrader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/KnowsCapabilities.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/LoginResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/LoginResponseMessageHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/LoginResultCode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/MinimalGarnettSession.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/PingListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/PingRegistry.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/SSLUtilities.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/SavrolaCapabilities.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/SavrolaCapability.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/SavrolaLoginEnvironment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/SavrolaStatus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/UserUtilities.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSession.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSessionManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/client/GarnettClientSslTools.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/examples/ExampleEmittedClass.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/examples/SimpleTestClass.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettDeserializationFailedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettIllegalArgumentException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettInvalidAccountNameException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettInvalidCharacterException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettInvalidPasswordException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettNoMessageHandlerDefinedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettNotConnectedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettObjectVersionNotSupportedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettOutBoundQueueDoneException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettPasswordTooShortException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettSSLChannelCreationFailedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettSerializationFailedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettTypeNameAlreadyRegisteredException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettTypeNameInvalidException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettTypeNameUnknownException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettTypeRegistryException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/exceptions/GarnettUnsupportedProtocolVersionException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/explore/ExploreSSL.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/resources/GarnettClient.keystore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/server/GarnettServerSslTools.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/server/GarnettSessionServerManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettClientSession.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettServerManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/simple/SimpleGarnettServerSession.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettLoginRequestMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettLoginResponseMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettPingRequestMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettPingResponseMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettRequestMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/obtuse/garnett/stdmsgs/GarnettResponseMessage.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Caliper.iml" afterPath="$PROJECT_DIR$/Caliper.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Third Party/Third Party.iml" afterPath="$PROJECT_DIR$/Third Party/Third Party.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/Third Party.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Caliper.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356229049157" ignored="false" />
+    <file path="/Dummy.txt" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356229103365" ignored="false" />
     <file path="/a.dummy" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356227953727" ignored="false" />
     <file path="/fragment.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356228244781" ignored="false" />
     <file path="/BundledKeys.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1354789076806" ignored="false" />
@@ -921,13 +224,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Navigable_date_selector.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Navigable_date_selector.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Navigable_date_selector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="51" selection-start="6616" selection-end="6616" vertical-scroll-proportion="0.43809524">
+            <state line="172" column="51" selection-start="6616" selection-end="6616" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitattributes" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitattributes">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="0" selection-start="325" selection-end="325" vertical-scroll-proportion="0.22178988">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1180,38 +492,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Third Party" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Third Party" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2077,18 +1357,18 @@
     <frame x="348" y="22" width="1880" height="1422" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17177914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17127496" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13166912" sideWeight="0.6839339" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3882175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3156682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3156682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995633" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32988003" sideWeight="0.6843318" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32988003" sideWeight="0.82872504" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843858" sideWeight="0.6839339" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2138,7 +1418,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lots and lots of cleanup.&#10;Last commit before moving garnett to its own IntelliJ project.&#10;Add a .gitattributes file to specify how line endings are to be handled." />
+    <option name="LAST_COMMIT_MESSAGE" value="Move the Third Party module into its own project." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -2167,6 +1447,7 @@
     <MESSAGE value="Copy NanoHTTPD and PostParameters over from LPT." />
     <MESSAGE value="Lots and lots of cleanup.&#10;Last commit before moving garnett to its own IntelliJ project." />
     <MESSAGE value="Lots and lots of cleanup.&#10;Last commit before moving garnett to its own IntelliJ project.&#10;Add a .gitattributes file to specify how line endings are to be handled." />
+    <MESSAGE value="Move the Third Party module into its own project." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2223,11 +1504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Date_selector_dialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="133" column="11" selection-start="4815" selection-end="4815" vertical-scroll-proportion="0.0">
@@ -2279,10 +1555,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Navigable_date_selector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="51" selection-start="6616" selection-end="6616" vertical-scroll-proportion="0.43809524">
+        <state line="172" column="51" selection-start="6616" selection-end="6616" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="325" selection-end="325" vertical-scroll-proportion="0.22178988">
+          <folding />
         </state>
       </provider>
     </entry>
