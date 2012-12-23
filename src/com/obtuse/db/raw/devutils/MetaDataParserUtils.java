@@ -14,7 +14,7 @@ import java.util.*;
  * Java class that describes the metadata of each class.
  * <p/>
  * Copyright © 2012 Daniel Boulet.
- * Those parts which describe Invidi-specific database tables are Copyright © 2009 Invidi Technologies Corporation.
+ * Those parts which describe Invidi-specific database tables are Copyright © 2008-2009 Invidi Technologies Corporation.
  */
 
 @SuppressWarnings({ "ClassWithoutToString" })

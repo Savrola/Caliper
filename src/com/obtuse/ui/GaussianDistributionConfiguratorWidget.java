@@ -12,7 +12,6 @@ import java.util.*;
 /**
  * A widget for configurating a gaussian distribution.
  * <p/>
- * Copyright © 2012 Invidi Technologies Corporation
  * Copyright © 2012 Obtuse Systems Corporation
  */
 

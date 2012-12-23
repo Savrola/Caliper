@@ -10,7 +10,6 @@ import java.util.*;
 /**
  * Various methods for parsing and just generally managing dates.
  * <p/>
- * Copyright © 2009 Invidi Technologies Corporation
  * Copyright © 2009 Daniel Boulet
  */
 

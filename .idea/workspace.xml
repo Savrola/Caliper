@@ -5,13 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5464cd35-ae85-4a2e-a138-8145a5db6189" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Third Party/Third Party.iml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NOTICE.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Certs/Makefile" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java" afterPath="$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/ui/GaussianDistributionConfiguratorWidget.java" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/GaussianDistributionConfiguratorWidget.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/exceptions/HowDidWeGetHereError.java" afterPath="$PROJECT_DIR$/src/com/obtuse/exceptions/HowDidWeGetHereError.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParser.java" afterPath="$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParserUtils.java" afterPath="$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParserUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/util/ObtuseXMLUtils.java" afterPath="$PROJECT_DIR$/src/com/obtuse/util/ObtuseXMLUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/util/exceptions/ParsingException.java" afterPath="$PROJECT_DIR$/src/com/obtuse/util/exceptions/ParsingException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/ui/StackedGaussianDistributionsDrawing.java" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/StackedGaussianDistributionsDrawing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/util/WeightedGaussianDistribution.java" afterPath="$PROJECT_DIR$/src/com/obtuse/util/WeightedGaussianDistribution.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Caliper.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356229103365" ignored="false" />
-    <file path="/a.dummy" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356227953727" ignored="false" />
+    <file path="/Dummy.txt" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356231087112" ignored="false" />
+    <file path="/a.dummy" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356231413287" ignored="false" />
     <file path="/fragment.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356228244781" ignored="false" />
     <file path="/BundledKeys.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1354789076806" ignored="false" />
     <file path="/GarnettSessionPrefix.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1354789095986" ignored="false" />
@@ -197,93 +208,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Date_selector_dialog.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Date_selector_dialog.java">
+      <file leaf-file-name="README.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/README.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="11" selection-start="4815" selection-end="4815" vertical-scroll-proportion="0.0">
+            <state line="0" column="41" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Date_selector.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Date_selector.java">
+      <file leaf-file-name="DateUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="16" selection-start="3324" selection-end="3324" vertical-scroll-proportion="0.0">
+            <state line="12" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Date_selector_panel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Date_selector_panel.java">
+      <file leaf-file-name="ObtuseXMLUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ObtuseXMLUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="366" column="53" selection-start="13677" selection-end="13677" vertical-scroll-proportion="0.0">
+            <state line="520" column="0" selection-start="15906" selection-end="15906" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Navigable_date_selector.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Navigable_date_selector.java">
+      <file leaf-file-name="WeightedGaussianDistribution.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/WeightedGaussianDistribution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="51" selection-start="6616" selection-end="6616" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitattributes" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitattributes">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="325" selection-end="325" vertical-scroll-proportion="0.22178988">
+            <state line="3" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageIconUtils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java">
+      <file leaf-file-name="ParsingException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/exceptions/ParsingException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+            <state line="5" column="46" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageIconUtilsCopy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Third Party/src/com/obtuse/util/ImageIconUtilsCopy.java">
+      <file leaf-file-name="DbClassGeneratorV2.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/DbClassGeneratorV2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+            <state line="209" column="41" selection-start="7871" selection-end="7871" vertical-scroll-proportion="0.2859922">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Titled_date_selector.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Titled_date_selector.java">
+      <file leaf-file-name="MetaDataParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="24" selection-start="3587" selection-end="3587" vertical-scroll-proportion="0.0">
+            <state line="118" column="72" selection-start="8110" selection-end="8110" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HSBAdjustFilter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Third Party/src/com/jhlabs/image/HSBAdjustFilter.java">
+      <file leaf-file-name="MetaDataParserUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParserUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="0" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.0">
+            <state line="412" column="72" selection-start="19753" selection-end="19753" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="GaussianDistributionConfiguratorWidget.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/GaussianDistributionConfiguratorWidget.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="14" column="0" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StackedGaussianDistributionsDrawing.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/StackedGaussianDistributionsDrawing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -307,22 +316,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/obtuse/ui/SortedJPanel.java" />
-        <option value="$PROJECT_DIR$/src/com/obtuse/db/raw/ti/TableInfo.java" />
-        <option value="$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/TableMetaData.java" />
-        <option value="$PROJECT_DIR$/src/com/obtuse/util/Trace.java" />
-        <option value="$PROJECT_DIR$/src/com/obtuse/util/TwoDimensionalTreeMap.java" />
-        <option value="$PROJECT_DIR$/src/com/obtuse/ui/WindowWithMenus.java" />
-        <option value="$PROJECT_DIR$/src/fi/iki/nanohttpd/NanoHTTPD.java" />
-        <option value="$PROJECT_DIR$/Third Party/src/com/holub/ui/Date_selector_dialog.java" />
-        <option value="$PROJECT_DIR$/Third Party/src/com/holub/ui/Titled_date_selector.java" />
-        <option value="$PROJECT_DIR$/Third Party/src/com/holub/ui/Date_selector.java" />
-        <option value="$PROJECT_DIR$/Third Party/src/com/holub/ui/Date_selector_panel.java" />
         <option value="$PROJECT_DIR$/Third Party/src/com/jhlabs/image/HSBAdjustFilter.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtilsCopy.java" />
         <option value="$PROJECT_DIR$/Third Party/src/com/holub/ui/Navigable_date_selector.java" />
         <option value="$PROJECT_DIR$/../Third Party/src/com/holub/ui/Navigable_date_selector.java" />
+        <option value="$PROJECT_DIR$/LICENSE.txt" />
+        <option value="$PROJECT_DIR$/NOTICE.txt" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/exceptions/HowDidWeGetHereError.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/GaussianDistributionConfiguratorWidget.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/StackedGaussianDistributionsDrawing.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/ObtuseXMLUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/WeightedGaussianDistribution.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/exceptions/ParsingException.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParser.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParserUtils.java" />
       </list>
     </option>
   </component>
@@ -463,16 +472,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Caliper" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -826,6 +825,10 @@
               <option name="myItemId" value="obtuse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceptions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -985,18 +988,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Certs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1015,15 +1014,16 @@
     <property name="options.lastSelected" value="settings.github" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mail Prefs/Rabbitkettle.ipr" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1360,21 +1360,21 @@
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17127496" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13166912" sideWeight="0.6839339" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28187403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3882175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3156682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995633" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32988003" sideWeight="0.82872504" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33369684" sideWeight="0.82872504" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843858" sideWeight="0.6839339" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843858" sideWeight="0.6839339" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28187403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3156682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27726576" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1418,7 +1418,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move the Third Party module into its own project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete the directory hierarchy that used to contain the Third Party module." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1448,6 +1448,7 @@
     <MESSAGE value="Lots and lots of cleanup.&#10;Last commit before moving garnett to its own IntelliJ project." />
     <MESSAGE value="Lots and lots of cleanup.&#10;Last commit before moving garnett to its own IntelliJ project.&#10;Add a .gitattributes file to specify how line endings are to be handled." />
     <MESSAGE value="Move the Third Party module into its own project." />
+    <MESSAGE value="Delete the directory hierarchy that used to contain the Third Party module." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1457,114 +1458,114 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/TwoDimensionalTreeMap.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="48" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/WindowWithMenus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="27" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fi/iki/nanohttpd/NanoHTTPD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="22" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.0">
+        <state line="10" column="15" selection-start="110" selection-end="110" vertical-scroll-proportion="0.14913657">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ObtuseUtil5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="442" column="0" selection-start="12616" selection-end="12616" vertical-scroll-proportion="0.0">
+        <state line="29" column="34" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/ti/TableInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="38" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Third Party/src/com/jhlabs/image/ApplyMaskFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/LICENSE.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Date_selector_dialog.java">
+    <entry file="file://$PROJECT_DIR$/src/fi/iki/nanohttpd/NanoHTTPD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="11" selection-start="4815" selection-end="4815" vertical-scroll-proportion="0.0">
+        <state line="1093" column="0" selection-start="30129" selection-end="31976" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Titled_date_selector.java">
+    <entry file="file://$PROJECT_DIR$/NOTICE.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="24" selection-start="3587" selection-end="3587" vertical-scroll-proportion="0.0">
+        <state line="14" column="12" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Date_selector.java">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/exceptions/HowDidWeGetHereError.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="16" selection-start="3324" selection-end="3324" vertical-scroll-proportion="0.0">
+        <state line="5" column="46" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Date_selector_panel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/GaussianDistributionConfiguratorWidget.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="366" column="53" selection-start="13677" selection-end="13677" vertical-scroll-proportion="0.0">
+        <state line="14" column="0" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Third Party/src/com/jhlabs/image/HSBAdjustFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/StackedGaussianDistributionsDrawing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.0">
+        <state line="13" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+        <state line="12" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Third Party/src/com/obtuse/util/ImageIconUtilsCopy.java">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ObtuseXMLUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+        <state line="520" column="0" selection-start="15906" selection-end="15906" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Third Party/src/com/holub/ui/Navigable_date_selector.java">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/WeightedGaussianDistribution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="51" selection-start="6616" selection-end="6616" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="3" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/exceptions/ParsingException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="325" selection-end="325" vertical-scroll-proportion="0.22178988">
+        <state line="5" column="46" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="41" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParserUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="412" column="72" selection-start="19753" selection-end="19753" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="72" selection-start="8110" selection-end="8110" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/DbClassGeneratorV2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="209" column="41" selection-start="7871" selection-end="7871" vertical-scroll-proportion="0.2859922">
           <folding />
         </state>
       </provider>

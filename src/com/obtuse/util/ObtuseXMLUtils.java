@@ -430,8 +430,6 @@ public class ObtuseXMLUtils {
 
         String targetNodeName = targetNode.getNodeName();
 
-//        targetNodeName = "com.invidi.madison.util." + targetNodeName;
-
         Class<?> targetClass = null;
 
         for ( Package targetPackage : expectedPackages ) {
@@ -519,14 +517,6 @@ public class ObtuseXMLUtils {
                 return null;
 
             }
-
-//        } catch ( ClassNotFoundException e ) {
-//
-//            messageProxy.error(
-//                    "Unknown/unsupported " + name + ":  " + targetNodeName,
-//                    "The " + name + " classes must be in the com.invidi.madison.util package.",
-//                    "Ok"
-//            );
 
         } catch ( NoSuchMethodException e ) {
 

@@ -3,7 +3,7 @@ package com.obtuse.exceptions;
 /**
  * Thrown if something truly unexpected happens.
  * <p>
- * Copyright © 2008 Invidi Technologies Corporation
+ * Copyright © 2008 Obtuse Systems Corporation
  */
 
 public class HowDidWeGetHereError

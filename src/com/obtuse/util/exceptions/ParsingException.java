@@ -3,7 +3,7 @@ package com.obtuse.util.exceptions;
 /**
  * Thrown when something goes wrong parsing.
  * <p>
- * Copyright © 2009 Invidi Technologies Corporation
+ * Copyright © 2009 Obtuse Systems Corporation
  */
 
 @SuppressWarnings("SameParameterValue")

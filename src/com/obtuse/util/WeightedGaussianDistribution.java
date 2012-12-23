@@ -1,7 +1,6 @@
 package com.obtuse.util;
 
 /*
- * Copyright © 2011 Invidi Technologies Corporation
  * Copyright © 2011 Obtuse Systems Corporation
  */
 
