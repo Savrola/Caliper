@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Jetbrains annotations">
     <CLASSES>
-      <root url="jar://$APPLICATION_HOME_DIR$/redist/annotations.jar!/" />
+      <root url="jar://$PROJECT_DIR$/annotations.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -71,15 +71,10 @@ public class TrackedWindow extends JFrame {
     private void saveWindowGeometry( Rectangle windowGeometry ) {
 
 //        Logger.logMsg( _windowGeometryPrefsKey + ":  saving window geometry \"" + windowGeometry + "\"" );
-        if ( BasicProgramConfigInfo.getPreferences() != null ) {
-
-            BasicProgramConfigInfo.getPreferences().putByteArray(
+        BasicProgramConfigInfo.putPreferenceIfEnabled(
                     _windowGeometryPrefsKey,
                     ObtuseUtil5.getSerializedVersion( windowGeometry, false )
-            );
-
-        }
-
+        );
     }
 
     @SuppressWarnings({ "UnusedDeclaration" })
@@ -114,9 +109,9 @@ public class TrackedWindow extends JFrame {
 
     public Rectangle getSavedGeometry() {
 
-        byte[] savedLocationBytes = BasicProgramConfigInfo.getPreferences() == null ? null : BasicProgramConfigInfo.getPreferences().getByteArray(
+        byte[] savedLocationBytes = BasicProgramConfigInfo.getPreferenceIfEnabled(
                 _windowGeometryPrefsKey,
-                null
+                (byte[])null
         );
         Rectangle savedGeometry;
         if ( savedLocationBytes == null ) {

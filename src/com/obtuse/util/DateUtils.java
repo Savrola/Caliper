@@ -5,7 +5,9 @@ import com.obtuse.util.exceptions.ParsingException;
 import javax.management.timer.Timer;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * Various methods for parsing and just generally managing dates.
@@ -681,12 +683,16 @@ public class DateUtils {
         String rval = "";
         String spacing = "";
 
+        boolean formattedSomething = false;
+
         if ( millis >= Timer.ONE_WEEK ) {
 
             long weeks = millis / Timer.ONE_WEEK;
             rval += spacing + weeks + ( shortForm ? "w" : ( " week" + ( weeks == 1L ? "" : "s" ) ) );
             millis %= Timer.ONE_WEEK;
             spacing = " ";
+
+            formattedSomething = true;
 
         }
 
@@ -697,6 +703,8 @@ public class DateUtils {
             millis %= Timer.ONE_DAY;
             spacing = " ";
 
+            formattedSomething = true;
+
         }
 
         if ( millis >= Timer.ONE_HOUR ) {
@@ -705,6 +713,8 @@ public class DateUtils {
             rval += spacing + hours + ( shortForm ? "h" : ( " hour" + ( hours == 1L ? "" : "s" ) ) );
             millis %= Timer.ONE_HOUR;
             spacing = " ";
+
+            formattedSomething = true;
 
         }
 
@@ -715,9 +725,11 @@ public class DateUtils {
             millis %= Timer.ONE_MINUTE;
             spacing = " ";
 
+            formattedSomething = true;
+
         }
 
-        if ( millis > 0L ) {
+        if ( millis > 0L || !formattedSomething ) {
 
             long seconds = millis / Timer.ONE_SECOND;
             if ( shortForm && millis % Timer.ONE_SECOND == 0L ) {

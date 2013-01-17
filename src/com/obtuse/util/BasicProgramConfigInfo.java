@@ -154,6 +154,60 @@ public class BasicProgramConfigInfo {
 
     }
 
+    public static String getPreferenceIfEnabled( String prefsKey, String defaultValue ) {
+
+        if ( BasicProgramConfigInfo.s_preferences == null ) {
+
+            return defaultValue;
+
+        } else {
+
+            return BasicProgramConfigInfo.s_preferences.get( prefsKey, defaultValue );
+
+        }
+
+    }
+
+    public static byte[] getPreferenceIfEnabled( String prefsKey, byte[] defaultValue ) {
+
+        if ( BasicProgramConfigInfo.s_preferences == null ) {
+
+            return defaultValue;
+
+        } else {
+
+            return BasicProgramConfigInfo.s_preferences.getByteArray( prefsKey, defaultValue );
+
+        }
+
+    }
+
+    public static void putPreferenceIfEnabled( String prefsKey, String value ) {
+
+        if ( BasicProgramConfigInfo.s_preferences != null ) {
+
+            BasicProgramConfigInfo.s_preferences.put( prefsKey, value );
+
+        }
+
+    }
+
+    public static void putPreferenceIfEnabled( String prefsKey, byte[] value ) {
+
+        if ( BasicProgramConfigInfo.s_preferences != null ) {
+
+            BasicProgramConfigInfo.s_preferences.putByteArray( prefsKey, value );
+
+        }
+
+    }
+
+    public static boolean isPreferencesEnabled() {
+
+        return BasicProgramConfigInfo.s_preferences != null;
+
+    }
+
     public static String getLogFileNameFormat() {
 
         return BasicProgramConfigInfo.s_logFileNameFormat;

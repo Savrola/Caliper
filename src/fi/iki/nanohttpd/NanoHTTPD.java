@@ -1,11 +1,16 @@
 package fi.iki.nanohttpd;
 
-import com.obtuse.util.*;
+import com.obtuse.util.Logger;
+import com.obtuse.util.ObtuseUtil5;
+import com.obtuse.util.PostParameters;
 import org.jetbrains.annotations.Nullable;
 
 import javax.net.ServerSocketFactory;
 import java.io.*;
-import java.net.*;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.URLEncoder;
 import java.nio.ByteBuffer;
 import java.util.*;
 
@@ -274,7 +279,9 @@ public abstract class NanoHTTPD {
     public static final String
             MIME_PLAINTEXT = "text/plain",
             MIME_HTML = "text/html",
-            MIME_DEFAULT_BINARY = "application/octet-stream";
+            MIME_DEFAULT_BINARY = "application/octet-stream",
+            MIME_TAR = "application/x-tar",
+            MIME_TGZ = "application/x-compressed";
 
     protected abstract int getMaxUploadSize();
 
@@ -578,9 +585,21 @@ public abstract class NanoHTTPD {
 
                     sendError( NanoHTTPD.HTTP_INTERNALERROR, "SERVER INTERNAL ERROR: Serve() returned a null response." );
 
-                } else {
+                } else if ( HTTP_OK.equals( r.getStatus() ) ) {
 
                     sendResponse( r.getStatus(), r.getMimeType(), r.getHeader(), r.getData() );
+
+                } else {
+
+                    if ( r.getData() == null ) {
+
+                        sendError( r.getStatus(), "unable to satisfy request" );
+
+                    } else {
+
+                        sendError( r.getStatus(), r.getData() );
+
+                    }
 
                 }
 
@@ -624,7 +643,7 @@ public abstract class NanoHTTPD {
         }
 
         /**
-         * Returns an error message as a HTTP response and throws InterruptedException to stop furhter request
+         * Returns an error message as a HTTP response and throws InterruptedException to stop further request
          * processing.
          *
          * @param status the status code to send.
@@ -638,6 +657,25 @@ public abstract class NanoHTTPD {
                 InterruptedException {
 
             sendResponse( status, NanoHTTPD.MIME_PLAINTEXT, null, new ByteArrayInputStream( msg.getBytes() ) );
+            throw new InterruptedException();
+
+        }
+
+        /**
+         * Returns an error message as a HTTP response and throws InterruptedException to stop further request
+         * processing.
+         *
+         * @param status the status code to send.
+         * @param data   an input stream containing the message to send.
+         *
+         * @throws InterruptedException (always thrown) to abort the operation.
+         */
+
+        private void sendError( String status, InputStream data )
+                throws
+                InterruptedException {
+
+            sendResponse( status, NanoHTTPD.MIME_PLAINTEXT, null, data );
             throw new InterruptedException();
 
         }
@@ -725,6 +763,14 @@ public abstract class NanoHTTPD {
                 // Couldn't write? No can do.
 
                 ObtuseUtil5.closeQuietly( _mySocket );
+
+            } finally {
+
+                if ( data != null ) {
+
+                    ObtuseUtil5.closeQuietly( data );
+
+                }
 
             }
 

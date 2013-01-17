@@ -5,18 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5464cd35-ae85-4a2e-a138-8145a5db6189" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/obtuse/generic/OkPopupMessageWindow.form" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/OkPopupMessageWindow.form" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/obtuse/generic/OkPopupMessageWindow.java" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/OkPopupMessageWindow.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/obtuse/generic/YesNoPopupMessageWindow.form" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/YesNoPopupMessageWindow.form" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/obtuse/generic/YesNoPopupMessageWindow.java" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/YesNoPopupMessageWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/ui/LogsWindow.java" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/LogsWindow.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/annotations.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/util/BasicProgramConfigInfo.java" afterPath="$PROJECT_DIR$/src/com/obtuse/util/BasicProgramConfigInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java" afterPath="$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Jetbrains_annotations.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Jetbrains_annotations.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NOTICE.txt" afterPath="$PROJECT_DIR$/NOTICE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fi/iki/nanohttpd/NanoHTTPD.java" afterPath="$PROJECT_DIR$/src/fi/iki/nanohttpd/NanoHTTPD.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obtuse/ui/TrackedWindow.java" afterPath="$PROJECT_DIR$/src/com/obtuse/ui/TrackedWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Caliper.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356249404067" ignored="false" />
-    <file path="/a.dummy" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356231413287" ignored="false" />
-    <file path="/fragment.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356249232479" ignored="false" />
+    <file path="/Dummy.txt" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358390588240" ignored="false" />
+    <file path="/a.dummy" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358305800820" ignored="false" />
+    <file path="/fragment.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358316649949" ignored="false" />
     <file path="/BundledKeys.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1354789076806" ignored="false" />
     <file path="/GarnettSessionPrefix.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1354789095986" ignored="false" />
     <file path="$PROJECT_DIR$/../Misc - very old stuff/src/com/obtuse/SymLinkChecker.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1355303934483" ignored="false" />
@@ -34,6 +36,92 @@
     <file path="$PROJECT_DIR$/../Garnett/src/com/obtuse/garnett/UserUtilities.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356226795772" ignored="false" />
     <file path="$PROJECT_DIR$/../Safedoor Couchdb/.idea/workspace.xml" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356228330082" ignored="false" />
     <file path="/Date_selector_panel.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356228018387" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/dbdata/Tuple.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305275227" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/ti/DBShort.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047571" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/ti/DBTimestamptz.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047572" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/ti/DBValue.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047572" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/ti/DBBoolean.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047572" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/ti/DBInt.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047568" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/devutils/TableMetaData.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047572" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/ti/TableInfo.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305275227" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/ui/JListManager.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/ui/MultiPointSlider.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/ui/SortedJPanel.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/ui/SimpleTableCellRenderer.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/ArgYYYY_MM_DD_Date.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/DateUtils.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/ArgString.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/ButtonOwner.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/ArgYesNo.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/ImmutableDate.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/Logger.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/LoggerListener.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/ObtuseUtil5.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/OrderedEntity.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/RangeFactory.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/Ranges.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/QuitCatcher.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/Range.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/TreeSorter.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/TraceHook.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/ThreeDimensionalTreeMap.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/UniquelyNamedEntity.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/TwoDimensionalTreeMap.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/util/UniqueEntity.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304717716" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/ec/util/MersenneTwister.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304870780" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/ec/util/MersenneTwisterFast.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356304871989" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/ti/DBSerial.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047568" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/dbdata/DBInet.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047568" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/devutils/MetaDataParser.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047568" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/devutils/MetaDataParserUtils.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047571" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/devutils/DbClassGeneratorV2.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047571" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/ElephantDBServices.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305275227" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/PostgresConnection.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305347356" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/ti/DBByteArray.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047571" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/devutils/ColumnMetaData.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047571" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/devutils/ExpectedTableInfo.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305047572" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/raw/dbdata/Tuple2.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305275227" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/exceptions/ObtuseJDBCgetConnectionFailedException.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305347356" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/db/exceptions/ObtuseJDBCDriverLoadFailedException.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305347356" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/ui/testanddemo/JSliderTest.form" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305503588" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/ui/testanddemo/JSliderTest.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305503588" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/ui/testanddemo/MpsTest2.form" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305525213" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/ui/testanddemo/MpsTest2.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305525213" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/ui/testanddemo/MpsTest.form" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305525213" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/src/com/obtuse/ui/testanddemo/MpsTest.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1356305525490" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Mahler/src/com/savrola/picklebarrel/mahler/MahlerHTTPD.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358162825467" ignored="false" />
+    <file path="/MahlerHTTPD.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358162825467" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Mahler/src/com/savrola/picklebarrel/mahler/MainMahlerWindow.form" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358036091543" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Mahler/src/com/savrola/picklebarrel/mahler/MainMahlerWindow.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358163432019" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Mahler/src/com/savrola/picklebarrel/mahler/NodesTableModel.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357455566840" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Pickle Barrel/src/com/savrola/picklebarrel/util/NodesTableModel.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358163286894" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Pickle Barrel/src/com/savrola/picklebarrel/util/NodeInfo.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357459119440" ignored="false" />
+    <file path="/NodeInfo.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357458439580" ignored="false" />
+    <file path="/a.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358306264152" ignored="false" />
+    <file path="/sample.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357719546805" ignored="false" />
+    <file path="/NodesTableModel.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358163279934" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Pickle Barrel/src/com/savrola/picklebarrel/util/ClusterNodeInfo.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358162691919" ignored="false" />
+    <file path="/ClusterNodeInfo.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358035498845" ignored="false" />
+    <file path="/MainMahlerWindow.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358162634057" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Mahler/src/com/savrola/picklebarrel/mahler/Mahler.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358349840531" ignored="false" />
+    <file path="/Mahler.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358306658195" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pipestone/.idea/workspace.xml" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357554865092" ignored="false" />
+    <file path="$PROJECT_DIR$/../Benoit/Obtuse/src/com/obtuse/util/Measure.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357553877892" ignored="false" />
+    <file path="$PROJECT_DIR$/../Benoit/Benoit2/src/com/obtuse/benoit2/util/BenoitByteBuffer.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357554061561" ignored="false" />
+    <file path="$PROJECT_DIR$/../Benoit/Benoit2/src/com/obtuse/benoit2/ui/BenoitClassBrowserWindow.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357554200640" ignored="false" />
+    <file path="$PROJECT_DIR$/../Benoit/Benoit2/src/com/obtuse/benoit2/project/BenoitProject.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357554210068" ignored="false" />
+    <file path="$PROJECT_DIR$/../Benoit/Benoit2/src/com/obtuse/benoit2/ui/BenoitClassEditorWindow.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357554227413" ignored="false" />
+    <file path="$PROJECT_DIR$/../Benoit/Benoit/src/com/obtuse/benoit/gui/old/MetaDataManagerWindow.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357554496048" ignored="false" />
+    <file path="/File Header.txt.ft" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357720005707" ignored="false" />
+    <file path="/DateUtils.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357725692233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Pickle Barrel/src/com/savrola/picklebarrel/util/IdentifyChangeHandler.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357727363150" ignored="false" />
+    <file path="/IdentifyChangeHandler.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1357726448514" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Mahler/src/com/savrola/picklebarrel/mahler/play/ActiveTable.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358027965235" ignored="false" />
+    <file path="/ActiveTable.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358026136494" ignored="false" />
+    <file path="$PROJECT_DIR$/../Pickle Barrel/Pickle Barrel/src/com/savrola/picklebarrel/util/NodesTableOwner.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358031697168" ignored="false" />
+    <file path="/NodesTableOwner.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358031644615" ignored="false" />
+    <file path="/BasicProgramConfigInfo.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358391139532" ignored="false" />
+    <file path="/TrackedWindow.java" changelist="5464cd35-ae85-4a2e-a138-8145a5db6189" time="1358391157083" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,41 +145,6 @@
     <groupTables value="false" />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </breakpoint_any>
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/src/com/obtuse/util/ButtonInfo.java" line="100" class="com.obtuse.util.ButtonInfo" package="com.obtuse.util">
         <option name="ENABLED" value="true" />
@@ -192,6 +245,41 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -201,44 +289,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BundledKeys.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/dbdata/BundledKeys.java">
+      <file leaf-file-name="NOTICE.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NOTICE.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
+            <state line="15" column="12" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OkPopupMessageWindow.form" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/OkPopupMessageWindow.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OkPopupMessageWindow.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/OkPopupMessageWindow.java">
+      <file leaf-file-name="DateUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="22" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0">
+            <state line="42" column="44" selection-start="2483" selection-end="2483" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YesNoPopupMessageWindow.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/YesNoPopupMessageWindow.java">
+      <file leaf-file-name="MacCustomization.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/MacCustomization.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="811" selection-end="811" vertical-scroll-proportion="0.6869648">
+            <state line="116" column="26" selection-start="3565" selection-end="3565" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YesNoPopupMessageWindow.form" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/YesNoPopupMessageWindow.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
+      <file leaf-file-name="MultiPointSlider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/MultiPointSlider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="45" selection-start="2732" selection-end="2732" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ButtonInfo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ButtonInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="13" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicProgramConfigInfo.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/BasicProgramConfigInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="170" column="70" selection-start="5195" selection-end="5195" vertical-scroll-proportion="0.58949417">
+              <folding>
+                <element signature="e#268#316#0" expanded="true" />
+                <element signature="e#1935#1974#1" expanded="true" />
+                <element signature="e#2006#2045#1" expanded="true" />
+                <element signature="e#2082#2121#1" expanded="true" />
+                <element signature="e#2156#2195#0" expanded="true" />
+                <element signature="e#3801#3839#0" expanded="true" />
+                <element signature="e#4292#4330#0" expanded="true" />
+                <element signature="e#4663#4701#0" expanded="true" />
+                <element signature="e#6280#6318#0" expanded="true" />
+                <element signature="e#6478#6516#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrackedWindow.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/TrackedWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="114" column="10" selection-start="3087" selection-end="3087" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogsWindow.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/LogsWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="246" column="0" selection-start="7089" selection-end="7089" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageIconUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="35" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/README.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="97" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -260,11 +408,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtilsCopy.java" />
-        <option value="$PROJECT_DIR$/Third Party/src/com/holub/ui/Navigable_date_selector.java" />
-        <option value="$PROJECT_DIR$/../Third Party/src/com/holub/ui/Navigable_date_selector.java" />
         <option value="$PROJECT_DIR$/LICENSE.txt" />
-        <option value="$PROJECT_DIR$/NOTICE.txt" />
         <option value="$PROJECT_DIR$/src/com/obtuse/exceptions/HowDidWeGetHereError.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/ui/GaussianDistributionConfiguratorWidget.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/ui/StackedGaussianDistributionsDrawing.java" />
@@ -276,6 +420,10 @@
         <option value="$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParserUtils.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/ui/OkPopupMessageWindow.java" />
         <option value="$PROJECT_DIR$/src/com/obtuse/ui/YesNoPopupMessageWindow.java" />
+        <option value="$PROJECT_DIR$/NOTICE.txt" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/TrackedWindow.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/ui/LogsWindow.java" />
+        <option value="$PROJECT_DIR$/src/com/obtuse/util/BasicProgramConfigInfo.java" />
       </list>
     </option>
   </component>
@@ -284,8 +432,8 @@
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="348" />
-    <option name="y" value="22" />
+    <option name="x" value="672" />
+    <option name="y" value="30" />
     <option name="width" value="1880" />
     <option name="height" value="1422" />
   </component>
@@ -420,6 +568,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -451,40 +609,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nanohttpd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -534,128 +658,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exceptions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YesNoPopupMessageWindow" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OkPopupMessageWindow" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MpsTest" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -709,196 +713,6 @@
               <option name="myItemId" value="obtuse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GaussianDistributionConfiguratorWidget" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ListPlay" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exceptions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Caliper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="obtuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dbdata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -907,20 +721,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_directory_selection" value="$PROJECT_DIR$/Third Party/src/com" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="RESOURCE_BUNDLE_SPLITTER_PROPORTION" value="0.5" />
-    <property name="options.lastSelected" value="settings.github" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mail Prefs/Rabbitkettle.ipr" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
@@ -1259,29 +1074,34 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="348" y="22" width="1880" height="1422" extended-state="0" />
+    <frame x="672" y="30" width="1880" height="1422" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.6839339" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17127496" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1308615" sideWeight="0.6839339" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28187403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3882175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3156682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995633" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33369684" sideWeight="0.82872504" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33315158" sideWeight="0.82872504" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28187403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27726576" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1323,7 +1143,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor cleanup and reorganization." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor cleanup and reorganization (commit the files that got forgotten on the first attempt)." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1356,6 +1176,7 @@
     <MESSAGE value="Delete the directory hierarchy that used to contain the Third Party module." />
     <MESSAGE value="Cleanup copyrights and add LICENSE.txt and NOTICE.txt files. Caliper is now licensed under the terms of the Apache License, version 2.0." />
     <MESSAGE value="Minor cleanup and reorganization." />
+    <MESSAGE value="Minor cleanup and reorganization (commit the files that got forgotten on the first attempt)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1365,88 +1186,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/exceptions/HowDidWeGetHereError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="46" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/DbClassGeneratorV2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="35" selection-start="8830" selection-end="8830" vertical-scroll-proportion="0.5083933">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/exceptions/ParsingException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="46" selection-start="139" selection-end="139" vertical-scroll-proportion="0.075939246">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/WeightedGaussianDistribution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.04556355">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ObtuseXMLUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="520" column="0" selection-start="15906" selection-end="15906" vertical-scroll-proportion="0.17285945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.104395606">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="41" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="72" selection-start="8110" selection-end="8110" vertical-scroll-proportion="0.23076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/devutils/MetaDataParserUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="412" column="72" selection-start="19753" selection-end="19753" vertical-scroll-proportion="0.23076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/GaussianDistributionConfiguratorWidget.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="302" selection-end="302" vertical-scroll-proportion="0.104395606">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/StackedGaussianDistributionsDrawing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="0.104395606">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/obtuse/db/raw/dbdata/BundledKeys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="10" column="13" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/OkPopupMessageWindow.form">
@@ -1468,8 +1210,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/YesNoPopupMessageWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="811" selection-end="811" vertical-scroll-proportion="0.6869648">
+        <state line="32" column="32" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ec/util/MersenneTwister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="29" selection-start="7708" selection-end="7708" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="97" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NOTICE.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="12" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="44" selection-start="2483" selection-end="2483" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/MacCustomization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="26" selection-start="3565" selection-end="3565" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/MultiPointSlider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="45" selection-start="2732" selection-end="2732" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ImageIconUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="35" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/ButtonInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/TrackedWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="10" selection-start="3087" selection-end="3087" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/ui/LogsWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="246" column="0" selection-start="7089" selection-end="7089" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obtuse/util/BasicProgramConfigInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="170" column="70" selection-start="5195" selection-end="5195" vertical-scroll-proportion="0.58949417">
+          <folding>
+            <element signature="e#268#316#0" expanded="true" />
+            <element signature="e#1935#1974#1" expanded="true" />
+            <element signature="e#2006#2045#1" expanded="true" />
+            <element signature="e#2082#2121#1" expanded="true" />
+            <element signature="e#2156#2195#0" expanded="true" />
+            <element signature="e#3801#3839#0" expanded="true" />
+            <element signature="e#4292#4330#0" expanded="true" />
+            <element signature="e#4663#4701#0" expanded="true" />
+            <element signature="e#6280#6318#0" expanded="true" />
+            <element signature="e#6478#6516#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1500,9 +1330,21 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Shared/Parsers</last-edited>
+          <last-edited>Caliper</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1550,7 +1392,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Postgres</last-edited>
+          <last-edited>Jetbrains annotations</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
