@@ -1,6 +1,6 @@
 package com.obtuse.ui;
 
-import com.obtuse.util.ObtuseUtil5;
+import com.obtuse.util.ObtuseUtil;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -297,7 +297,7 @@ public abstract class YesNoPopupMessageWindow
 
             public void run() {
                 //noinspection MagicNumber
-                ObtuseUtil5.safeSleepMillis( javax.management.timer.Timer.ONE_SECOND * 50L );
+                ObtuseUtil.safeSleepMillis( javax.management.timer.Timer.ONE_SECOND * 50L );
                 dialog.fakeAnswer( true );
             }
         }.start();

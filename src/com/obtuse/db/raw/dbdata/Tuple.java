@@ -3,7 +3,7 @@ package com.obtuse.db.raw.dbdata;
 import com.obtuse.db.raw.ElephantConnection;
 import com.obtuse.db.raw.ti.*;
 import com.obtuse.exceptions.HowDidWeGetHereError;
-import com.obtuse.util.ObtuseUtil5;
+import com.obtuse.util.ObtuseUtil;
 
 import java.io.Serializable;
 import java.sql.*;
@@ -524,7 +524,7 @@ public abstract class Tuple implements Serializable {
                             }
                         }
                     } finally {
-                        ObtuseUtil5.closeQuietly( rs );
+                        ObtuseUtil.closeQuietly( rs );
                     }
 
                 } finally {
@@ -537,7 +537,7 @@ public abstract class Tuple implements Serializable {
         } finally {
 
             if ( bundle != null ) {
-                ObtuseUtil5.closeQuietly( bundle.getPs() );
+                ObtuseUtil.closeQuietly( bundle.getPs() );
             }
 
         }

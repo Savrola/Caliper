@@ -11,7 +11,7 @@ import java.awt.*;
  * <p/>
  */
 
-public interface ButtonOwner {
+public interface ButtonManager {
 
     /**
      * Make sure that the buttons are enabled/disabled as appropriate.

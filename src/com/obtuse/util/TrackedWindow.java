@@ -1,15 +1,14 @@
-package com.obtuse.ui;
-
-import com.obtuse.util.BasicProgramConfigInfo;
-import com.obtuse.util.ObtuseUtil;
+package com.obtuse.util;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
-/*
- * Copyright © 2012 Daniel Boulet
+/**
+ * Record window location changes in the users preferences object.
+ * <p/>
+ * Copyright © 2007, 2008, 2011 Daniel Boulet.
  */
 
 public class TrackedWindow extends JFrame {
@@ -71,10 +70,15 @@ public class TrackedWindow extends JFrame {
     private void saveWindowGeometry( Rectangle windowGeometry ) {
 
 //        Logger.logMsg( _windowGeometryPrefsKey + ":  saving window geometry \"" + windowGeometry + "\"" );
-        BasicProgramConfigInfo.putPreferenceIfEnabled(
-                _windowGeometryPrefsKey,
-                ObtuseUtil.getSerializedVersion( windowGeometry, false )
-        );
+        if ( BasicProgramConfigInfo.getPreferences() != null ) {
+
+            BasicProgramConfigInfo.getPreferences().putByteArray(
+                    _windowGeometryPrefsKey,
+                    ObtuseUtil.getSerializedVersion( windowGeometry, false )
+            );
+
+        }
+
     }
 
     @SuppressWarnings({ "UnusedDeclaration" })
@@ -109,9 +113,9 @@ public class TrackedWindow extends JFrame {
 
     public Rectangle getSavedGeometry() {
 
-        byte[] savedLocationBytes = BasicProgramConfigInfo.getPreferenceIfEnabled(
+        byte[] savedLocationBytes = BasicProgramConfigInfo.getPreferences() == null ? null : BasicProgramConfigInfo.getPreferences().getByteArray(
                 _windowGeometryPrefsKey,
-                (byte[]) null
+                null
         );
         Rectangle savedGeometry;
         if ( savedLocationBytes == null ) {

@@ -113,15 +113,15 @@ public class GaussianDistribution {
 
         //noinspection UseOfSystemOutOrSystemErr
         System.out.println(
-                "center = " + ObtuseUtil5.lpad( center, 0, 4 ) +
-                ", expected standard deviation = " + ObtuseUtil5.lpad( standardDeviation, 0, 4 ) +
-                ", mean = " + ObtuseUtil5.lpad( stats.mean(), 0, 4 ) +
-                ", actual standardDeviation = " + ObtuseUtil5.lpad( stats.sampleStdev(), 0, 4 ) +
+                "center = " + ObtuseUtil.lpad( center, 0, 4 ) +
+                ", expected standard deviation = " + ObtuseUtil.lpad( standardDeviation, 0, 4 ) +
+                ", mean = " + ObtuseUtil.lpad( stats.mean(), 0, 4 ) +
+                ", actual standardDeviation = " + ObtuseUtil.lpad( stats.sampleStdev(), 0, 4 ) +
                 ", expected / actual standard deviation = " +
-                ObtuseUtil5.lpad( standardDeviation / stats.sampleStdev(), 0, 4 ) +
-                ", " + ObtuseUtil5.lpad( 100 * buckets[0] / (double)nTrials, 0, 1 ) + "% <= one stdev" +
-                ", " + ObtuseUtil5.lpad( 100 * buckets[1] / (double)nTrials, 0, 1 ) + "% <= two stdevs" +
-                ", " + ObtuseUtil5.lpad( 100 * buckets[2] / (double)nTrials, 0, 1 ) + "% <= three stdevs"
+                ObtuseUtil.lpad( standardDeviation / stats.sampleStdev(), 0, 4 ) +
+                ", " + ObtuseUtil.lpad( 100 * buckets[ 0 ] / (double) nTrials, 0, 1 ) + "% <= one stdev" +
+                ", " + ObtuseUtil.lpad( 100 * buckets[ 1 ] / (double) nTrials, 0, 1 ) + "% <= two stdevs" +
+                ", " + ObtuseUtil.lpad( 100 * buckets[ 2 ] / (double) nTrials, 0, 1 ) + "% <= three stdevs"
         );
 
     }

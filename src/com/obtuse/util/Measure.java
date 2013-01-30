@@ -1,7 +1,9 @@
 package com.obtuse.util;
 
 import java.io.PrintStream;
-import java.util.*;
+import java.util.Comparator;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 /**
  * Measure how long things take.
@@ -101,15 +103,15 @@ public class Measure {
         if ( showTitle ) {
 
                 where.println(
-                    ObtuseUtil5.rpad( "category", Measure.s_maxCategoryNameLength + 2 )
+                    ObtuseUtil.rpad( "category", Measure.s_maxCategoryNameLength + 2 )
                     + "   " +
-                    ObtuseUtil5.lpad( "count", 10 )
+                    ObtuseUtil.lpad( "count", 10 )
                     + "   " +
-                    ObtuseUtil5.lpad( "mean", 10 )
+                    ObtuseUtil.lpad( "mean", 10 )
                     + "   " +
-                    ObtuseUtil5.lpad( "stdev", 10 )
+                    ObtuseUtil.lpad( "stdev", 10 )
                     + "   " +
-                    ObtuseUtil5.lpad( "total", 10 )
+                    ObtuseUtil.lpad( "total", 10 )
             );
 
         }
@@ -119,9 +121,9 @@ public class Measure {
             CategoryStats stats = Measure.STATS.get( categoryName );
 
             where.println(
-                    ObtuseUtil5.rpad( categoryName, Measure.s_maxCategoryNameLength + 2 )
+                    ObtuseUtil.rpad( categoryName, Measure.s_maxCategoryNameLength + 2 )
                     + " : " +
-                    ObtuseUtil5.lpad( (long)stats.n(), 10 )
+                    ObtuseUtil.lpad( (long) stats.n(), 10 )
                     + " : " +
                     String.format( "%10.6f", stats.mean() )
                     + " : " +

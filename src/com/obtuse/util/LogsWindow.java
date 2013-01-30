@@ -1,8 +1,6 @@
-package com.obtuse.ui;
+package com.obtuse.util;
 
-import com.obtuse.util.BasicProgramConfigInfo;
-import com.obtuse.util.Logger;
-import com.obtuse.util.ObtuseUtil;
+import com.obtuse.ui.OkPopupMessageWindow;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -17,8 +15,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/*
- * Copyright © 2012 Daniel Boulet
+/**
+ * Log messages window.
+ * <p/>
+ * Copyright © 2006, 2007 Daniel Boulet.
  */
 
 @SuppressWarnings( { "ClassWithoutToString" } )
@@ -33,12 +33,12 @@ public class LogsWindow extends WindowWithMenus {
 
     private JButton _closeButton;
 
-    private final DefaultListModel _messagesList = new DefaultListModel();
+    private DefaultListModel _messagesList = new DefaultListModel();
 
-    private static final Long WINDOW_LOCK = 0L;
+    private static final Long WINDOW_LOCK = new Long( 0L );
 
     @SuppressWarnings( { "FieldAccessedSynchronizedAndUnsynchronized" } )
-    private static LogsWindow s_logsWindow = null;
+    private static LogsWindow s_logsWindow;
 
     private static DateFormat s_dateFormatter = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
 
@@ -48,12 +48,10 @@ public class LogsWindow extends WindowWithMenus {
 
 //    public static final int LOGO_SIZE = 80;
 
-    @SuppressWarnings("FieldCanBeLocal")
-    private JMenu _editMenu = null;
+    private JMenu _editMenu;
 
-    private JMenuItem _copyMenuItem = null;
+    private JMenuItem _copyMenuItem;
 
-    @SuppressWarnings("CanBeFinal")
     private Clipboard _systemClipboard;
 
     private static final String WINDOW_NAME = "LogsWindow";
@@ -219,7 +217,6 @@ public class LogsWindow extends WindowWithMenus {
     @SuppressWarnings({ "UnusedDeclaration" })
     public void setUseHTML( boolean useHTML ) {
 
-        //noinspection AssignmentToStaticFieldFromInstanceMethod
         LogsWindow.s_useHTML = useHTML;
 
     }
@@ -239,21 +236,13 @@ public class LogsWindow extends WindowWithMenus {
 
                 if ( BasicProgramConfigInfo.getApplicationName() == null ) {
 
-                    OkPopupMessageWindow.fatal(
-                            "Application has not registered its name using BasicProgramConfigInfo.",
-                            "Unable to continue.",
-                            "I Will Submit A Bug Report"
-                    );
+                    OkPopupMessageWindow.fatal( "Application has not registered its name using BasicProgramConfigInfo.", "Unable to continue.", "I Will Submit A Bug Report" );
 
                 }
 
                 if ( BasicProgramConfigInfo.getPreferences() == null ) {
 
-                    OkPopupMessageWindow.fatal(
-                            "Application has not registered its preferences object using BasicProgramConfigInfo.",
-                            "Unable to continue.",
-                            "I Will Submit A Bug Report"
-                    );
+                    OkPopupMessageWindow.fatal( "Application has not registered its preferences object using BasicProgramConfigInfo.", "Unable to continue.", "I Will Submit A Bug Report" );
 
                 }
 

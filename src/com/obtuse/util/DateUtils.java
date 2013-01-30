@@ -12,40 +12,39 @@ import java.util.TimeZone;
 /**
  * Various methods for parsing and just generally managing dates.
  * <p/>
+ * Copyright © 2009 Invidi Technologies Corporation
  * Copyright © 2009 Daniel Boulet
  */
 
 @SuppressWarnings({ "UnnecessaryLocalVariable", "StaticMethodNamingConvention", "UnusedDeclaration" })
 public class DateUtils {
 
-    public static final TimeZone EASTERN_TIME = TimeZone.getTimeZone( "America/New_York" );
-    public static final TimeZone CENTRAL_TIME = TimeZone.getTimeZone( "America/Chicago" );
+    public static final TimeZone EASTERN_TIME  = TimeZone.getTimeZone( "America/New_York" );
+    public static final TimeZone CENTRAL_TIME  = TimeZone.getTimeZone( "America/Chicago" );
     public static final TimeZone MOUNTAIN_TIME = TimeZone.getTimeZone( "America/Denver" );
-    public static final TimeZone PACIFIC_TIME = TimeZone.getTimeZone( "America/Los_Angeles" );
-    public static final TimeZone ARIZONA_TIME = TimeZone.getTimeZone( "America/Arizona" );
-    @SuppressWarnings({ "ConstantNamingConvention" })
-    public static final TimeZone UTC = TimeZone.getTimeZone( "UTC" );
+    public static final TimeZone PACIFIC_TIME  = TimeZone.getTimeZone( "America/Los_Angeles" );
+    public static final TimeZone ARIZONA_TIME  = TimeZone.getTimeZone( "America/Arizona" );
+    public static final TimeZone UTC           = TimeZone.getTimeZone( "UTC" );
 
     // IMPORTANT:  keep these date formats private as we fiddle with their embedded timezone in methods within this
     // class.
 
-    private static final SimpleDateFormat HHMMSSS = new SimpleDateFormat( "hh:mm.SSS" );
-    private static final SimpleDateFormat MMDDYYYY = new SimpleDateFormat( "MM/dd/yyyy" );
-    private static final SimpleDateFormat MMDDYYYY_HHMM = new SimpleDateFormat( "MM/dd/yyyy hh:mmaa" );
-    //    private static final SimpleDateFormat YYYYMMDD_HHMM          = new SimpleDateFormat( "yyyy-MM-dd hh:mm" );
-    @SuppressWarnings({ "ConstantNamingConvention" })
-    private static final SimpleDateFormat HHMM = new SimpleDateFormat( "hh:mmaa" );
-    private static final SimpleDateFormat MM_DD_YYYY = new SimpleDateFormat( "MM/dd/yyyy" );
-    private static final SimpleDateFormat MM_DD_YYYY_HH_MM = new SimpleDateFormat( "MM/dd/yyyy hh:mmaa" );
-    private static final SimpleDateFormat YYYY_MM_DD_HH_MM = new SimpleDateFormat( "yyyy-MM-dd HH:mm" );
-    private static final SimpleDateFormat YYYY_MM_DD_HH_MM_SS = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
+    private static final SimpleDateFormat HHMMSSS                 = new SimpleDateFormat( "hh:mm.SSS" );
+    private static final SimpleDateFormat MMDDYYYY                = new SimpleDateFormat( "MM/dd/yyyy" );
+    private static final SimpleDateFormat MMDDYYYY_HHMM           = new SimpleDateFormat( "MM/dd/yyyy hh:mmaa" );
+    private static final SimpleDateFormat HHMM                    = new SimpleDateFormat( "hh:mmaa" );
+    private static final SimpleDateFormat MM_DD_YYYY              = new SimpleDateFormat( "MM/dd/yyyy" );
+    private static final SimpleDateFormat MM_DD_YYYY_HH_MM        = new SimpleDateFormat( "MM/dd/yyyy hh:mmaa" );
+    private static final SimpleDateFormat YYYY_MM_DD_HH_MM        = new SimpleDateFormat( "yyyy-MM-dd HH:mm" );
+    private static final SimpleDateFormat YYYY_MM_DD_HH_MM_SS     = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
     private static final SimpleDateFormat YYYY_MM_DD_HH_MM_SS_SSS = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss.SSS" );
-    private static final SimpleDateFormat YYYY_MM_DD_HH_MM_ZZZ = new SimpleDateFormat( "yyyy-MM-dd HH:mm zzz" );
-    private static final SimpleDateFormat HH_MM = new SimpleDateFormat( "hh:mmaa" );
-    private static final SimpleDateFormat WWW_MMM_DD_HHMMSS_YYYY = new SimpleDateFormat( "EEE MMM dd HH:mm:ss yyyy" );
-    private static final SimpleDateFormat YYYY_MM_DD = new SimpleDateFormat( "yyyy-MM-dd" );
-    private static final SimpleDateFormat YYYYMMDD = new SimpleDateFormat( "yyyyMMdd" );
-    private static final SimpleDateFormat YYMMDD = new SimpleDateFormat( "yyMMdd" );
+    private static final SimpleDateFormat YYYY_MM_DD_HH_MM_ZZZ    = new SimpleDateFormat( "yyyy-MM-dd HH:mm zzz" );
+    private static final SimpleDateFormat HH_MM                   = new SimpleDateFormat( "hh:mmaa" );
+    private static final SimpleDateFormat WWW_MMM_DD_HHMMSS_YYYY  = new SimpleDateFormat( "EEE MMM dd HH:mm:ss yyyy" );
+    private static final SimpleDateFormat WWWW_MMMM_D_YYYY        = new SimpleDateFormat( "EEEE, MMMM d, yyyy" );
+    private static final SimpleDateFormat YYYY_MM_DD              = new SimpleDateFormat( "yyyy-MM-dd" );
+    private static final SimpleDateFormat YYYYMMDD                = new SimpleDateFormat( "yyyyMMdd" );
+    private static final SimpleDateFormat YYMMDD                  = new SimpleDateFormat( "yyMMdd" );
 
     /**
      * Make it impossible to instantiate this class.
@@ -94,8 +93,32 @@ public class DateUtils {
 
         synchronized ( DateUtils.YYYY_MM_DD_HH_MM ) {
 
-            DateUtils.MMDDYYYY_HHMM.setTimeZone( TimeZone.getDefault() );
+            DateUtils.YYYY_MM_DD_HH_MM.setTimeZone( TimeZone.getDefault() );
             ImmutableDate date = DateUtils.dateParse( DateUtils.YYYY_MM_DD_HH_MM, token, lineNumber );
+            return date;
+
+        }
+
+    }
+
+    /**
+     * Parse an YYYY_MM_DD_HH_MM_SS format date and time string.
+     *
+     * @param token      the date and time string.
+     * @param lineNumber where the date was found.
+     *
+     * @return the result in UTC.
+     *
+     * @throws ParsingException if the token does not contain a valid date and time string.
+     */
+
+    public static ImmutableDate parseYYYY_MM_DD_HH_MM_SS( String token, int lineNumber )
+            throws ParsingException {
+
+        synchronized ( DateUtils.YYYY_MM_DD_HH_MM_SS ) {
+
+            DateUtils.YYYY_MM_DD_HH_MM_SS.setTimeZone( TimeZone.getDefault() );
+            ImmutableDate date = DateUtils.dateParse( DateUtils.YYYY_MM_DD_HH_MM_SS, token, lineNumber );
             return date;
 
         }
@@ -357,6 +380,29 @@ public class DateUtils {
 
             DateUtils.YYYY_MM_DD.setTimeZone( TimeZone.getDefault() );
             ImmutableDate date = DateUtils.dateParse( DateUtils.YYYY_MM_DD, token, lineNumber );
+            return date;
+
+        }
+
+    }
+
+    /**
+     * Parse a "yyyy-MM-dd" format date string and return an ImmutableDate value that is midnight UTC at the start of the specified date.
+     *
+     * @param token      the date string.
+     * @param lineNumber where the date was found.
+     * @return the result in UTC.
+     * @throws ParsingException if the token does not contain a valid date string.
+     */
+
+    public static ImmutableDate parseYYYY_MM_DD_utc( String token, int lineNumber )
+            throws ParsingException {
+
+        synchronized ( DateUtils.YYYY_MM_DD ) {
+
+            DateUtils.YYYY_MM_DD.setTimeZone( DateUtils.UTC );
+            ImmutableDate date = DateUtils.dateParse( DateUtils.YYYY_MM_DD, token, lineNumber );
+
             return date;
 
         }
@@ -633,9 +679,37 @@ public class DateUtils {
 
     public static String formatYYYY_MM_DD( ImmutableDate dateTime ) {
 
-        return DateUtils.formatYYYY_MM_DD( (Date)dateTime );
+        return DateUtils.formatYYYY_MM_DD( (Date) dateTime );
 
     }
+
+    /**
+     * Format a date string in our local time.
+     * This method exists primarily for symmetry with the three date and time parsing methods in this class.
+     * By hiding the {@link java.text.SimpleDateFormat} objects, this also ensures that nobody 'accidentally'
+     * parses a date and time string without properly taking into account the market's timezone.
+     *
+     * @param dateTime the date to be formatted.
+     * @return the formatted date string.
+     */
+
+    public static String formatWWWW_MMMM_D_YYYY( Date dateTime ) {
+
+        synchronized ( DateUtils.WWWW_MMMM_D_YYYY ) {
+
+            DateUtils.WWWW_MMMM_D_YYYY.setTimeZone( TimeZone.getDefault() );
+            String s = DateUtils.WWWW_MMMM_D_YYYY.format( dateTime );
+            return s;
+
+        }
+
+    }
+
+//    public static String formatWWWW_MMMM_D_YYYY( ImmutableDate dateTime ) {
+//
+//        return DateUtils.formatWWWW_MMMM_D_YYYY( (Date)dateTime );
+//
+//    }
 
     /**
      * Format a date string in our local time.
@@ -680,19 +754,21 @@ public class DateUtils {
     public static String formatDuration( long xmillis, int digits, boolean shortForm ) {
 
         long millis = xmillis;
+
+        if ( millis == 0 ) {
+
+            return "0" + ( shortForm ? "s" : " seconds" );
+
+        }
+
         String rval = "";
         String spacing = "";
-
-        boolean formattedSomething = false;
-
         if ( millis >= Timer.ONE_WEEK ) {
 
             long weeks = millis / Timer.ONE_WEEK;
             rval += spacing + weeks + ( shortForm ? "w" : ( " week" + ( weeks == 1L ? "" : "s" ) ) );
             millis %= Timer.ONE_WEEK;
             spacing = " ";
-
-            formattedSomething = true;
 
         }
 
@@ -703,8 +779,6 @@ public class DateUtils {
             millis %= Timer.ONE_DAY;
             spacing = " ";
 
-            formattedSomething = true;
-
         }
 
         if ( millis >= Timer.ONE_HOUR ) {
@@ -713,8 +787,6 @@ public class DateUtils {
             rval += spacing + hours + ( shortForm ? "h" : ( " hour" + ( hours == 1L ? "" : "s" ) ) );
             millis %= Timer.ONE_HOUR;
             spacing = " ";
-
-            formattedSomething = true;
 
         }
 
@@ -725,11 +797,9 @@ public class DateUtils {
             millis %= Timer.ONE_MINUTE;
             spacing = " ";
 
-            formattedSomething = true;
-
         }
 
-        if ( millis > 0L || !formattedSomething ) {
+        if ( millis > 0L ) {
 
             long seconds = millis / Timer.ONE_SECOND;
             if ( shortForm && millis % Timer.ONE_SECOND == 0L ) {
@@ -738,7 +808,7 @@ public class DateUtils {
 
             } else {
 
-                rval += spacing + ObtuseUtil5.lpad( millis / (double)Timer.ONE_SECOND, 0, digits ) +
+                rval += spacing + ObtuseUtil.lpad( millis / (double) Timer.ONE_SECOND, 0, digits ) +
                         ( shortForm ? "s " : ( " second" + ( seconds == 1L ? "" : "s" ) ) );
 
             }
@@ -774,8 +844,10 @@ public class DateUtils {
         Calendar cal = Calendar.getInstance();
         cal.setTime( date );
         cal.add( Calendar.DAY_OF_MONTH, delta );
+
         return cal.getTime();
 
     }
+
 
 }

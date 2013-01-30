@@ -1,12 +1,18 @@
 package com.obtuse.ui;
 
-import com.obtuse.util.*;
+import com.obtuse.util.ButtonInfo;
+import com.obtuse.util.ButtonManager;
+import com.obtuse.util.Logger;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.undo.*;
-import java.util.*;
+import javax.swing.undo.CannotRedoException;
+import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.UndoManager;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 /*
  * Copyright © 2012 Daniel Boulet
@@ -18,7 +24,7 @@ import java.util.*;
  */
 
 @SuppressWarnings("UnusedDeclaration")
-public abstract class JListManager implements ButtonOwner {
+public abstract class JListManager implements ButtonManager {
 
     public interface ListElementFactory {
 

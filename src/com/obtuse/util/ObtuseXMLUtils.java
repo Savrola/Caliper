@@ -3,12 +3,17 @@ package com.obtuse.util;
 import com.obtuse.util.exceptions.ObtuseXmlNodeException;
 import com.obtuse.util.exceptions.ParsingException;
 import org.jetbrains.annotations.Nullable;
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import java.io.PrintStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.util.Collection;
+import java.util.Date;
+import java.util.LinkedList;
 
 /*
  * Copyright © 2012 Daniel Boulet
@@ -61,12 +66,12 @@ public class ObtuseXMLUtils {
 
             if ( node.getTextContent().trim().isEmpty() ) {
 
-//                ps.println( ObtuseUtil5.replicate( "   ", depth ) + "node is \"" + node.getNodeName() + "\" (whitespace)" );
+//                ps.println( ObtuseUtil.replicate( "   ", depth ) + "node is \"" + node.getNodeName() + "\" (whitespace)" );
 
             } else {
 
                 ps.println(
-                        ObtuseUtil5.replicate( "   ", depth ) + "node is \"" + node.getNodeName() + "\" (text = \"" + node.getTextContent().trim() + "\")"
+                        ObtuseUtil.replicate( "   ", depth ) + "node is \"" + node.getNodeName() + "\" (text = \"" + node.getTextContent().trim() + "\")"
                 );
 
             }
@@ -79,7 +84,7 @@ public class ObtuseXMLUtils {
 
         } else {
 
-            ps.println( ObtuseUtil5.replicate( "   ", depth ) + "node is \"" + node.getNodeName() + "\"" );
+            ps.println( ObtuseUtil.replicate( "   ", depth ) + "node is \"" + node.getNodeName() + "\"" );
 
         }
 
@@ -98,7 +103,7 @@ public class ObtuseXMLUtils {
 
                     Node item = nodeMap.item( ix );
                     ps.println(
-                            ObtuseUtil5.replicate( "   ", depth ) +
+                            ObtuseUtil.replicate( "   ", depth ) +
                             item.getNodeName() + "=" + item.getNodeValue() // + " (type " + item.getNodeType() + ")"
                     );
 

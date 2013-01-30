@@ -1,7 +1,7 @@
 package fi.iki.nanohttpd;
 
 import com.obtuse.util.Logger;
-import com.obtuse.util.ObtuseUtil5;
+import com.obtuse.util.ObtuseUtil;
 import com.obtuse.util.PostParameters;
 import org.jetbrains.annotations.Nullable;
 
@@ -635,8 +635,8 @@ public abstract class NanoHTTPD {
 
             } finally {
 
-                ObtuseUtil5.closeQuietly( is );
-                ObtuseUtil5.closeQuietly( _mySocket );
+                ObtuseUtil.closeQuietly( is );
+                ObtuseUtil.closeQuietly( _mySocket );
 
             }
 
@@ -762,13 +762,13 @@ public abstract class NanoHTTPD {
 
                 // Couldn't write? No can do.
 
-                ObtuseUtil5.closeQuietly( _mySocket );
+                ObtuseUtil.closeQuietly( _mySocket );
 
             } finally {
 
                 if ( data != null ) {
 
-                    ObtuseUtil5.closeQuietly( data );
+                    ObtuseUtil.closeQuietly( data );
 
                 }
 
@@ -1170,7 +1170,7 @@ public abstract class NanoHTTPD {
             } else {
 
                 Logger.logErr(
-                        "ERROR:  unexpected by in POST parameters 0x" + ObtuseUtil5.hexvalue( b ) + " - ignored"
+                        "ERROR:  unexpected by in POST parameters 0x" + ObtuseUtil.hexvalue( b ) + " - ignored"
                 );
 
             }

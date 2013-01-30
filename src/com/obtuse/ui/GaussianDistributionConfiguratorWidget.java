@@ -7,7 +7,9 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.util.*;
+import java.util.Dictionary;
+import java.util.Hashtable;
+import java.util.LinkedList;
 
 /**
  * A widget for configurating a gaussian distribution.
@@ -63,7 +65,7 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
 
         @SuppressWarnings({ "MagicNumber", "UseOfObsoleteCollectionType" })
         Hashtable<Integer,MpsLabel> ht = MpsLabel.makeLabels( 0, 1000, 250, 3 );
-        S_0TO_1BY_QUARTERS_LABELS = ObtuseUtil5.unmodifiableHashtable( ht );
+        S_0TO_1BY_QUARTERS_LABELS = ObtuseUtil.unmodifiableHashtable( ht );
 
     }
 
@@ -255,16 +257,16 @@ public class GaussianDistributionConfiguratorWidget extends JPanel {
 
         _currentWeightLabel.setText( "" + _weightSlider.getModel().getValue() );
         _currentCenteredAtLabel.setText(
-                "" + ObtuseUtil5.lpad0(
+                "" + ObtuseUtil.lpad0(
                         _centerSlider.getModel().getValue() /
-                        GaussianDistributionConfiguratorWidget.SCALING_FACTOR, 6, 3
+                                GaussianDistributionConfiguratorWidget.SCALING_FACTOR, 6, 3
                 )
         );
 
         _currentStdDevLabel.setText(
-                "" + ObtuseUtil5.lpad0(
+                "" + ObtuseUtil.lpad0(
                         _standardDeviationSlider.getModel().getValue() /
-                        GaussianDistributionConfiguratorWidget.SCALING_FACTOR, 6, 3
+                                GaussianDistributionConfiguratorWidget.SCALING_FACTOR, 6, 3
                 )
         );
 

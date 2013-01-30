@@ -1,6 +1,8 @@
 package com.obtuse.util;
 
-import java.io.*;
+import java.io.Closeable;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.util.Collection;
 import java.util.Stack;
 
@@ -25,7 +27,7 @@ public class NestedXMLPrinter implements Closeable {
         super();
 
         _indentPerLevel = indentPerLevel;
-        _perIndentString = ObtuseUtil5.replicate( " ", indentPerLevel );
+        _perIndentString = ObtuseUtil.replicate( " ", indentPerLevel );
         _ps = ps;
 
     }
@@ -146,7 +148,7 @@ public class NestedXMLPrinter implements Closeable {
         emitOpenTag( arrayName );
         for ( double v : values ) {
 
-            emitTag( "item", ObtuseUtil5.lpad( v, 0, precision ) );
+            emitTag( "item", ObtuseUtil.lpad( v, 0, precision ) );
 
         }
         emitCloseTag( arrayName );
@@ -217,7 +219,7 @@ public class NestedXMLPrinter implements Closeable {
 
         _nestingLevel += 1;
         _tagStack.push( tag );
-        _currentIndentString = ObtuseUtil5.replicate( _perIndentString, _nestingLevel );
+        _currentIndentString = ObtuseUtil.replicate( _perIndentString, _nestingLevel );
 
     }
 
@@ -233,7 +235,7 @@ public class NestedXMLPrinter implements Closeable {
         if ( expectedTag.equals( tagName ) ) {
 
             _nestingLevel -= 1;
-            _currentIndentString = ObtuseUtil5.replicate( "   ", _nestingLevel );
+            _currentIndentString = ObtuseUtil.replicate( "   ", _nestingLevel );
 
         } else {
 

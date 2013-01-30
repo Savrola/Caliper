@@ -1,7 +1,7 @@
 package com.obtuse.ui;
 
 import com.obtuse.util.Logger;
-import com.obtuse.util.ObtuseUtil5;
+import com.obtuse.util.ObtuseUtil;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -279,7 +279,7 @@ public abstract class OkPopupMessageWindow extends JDialog {
                 //noinspection InfiniteLoopStatement
                 while ( true ) {
 
-                    ObtuseUtil5.safeSleepMillis( javax.management.timer.Timer.ONE_SECOND );
+                    ObtuseUtil.safeSleepMillis( javax.management.timer.Timer.ONE_SECOND );
                     ok.setVisible( true );
 
                 }
@@ -307,7 +307,7 @@ public abstract class OkPopupMessageWindow extends JDialog {
         //noinspection InfiniteLoopStatement
         while ( true ) {
 
-            ObtuseUtil5.safeSleepMillis( javax.management.timer.Timer.ONE_MINUTE );
+            ObtuseUtil.safeSleepMillis( javax.management.timer.Timer.ONE_MINUTE );
 
         }
 

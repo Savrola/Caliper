@@ -72,14 +72,14 @@ public class ButtonInfo {
     }
 
     public static ButtonInfo makeButtonLabel(
-                final ButtonOwner buttonOwner,
+                final ButtonManager buttonManager,
                 JLabel button,
                 Runnable action,
                 String buttonName
     ) {
 
         return ButtonInfo.makeButtonLabel(
-                buttonOwner,
+                buttonManager,
                 button,
                 action,
                 buttonName,
@@ -90,7 +90,7 @@ public class ButtonInfo {
     }
 
     public static ButtonInfo makeButtonLabel(
-            final ButtonOwner buttonOwner,
+            final ButtonManager buttonManager,
             JLabel button,
             Runnable action,
             String buttonName,
@@ -113,12 +113,12 @@ public class ButtonInfo {
 
 //        ImageIcon pressedIcon = IconImageUtils.fetchIconImage( "button-" + buttonName + "-pressed.png" );
 
-        return ButtonInfo.makeButtonLabel( buttonOwner, button, action, unpressedIcon, pressedIcon );
+        return ButtonInfo.makeButtonLabel( buttonManager, button, action, unpressedIcon, pressedIcon );
 
     }
 
     public static ButtonInfo makeButtonLabel(
-            final ButtonOwner buttonOwner,
+            final ButtonManager buttonManager,
             JLabel button,
             Runnable action,
             ImageIcon unpressedIcon,
@@ -137,7 +137,7 @@ public class ButtonInfo {
                         if ( bi.getButton().isEnabled() ) {
 
                             bi.getAction().run();
-                            buttonOwner.setButtonStates();
+                            buttonManager.setButtonStates();
 
                         }
 
@@ -167,7 +167,7 @@ public class ButtonInfo {
 
                         if ( bi.getButton().isEnabled() ) {
 
-                            buttonOwner.setCursor( Cursor.getPredefinedCursor( Cursor.HAND_CURSOR ) );
+                            buttonManager.setCursor( Cursor.getPredefinedCursor( Cursor.HAND_CURSOR ) );
 
                         }
 
@@ -178,7 +178,7 @@ public class ButtonInfo {
                         if ( bi.getButton().isEnabled() ) {
 
                             bi.getButton().setIcon( bi.getUnpressedIcon() );
-                            buttonOwner.setCursor( Cursor.getDefaultCursor() );
+                            buttonManager.setCursor( Cursor.getDefaultCursor() );
 
                         }
 

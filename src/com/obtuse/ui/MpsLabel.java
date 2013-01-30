@@ -1,7 +1,7 @@
 package com.obtuse.ui;
 
 import com.obtuse.util.ImageIconUtils;
-import com.obtuse.util.ObtuseUtil5;
+import com.obtuse.util.ObtuseUtil;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
@@ -47,7 +47,7 @@ public class MpsLabel {
 
     public MpsLabel( double value, int digits ) {
 
-        this( ObtuseUtil5.lpad( value, 0, digits ) );
+        this( ObtuseUtil.lpad( value, 0, digits ) );
 
     }
 
@@ -130,7 +130,7 @@ public class MpsLabel {
 
             } else {
 
-                ht.put( v, new MpsLabel( ObtuseUtil5.lpad( v / (double)scalingFactor, 0, digits ) ) );
+                ht.put( v, new MpsLabel( ObtuseUtil.lpad( v / (double) scalingFactor, 0, digits ) ) );
 
             }
 
@@ -179,7 +179,7 @@ public class MpsLabel {
         }
         for ( double v = min; v <= max; v += incr ) {
 
-            ht.put( (int)Math.round( v ), new MpsLabel( ObtuseUtil5.lpad( v / (double)scalingFactor, 0, digits ) ) );
+            ht.put( (int)Math.round( v ), new MpsLabel( ObtuseUtil.lpad( v / (double) scalingFactor, 0, digits ) ) );
 
         }
 

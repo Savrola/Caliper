@@ -1,8 +1,10 @@
 package com.obtuse.db.raw.ti;
 
-import com.obtuse.util.ObtuseUtil5;
+import com.obtuse.util.ObtuseUtil;
 
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Carry around a byte array value from the database.
@@ -71,7 +73,7 @@ public class DBByteArray extends DBValue {
 
     public String toString() {
 
-        return ObtuseUtil5.hexvalue( _byteArrayValue );
+        return ObtuseUtil.hexvalue( _byteArrayValue );
 
     }
 

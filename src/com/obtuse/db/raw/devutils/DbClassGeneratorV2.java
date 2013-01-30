@@ -399,7 +399,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
             writer.println( "import com.obtuse.db.raw.ElephantConnection;" );
             writer.println( "import com.obtuse.db.raw.dbdata.BundledKeys;" );
             writer.println( "import com.obtuse.db.raw.dbdata.Tuple2;" );
-            writer.println( "import com.obtuse.util.ObtuseUtil5;" );
+            writer.println( "import com.obtuse.util.ObtuseUtil;" );
             writer.println();
             writer.println( "import java.sql.PreparedStatement;" );
             writer.println( "import java.sql.ResultSet;" );
@@ -805,7 +805,7 @@ public class DbClassGeneratorV2 implements DbClassGenerator {
 
         writer.println( "        } finally {" );
         writer.println();
-        writer.println( "            ObtuseUtil5.closeQuietly( ps );" );
+        writer.println( "            ObtuseUtil.closeQuietly( ps );" );
         writer.println();
         writer.println( "        }" );
         writer.println();
